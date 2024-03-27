@@ -1,7 +1,39 @@
-[gd_scene format=3 uid="uid://bogftkpp5renw"]
+[gd_scene load_steps=5 format=3 uid="uid://bogftkpp5renw"]
+
+[ext_resource type="Script" path="res://area_2d.gd" id="1_fbeto"]
+[ext_resource type="Texture2D" uid="uid://wg1qi07pbcay" path="res://sprites/player/submarine_sprite.png" id="2_ypjpa"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sebnp"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"Accelerating",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ypjpa")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gjbdk"]
+radius = 34.0
+height = 138.0
 
 [node name="Area2D" type="Area2D"]
+position = Vector2(436, 187)
+script = ExtResource("1_fbeto")
+metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.565, 0.565)
+sprite_frames = SubResource("SpriteFrames_sebnp")
+animation = &"Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_gjbdk")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
