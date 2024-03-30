@@ -19,9 +19,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qea78"]
-radius = 34.0
-height = 138.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uhf8u"]
+size = Vector2(66.9999, 106)
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(924, 382)
@@ -34,6 +33,7 @@ sprite_frames = SubResource("SpriteFrames_1eeoj")
 animation = &"Idle"
 
 [node name="Collider" type="CollisionShape2D" parent="."]
+position = Vector2(-3.00006, 0.499939)
 rotation = 1.5708
-shape = SubResource("CapsuleShape2D_qea78")
+shape = SubResource("RectangleShape2D_uhf8u")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
