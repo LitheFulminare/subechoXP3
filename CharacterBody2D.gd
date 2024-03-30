@@ -1,6 +1,5 @@
+extends CharacterBody2D
 
-
-extends Area2D
 
 #mudar de area2D para characterBody2D, ele tem argumentos como move_and_slide que ajudam 
 
@@ -9,7 +8,6 @@ extends Area2D
 @export var friction = 100
 
 var input = Vector2.ZERO
-var velocity = Vector2()
 
 func _physics_process(delta):
 	player_movement(delta)
