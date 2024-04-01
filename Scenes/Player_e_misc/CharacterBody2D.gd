@@ -34,7 +34,11 @@ func _ready():
 	pass
 
 func _process(delta):
-	pass
+	if energy <= 0:
+		energy = 0
+	if Input.is_action_pressed("Right"):
+		energy -= 1
+		
 
 func _on_energy_timer_timeout():
 	energy -= 1

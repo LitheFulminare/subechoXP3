@@ -47,8 +47,8 @@ shape = SubResource("RectangleShape2D_uhf8u")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
 [node name="Light" type="PointLight2D" parent="."]
-position = Vector2(1, 2)
-scale = Vector2(4.15625, 3.92188)
+position = Vector2(-0.999991, -9.53674e-06)
+scale = Vector2(4.77344, 4.41797)
 texture = SubResource("GradientTexture2D_w4kjf")
 metadata/_edit_group_ = true
 
