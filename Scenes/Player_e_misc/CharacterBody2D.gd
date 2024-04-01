@@ -3,6 +3,8 @@ extends CharacterBody2D
 @export var speed = 500
 @export var acceleration = 500
 @export var friction = 100
+@export var life = 100
+@export var energy = 100
 
 var input = Vector2.ZERO
 
@@ -33,5 +35,6 @@ func _ready():
 
 func _process(delta):
 	pass
-	
 
+func _on_energy_timer_timeout():
+	energy -= 1

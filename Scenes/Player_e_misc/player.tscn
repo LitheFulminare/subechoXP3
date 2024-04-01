@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://e4g3db01cv23"]
 
-[ext_resource type="Script" path="res://Player_e_misc/CharacterBody2D.gd" id="1_k0pig"]
+[ext_resource type="Script" path="res://Scenes/Player_e_misc/CharacterBody2D.gd" id="1_k0pig"]
 [ext_resource type="Texture2D" uid="uid://wg1qi07pbcay" path="res://sprites/player/submarine_sprite.png" id="2_scnty"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1eeoj"]
@@ -51,3 +51,8 @@ position = Vector2(1, 2)
 scale = Vector2(4.15625, 3.92188)
 texture = SubResource("GradientTexture2D_w4kjf")
 metadata/_edit_group_ = true
+
+[node name="Energy timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Energy timer" to="." method="_on_energy_timer_timeout"]

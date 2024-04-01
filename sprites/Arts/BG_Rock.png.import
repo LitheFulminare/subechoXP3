@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://nd1cj2evm612"
-path="res://.godot/imported/2d_lights_and_shadows_neutral_point_light.webp-aa0ca43367949d424c5843b25fa14e9d.ctex"
+uid="uid://cr1yy7kq7r2sn"
+path="res://.godot/imported/BG_Rock.png-28ac56213dd3b5b29e2cbdfb6b5e9f47.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Arts/2d_lights_and_shadows_neutral_point_light.webp"
-dest_files=["res://.godot/imported/2d_lights_and_shadows_neutral_point_light.webp-aa0ca43367949d424c5843b25fa14e9d.ctex"]
+source_file="res://sprites/Arts/BG_Rock.png"
+dest_files=["res://.godot/imported/BG_Rock.png-28ac56213dd3b5b29e2cbdfb6b5e9f47.ctex"]
 
 [params]
 
