@@ -51,6 +51,7 @@ glow_enabled = true
 glow_normalized = true
 glow_bloom = 0.27
 glow_blend_mode = 0
+fog_light_color = Color(0.788235, 0, 0, 1)
 adjustment_enabled = true
 adjustment_brightness = 0.83
 adjustment_saturation = 1.67
@@ -88,24 +89,17 @@ theme_override_constants/shadow_outline_size = 0
 text = "Energia: 100
 "
 
+[node name="TextureProgressBar" type="TextureProgressBar" parent="UI"]
+offset_left = 141.0
+offset_top = 139.0
+offset_right = 325.0
+offset_bottom = 179.0
+
 [node name="CanvasGroup" type="CanvasGroup" parent="."]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="CanvasGroup"]
 position = Vector2(-24, 4)
 color = Color(0, 0, 0, 1)
-
-[node name="Player" parent="CanvasGroup/CanvasModulate" instance=ExtResource("1_tgyws")]
-position = Vector2(373, 272)
-speed = 200
-acceleration = 150
-
-[node name="Camera2D" type="Camera2D" parent="CanvasGroup/CanvasModulate/Player"]
-limit_left = 0
-limit_top = 0
-limit_right = 2385
-limit_bottom = 1630
-editor_draw_screen = false
-editor_draw_limits = true
 
 [node name="Pedra" parent="CanvasGroup" instance=ExtResource("2_k77am")]
 position = Vector2(0, 0)
@@ -133,6 +127,19 @@ metadata/_edit_lock_ = true
 position = Vector2(2296, 864)
 scale = Vector2(9.125, 3)
 texture = SubResource("GradientTexture2D_22few")
+
+[node name="Player" parent="CanvasGroup" instance=ExtResource("1_tgyws")]
+position = Vector2(349, 276)
+speed = 200
+acceleration = 150
+
+[node name="Camera2D" type="Camera2D" parent="CanvasGroup/Player"]
+limit_left = 0
+limit_top = 0
+limit_right = 2385
+limit_bottom = 1630
+editor_draw_screen = false
+editor_draw_limits = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_wadha")

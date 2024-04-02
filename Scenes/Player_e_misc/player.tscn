@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://e4g3db01cv23"]
+[gd_scene load_steps=9 format=3 uid="uid://e4g3db01cv23"]
 
 [ext_resource type="Script" path="res://Scenes/Player_e_misc/CharacterBody2D.gd" id="1_k0pig"]
 [ext_resource type="Texture2D" uid="uid://wg1qi07pbcay" path="res://sprites/player/submarine_sprite.png" id="2_scnty"]
@@ -31,10 +31,18 @@ fill = 1
 fill_from = Vector2(0.5, 0.522936)
 fill_to = Vector2(0.848624, 0.816514)
 
+[sub_resource type="Gradient" id="Gradient_xpgn4"]
+colors = PackedColorArray(0.078125, 1, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_s5eh0"]
+gradient = SubResource("Gradient_xpgn4")
+fill = 1
+fill_from = Vector2(0.495413, 0.477064)
+fill_to = Vector2(0.133028, 0.0733945)
+
 [node name="Player" type="CharacterBody2D"]
-position = Vector2(1116, 477)
+position = Vector2(1044, 422)
 script = ExtResource("1_k0pig")
-metadata/_edit_group_ = true
 
 [node name="Sprites" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.565, 0.565)
@@ -52,6 +60,12 @@ position = Vector2(-0.999991, -9.53674e-06)
 scale = Vector2(4.77344, 4.41797)
 texture = SubResource("GradientTexture2D_w4kjf")
 metadata/_edit_group_ = true
+
+[node name="Sonar" type="PointLight2D" parent="."]
+visible = false
+position = Vector2(-3.71933e-05, 8)
+scale = Vector2(3, 3)
+texture = SubResource("GradientTexture2D_s5eh0")
 
 [node name="Energy timer" type="Timer" parent="."]
 autostart = true
