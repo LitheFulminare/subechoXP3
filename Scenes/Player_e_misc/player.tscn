@@ -23,7 +23,7 @@ animations = [{
 size = Vector2(66.9999, 106)
 
 [sub_resource type="Gradient" id="Gradient_sbpw5"]
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+colors = PackedColorArray(0.613281, 0.764343, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_w4kjf"]
 gradient = SubResource("Gradient_sbpw5")
