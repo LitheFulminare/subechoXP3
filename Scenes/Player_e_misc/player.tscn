@@ -32,13 +32,16 @@ fill_from = Vector2(0.5, 0.522936)
 fill_to = Vector2(0.848624, 0.816514)
 
 [sub_resource type="Gradient" id="Gradient_xpgn4"]
+offsets = PackedFloat32Array(0, 0.655844)
 colors = PackedColorArray(0.078125, 1, 0, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_s5eh0"]
 gradient = SubResource("Gradient_xpgn4")
+width = 256
+height = 256
 fill = 1
 fill_from = Vector2(0.495413, 0.477064)
-fill_to = Vector2(0.133028, 0.0733945)
+fill_to = Vector2(0, 0)
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(1044, 422)
@@ -56,16 +59,19 @@ shape = SubResource("RectangleShape2D_uhf8u")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
 [node name="Light" type="PointLight2D" parent="."]
-position = Vector2(-0.999991, -9.53674e-06)
-scale = Vector2(4.77344, 4.41797)
+visible = false
+position = Vector2(-1.00002, 9.53674e-06)
+scale = Vector2(5.16797, 4.89649)
+shadow_color = Color(0, 0.27451, 1, 0)
 texture = SubResource("GradientTexture2D_w4kjf")
 metadata/_edit_group_ = true
 
 [node name="Sonar" type="PointLight2D" parent="."]
-visible = false
-position = Vector2(-3.71933e-05, 8)
-scale = Vector2(3, 3)
+position = Vector2(4.99997, 4)
+shadow_enabled = true
+shadow_color = Color(0.290196, 1, 0, 0)
 texture = SubResource("GradientTexture2D_s5eh0")
+texture_scale = 0.25
 
 [node name="Energy timer" type="Timer" parent="."]
 autostart = true

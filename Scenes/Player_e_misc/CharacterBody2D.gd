@@ -6,7 +6,11 @@ extends CharacterBody2D
 @export var life = 100
 @export var energy = 100
 
+var sonar = false
+
 var input = Vector2.ZERO
+
+var tween
 
 func _physics_process(delta):
 	player_movement(delta)
@@ -36,9 +40,19 @@ func _ready():
 func _process(delta):
 	if energy <= 0:
 		energy = 0
-	if Input.is_action_pressed("Right"):
-		energy -= 1
-		
+	#if Input.is_action_pressed("Right"):
+	#	energy -= 1
+	if Input.is_action_pressed("Sonar"):
+		Sonar()
 
 func _on_energy_timer_timeout():
 	energy -= 1
+	
+func Sonar():
+	#$Sonar.visible = true
+	var tween = get_tree().create_tween()
+	tween.tween_property($Sonar, "scale", Vector2(), 0.5)
+	#tween.tween_callback($Sonar.queue_free)
+	
+	#search for "on finished" signal for the tween. it kinda works bit it only shrinks
+	
