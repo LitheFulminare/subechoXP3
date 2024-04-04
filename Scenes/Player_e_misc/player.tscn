@@ -49,7 +49,7 @@ fill_to = Vector2(0, 0)
 position = Vector2(1044, 422)
 script = ExtResource("1_k0pig")
 
-[node name="Sprites" type="AnimatedSprite2D" parent="."]
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.565, 0.565)
 sprite_frames = SubResource("SpriteFrames_1eeoj")
 animation = &"Idle"
@@ -70,7 +70,6 @@ metadata/_edit_group_ = true
 [node name="Sonar" type="PointLight2D" parent="."]
 visible = false
 position = Vector2(4.99997, 4)
-shadow_enabled = true
 shadow_color = Color(0.290196, 1, 0, 0)
 texture = SubResource("GradientTexture2D_s5eh0")
 texture_scale = 0.25
