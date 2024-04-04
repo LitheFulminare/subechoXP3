@@ -122,9 +122,10 @@ scale = Vector2(9.125, 3)
 texture = SubResource("GradientTexture2D_22few")
 
 [node name="Player" parent="CanvasGroup" instance=ExtResource("1_tgyws")]
-position = Vector2(349, 276)
+position = Vector2(280, 246)
 speed = 200
 acceleration = 150
+metadata/_edit_group_ = true
 
 [node name="Camera2D" type="Camera2D" parent="CanvasGroup/Player"]
 limit_left = 0

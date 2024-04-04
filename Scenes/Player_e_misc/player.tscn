@@ -70,11 +70,18 @@ metadata/_edit_group_ = true
 [node name="Sonar" type="PointLight2D" parent="."]
 visible = false
 position = Vector2(4.99997, 4)
-shadow_color = Color(0.290196, 1, 0, 0)
+shadow_color = Color(0.12549, 1, 0, 0)
+shadow_filter_smooth = 1.9
 texture = SubResource("GradientTexture2D_s5eh0")
 texture_scale = 0.25
 
 [node name="Energy timer" type="Timer" parent="."]
 autostart = true
 
+[node name="Sonar cooldown" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+
 [connection signal="timeout" from="Energy timer" to="." method="_on_energy_timer_timeout"]
+[connection signal="timeout" from="Sonar cooldown" to="." method="_on_sonar_cooldown_timeout"]
