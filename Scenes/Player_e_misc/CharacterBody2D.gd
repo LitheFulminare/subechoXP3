@@ -51,7 +51,7 @@ func _on_energy_timer_timeout():
 func Sonar():
 	#$Sonar.visible = true
 	var tween = get_tree().create_tween()
-	tween.tween_property($Sonar, "scale", Vector2(), 0.5)
+	tween.tween_property($Sonar, "scale", Vector2(10,10), 0.5)
 	#tween.tween_callback($Sonar.queue_free)
 	
 	#search for "on finished" signal for the tween. it kinda works bit it only shrinks
