@@ -14,6 +14,11 @@ var tween
 
 func _physics_process(delta):
 	player_movement(delta)
+	
+	#var space_state = get_world_2d().direct_space_state
+	#var query = PhysicsRayQueryParameters2D.create(Vector2(0, 0), Vector2(50, 100))
+	#var result = space_state.intersect_ray(query)
+	
 
 func get_input():
 
@@ -63,12 +68,6 @@ func Sonar():
 		$Sonar.visible = false
 		$Sonar.scale = Vector2(1,1)
 		$Sonar.energy = 1.0
-
-	
-
-	#tween.tween_callback($Sonar.queue_free)
-	
-	#search for "on finished" signal for the tween. it kinda works bit it only shrinks
 	
 
 

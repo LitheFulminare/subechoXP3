@@ -124,18 +124,19 @@ axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 metadata/_edit_lock_ = true
 
-[node name="PointLight2D" type="PointLight2D" parent="CanvasGroup"]
+[node name="SaidaVerde" type="PointLight2D" parent="CanvasGroup"]
 position = Vector2(2159.5, 864)
 scale = Vector2(7.39062, 3)
 texture = SubResource("GradientTexture2D_22few")
 
-[node name="PointLight2D2" type="PointLight2D" parent="CanvasGroup"]
+[node name="SaidaVermelha" type="PointLight2D" parent="CanvasGroup"]
 position = Vector2(2198, 144)
 scale = Vector2(6.0625, 1.5)
 texture = SubResource("GradientTexture2D_rly4j")
 
 [node name="Player" parent="CanvasGroup" instance=ExtResource("1_tgyws")]
 position = Vector2(280, 246)
+scale = Vector2(0.992109, 0.984466)
 speed = 200
 acceleration = 150
 metadata/_edit_group_ = true
