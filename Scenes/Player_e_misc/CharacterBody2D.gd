@@ -61,7 +61,7 @@ func Sonar():
 		$Sonar.visible = true
 		
 		var tween = create_tween()
-		tween.tween_property($Sonar, "scale", Vector2(20,20), 1)
+		tween.tween_property($Sonar, "scale", Vector2(55,55), 1)
 		tween.parallel().tween_property($Sonar, "energy", 0, 2)
 		
 		await tween.finished
