@@ -10,5 +10,5 @@ func _ready():
 func _process(delta):
 	$UI/Integridade.text = "Integridade: " + str($CanvasGroup/Player.life)
 	$UI/Energia.text = "Energia: " + str($CanvasGroup/Player.energy)
-	
+	#
 	
