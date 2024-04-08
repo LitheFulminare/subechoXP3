@@ -38,6 +38,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_3e0e8")
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_fk0it"]
+blend_mode = 3
 light_mode = 2
 
 [sub_resource type="Gradient" id="Gradient_gq56k"]
@@ -123,6 +124,7 @@ layer_0/tile_data = PackedInt32Array(0, 0, 0, 65536, 0, 1, 1, 65536, 0, 65537, 6
 [node name="TileMap2" type="TileMap" parent="CanvasGroup/Pedra"]
 modulate = Color(0.00784314, 1, 0, 0.290196)
 light_mask = 2
+visibility_layer = 2
 z_index = 1
 material = SubResource("CanvasItemMaterial_fk0it")
 tile_set = SubResource("TileSet_o1jxt")
