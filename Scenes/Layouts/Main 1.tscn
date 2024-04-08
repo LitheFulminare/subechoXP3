@@ -38,7 +38,6 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_3e0e8")
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_fk0it"]
-blend_mode = 3
 light_mode = 2
 
 [sub_resource type="Gradient" id="Gradient_gq56k"]
