@@ -49,6 +49,7 @@ fill_to = Vector2(0, 0)
 radius = 500.0
 
 [node name="Player" type="CharacterBody2D"]
+light_mask = 0
 position = Vector2(1044, 422)
 script = ExtResource("1_k0pig")
 
@@ -73,6 +74,7 @@ metadata/_edit_group_ = true
 [node name="Sonar" type="PointLight2D" parent="."]
 visible = false
 position = Vector2(4.99997, 4)
+range_item_cull_mask = 2
 shadow_color = Color(0.12549, 1, 0, 0)
 shadow_filter_smooth = 1.9
 texture = SubResource("GradientTexture2D_s5eh0")
@@ -85,6 +87,7 @@ autostart = true
 wait_time = 3.0
 
 [node name="ShapeCast2D" type="ShapeCast2D" parent="."]
+visible = false
 shape = SubResource("CircleShape2D_qow0k")
 
 [connection signal="timeout" from="Energy timer" to="." method="_on_energy_timer_timeout"]
