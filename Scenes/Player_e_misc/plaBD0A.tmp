@@ -1,0 +1,94 @@
+[gd_scene load_steps=10 format=3 uid="uid://e4g3db01cv23"]
+
+[ext_resource type="Script" path="res://Scenes/Player_e_misc/CharacterBody2D.gd" id="1_k0pig"]
+[ext_resource type="Texture2D" uid="uid://wg1qi07pbcay" path="res://sprites/player/submarine_sprite.png" id="2_scnty"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1eeoj"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"Accelerating",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_scnty")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uhf8u"]
+size = Vector2(66.9999, 106)
+
+[sub_resource type="Gradient" id="Gradient_sbpw5"]
+colors = PackedColorArray(0.613281, 0.764343, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_w4kjf"]
+gradient = SubResource("Gradient_sbpw5")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.522936)
+fill_to = Vector2(0.853211, 0.853211)
+
+[sub_resource type="Gradient" id="Gradient_xpgn4"]
+offsets = PackedFloat32Array(0, 0.655844)
+colors = PackedColorArray(0.078125, 1, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_s5eh0"]
+gradient = SubResource("Gradient_xpgn4")
+width = 256
+height = 256
+fill = 1
+fill_from = Vector2(0.495413, 0.477064)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qow0k"]
+radius = 500.0
+
+[node name="Player" type="CharacterBody2D"]
+light_mask = 0
+position = Vector2(1044, 422)
+script = ExtResource("1_k0pig")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.565, 0.565)
+sprite_frames = SubResource("SpriteFrames_1eeoj")
+animation = &"Idle"
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+position = Vector2(-3.00006, 0.499939)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_uhf8u")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Light" type="PointLight2D" parent="."]
+position = Vector2(1.99998, 5.00002)
+scale = Vector2(2.34375, 2.42188)
+shadow_color = Color(0, 0.27451, 1, 0)
+texture = SubResource("GradientTexture2D_w4kjf")
+metadata/_edit_group_ = true
+
+[node name="Sonar" type="PointLight2D" parent="."]
+visible = false
+position = Vector2(4.99997, 4)
+range_item_cull_mask = 3
+shadow_color = Color(0.12549, 1, 0, 0)
+shadow_filter_smooth = 1.9
+texture = SubResource("GradientTexture2D_s5eh0")
+texture_scale = 0.25
+
+[node name="Energy timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Sonar cooldown" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="ShapeCast2D" type="ShapeCast2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_qow0k")
+
+[connection signal="timeout" from="Energy timer" to="." method="_on_energy_timer_timeout"]
+[connection signal="timeout" from="Sonar cooldown" to="." method="_on_sonar_cooldown_timeout"]
