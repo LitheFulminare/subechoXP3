@@ -69,6 +69,8 @@ func Sonar():
 		$Sonar.scale = Vector2(1,1)
 		$Sonar.energy = 1.0
 		
+		
+		
 
 func _on_sonar_cooldown_timeout():
 	sonar = false
