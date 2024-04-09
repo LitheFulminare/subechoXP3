@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://e4g3db01cv23"]
 
-[ext_resource type="Script" path="res://Scenes/Player_e_misc/CharacterBody2D.gd" id="1_k0pig"]
+[ext_resource type="Script" path="res://Scenes/Player_e_misc/Player/CharacterBody2D.gd" id="1_k0pig"]
 [ext_resource type="Texture2D" uid="uid://fcjwgbvtu06l" path="res://sprites/player/Casco/Casco1.png" id="2_r5lx4"]
 [ext_resource type="Texture2D" uid="uid://cocbp3s5ii87t" path="res://sprites/player/Arma/arma1.png" id="3_a035m"]
 [ext_resource type="Texture2D" uid="uid://bcu5ky7sxtmn3" path="res://sprites/player/Motor/turbina1.png" id="4_ynpd3"]
