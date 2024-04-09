@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wg1qi07pbcay"
-path="res://.godot/imported/submarine_sprite.png-e816958913a58d77f8bdaedbb649fa70.ctex"
+uid="uid://cvae20cgax3sk"
+path="res://.godot/imported/sonar1_2.png-62946157f0367b28c59360c25e997c94.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/player/submarine_sprite.png"
-dest_files=["res://.godot/imported/submarine_sprite.png-e816958913a58d77f8bdaedbb649fa70.ctex"]
+source_file="res://sprites/player/Sonar/sonar1_2.png"
+dest_files=["res://.godot/imported/sonar1_2.png-62946157f0367b28c59360c25e997c94.ctex"]
 
 [params]
 

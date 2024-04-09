@@ -20,15 +20,21 @@ func _physics_process(delta):
 
 func get_input():
 
+
 	input.x = int(Input.is_action_pressed("Right")) - int(Input.is_action_pressed("Left"))
 	input.y = int(Input.is_action_pressed("Down")) - int(Input.is_action_pressed("Up"))
 	
+	if Input.is_action_just_released("Down") || Input.is_action_just_released("Up") || Input.is_action_just_released("Left") || Input.is_action_just_released("Right"): 
+		$Sprite/Turbina.stop
+		
 	return input.normalized()
 	
 func player_movement(delta):
 	input = get_input()
 	if input == Vector2.ZERO:
+		
 		if velocity.length() > (friction * delta):
+			$Sprite/Turbina.play()
 			velocity -= velocity.normalized() * (friction * delta)
 		else:
 			velocity = Vector2.ZERO
@@ -65,6 +71,7 @@ func _on_energy_timer_timeout():
 	
 func Sonar():
 	if not sonar:
+		$Sprite/Sonar.play()
 		sonar = true
 		$"Sonar cooldown".start()
 		energy = energy - 10
@@ -78,6 +85,7 @@ func Sonar():
 		$Sonar.visible = false
 		$Sonar.scale = Vector2(1,1)
 		$Sonar.energy = 1.0
+		$Sprite/Sonar.stop()
 		
 func damage_effect():
 	$Flash.start()
