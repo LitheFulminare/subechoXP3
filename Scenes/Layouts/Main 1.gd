@@ -11,5 +11,4 @@ func _process(delta):
 	$UI/Integridade.text = "Integridade: " + str($CanvasGroup/Player.life)
 	$UI/Energia.text = "Energia: " + str($CanvasGroup/Player.energy)
 	
-func game_over():
-	var z = 1
+#func game_over():
