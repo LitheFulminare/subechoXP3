@@ -5,19 +5,17 @@ extends CharacterBody2D
 @export var friction = 100
 @export var life = 100
 @export var energy = 100
-
+var invincible = false
 var sonar = false
-
 var input = Vector2.ZERO
-
 var tween
 
 func _physics_process(delta):
 	player_movement(delta)
 	
-	var space_state = get_world_2d().direct_space_state
-	var query = PhysicsRayQueryParameters2D.create(Vector2(0, 0), Vector2(50, 100))
-	var result = space_state.intersect_ray(query)
+	#var space_state = get_world_2d().direct_space_state
+	#var query = PhysicsRayQueryParameters2D.create(Vector2(0, 0), Vector2(50, 100))
+	#var result = space_state.intersect_ray(query)
 	
 
 func get_input():
@@ -37,7 +35,19 @@ func player_movement(delta):
 	else:
 		velocity += (input * acceleration * delta)
 		velocity = velocity.limit_length(speed)
-	move_and_slide()
+	#move_and_slide()
+	
+	var collision = move_and_collide(velocity * delta)
+	if collision:
+		if not invincible:
+			life -= 10		
+			velocity = Vector2.ZERO
+			invincible = true
+			damage_effect()
+			$iFrames.start()
+		
+		#print("I collided with ", collision.get_collider().name)
+
 
 func _ready():
 	pass
@@ -63,18 +73,26 @@ func Sonar():
 		var tween = create_tween()
 		tween.tween_property($Sonar, "scale", Vector2(55,55), 1)
 		tween.parallel().tween_property($Sonar, "energy", 0, 2) 
-		
-				
-		
+			
 		await tween.finished
 		$Sonar.visible = false
 		$Sonar.scale = Vector2(1,1)
 		$Sonar.energy = 1.0
 		
+func damage_effect():
+	$Flash.start()
+	#$FlashDur.Start()
 		
-		
-		
-		
-
 func _on_sonar_cooldown_timeout():
 	sonar = false
+
+
+func _on_i_frames_timeout():
+	invincible = false
+	$Flash.stop()
+	$Light.energy = 1
+
+
+func _on_flash_timeout():
+	var t = randf()
+	$Light.energy = t

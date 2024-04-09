@@ -73,6 +73,7 @@ metadata/_edit_group_ = true
 
 [node name="Sonar" type="PointLight2D" parent="."]
 visible = false
+light_mask = 2
 position = Vector2(4.99997, 4)
 range_item_cull_mask = 3
 shadow_color = Color(0.12549, 1, 0, 0)
@@ -86,9 +87,16 @@ autostart = true
 [node name="Sonar cooldown" type="Timer" parent="."]
 wait_time = 3.0
 
+[node name="iFrames" type="Timer" parent="."]
+
+[node name="Flash" type="Timer" parent="."]
+wait_time = 0.05
+
 [node name="ShapeCast2D" type="ShapeCast2D" parent="."]
 visible = false
 shape = SubResource("CircleShape2D_qow0k")
 
 [connection signal="timeout" from="Energy timer" to="." method="_on_energy_timer_timeout"]
 [connection signal="timeout" from="Sonar cooldown" to="." method="_on_sonar_cooldown_timeout"]
+[connection signal="timeout" from="iFrames" to="." method="_on_i_frames_timeout"]
+[connection signal="timeout" from="Flash" to="." method="_on_flash_timeout"]
