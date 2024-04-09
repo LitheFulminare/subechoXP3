@@ -161,7 +161,7 @@ wait_time = 3.0
 [node name="Flash" type="Timer" parent="."]
 wait_time = 0.05
 
-[node name="ShapeCast2D" type="ShapeCast2D" parent="."]
+[node name="ShapeCast" type="ShapeCast2D" parent="."]
 visible = false
 shape = SubResource("CircleShape2D_qow0k")
 

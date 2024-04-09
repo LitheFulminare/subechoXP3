@@ -20,16 +20,13 @@ func _physics_process(delta):
 
 func get_input():
 
-
 	input.x = int(Input.is_action_pressed("Right")) - int(Input.is_action_pressed("Left"))
 	input.y = int(Input.is_action_pressed("Down")) - int(Input.is_action_pressed("Up"))
 	
-	if Input.is_action_just_released("Down") || Input.is_action_just_released("Up") || Input.is_action_just_released("Left") || Input.is_action_just_released("Right"): 
-		$Sprite/Turbina.stop
-		
 	return input.normalized()
 	
 func player_movement(delta):
+	
 	input = get_input()
 	if input == Vector2.ZERO:
 		
@@ -38,6 +35,7 @@ func player_movement(delta):
 			velocity -= velocity.normalized() * (friction * delta)
 		else:
 			velocity = Vector2.ZERO
+			$Sprite/Turbina.stop()
 	else:
 		velocity += (input * acceleration * delta)
 		velocity = velocity.limit_length(speed)
@@ -65,6 +63,11 @@ func _process(delta):
 	#	energy -= 1
 	if Input.is_action_pressed("Sonar"):
 		Sonar()
+		
+	if velocity.length() > 0 :
+		$Sprite/Turbina.play()
+	else:
+		$Sprite/Turbina.stop()
 
 func _on_energy_timer_timeout():
 	energy -= 1
