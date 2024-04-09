@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://e4g3db01cv23"]
+[gd_scene load_steps=18 format=3 uid="uid://e4g3db01cv23"]
 
 [ext_resource type="Script" path="res://Scenes/Player_e_misc/CharacterBody2D.gd" id="1_k0pig"]
 [ext_resource type="Texture2D" uid="uid://fcjwgbvtu06l" path="res://sprites/player/Casco/Casco1.png" id="2_r5lx4"]
@@ -66,9 +66,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uhf8u"]
-size = Vector2(66.9999, 106)
-
 [sub_resource type="Gradient" id="Gradient_sbpw5"]
 colors = PackedColorArray(0.613281, 0.764343, 1, 1, 0, 0, 0, 1)
 
@@ -130,12 +127,10 @@ animation = &"Sonar 1"
 frame_progress = 0.382877
 metadata/_edit_lock_ = true
 
-[node name="Collider" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(-3.00006, 0.499939)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-4.99988, -12)
 rotation = 1.5708
-shape = SubResource("RectangleShape2D_uhf8u")
-debug_color = Color(0, 0.6, 0.701961, 0.419608)
+polygon = PackedVector2Array(20.0001, 27, 24.0001, 27, 24.0002, 55, -23.9998, 55.0002, -23.9999, 7.00024, -51.9999, 7.00024, -52.0001, -28.9998, -25.0001, -28.9998, -11.0002, -52.9999, 19.9998, -53, 19.9998, -61, 55.9998, -61.0001, 55.9998, -49.0001, 47.9998, -49.0001, 48, -9.00012, 37, -9, 24.0001, 7)
 
 [node name="Light" type="PointLight2D" parent="."]
 position = Vector2(1.99998, 5.00002)
