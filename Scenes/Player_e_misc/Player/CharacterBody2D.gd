@@ -20,11 +20,6 @@ const tiro1Path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Ti
 
 func _physics_process(delta):
 	player_movement(delta)
-	
-	#var space_state = get_world_2d().direct_space_state
-	#var query = PhysicsRayQueryParameters2D.create(Vector2(0, 0), Vector2(50, 100))
-	#var result = space_state.intersect_ray(query)
-	
 
 func get_input():
 
@@ -57,9 +52,6 @@ func player_movement(delta):
 			invincible = true
 			damage_effect()
 			$iFrames.start()
-		
-		#print("I collided with ", collision.get_collider().name)
-
 
 func _ready():
 	pass
