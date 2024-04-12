@@ -1,13 +1,8 @@
-extends Area2D
+extends CharacterBody2D
 
-var direction = Vector2(1.0,0.0)
-var speed = 300.0
+var direction
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+var speed = 300 
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	position = position + speed * direction * delta
+	position += velocity * speed * delta * direction

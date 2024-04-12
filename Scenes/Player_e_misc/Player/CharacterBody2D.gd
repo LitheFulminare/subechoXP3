@@ -5,10 +5,15 @@ extends CharacterBody2D
 @export var friction = 100
 @export var life = 100
 @export var energy = 100
+
 var invincible = false
 var sonar = false
 var input = Vector2.ZERO
+var t1_cd = false
+
 var tween
+
+const tiro1Path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Tiro 1.tscn") 
 
 func _physics_process(delta):
 	player_movement(delta)
@@ -44,7 +49,7 @@ func player_movement(delta):
 	var collision = move_and_collide(velocity * delta)
 	if collision:
 		if not invincible:
-			life -= 10		
+			life -= 10
 			velocity = Vector2.ZERO
 			invincible = true
 			damage_effect()
@@ -63,7 +68,12 @@ func _process(delta):
 	#	energy -= 1
 	if Input.is_action_pressed("Sonar"):
 		Sonar()
+	
+	if Input.is_action_pressed("Arma1"):
+		tiro1()
 		
+	$"Spawn Tiro 1".look_at(get_global_mouse_position())
+	
 	if velocity.length() > 0 :
 		$Sprite/Turbina.play()
 	else:
@@ -90,6 +100,21 @@ func Sonar():
 		$Sonar.energy = 1.0
 		$Sprite/Sonar.stop()
 		
+func tiro1():
+	if not t1_cd:
+		#var direction = (get_global_mouse_position() - position).normalized()
+		var tiro1 = tiro1Path.instantiate()
+		#tiro1.direction = direction
+		get_parent().add_child(tiro1)
+		tiro1.velocity = Vector2(1,0)
+		tiro1.direction = (get_global_mouse_position() - global_position).normalized()
+		tiro1.position = $"Spawn Tiro 1".global_position
+		
+		#tiro1.velocity = get_global_mouse_position() - tiro1().position
+		
+		t1_cd = true
+		$"Tiro 1 cooldown".start()
+
 func damage_effect():
 	$Flash.start()
 	#$FlashDur.Start()
@@ -107,3 +132,7 @@ func _on_i_frames_timeout():
 func _on_flash_timeout():
 	var t = randf()
 	$Light.energy = t
+
+
+func _on_tiro_1_cooldown_timeout():
+	t1_cd = false
