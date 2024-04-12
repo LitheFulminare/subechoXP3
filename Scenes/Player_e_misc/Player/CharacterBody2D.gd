@@ -11,6 +11,9 @@ var sonar = false
 var input = Vector2.ZERO
 var t1_cd = false
 
+var targetPosition: Vector2
+var shootDirection: Vector2
+
 var tween
 
 const tiro1Path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Tiro 1.tscn") 
@@ -102,15 +105,13 @@ func Sonar():
 		
 func tiro1():
 	if not t1_cd:
-		#var direction = (get_global_mouse_position() - position).normalized()
-		var tiro1 = tiro1Path.instantiate()
-		#tiro1.direction = direction
-		get_parent().add_child(tiro1)
-		tiro1.velocity = Vector2(1,0)
-		tiro1.direction = (get_global_mouse_position() - global_position).normalized()
-		tiro1.position = $"Spawn Tiro 1".global_position
+		targetPosition = get_global_mouse_position()
+		shootDirection = (targetPosition - global_position).normalized()
 		
-		#tiro1.velocity = get_global_mouse_position() - tiro1().position
+		var tiro1 = tiro1Path.instantiate()
+		tiro1.set_bullet(global_position, targetPosition)
+		get_parent().add_child(tiro1)
+		tiro1.position = $"Spawn Tiro 1".global_position
 		
 		t1_cd = true
 		$"Tiro 1 cooldown".start()

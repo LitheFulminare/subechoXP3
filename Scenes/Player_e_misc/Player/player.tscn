@@ -171,10 +171,6 @@ shape = SubResource("CircleShape2D_qow0k")
 [node name="Spawn Tiro 1" type="Marker2D" parent="."]
 position = Vector2(52, 24)
 
-[node name="ColorRect" type="ColorRect" parent="Spawn Tiro 1"]
-offset_right = 40.0
-offset_bottom = 40.0
-
 [connection signal="timeout" from="Energy timer" to="." method="_on_energy_timer_timeout"]
 [connection signal="timeout" from="Sonar cooldown" to="." method="_on_sonar_cooldown_timeout"]
 [connection signal="timeout" from="iFrames" to="." method="_on_i_frames_timeout"]

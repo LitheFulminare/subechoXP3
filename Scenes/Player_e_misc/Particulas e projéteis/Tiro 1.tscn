@@ -14,7 +14,7 @@ fill_to = Vector2(1, 0.5)
 [sub_resource type="CircleShape2D" id="CircleShape2D_dq8nn"]
 radius = 25.7099
 
-[node name="Tiro1" type="CharacterBody2D"]
+[node name="Tiro1" type="Area2D"]
 position = Vector2(376, 148)
 collision_layer = 0
 collision_mask = 0
@@ -24,6 +24,7 @@ metadata/_edit_group_ = true
 [node name="PointLight2D" type="PointLight2D" parent="."]
 light_mask = 3
 scale = Vector2(0.801, 0.801)
+energy = 3.44
 range_item_cull_mask = 3
 texture = SubResource("GradientTexture2D_ltj45")
 
