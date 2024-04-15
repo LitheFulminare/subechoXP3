@@ -44,14 +44,14 @@ func player_movement(delta):
 		velocity = velocity.limit_length(speed)
 	#move_and_slide()
 	
-	var collision = move_and_slide()
-	#if collision:
-		#if not invincible && life > 0:
-			#life -= 10
-			#velocity = Vector2.ZERO
-			#invincible = true
-			#damage_effect()
-			#$iFrames.start()
+	var collision = move_and_collide(velocity * delta)
+	if collision:
+		if not invincible && life > 0:
+			life -= 10
+			velocity = Vector2.ZERO
+			invincible = true
+			damage_effect()
+			$iFrames.start()
 
 func _ready():
 	pass
