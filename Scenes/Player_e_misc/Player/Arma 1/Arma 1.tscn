@@ -13,8 +13,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Arma1" type="Node2D"]
+[node name="Arma1" type="Area2D"]
 
 [node name="Sprites" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_e0eqn")
 animation = &"Arma 1 v1"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-6, 3, 4, 3, 4, 5, 9, 5, 9, -6, -7, -5, -8, -4, -8, -1, -6, 0)

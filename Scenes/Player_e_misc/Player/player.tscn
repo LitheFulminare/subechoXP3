@@ -89,14 +89,15 @@ animation = &"Sonar 1"
 frame_progress = 0.382877
 
 [node name="Arma1" parent="Sprite" instance=ExtResource("7_dot8c")]
+position = Vector2(7, 7)
 
 [node name="TurbinaV1" parent="Sprite" instance=ExtResource("6_iu35p")]
+position = Vector2(-11, -3)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-visible = false
-position = Vector2(-4.99988, -12)
+position = Vector2(-41, 5)
 rotation = 1.5708
-polygon = PackedVector2Array(20.0001, 27, 24.0001, 27, 24.0002, 55, -23.9998, 55.0002, -23.9999, 7.00024, -51.9999, 7.00024, -52.0001, -28.9998, -25.0001, -28.9998, -11.0002, -52.9999, 19.9998, -53, 19.9998, -61, 55.9998, -61.0001, 55.9998, -49.0001, 47.9998, -49.0001, 48, -9.00012, 37, -9, 24.0001, 7)
+polygon = PackedVector2Array(-39, 1.00012, -51.0001, -34.9998, -71.0001, -34.9998, -71.0002, -58.9998, -51.0002, -58.9998, -39.0003, -82.9999, -35.0003, -82.9999, -35.0003, -90.9999, 8.99966, -91.0001, 8.99991, -23.0001, 4.99991, -23.0001, 4.99997, -7.00006, 0.999969, -7, 1, 1)
 
 [node name="Light" type="PointLight2D" parent="."]
 position = Vector2(1.99998, 5.00002)
