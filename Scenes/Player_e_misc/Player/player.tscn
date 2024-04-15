@@ -81,9 +81,6 @@ frame_progress = 0.382877
 [node name="Arma1" parent="Sprite" instance=ExtResource("7_dot8c")]
 position = Vector2(7, 7)
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Sprite/Arma1"]
-polygon = PackedVector2Array(-6, 3, 4, 3, 4, 5, 9, 5, 9, -6, -7, -5, -8, -4, -8, -1, -6, 0)
-
 [node name="TurbinaV1" parent="Sprite" instance=ExtResource("6_iu35p")]
 position = Vector2(-11, -3)
 
