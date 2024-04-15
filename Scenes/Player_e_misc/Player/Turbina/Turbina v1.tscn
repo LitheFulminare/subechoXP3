@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://r2uor4w348v2"]
+
+[ext_resource type="Texture2D" uid="uid://bcu5ky7sxtmn3" path="res://sprites/player/Motor/turbina1.png" id="1_qgtf2"]
+[ext_resource type="Texture2D" uid="uid://bfsh27fh56qh7" path="res://sprites/player/Motor/turbina1_2.png" id="2_4475l"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uhwi8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qgtf2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_4475l")
+}],
+"loop": true,
+"name": &"Motor 1",
+"speed": 5.0
+}]
+
+[node name="TurbinaV1" type="Node2D"]
+
+[node name="Sprites" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 1.01725e-05)
+sprite_frames = SubResource("SpriteFrames_uhwi8")
+animation = &"Motor 1"
+metadata/_edit_lock_ = true

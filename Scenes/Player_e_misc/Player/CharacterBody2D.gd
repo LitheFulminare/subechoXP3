@@ -34,11 +34,11 @@ func player_movement(delta):
 	if input == Vector2.ZERO:
 		
 		if velocity.length() > (friction * delta):
-			$Sprite/Turbina.play()
+			$Sprite/TurbinaV1/Sprites.play()
 			velocity -= velocity.normalized() * (friction * delta)
 		else:
 			velocity = Vector2.ZERO
-			$Sprite/Turbina.stop()
+			$Sprite/TurbinaV1/Sprites.stop()
 	else:
 		velocity += (input * acceleration * delta)
 		velocity = velocity.limit_length(speed)
@@ -46,7 +46,7 @@ func player_movement(delta):
 	
 	var collision = move_and_collide(velocity * delta)
 	if collision:
-		if not invincible:
+		if not invincible && life > 0:
 			life -= 10
 			velocity = Vector2.ZERO
 			invincible = true
@@ -70,15 +70,15 @@ func _process(delta):
 	$"Spawn Tiro 1".look_at(get_global_mouse_position())
 	
 	if velocity.length() > 0 :
-		$Sprite/Turbina.play()
+		$Sprite/TurbinaV1/Sprites.play()
 	else:
-		$Sprite/Turbina.stop()
+		$Sprite/TurbinaV1/Sprites.stop()
 
 func _on_energy_timer_timeout():
 	energy -= 1
 	
 func Sonar():
-	if not sonar:
+	if not sonar && life > 0 && energy > 0:
 		$Sprite/Sonar.play()
 		sonar = true
 		$"Sonar cooldown".start()
@@ -96,7 +96,7 @@ func Sonar():
 		$Sprite/Sonar.stop()
 		
 func tiro1():
-	if not t1_cd:
+	if not t1_cd && life > 0 && energy > 0:
 		targetPosition = get_global_mouse_position()
 		shootDirection = (targetPosition - global_position).normalized()
 		

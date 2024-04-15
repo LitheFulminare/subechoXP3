@@ -1,10 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://e4g3db01cv23"]
+[gd_scene load_steps=15 format=3 uid="uid://e4g3db01cv23"]
 
 [ext_resource type="Script" path="res://Scenes/Player_e_misc/Player/CharacterBody2D.gd" id="1_k0pig"]
 [ext_resource type="Texture2D" uid="uid://fcjwgbvtu06l" path="res://sprites/player/Casco/Casco1.png" id="2_r5lx4"]
-[ext_resource type="Texture2D" uid="uid://bcu5ky7sxtmn3" path="res://sprites/player/Motor/turbina1.png" id="4_ynpd3"]
-[ext_resource type="Texture2D" uid="uid://bfsh27fh56qh7" path="res://sprites/player/Motor/turbina1_2.png" id="5_f1d4h"]
 [ext_resource type="Texture2D" uid="uid://vjb3rydk6640" path="res://sprites/player/Sonar/sonar1.png" id="6_22ess"]
+[ext_resource type="PackedScene" uid="uid://r2uor4w348v2" path="res://Scenes/Player_e_misc/Player/Turbina/Turbina v1.tscn" id="6_iu35p"]
 [ext_resource type="Texture2D" uid="uid://cvae20cgax3sk" path="res://sprites/player/Sonar/sonar1_2.png" id="7_3ljv3"]
 [ext_resource type="PackedScene" uid="uid://drvd8bhk4plho" path="res://Scenes/Player_e_misc/Player/Arma 1/Arma 1.tscn" id="7_dot8c"]
 
@@ -24,20 +23,6 @@ animations = [{
 }],
 "loop": true,
 "name": &"casco 1",
-"speed": 5.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_qncdd"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_ynpd3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_f1d4h")
-}],
-"loop": true,
-"name": &"Motor 1",
 "speed": 5.0
 }]
 
@@ -87,7 +72,7 @@ position = Vector2(1044, 422)
 script = ExtResource("1_k0pig")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
-position = Vector2(-7, 1.00001)
+position = Vector2(-2, -1.99999)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_1eeoj")
 animation = &"Casco Base"
@@ -97,21 +82,15 @@ metadata/_edit_group_ = true
 sprite_frames = SubResource("SpriteFrames_a0lt3")
 animation = &"casco 1"
 
-[node name="Turbina" type="AnimatedSprite2D" parent="Sprite"]
-position = Vector2(0, 1.01725e-05)
-sprite_frames = SubResource("SpriteFrames_qncdd")
-animation = &"Motor 1"
-frame_progress = 0.248605
-metadata/_edit_lock_ = true
-
 [node name="Sonar" type="AnimatedSprite2D" parent="Sprite"]
 position = Vector2(0, 1.01725e-05)
 sprite_frames = SubResource("SpriteFrames_2lbqy")
 animation = &"Sonar 1"
 frame_progress = 0.382877
-metadata/_edit_lock_ = true
 
 [node name="Arma1" parent="Sprite" instance=ExtResource("7_dot8c")]
+
+[node name="TurbinaV1" parent="Sprite" instance=ExtResource("6_iu35p")]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 visible = false
