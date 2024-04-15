@@ -45,17 +45,18 @@ func player_movement(delta):
 	#move_and_slide()
 	
 	var collision = move_and_slide()
-	#if collision:
-		#if not invincible && life > 0:
-			#life -= 10
-			#velocity = Vector2.ZERO
-			#invincible = true
-			#damage_effect()
-			#$iFrames.start()
+	if collision:
+		if not invincible && life > 0:
+			life -= 10
+			velocity = Vector2.ZERO
+			invincible = true
+			damage_effect()
+			$iFrames.start()
 
 func _ready():
 	pass
 
+@warning_ignore("unused_parameter")
 func _process(delta):
 	#if energy <= 0:
 	#	energy = 0
@@ -85,6 +86,7 @@ func Sonar():
 		energy = energy - 10
 		$Sonar.visible = true
 		
+		@warning_ignore("shadowed_variable")
 		var tween = create_tween()
 		tween.tween_property($Sonar, "scale", Vector2(55,55), 1)
 		tween.parallel().tween_property($Sonar, "energy", 0, 2) 
@@ -100,6 +102,7 @@ func tiro1():
 		targetPosition = get_global_mouse_position()
 		shootDirection = (targetPosition - global_position).normalized()
 		
+		@warning_ignore("shadowed_variable")
 		var tiro1 = tiro1Path.instantiate()
 		tiro1.set_bullet(global_position, targetPosition)
 		get_parent().add_child(tiro1)
@@ -129,3 +132,4 @@ func _on_flash_timeout():
 
 func _on_tiro_1_cooldown_timeout():
 	t1_cd = false
+	
