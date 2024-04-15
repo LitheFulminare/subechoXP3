@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://e4g3db01cv23"]
+[gd_scene load_steps=14 format=3 uid="uid://e4g3db01cv23"]
 
 [ext_resource type="Script" path="res://Scenes/Player_e_misc/Player/CharacterBody2D.gd" id="1_k0pig"]
 [ext_resource type="Texture2D" uid="uid://fcjwgbvtu06l" path="res://sprites/player/Casco/Casco1.png" id="2_r5lx4"]
@@ -6,14 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://r2uor4w348v2" path="res://Scenes/Player_e_misc/Player/Turbina/Turbina v1.tscn" id="6_iu35p"]
 [ext_resource type="Texture2D" uid="uid://cvae20cgax3sk" path="res://sprites/player/Sonar/sonar1_2.png" id="7_3ljv3"]
 [ext_resource type="PackedScene" uid="uid://drvd8bhk4plho" path="res://Scenes/Player_e_misc/Player/Arma 1/Arma 1.tscn" id="7_dot8c"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_1eeoj"]
-animations = [{
-"frames": [],
-"loop": true,
-"name": &"Casco Base",
-"speed": 5.0
-}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a0lt3"]
 animations = [{
@@ -40,6 +32,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_qow0k"]
+radius = 500.0
+
 [sub_resource type="Gradient" id="Gradient_sbpw5"]
 colors = PackedColorArray(0.613281, 0.764343, 1, 1, 0, 0, 0, 1)
 
@@ -63,19 +58,14 @@ fill = 1
 fill_from = Vector2(0.495413, 0.477064)
 fill_to = Vector2(0, 0)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_qow0k"]
-radius = 500.0
-
 [node name="Player" type="CharacterBody2D"]
 light_mask = 0
 position = Vector2(1044, 422)
 script = ExtResource("1_k0pig")
 
-[node name="Sprite" type="AnimatedSprite2D" parent="."]
+[node name="Sprite" type="Area2D" parent="."]
 position = Vector2(-2, -1.99999)
 scale = Vector2(4, 4)
-sprite_frames = SubResource("SpriteFrames_1eeoj")
-animation = &"Casco Base"
 metadata/_edit_group_ = true
 
 [node name="Casco" type="AnimatedSprite2D" parent="Sprite"]
@@ -91,31 +81,17 @@ frame_progress = 0.382877
 [node name="Arma1" parent="Sprite" instance=ExtResource("7_dot8c")]
 position = Vector2(7, 7)
 
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Sprite/Arma1"]
+polygon = PackedVector2Array(-6, 3, 4, 3, 4, 5, 9, 5, 9, -6, -7, -5, -8, -4, -8, -1, -6, 0)
+
 [node name="TurbinaV1" parent="Sprite" instance=ExtResource("6_iu35p")]
 position = Vector2(-11, -3)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
 position = Vector2(-41, 5)
 rotation = 1.5708
 polygon = PackedVector2Array(-39, 1.00012, -51.0001, -34.9998, -71.0001, -34.9998, -71.0002, -58.9998, -51.0002, -58.9998, -39.0003, -82.9999, -35.0003, -82.9999, -35.0003, -90.9999, 8.99966, -91.0001, 8.99991, -23.0001, 4.99991, -23.0001, 4.99997, -7.00006, 0.999969, -7, 1, 1)
-
-[node name="Light" type="PointLight2D" parent="."]
-position = Vector2(1.99998, 5.00002)
-scale = Vector2(2.34375, 2.42188)
-shadow_color = Color(0, 0.27451, 1, 0)
-texture = SubResource("GradientTexture2D_w4kjf")
-metadata/_edit_group_ = true
-metadata/_edit_lock_ = true
-
-[node name="Sonar" type="PointLight2D" parent="."]
-visible = false
-light_mask = 2
-position = Vector2(4.99997, 4)
-range_item_cull_mask = 3
-shadow_color = Color(0.12549, 1, 0, 0)
-shadow_filter_smooth = 1.9
-texture = SubResource("GradientTexture2D_s5eh0")
-texture_scale = 0.25
 
 [node name="Energy timer" type="Timer" parent="."]
 autostart = true
@@ -137,6 +113,24 @@ shape = SubResource("CircleShape2D_qow0k")
 
 [node name="Spawn Tiro 1" type="Marker2D" parent="."]
 position = Vector2(52, 24)
+
+[node name="Light" type="PointLight2D" parent="."]
+position = Vector2(2, 5.00003)
+scale = Vector2(2.34375, 2.42188)
+shadow_color = Color(0, 0.27451, 1, 0)
+texture = SubResource("GradientTexture2D_w4kjf")
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Sonar" type="PointLight2D" parent="."]
+visible = false
+light_mask = 2
+position = Vector2(5, 4)
+range_item_cull_mask = 3
+shadow_color = Color(0.12549, 1, 0, 0)
+shadow_filter_smooth = 1.9
+texture = SubResource("GradientTexture2D_s5eh0")
+texture_scale = 0.25
 
 [connection signal="timeout" from="Energy timer" to="." method="_on_energy_timer_timeout"]
 [connection signal="timeout" from="Sonar cooldown" to="." method="_on_sonar_cooldown_timeout"]
