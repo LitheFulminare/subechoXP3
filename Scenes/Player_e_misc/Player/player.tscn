@@ -128,6 +128,7 @@ frame_progress = 0.382877
 metadata/_edit_lock_ = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
 position = Vector2(-4.99988, -12)
 rotation = 1.5708
 polygon = PackedVector2Array(20.0001, 27, 24.0001, 27, 24.0002, 55, -23.9998, 55.0002, -23.9999, 7.00024, -51.9999, 7.00024, -52.0001, -28.9998, -25.0001, -28.9998, -11.0002, -52.9999, 19.9998, -53, 19.9998, -61, 55.9998, -61.0001, 55.9998, -49.0001, 47.9998, -49.0001, 48, -9.00012, 37, -9, 24.0001, 7)

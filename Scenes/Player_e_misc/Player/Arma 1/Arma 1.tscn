@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://drvd8bhk4plho"]
+
+[ext_resource type="Texture2D" uid="uid://cocbp3s5ii87t" path="res://sprites/player/Arma/arma1.png" id="1_crkei"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e0eqn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_crkei")
+}],
+"loop": true,
+"name": &"Arma 1 v1",
+"speed": 5.0
+}]
+
+[node name="Arma1" type="Node2D"]
+
+[node name="Sprites" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_e0eqn")
+animation = &"Arma 1 v1"
