@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://e4g3db01cv23"]
+[gd_scene load_steps=10 format=3 uid="uid://d31pbt81fv3r6"]
 
 [ext_resource type="Script" path="res://Scenes/Player_e_misc/CharacterBody2D.gd" id="1_k0pig"]
 [ext_resource type="Texture2D" uid="uid://wg1qi07pbcay" path="res://sprites/player/submarine_sprite.png" id="2_scnty"]
