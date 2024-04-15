@@ -1,18 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://g0ri21kidd5o"]
+[gd_scene load_steps=6 format=3 uid="uid://g0ri21kidd5o"]
 
 [ext_resource type="Script" path="res://Scenes/Player_e_misc/Particulas e projéteis/Tiro 1.gd" id="1_5r667"]
+[ext_resource type="Texture2D" uid="uid://b8xnl337pdvex" path="res://sprites/Projeteis e partículas/bala_rapida.png" id="2_58pq1"]
 
 [sub_resource type="Gradient" id="Gradient_58ohc"]
-colors = PackedColorArray(1, 0, 0, 1, 0, 0, 0, 1)
+offsets = PackedFloat32Array(0.00649351, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ltj45"]
 gradient = SubResource("Gradient_58ohc")
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(1, 0.5)
+fill_from = Vector2(1, 0.509174)
+fill_to = Vector2(0, 0.518349)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_dq8nn"]
-radius = 25.7099
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h7iu3"]
+size = Vector2(80, 16)
 
 [node name="Tiro1" type="Area2D"]
 position = Vector2(376, 148)
@@ -21,11 +22,17 @@ collision_mask = 0
 script = ExtResource("1_5r667")
 metadata/_edit_group_ = true
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("2_58pq1")
+
 [node name="PointLight2D" type="PointLight2D" parent="."]
 light_mask = 3
-scale = Vector2(0.801, 0.801)
+position = Vector2(6.00002, 7.86781e-06)
+scale = Vector2(1.1875, 0.125)
 range_item_cull_mask = 3
 texture = SubResource("GradientTexture2D_ltj45")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_dq8nn")
+position = Vector2(4, 0)
+shape = SubResource("RectangleShape2D_h7iu3")
