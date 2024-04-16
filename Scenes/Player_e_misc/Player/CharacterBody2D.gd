@@ -114,7 +114,7 @@ func tiro1():
 		var muzz = muzz1Path.instantiate()
 		get_parent().add_child(muzz)
 		#$"Spawn Tiro 1".add_child(muzz)
-		muzz.position = $"Spawn Tiro 1".global_position
+		muzz.position = $PinJoint2D.global_position
 		muzz.anim()
 		
 		t1_cd = true
@@ -141,4 +141,3 @@ func _on_flash_timeout():
 
 func _on_tiro_1_cooldown_timeout():
 	t1_cd = false
-	

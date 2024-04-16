@@ -60,17 +60,17 @@ animations = [{
 "speed": 13.0
 }]
 
-[sub_resource type="Gradient" id="Gradient_x3oy3"]
+[sub_resource type="Gradient" id="Gradient_jdehp"]
 colors = PackedColorArray(1, 0.585938, 0, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_plgjp"]
-gradient = SubResource("Gradient_x3oy3")
+gradient = SubResource("Gradient_jdehp")
 fill = 1
 fill_from = Vector2(0.504587, 0.5)
 fill_to = Vector2(0.133028, 0.137615)
 
 [node name="Muzzle lento" type="Node2D"]
-scale = Vector2(3, 3)
+scale = Vector2(4, 4)
 script = ExtResource("1_anfrx")
 
 [node name="animacao" type="AnimatedSprite2D" parent="."]
