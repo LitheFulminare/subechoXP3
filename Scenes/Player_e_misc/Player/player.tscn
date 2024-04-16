@@ -96,7 +96,7 @@ wait_time = 3.0
 wait_time = 0.05
 
 [node name="Tiro 1 cooldown" type="Timer" parent="."]
-wait_time = 0.3
+wait_time = 0.784
 
 [node name="ShapeCast" type="ShapeCast2D" parent="."]
 visible = false
