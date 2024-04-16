@@ -27,10 +27,10 @@ scale = Vector2(4, 4)
 texture = ExtResource("2_58pq1")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-light_mask = 3
+light_mask = 4
 position = Vector2(6.00002, 7.86781e-06)
 scale = Vector2(1.1875, 0.125)
-range_item_cull_mask = 3
+range_item_cull_mask = 7
 texture = SubResource("GradientTexture2D_ltj45")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

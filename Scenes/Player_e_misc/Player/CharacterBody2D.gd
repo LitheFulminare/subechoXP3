@@ -17,6 +17,7 @@ var shootDirection: Vector2
 var tween
 
 const tiro1Path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Tiro 1.tscn") 
+const muzz1Path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Muzzle 1.tscn")
 
 func _physics_process(delta):
 	player_movement(delta)
@@ -74,6 +75,8 @@ func _process(delta):
 		$Sprite/TurbinaV1/Sprites.play()
 	else:
 		$Sprite/TurbinaV1/Sprites.stop()
+		
+	
 
 func _on_energy_timer_timeout():
 	energy -= 1
@@ -107,6 +110,12 @@ func tiro1():
 		tiro1.set_bullet(global_position, targetPosition)
 		get_parent().add_child(tiro1)
 		tiro1.position = $"Spawn Tiro 1".global_position
+		
+		var muzz = muzz1Path.instantiate()
+		get_parent().add_child(muzz)
+		#$"Spawn Tiro 1".add_child(muzz)
+		muzz.position = $"Spawn Tiro 1".global_position
+		muzz.anim()
 		
 		t1_cd = true
 		$"Tiro 1 cooldown".start()

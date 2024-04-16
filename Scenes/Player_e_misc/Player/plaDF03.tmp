@@ -1,0 +1,148 @@
+[gd_scene load_steps=14 format=3 uid="uid://e4g3db01cv23"]
+
+[ext_resource type="Script" path="res://Scenes/Player_e_misc/Player/CharacterBody2D.gd" id="1_k0pig"]
+[ext_resource type="Texture2D" uid="uid://fcjwgbvtu06l" path="res://sprites/player/Casco/Casco1.png" id="2_r5lx4"]
+[ext_resource type="Texture2D" uid="uid://vjb3rydk6640" path="res://sprites/player/Sonar/sonar1.png" id="6_22ess"]
+[ext_resource type="PackedScene" uid="uid://r2uor4w348v2" path="res://Scenes/Player_e_misc/Player/Turbina/Turbina v1.tscn" id="6_iu35p"]
+[ext_resource type="Texture2D" uid="uid://cvae20cgax3sk" path="res://sprites/player/Sonar/sonar1_2.png" id="7_3ljv3"]
+[ext_resource type="PackedScene" uid="uid://drvd8bhk4plho" path="res://Scenes/Player_e_misc/Player/Arma 1/Arma 1.tscn" id="7_dot8c"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a0lt3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_r5lx4")
+}],
+"loop": true,
+"name": &"casco 1",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2lbqy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_22ess")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_3ljv3")
+}],
+"loop": true,
+"name": &"Sonar 1",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qow0k"]
+radius = 500.0
+
+[sub_resource type="Gradient" id="Gradient_sbpw5"]
+colors = PackedColorArray(0.613281, 0.764343, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_w4kjf"]
+gradient = SubResource("Gradient_sbpw5")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.522936)
+fill_to = Vector2(0.853211, 0.853211)
+
+[sub_resource type="Gradient" id="Gradient_xpgn4"]
+offsets = PackedFloat32Array(0, 0.655844)
+colors = PackedColorArray(0.078125, 1, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_s5eh0"]
+gradient = SubResource("Gradient_xpgn4")
+width = 256
+height = 256
+fill = 1
+fill_from = Vector2(0.495413, 0.477064)
+fill_to = Vector2(0, 0)
+
+[node name="Player" type="CharacterBody2D"]
+light_mask = 0
+position = Vector2(1044, 422)
+script = ExtResource("1_k0pig")
+
+[node name="Sprite" type="Area2D" parent="."]
+position = Vector2(-2, -1.99999)
+scale = Vector2(4, 4)
+metadata/_edit_group_ = true
+
+[node name="Casco" type="AnimatedSprite2D" parent="Sprite"]
+sprite_frames = SubResource("SpriteFrames_a0lt3")
+animation = &"casco 1"
+
+[node name="Sonar" type="AnimatedSprite2D" parent="Sprite"]
+position = Vector2(0, 1.01725e-05)
+sprite_frames = SubResource("SpriteFrames_2lbqy")
+animation = &"Sonar 1"
+frame_progress = 0.382877
+
+[node name="Arma1" parent="Sprite" instance=ExtResource("7_dot8c")]
+position = Vector2(7, 7)
+
+[node name="TurbinaV1" parent="Sprite" instance=ExtResource("6_iu35p")]
+position = Vector2(-11, -3)
+
+[node name="Energy timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Sonar cooldown" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="iFrames" type="Timer" parent="."]
+
+[node name="Flash" type="Timer" parent="."]
+wait_time = 0.05
+
+[node name="Tiro 1 cooldown" type="Timer" parent="."]
+wait_time = 0.3
+
+[node name="ShapeCast" type="ShapeCast2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_qow0k")
+
+[node name="Light" type="PointLight2D" parent="."]
+position = Vector2(2, 5.00003)
+scale = Vector2(2.34375, 2.42188)
+shadow_color = Color(0, 0.27451, 1, 0)
+texture = SubResource("GradientTexture2D_w4kjf")
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Sonar" type="PointLight2D" parent="."]
+visible = false
+light_mask = 2
+position = Vector2(5, 4)
+range_item_cull_mask = 3
+shadow_color = Color(0.12549, 1, 0, 0)
+shadow_filter_smooth = 1.9
+texture = SubResource("GradientTexture2D_s5eh0")
+texture_scale = 0.25
+
+[node name="Spawn Tiro 1" type="Marker2D" parent="."]
+position = Vector2(65, 24)
+
+[node name="Colisão Geral" type="CollisionPolygon2D" parent="."]
+position = Vector2(-41, 5)
+rotation = 1.5708
+polygon = PackedVector2Array(-39, 1.00012, -51.0001, -34.9998, -71.0001, -34.9998, -71.0002, -58.9998, -51.0002, -58.9998, -39.0003, -82.9999, -35.0003, -82.9999, -35.0003, -90.9999, 8.99966, -91.0001, 8.99991, -23.0001, 4.99991, -23.0001, 4.99997, -7.00006, 0.999969, -7, 1, 1)
+metadata/_edit_lock_ = true
+
+[node name="Colisão arma 1" type="CollisionPolygon2D" parent="."]
+position = Vector2(25.6217, 25.9091)
+scale = Vector2(3.98686, 3.98686)
+polygon = PackedVector2Array(-5.9249, 3.03269, 4.10806, 3.03269, 4.10806, 5.03928, 9.12454, 5.03928, 9.12454, -5.99697, 6.11465, -5.99697, -8, -4, -7.93149, -0.980492, -5.9249, 0.0228043)
+metadata/_edit_lock_ = true
+
+[node name="Colisão turbina 1" type="CollisionPolygon2D" parent="."]
+position = Vector2(-45, -15)
+scale = Vector2(4.09669, 4.09669)
+polygon = PackedVector2Array(-5.1261, 6.10249, -3.1733, 6.10249, -3.17329, 7.07888, 1.70869, 7.07888, 1.70869, 6.10249, 2.68509, 6.10249, 4.63788, -5.61429, 1.70869, -6.59068, -3.17329, -6.59068, -5.1261, -5.61429)
+metadata/_edit_lock_ = true
+
+[connection signal="timeout" from="Energy timer" to="." method="_on_energy_timer_timeout"]
+[connection signal="timeout" from="Sonar cooldown" to="." method="_on_sonar_cooldown_timeout"]
+[connection signal="timeout" from="iFrames" to="." method="_on_i_frames_timeout"]
+[connection signal="timeout" from="Flash" to="." method="_on_flash_timeout"]
+[connection signal="timeout" from="Tiro 1 cooldown" to="." method="_on_tiro_1_cooldown_timeout"]
