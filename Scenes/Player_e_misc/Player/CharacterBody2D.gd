@@ -76,7 +76,7 @@ func _process(delta):
 	else:
 		$Sprite/TurbinaV1/Sprites.stop()
 		
-	
+
 
 func _on_energy_timer_timeout():
 	energy -= 1

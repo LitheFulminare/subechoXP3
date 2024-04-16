@@ -123,6 +123,9 @@ texture_scale = 0.25
 [node name="Spawn Tiro 1" type="Marker2D" parent="."]
 position = Vector2(65, 24)
 
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+position = Vector2(65, 24)
+
 [node name="Colisão Geral" type="CollisionPolygon2D" parent="."]
 position = Vector2(-41, 5)
 rotation = 1.5708
