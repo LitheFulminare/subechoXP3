@@ -1,16 +1,16 @@
-[gd_scene load_steps=15 format=3 uid="uid://cpg157q5cbli7"]
+[gd_scene load_steps=15 format=3 uid="uid://2gm62cdvui0w"]
 
-[ext_resource type="Script" path="res://Scenes/Layouts/Main 1.gd" id="1_rloub"]
-[ext_resource type="PackedScene" uid="uid://e4g3db01cv23" path="res://Scenes/Player_e_misc/Player/player.tscn" id="1_tgyws"]
-[ext_resource type="PackedScene" uid="uid://bijwkls1lldy4" path="res://Scenes/Props/Pedra.tscn" id="2_k77am"]
-[ext_resource type="Texture2D" uid="uid://bte6svm5o0n4t" path="res://sprites/Props/Rock.png" id="3_fihjn"]
-[ext_resource type="Texture2D" uid="uid://cr1yy7kq7r2sn" path="res://sprites/Props/BG_Rock.png" id="4_iay3u"]
+[ext_resource type="Script" path="res://Scenes/Layouts/Main 1.gd" id="1_5phib"]
+[ext_resource type="PackedScene" uid="uid://bijwkls1lldy4" path="res://Scenes/Props/Pedra.tscn" id="2_g5he7"]
+[ext_resource type="Texture2D" uid="uid://bte6svm5o0n4t" path="res://sprites/Props/Rock.png" id="3_2g834"]
+[ext_resource type="Texture2D" uid="uid://cr1yy7kq7r2sn" path="res://sprites/Props/BG_Rock.png" id="4_d6mua"]
+[ext_resource type="PackedScene" uid="uid://e4g3db01cv23" path="res://Scenes/Player_e_misc/Player/player.tscn" id="5_qvshv"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_vobk1"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3e0e8"]
-texture = ExtResource("3_fihjn")
+texture = ExtResource("3_2g834")
 0:0/0 = 0
 0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_vobk1")
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -70,7 +70,7 @@ adjustment_brightness = 0.83
 adjustment_saturation = 1.67
 
 [node name="Main 1" type="Node2D"]
-script = ExtResource("1_rloub")
+script = ExtResource("1_5phib")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -110,7 +110,7 @@ metadata/_edit_use_anchors_ = true
 light_mask = 3
 color = Color(0, 0, 0, 1)
 
-[node name="Pedra" parent="CanvasGroup" instance=ExtResource("2_k77am")]
+[node name="Pedra" parent="CanvasGroup" instance=ExtResource("2_g5he7")]
 position = Vector2(0, 0)
 scale = Vector2(3, 3)
 
@@ -136,22 +136,24 @@ z_index = -1
 offset_right = 7772.0
 offset_bottom = 4928.0
 scale = Vector2(0.333, 0.333)
-texture = ExtResource("4_iay3u")
+texture = ExtResource("4_d6mua")
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 metadata/_edit_lock_ = true
 
 [node name="SaidaVerde" type="PointLight2D" parent="CanvasGroup"]
+visible = false
 position = Vector2(2159.5, 864)
 scale = Vector2(7.39062, 3)
 texture = SubResource("GradientTexture2D_22few")
 
 [node name="SaidaVermelha" type="PointLight2D" parent="CanvasGroup"]
+visible = false
 position = Vector2(2198, 144)
 scale = Vector2(6.0625, 1.5)
 texture = SubResource("GradientTexture2D_rly4j")
 
-[node name="Player" parent="CanvasGroup" instance=ExtResource("1_tgyws")]
+[node name="Player" parent="CanvasGroup" instance=ExtResource("5_qvshv")]
 light_mask = 1
 position = Vector2(186, 269)
 scale = Vector2(0.992109, 0.984466)
