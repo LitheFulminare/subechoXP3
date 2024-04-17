@@ -14,7 +14,6 @@ func _process(delta):
 	if $CanvasGroup/Player.life <= 0 || $CanvasGroup/Player.energy <= 0 :
 		game_over()
 
-func game_over():	
-	await get_tree().create_timer(1).timeout
+func game_over():
+	await get_tree().create_timer(3).timeout
 	get_tree().reload_current_scene()
-

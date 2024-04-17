@@ -45,7 +45,7 @@ func player_movement(delta):
 		velocity = velocity.limit_length(speed)
 	#move_and_slide()
 	
-	var collision = move_and_slide()
+	var collision = move_and_collide(velocity * delta)
 	if collision:
 		if not invincible && life > 0:
 			life -= 10
