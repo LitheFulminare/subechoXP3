@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://bj18jjcb7eo50"]
+
+[ext_resource type="Texture2D" uid="uid://b1yqmo12hkkwh" path="res://sprites/Inimigos/inimigo_spritesheet - Copia.webp" id="1_0e7fl"]
+[ext_resource type="Script" path="res://Scenes/Inimigos/inimigo.gd" id="1_atb20"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x1onv"]
+atlas = ExtResource("1_0e7fl")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qvd6l"]
+atlas = ExtResource("1_0e7fl")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xiwff"]
+atlas = ExtResource("1_0e7fl")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5sixu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x1onv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qvd6l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xiwff")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cgn2r"]
+size = Vector2(25, 29)
+
+[node name="inimigo" type="CharacterBody2D"]
+position = Vector2(64, 46)
+scale = Vector2(2.975, 2.975)
+script = ExtResource("1_atb20")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5sixu")
+frame_progress = 0.996746
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, 0.5)
+shape = SubResource("RectangleShape2D_cgn2r")

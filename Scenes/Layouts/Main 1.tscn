@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cpg157q5cbli7"]
+[gd_scene load_steps=20 format=3 uid="uid://cpg157q5cbli7"]
 
 [ext_resource type="Script" path="res://Scenes/Layouts/Main 1.gd" id="1_rloub"]
 [ext_resource type="PackedScene" uid="uid://e4g3db01cv23" path="res://Scenes/Player_e_misc/Player/player.tscn" id="1_tgyws"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://busy4y73si6ky" path="res://Scenes/Props/Lixo/Barril.tscn" id="7_cegly"]
 [ext_resource type="PackedScene" uid="uid://cfd07pxyjtad3" path="res://Scenes/Props/Lixo/Metal Enferrujado.tscn" id="8_c6rno"]
 [ext_resource type="PackedScene" uid="uid://i07d0qta5c7" path="res://Scenes/Props/Lixo/Plastico.tscn" id="9_rkp7y"]
+[ext_resource type="PackedScene" uid="uid://bj18jjcb7eo50" path="res://Scenes/Inimigos/inimigo.tscn" id="10_0ay53"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ki1ap"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -226,6 +227,9 @@ limit_right = 2385
 limit_bottom = 1630
 editor_draw_screen = false
 editor_draw_limits = true
+
+[node name="inimigo" parent="CanvasGroup" instance=ExtResource("10_0ay53")]
+position = Vector2(565, 301)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_wadha")
