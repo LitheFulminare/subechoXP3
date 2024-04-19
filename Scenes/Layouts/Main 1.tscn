@@ -170,60 +170,62 @@ limit_bottom = 1630
 editor_draw_screen = false
 editor_draw_limits = true
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_wadha")
+[node name="Props" type="CanvasGroup" parent="CanvasGroup"]
 
-[node name="Garrafa" parent="." instance=ExtResource("6_gca85")]
+[node name="Garrafa" parent="CanvasGroup/Props" instance=ExtResource("6_gca85")]
 z_index = 2
 position = Vector2(779, 342)
 
-[node name="Garrafa2" parent="." instance=ExtResource("6_gca85")]
+[node name="Garrafa2" parent="CanvasGroup/Props" instance=ExtResource("6_gca85")]
 z_index = 2
 position = Vector2(1116, 726)
 
-[node name="Garrafa3" parent="." instance=ExtResource("6_gca85")]
+[node name="Garrafa3" parent="CanvasGroup/Props" instance=ExtResource("6_gca85")]
 z_index = 2
 position = Vector2(1782, 1396)
 
-[node name="Barril" parent="." instance=ExtResource("7_cegly")]
+[node name="Barril" parent="CanvasGroup/Props" instance=ExtResource("7_cegly")]
 z_index = 2
 position = Vector2(119, 1313)
 
-[node name="Barril2" parent="." instance=ExtResource("7_cegly")]
+[node name="Barril2" parent="CanvasGroup/Props" instance=ExtResource("7_cegly")]
 z_index = 2
 position = Vector2(1428, 672)
 scale = Vector2(1.555, 1.555)
 
-[node name="Barril3" parent="." instance=ExtResource("7_cegly")]
+[node name="Barril3" parent="CanvasGroup/Props" instance=ExtResource("7_cegly")]
 z_index = 2
 position = Vector2(1796, 449)
 
-[node name="MetalEnferrujado" parent="." instance=ExtResource("8_c6rno")]
+[node name="MetalEnferrujado" parent="CanvasGroup/Props" instance=ExtResource("8_c6rno")]
 z_index = 2
 position = Vector2(143, 895)
 scale = Vector2(1.72, 1.72)
 
-[node name="MetalEnferrujado2" parent="." instance=ExtResource("8_c6rno")]
+[node name="MetalEnferrujado2" parent="CanvasGroup/Props" instance=ExtResource("8_c6rno")]
 z_index = 2
 position = Vector2(1248, 223)
 scale = Vector2(1.72, 1.72)
 
-[node name="Plastico" parent="." instance=ExtResource("9_rkp7y")]
+[node name="Plastico" parent="CanvasGroup/Props" instance=ExtResource("9_rkp7y")]
 z_index = 2
 position = Vector2(231, 231)
 scale = Vector2(1.57482, 1.57482)
 
-[node name="Plastico2" parent="." instance=ExtResource("9_rkp7y")]
+[node name="Plastico2" parent="CanvasGroup/Props" instance=ExtResource("9_rkp7y")]
 z_index = 2
 position = Vector2(961, 631)
 scale = Vector2(1.57482, 1.57482)
 
-[node name="Plastico3" parent="." instance=ExtResource("9_rkp7y")]
+[node name="Plastico3" parent="CanvasGroup/Props" instance=ExtResource("9_rkp7y")]
 z_index = 2
 position = Vector2(855, 107)
 scale = Vector2(1.57482, 1.57482)
 
-[node name="Plastico4" parent="." instance=ExtResource("9_rkp7y")]
+[node name="Plastico4" parent="CanvasGroup/Props" instance=ExtResource("9_rkp7y")]
 z_index = 2
 position = Vector2(674, 1332)
 scale = Vector2(1.57482, 1.57482)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_wadha")
