@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfd07pxyjtad3"]
+
+[ext_resource type="Texture2D" uid="uid://5cibbpds0pw7" path="res://sprites/Props/metal_enferrujado.png" id="1_mcin5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jqo6k"]
+radius = 11.0
+height = 58.0
+
+[node name="MetalEnferrujado" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("1_mcin5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -1)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_jqo6k")

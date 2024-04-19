@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://i07d0qta5c7"]
+
+[ext_resource type="Texture2D" uid="uid://c1jhputu6hg38" path="res://sprites/Props/plastico.png" id="1_2ktn3"]
+
+[node name="Plastico" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("1_2ktn3")

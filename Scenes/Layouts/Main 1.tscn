@@ -1,10 +1,14 @@
-[gd_scene load_steps=15 format=3 uid="uid://cpg157q5cbli7"]
+[gd_scene load_steps=19 format=3 uid="uid://cpg157q5cbli7"]
 
 [ext_resource type="Script" path="res://Scenes/Layouts/Main 1.gd" id="1_rloub"]
 [ext_resource type="PackedScene" uid="uid://e4g3db01cv23" path="res://Scenes/Player_e_misc/Player/player.tscn" id="1_tgyws"]
 [ext_resource type="PackedScene" uid="uid://bijwkls1lldy4" path="res://Scenes/Props/Pedra.tscn" id="2_k77am"]
 [ext_resource type="Texture2D" uid="uid://bte6svm5o0n4t" path="res://sprites/Props/Rock.png" id="3_fihjn"]
 [ext_resource type="Texture2D" uid="uid://cr1yy7kq7r2sn" path="res://sprites/Props/BG_Rock.png" id="4_iay3u"]
+[ext_resource type="PackedScene" uid="uid://dfd261wrcyq1c" path="res://Scenes/Props/Lixo/Garrafa.tscn" id="6_gca85"]
+[ext_resource type="PackedScene" uid="uid://busy4y73si6ky" path="res://Scenes/Props/Lixo/Barril.tscn" id="7_cegly"]
+[ext_resource type="PackedScene" uid="uid://cfd07pxyjtad3" path="res://Scenes/Props/Lixo/Metal Enferrujado.tscn" id="8_c6rno"]
+[ext_resource type="PackedScene" uid="uid://i07d0qta5c7" path="res://Scenes/Props/Lixo/Plastico.tscn" id="9_rkp7y"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ki1ap"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -107,7 +111,6 @@ metadata/_edit_use_anchors_ = true
 [node name="CanvasGroup" type="CanvasGroup" parent="."]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="CanvasGroup"]
-visible = false
 light_mask = 3
 color = Color(0, 0, 0, 1)
 
@@ -169,3 +172,58 @@ editor_draw_limits = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_wadha")
+
+[node name="Garrafa" parent="." instance=ExtResource("6_gca85")]
+z_index = 2
+position = Vector2(779, 342)
+
+[node name="Garrafa2" parent="." instance=ExtResource("6_gca85")]
+z_index = 2
+position = Vector2(1116, 726)
+
+[node name="Garrafa3" parent="." instance=ExtResource("6_gca85")]
+z_index = 2
+position = Vector2(1782, 1396)
+
+[node name="Barril" parent="." instance=ExtResource("7_cegly")]
+z_index = 2
+position = Vector2(119, 1313)
+
+[node name="Barril2" parent="." instance=ExtResource("7_cegly")]
+z_index = 2
+position = Vector2(1428, 672)
+scale = Vector2(1.555, 1.555)
+
+[node name="Barril3" parent="." instance=ExtResource("7_cegly")]
+z_index = 2
+position = Vector2(1796, 449)
+
+[node name="MetalEnferrujado" parent="." instance=ExtResource("8_c6rno")]
+z_index = 2
+position = Vector2(143, 895)
+scale = Vector2(1.72, 1.72)
+
+[node name="MetalEnferrujado2" parent="." instance=ExtResource("8_c6rno")]
+z_index = 2
+position = Vector2(1248, 223)
+scale = Vector2(1.72, 1.72)
+
+[node name="Plastico" parent="." instance=ExtResource("9_rkp7y")]
+z_index = 2
+position = Vector2(231, 231)
+scale = Vector2(1.57482, 1.57482)
+
+[node name="Plastico2" parent="." instance=ExtResource("9_rkp7y")]
+z_index = 2
+position = Vector2(961, 631)
+scale = Vector2(1.57482, 1.57482)
+
+[node name="Plastico3" parent="." instance=ExtResource("9_rkp7y")]
+z_index = 2
+position = Vector2(855, 107)
+scale = Vector2(1.57482, 1.57482)
+
+[node name="Plastico4" parent="." instance=ExtResource("9_rkp7y")]
+z_index = 2
+position = Vector2(674, 1332)
+scale = Vector2(1.57482, 1.57482)
