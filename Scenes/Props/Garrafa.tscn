@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8xmfm147a28p"]
+
+[ext_resource type="Texture2D" uid="uid://da7stmyvbbdto" path="res://sprites/Props/garrafa.png" id="1_8e046"]
+
+[node name="Garrafa" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(24.5, 24.5)
+scale = Vector2(2.53125, 2.53125)
+texture = ExtResource("1_8e046")
