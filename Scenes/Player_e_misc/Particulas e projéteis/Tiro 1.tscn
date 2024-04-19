@@ -25,6 +25,7 @@ fill_to = Vector2(1, 0.486239)
 size = Vector2(80, 16)
 
 [node name="Tiro1" type="Area2D"]
+z_index = 2
 position = Vector2(376, 148)
 collision_layer = 0
 collision_mask = 0

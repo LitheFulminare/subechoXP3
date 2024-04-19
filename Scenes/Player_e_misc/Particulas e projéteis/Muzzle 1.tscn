@@ -70,6 +70,7 @@ fill_from = Vector2(0.504587, 0.5)
 fill_to = Vector2(0.133028, 0.137615)
 
 [node name="Muzzle lento" type="Node2D"]
+z_index = 2
 scale = Vector2(4, 4)
 script = ExtResource("1_anfrx")
 
