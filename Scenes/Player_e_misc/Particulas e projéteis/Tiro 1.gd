@@ -5,6 +5,12 @@ var speed = 3000
 
 var direction = Vector2.ZERO
 
+func tipoTiro(tipo):
+	if tipo == 1:
+		dano = 3
+	elif tipo == 2:
+		dano = 1
+
 func set_bullet(position, targetPosition):
 	global_position = position
 	direction = (targetPosition - position).normalized()

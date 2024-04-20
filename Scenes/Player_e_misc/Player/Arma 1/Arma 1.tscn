@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://drvd8bhk4plho"]
+[gd_scene load_steps=7 format=3 uid="uid://drvd8bhk4plho"]
 
 [ext_resource type="Texture2D" uid="uid://cocbp3s5ii87t" path="res://sprites/player/Arma/arma1.png" id="1_crkei"]
+[ext_resource type="Texture2D" uid="uid://bnlpirhmgpg26" path="res://sprites/player/Arma/arma_rapida_base1.png" id="2_t6nh2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_e0eqn"]
 animations = [{
@@ -13,8 +14,37 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_tyeqs"]
+atlas = ExtResource("2_t6nh2")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b7riw"]
+atlas = ExtResource("2_t6nh2")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4j4mm"]
+animations = [{
+"frames": [{
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_tyeqs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b7riw")
+}],
+"loop": true,
+"name": &"Arma 2 v2",
+"speed": 3.0
+}]
+
 [node name="Arma1" type="Node2D"]
 
-[node name="Sprites" type="AnimatedSprite2D" parent="."]
+[node name="Sprites 1" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_e0eqn")
 animation = &"Arma 1 v1"
+
+[node name="Sprites 2" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(-3, 0)
+sprite_frames = SubResource("SpriteFrames_4j4mm")
+animation = &"Arma 2 v2"
+autoplay = "Arma 2 v2"

@@ -5,11 +5,13 @@ extends CharacterBody2D
 @export var friction = 100
 @export var life = 100
 @export var energy = 100
+@export var arma1_tipo = 1
 
 var invincible = false
 var sonar = false
 var input = Vector2.ZERO
 var t1_cd = false
+var mudarA1_cd = false
 
 var targetPosition: Vector2
 var shootDirection: Vector2
@@ -69,6 +71,9 @@ func _process(delta):
 	if Input.is_action_pressed("Arma1"):
 		tiro1()
 		
+	if Input.is_action_pressed("mudarArma1"):
+		mudarArma1()
+		
 	$"Spawn Tiro 1".look_at(get_global_mouse_position())
 	
 	if velocity.length() > 0 :
@@ -108,6 +113,7 @@ func tiro1():
 		@warning_ignore("shadowed_variable")
 		var tiro1 = tiro1Path.instantiate()
 		tiro1.set_bullet(global_position, targetPosition)
+		tiro1.tipoTiro(arma1_tipo)
 		get_parent().add_child(tiro1)
 		tiro1.position = $"Spawn Tiro 1".global_position
 		
@@ -146,3 +152,24 @@ func _on_area_2d_area_entered(area):
 	print("colisao")
 	if area.is_in_group("inimigo"):
 		print("colisao com inimigo")
+		
+func mudarArma1():
+	if not mudarA1_cd:
+		if arma1_tipo == 1:
+			arma1_tipo = 2
+			$"Colisão arma 1 v1".disabled = true
+			$"Colisão arma 1 v2".disabled = false
+			$"Sprite/Arma1/Sprites 1".visible = false
+			$"Sprite/Arma1/Sprites 2".visible = true
+		
+		else:
+			arma1_tipo = 1
+			$"Colisão arma 1 v1".disabled = false
+			$"Colisão arma 1 v2".disabled = true
+			$"Sprite/Arma1/Sprites 1".visible = true
+			$"Sprite/Arma1/Sprites 2".visible = false
+			
+		mudarA1_cd = true
+		$"mudarArma1 Cooldown".start()
+func _on_mudar_arma_1_cooldown_timeout():
+	mudarA1_cd = false
