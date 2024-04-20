@@ -62,11 +62,6 @@ fill_to = Vector2(0, 0)
 light_mask = 0
 position = Vector2(1044, 422)
 script = ExtResource("1_k0pig")
-speed = null
-acceleration = null
-friction = null
-life = null
-energy = null
 
 [node name="Sprite" type="Area2D" parent="."]
 position = Vector2(-2, -1.99999)
