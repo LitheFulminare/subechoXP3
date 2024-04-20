@@ -1,5 +1,6 @@
 extends Area2D
 
+var dano = 3
 var speed = 3000
 
 var direction = Vector2.ZERO

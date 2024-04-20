@@ -218,6 +218,9 @@ position = Vector2(186, 269)
 scale = Vector2(0.992109, 0.984466)
 speed = 200
 acceleration = 150
+friction = null
+life = null
+energy = null
 metadata/_edit_group_ = true
 
 [node name="Camera2D" type="Camera2D" parent="CanvasGroup/Player"]
