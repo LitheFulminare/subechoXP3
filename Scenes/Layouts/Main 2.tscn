@@ -1,13 +1,30 @@
-[gd_scene load_steps=7 format=3 uid="uid://c037gi5sqq78r"]
+[gd_scene load_steps=9 format=3 uid="uid://c037gi5sqq78r"]
 
 [ext_resource type="Script" path="res://Scenes/Layouts/Main 1.gd" id="1_5phib"]
 [ext_resource type="PackedScene" uid="uid://bijwkls1lldy4" path="res://Scenes/Props/Pedra.tscn" id="2_g5he7"]
+[ext_resource type="Texture2D" uid="uid://bte6svm5o0n4t" path="res://sprites/Props/Rock.png" id="3_833r0"]
 [ext_resource type="Texture2D" uid="uid://cr1yy7kq7r2sn" path="res://sprites/Props/BG_Rock.png" id="4_d6mua"]
 [ext_resource type="PackedScene" uid="uid://e4g3db01cv23" path="res://Scenes/Player_e_misc/Player/player.tscn" id="5_qvshv"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nhhbf"]
+texture = ExtResource("3_833r0")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSet" id="TileSet_o1jxt"]
 occlusion_layer_0/light_mask = 1
 physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_nhhbf")
 
 [sub_resource type="Environment" id="Environment_wadha"]
 background_mode = 3
