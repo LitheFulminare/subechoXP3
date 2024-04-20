@@ -105,6 +105,7 @@ shape = SubResource("CircleShape2D_qow0k")
 [node name="Light" type="PointLight2D" parent="."]
 position = Vector2(2, 5.00003)
 scale = Vector2(2.34375, 2.42188)
+range_item_cull_mask = 9
 shadow_color = Color(0, 0.27451, 1, 0)
 texture = SubResource("GradientTexture2D_w4kjf")
 metadata/_edit_group_ = true

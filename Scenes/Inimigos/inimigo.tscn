@@ -41,6 +41,7 @@ scale = Vector2(2.975, 2.975)
 script = ExtResource("1_atb20")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
+light_mask = 8
 sprite_frames = SubResource("SpriteFrames_5sixu")
 frame_progress = 0.996746
 
