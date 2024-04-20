@@ -120,7 +120,7 @@ color = Color(0, 0, 0, 1)
 position = Vector2(0, 0)
 scale = Vector2(3, 3)
 
-[node name="TileMapPedra" type="TileMap" parent="CanvasGroup/Pedra"]
+[node name="TileMapPedra" type="TileMap" parent="CanvasGroup/Pedra" groups=["pedra"]]
 tile_set = SubResource("TileSet_3g3ni")
 rendering_quadrant_size = 32
 format = 2
@@ -236,7 +236,7 @@ environment = SubResource("Environment_wadha")
 wait_time = 5.0
 autostart = true
 
-[node name="Marker2D" type="Marker2D" parent="."]
+[node name="spawn inimigo local" type="Marker2D" parent="."]
 position = Vector2(220, 386)
 
 [connection signal="timeout" from="spawn inimigo" to="." method="_on_spawn_inimigo_timeout"]
