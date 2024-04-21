@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://nw80kvmtl88d"]
+
+[ext_resource type="PackedScene" uid="uid://e4g3db01cv23" path="res://Scenes/Player_e_misc/Player/player.tscn" id="1_f2gr2"]
+[ext_resource type="PackedScene" uid="uid://bj18jjcb7eo50" path="res://Scenes/Inimigos/inimigo.tscn" id="2_sgn0r"]
+
+[node name="Debug" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_f2gr2")]
+position = Vector2(1328, 522)
+
+[node name="inimigo" parent="." instance=ExtResource("2_sgn0r")]
+position = Vector2(446, 420)

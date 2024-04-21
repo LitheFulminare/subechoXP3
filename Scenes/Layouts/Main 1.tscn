@@ -234,7 +234,7 @@ editor_draw_limits = true
 environment = SubResource("Environment_wadha")
 
 [node name="spawn inimigo" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 3.0
 autostart = true
 
 [node name="spawn inimigo local" type="Marker2D" parent="."]
