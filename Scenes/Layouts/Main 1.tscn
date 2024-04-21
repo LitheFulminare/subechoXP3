@@ -259,10 +259,6 @@ limit_bottom = 1630
 editor_draw_screen = false
 editor_draw_limits = true
 
-[node name="inimigo" parent="CanvasGroup" node_paths=PackedStringArray("player") instance=ExtResource("10_0ay53")]
-position = Vector2(402, 591)
-player = NodePath("../Player/playerpos")
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_wadha")
 

@@ -27,4 +27,3 @@ func _on_spawn_inimigo_timeout():
 	inimigo.player = $CanvasGroup/Player/playerpos
 	inimigo.position = local_aleatorio.position
 	add_child(inimigo)
-	
