@@ -4,6 +4,7 @@ extends Node2D
 
 func _ready():
 	pass
+
 	
 func _process(delta):
 	
@@ -19,6 +20,11 @@ func game_over():
 
 
 func _on_spawn_inimigo_timeout():
+	randomize()
+	var numero_nos = $Spawns.get_children()
+	var local_aleatorio = numero_nos[randi()% numero_nos.size()]	
 	var inimigo = inimigo_scene.instantiate()
-	inimigo.position = $"spawn inimigo local".position
+	inimigo.player = $CanvasGroup/Player/playerpos
+	inimigo.position = local_aleatorio.position
 	add_child(inimigo)
+	
