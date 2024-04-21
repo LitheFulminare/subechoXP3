@@ -14,7 +14,7 @@ config/name="subechoXP3"
 run/main_scene="res://Scenes/Layouts/Main 1.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 run/max_fps=120
-config/icon="res://icon.svg"
+config/icon="res://sprites/Misc/Icon.png"
 
 [debug]
 
