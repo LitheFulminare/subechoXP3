@@ -26,9 +26,10 @@ func _physics_process(delta):
 	
 	move_and_slide()
 	
+	
+func _process(delta):
 	if vida <= 0:
 		queue_free()
-	
 
 
 func _on_area_2d_area_entered(area):
