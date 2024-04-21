@@ -44,8 +44,8 @@ func danoTiro(danoRec):
 func recalc_path():
 	if target_node:
 		nav_agent.target_position = target_node.global_position
-	else:
-		nav_agent.target_position = home_pos
+	#else:
+		#nav_agent.target_position = home_pos
 
 func _on_navigation_agent_2d_velocity_computed(safe_velocity):
 	pass # Replace with function body.
@@ -56,9 +56,9 @@ func _on_timer_recalcular_timeout():
 
 
 func _on_aggro_range_area_entered(area):
-	if area.is_in_group("player"):
-		target_node = area.owner
+	#if area.is_in_group("player"):
+	target_node = area.owner
 
-func _on_de_aggro_range_area_exited(area):
-	if area.owner == target_node:
-		target_node == null
+#func _on_de_aggro_range_area_exited(area):
+	#if area.owner == target_node:
+		#target_node == null
