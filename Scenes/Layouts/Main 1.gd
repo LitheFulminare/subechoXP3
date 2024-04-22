@@ -1,18 +1,27 @@
 extends Node2D
 
 @export var inimigo_scene : PackedScene
+var inimigos_mortos = 0
+var meta_fase1 = 5
 
 func _ready():
 	pass
 
-	
 func _process(delta):
 	
 	$UI/Integridade.text = "Integridade: " + str($CanvasGroup/Player.life)
 	$UI/Energia.text = "Energia: " + str($CanvasGroup/Player.energy)
-		
-	if $CanvasGroup/Player.life <= 0 || $CanvasGroup/Player.energy <= 0 :
+	$"UI/Inimigos mortos".text = "inimigos_mortos: " + str(inimigos_mortos) + "/5"
+
+	if $CanvasGroup/Player.life <= 0 || $CanvasGroup/Player.energy <= 0:
 		game_over()
+	
+	if inimigos_mortos >= meta_fase1:
+		meta_fase_batida()
+		
+func meta_fase_batida():
+	$CanvasGroup/SaidaVerdeDesligada.visible = false
+	$CanvasGroup/SaidaVerdeLigada.visible = true
 
 func game_over():
 	await get_tree().create_timer(3).timeout
@@ -20,10 +29,19 @@ func game_over():
 
 
 func _on_spawn_inimigo_timeout():
-	randomize()
-	var numero_nos = $Spawns.get_children()
-	var local_aleatorio = numero_nos[randi()% numero_nos.size()]	
-	var inimigo = inimigo_scene.instantiate()
-	inimigo.player = $CanvasGroup/Player/playerpos
-	inimigo.position = local_aleatorio.position
-	add_child(inimigo)
+	if inimigos_mortos < 5:
+		randomize()
+		var numero_nos = $Spawns.get_children()
+		var local_aleatorio = numero_nos[randi()% numero_nos.size()]
+		var inimigo = inimigo_scene.instantiate()
+		inimigo.player = $CanvasGroup/Player/playerpos
+		inimigo.position = local_aleatorio.position
+		add_child(inimigo)
+	
+func contador_morte_inimigo():
+	inimigos_mortos += 1
+
+
+func _on_area_2d_area_entered(area):
+	if area.is_in_group("player"):
+		pass

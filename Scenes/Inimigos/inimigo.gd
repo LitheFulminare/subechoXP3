@@ -2,11 +2,13 @@ extends CharacterBody2D
 
 var speed = 100
 
+
 @export var player:= Node2D
 @onready var nav_agent := $NavigationAgent2D as NavigationAgent2D
 @export var vida = 5
 @export var dano = 5
 
+const explosaoPath = preload("res://Scenes/Player_e_misc/Particulas e projéteis/explosao.tscn")
 #const tiro1 = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Tiro 1.tscn")
 
 func _ready():
@@ -20,9 +22,17 @@ func _physics_process(_delta: float) -> void:
 
 func _process(delta):
 	if vida <= 0:
-		queue_free()
+		morte()
 
-
+func morte():
+	# código pra spawnar a explosao, ela vai ser outra sprite no jogo final
+	#var explosao = explosaoPath.instantiate()
+	#get_parent().add_child(explosao)
+	#explosao.position = $Sprite.global_position
+	#explosao.anim()
+	get_tree().call_group("logica", "contador_morte_inimigo")
+	queue_free()
+	
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("tiro"):
 		var danoRec = area.get_parent().dano

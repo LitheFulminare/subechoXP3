@@ -1,11 +1,13 @@
 extends Area2D
 
+var tipo_tiro : int
 var dano = 3
 var speed = 3000
 
 var direction = Vector2.ZERO
 
 func tipoTiro(tipo):
+	tipo_tiro = tipo
 	if tipo == 1:
 		dano = 3
 	elif tipo == 2:
@@ -22,4 +24,7 @@ func _physics_process(delta):
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("pedra"):
 		queue_free()
+	if tipo_tiro == 2: # tiro rápido/leve
+		if body.is_in_group("inimigo"):
+			queue_free()
 	

@@ -20,6 +20,7 @@ var tween
 
 const tiro1Path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Tiro 1.tscn") 
 const muzz1Path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Muzzle 1.tscn")
+const muzz2Path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Muzzle 2.tscn")
 
 func _physics_process(delta):
 	player_movement(delta)
@@ -91,7 +92,7 @@ func Sonar():
 		$Sprite/Sonar.play()
 		sonar = true
 		$"Sonar cooldown".start()
-		energy = energy - 10
+		energy = energy - 5
 		$Sonar.visible = true
 		
 		@warning_ignore("shadowed_variable")
@@ -117,11 +118,18 @@ func tiro1():
 		get_parent().add_child(tiro1)
 		tiro1.position = $"Spawn Tiro 1".global_position
 		
-		var muzz = muzz1Path.instantiate()
-		get_parent().add_child(muzz)
-		#$"Spawn Tiro 1".add_child(muzz)
-		muzz.position = $PinJoint2D.global_position
-		muzz.anim()
+		if arma1_tipo == 1: # arma lenta
+			var muzz = muzz1Path.instantiate()
+			get_parent().add_child(muzz)
+			#$"Spawn Tiro 1".add_child(muzz)
+			muzz.position = $Muzz1Local.global_position
+			muzz.anim()
+		elif arma1_tipo == 2: # arma rapida
+			var muzz = muzz2Path.instantiate()
+			get_parent().add_child(muzz)
+			#$"Spawn Tiro 1".add_child(muzz)
+			muzz.position = $Muzz2Local.global_position
+			muzz.anim()
 		
 		t1_cd = true
 		$"Tiro 1 cooldown".start()
@@ -161,6 +169,7 @@ func mudarArma1():
 			$"Colisão arma 1 v2".disabled = false
 			$"Sprite/Arma1/Sprites 1".visible = false
 			$"Sprite/Arma1/Sprites 2".visible = true
+			$"Tiro 1 cooldown".wait_time = 0.25
 		
 		else:
 			arma1_tipo = 1
@@ -168,6 +177,7 @@ func mudarArma1():
 			$"Colisão arma 1 v2".disabled = true
 			$"Sprite/Arma1/Sprites 1".visible = true
 			$"Sprite/Arma1/Sprites 2".visible = false
+			$"Tiro 1 cooldown".wait_time = 0.8
 			
 		mudarA1_cd = true
 		$"mudarArma1 Cooldown".start()

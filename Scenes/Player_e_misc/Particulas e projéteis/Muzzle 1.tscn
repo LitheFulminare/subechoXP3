@@ -60,11 +60,11 @@ animations = [{
 "speed": 13.0
 }]
 
-[sub_resource type="Gradient" id="Gradient_jdehp"]
+[sub_resource type="Gradient" id="Gradient_yq22y"]
 colors = PackedColorArray(1, 0.585938, 0, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_plgjp"]
-gradient = SubResource("Gradient_jdehp")
+gradient = SubResource("Gradient_yq22y")
 fill = 1
 fill_from = Vector2(0.504587, 0.5)
 fill_to = Vector2(0.133028, 0.137615)
@@ -77,8 +77,6 @@ script = ExtResource("1_anfrx")
 [node name="animacao" type="AnimatedSprite2D" parent="."]
 position = Vector2(7.33333, -0.333333)
 sprite_frames = SubResource("SpriteFrames_7q2od")
-frame = 6
-frame_progress = 1.0
 
 [node name="luz" type="PointLight2D" parent="."]
 texture = SubResource("GradientTexture2D_plgjp")

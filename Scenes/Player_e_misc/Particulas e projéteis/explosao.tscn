@@ -1,0 +1,95 @@
+[gd_scene load_steps=14 format=3 uid="uid://l2ilsdatkvrq"]
+
+[ext_resource type="Texture2D" uid="uid://lu0potrhrxxp" path="res://sprites/Projeteis e partículas/explosao.png" id="1_cascl"]
+[ext_resource type="Script" path="res://Scenes/Player_e_misc/Particulas e projéteis/explosao.gd" id="1_xk7uc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yfkd5"]
+atlas = ExtResource("1_cascl")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3tapq"]
+atlas = ExtResource("1_cascl")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3exgu"]
+atlas = ExtResource("1_cascl")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ub5ay"]
+atlas = ExtResource("1_cascl")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lvcwm"]
+atlas = ExtResource("1_cascl")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iv1s0"]
+atlas = ExtResource("1_cascl")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mutrs"]
+atlas = ExtResource("1_cascl")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hbdhe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yfkd5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3tapq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3exgu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ub5ay")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lvcwm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iv1s0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mutrs")
+}],
+"loop": false,
+"name": &"default",
+"speed": 13.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_8hjsh"]
+offsets = PackedFloat32Array(0.0149254, 1)
+colors = PackedColorArray(0.785156, 0.367515, 0.141083, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_odhjx"]
+gradient = SubResource("Gradient_8hjsh")
+fill = 1
+fill_from = Vector2(0.482906, 0.482906)
+fill_to = Vector2(0.84188, 0.183761)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1dy2e"]
+radius = 58.5048
+
+[node name="Explosao" type="Node2D"]
+scale = Vector2(4, 4.02071)
+script = ExtResource("1_xk7uc")
+
+[node name="animacao" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.32813, 1.32813)
+sprite_frames = SubResource("SpriteFrames_hbdhe")
+frame = 6
+frame_progress = 1.0
+
+[node name="luz" type="PointLight2D" parent="."]
+position = Vector2(4.76837e-07, -4.76837e-07)
+scale = Vector2(2.137, 2.137)
+energy = 1.5
+texture = SubResource("GradientTexture2D_odhjx")
+
+[node name="Area2D" type="Area2D" parent="." groups=["explosao"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_1dy2e")
