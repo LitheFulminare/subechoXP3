@@ -1,11 +1,10 @@
-[gd_scene load_steps=27 format=3 uid="uid://cpg157q5cbli7"]
+[gd_scene load_steps=24 format=3 uid="uid://cpg157q5cbli7"]
 
 [ext_resource type="Script" path="res://Scenes/Layouts/Main 1.gd" id="1_rloub"]
 [ext_resource type="PackedScene" uid="uid://e4g3db01cv23" path="res://Scenes/Player_e_misc/Player/player.tscn" id="1_tgyws"]
 [ext_resource type="PackedScene" uid="uid://bijwkls1lldy4" path="res://Scenes/Props/Pedra.tscn" id="2_k77am"]
 [ext_resource type="Texture2D" uid="uid://bte6svm5o0n4t" path="res://sprites/Props/Rock.png" id="3_fihjn"]
 [ext_resource type="Texture2D" uid="uid://cr1yy7kq7r2sn" path="res://sprites/Props/BG_Rock.png" id="4_iay3u"]
-[ext_resource type="Texture2D" uid="uid://da5o8qogsuwxq" path="res://sprites/Props/sheet pedra.png" id="5_ct3bk"]
 [ext_resource type="PackedScene" uid="uid://dfd261wrcyq1c" path="res://Scenes/Props/Lixo/Garrafa.tscn" id="6_gca85"]
 [ext_resource type="PackedScene" uid="uid://busy4y73si6ky" path="res://Scenes/Props/Lixo/Barril.tscn" id="7_cegly"]
 [ext_resource type="PackedScene" uid="uid://cfd07pxyjtad3" path="res://Scenes/Props/Lixo/Metal Enferrujado.tscn" id="8_c6rno"]
@@ -48,25 +47,8 @@ sources/0 = SubResource("TileSetAtlasSource_cuxvt")
 blend_mode = 2
 light_mode = 2
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_skgqm"]
-vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
-source_geometry_group_name = &"navigation_polygon_source_group"
-agent_radius = 0.0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fcwyu"]
-texture = ExtResource("5_ct3bk")
-0:0/0 = 0
-0:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_skgqm")
-2:0/0 = 0
-3:0/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-
 [sub_resource type="TileSet" id="TileSet_rpj5f"]
 navigation_layer_0/layers = 1
-sources/0 = SubResource("TileSetAtlasSource_fcwyu")
 
 [sub_resource type="Gradient" id="Gradient_ux16l"]
 colors = PackedColorArray(0, 0, 0, 1, 1, 0, 0, 1)
@@ -161,7 +143,6 @@ metadata/_edit_use_anchors_ = true
 [node name="CanvasGroup" type="CanvasGroup" parent="."]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="CanvasGroup"]
-visible = false
 light_mask = 3
 color = Color(0, 0, 0, 1)
 

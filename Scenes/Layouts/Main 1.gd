@@ -33,11 +33,12 @@ func game_over():
 func _on_spawn_inimigo_timeout():
 	if inimigos_mortos < 5:
 		randomize()
-		var numero_nos = $Spawns.get_children()
-		var local_aleatorio = numero_nos[randi()% numero_nos.size()]
+		#var numero_nos = $Spawns.get_children()
+		#var local_aleatorio = numero_nos[randi()% numero_nos.size()]
 		var inimigo = inimigo_scene.instantiate()
 		inimigo.player = $CanvasGroup/Player/playerpos
-		inimigo.position = local_aleatorio.position
+		inimigo.position = $"Spawns/spawn inimigo local 2".global_position
+		#inimigo.position = local_aleatorio.position
 		add_child(inimigo)
 	
 func contador_morte_inimigo():
