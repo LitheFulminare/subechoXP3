@@ -15,6 +15,9 @@ func _process(delta):
 	$UI/Energia.text = "Energia: " + str($CanvasGroup/Player.energy)
 	$"UI/Inimigos mortos".text = "inimigos mortos: " + str(inimigos_mortos) + "/5"
 
+	if Input.is_action_pressed("restart"):
+		restart()
+	
 	if $CanvasGroup/Player.life <= 0 || $CanvasGroup/Player.energy <= 0:
 		game_over()
 	
@@ -27,7 +30,8 @@ func meta_fase_batida():
 
 func game_over():
 	await get_tree().create_timer(3).timeout
-	get_tree().reload_current_scene()
+	restart()
+	#get_tree().reload_current_scene()
 
 
 
@@ -53,6 +57,9 @@ func _on_spawn_inimigo_timeout():
 		#inimigo.position = $"Spawns/spawn inimigo local 2".global_position
 		inimigo.position = local_aleatorio.position
 		add_child(inimigo)
+		
+func restart():
+	get_tree().change_scene_to_file("res://Scenes/Layouts/principal.tscn")
 
 
 #func _on_spawn_2_inimigo_timeout():

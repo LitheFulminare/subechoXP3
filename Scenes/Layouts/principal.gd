@@ -10,6 +10,7 @@ func ready():
 func _process(delta):
 	if Input.is_action_pressed("Iniciar"):
 		Iniciar()
+	
 
 func Iniciar():
 	get_tree().change_scene_to_packed(level1)
