@@ -349,6 +349,7 @@ metadata/_edit_use_anchors_ = true
 [node name="CanvasGroup" type="CanvasGroup" parent="."]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="CanvasGroup"]
+visible = false
 light_mask = 3
 color = Color(0, 0, 0, 1)
 
@@ -491,5 +492,3 @@ position = Vector2(1137, 887)
 
 [node name="spawn inimigo local 5" type="Marker2D" parent="Spawns"]
 position = Vector2(1607, 152)
-
-[connection signal="timeout" from="spawn inimigo" to="." method="_on_spawn_inimigo_timeout"]

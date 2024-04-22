@@ -30,17 +30,7 @@ func game_over():
 	get_tree().reload_current_scene()
 
 
-func _on_spawn_inimigo_timeout():
-	if inimigos_mortos < 5:
-		randomize()
-		#var numero_nos = $Spawns.get_children()
-		#var local_aleatorio = numero_nos[randi()% numero_nos.size()]
-		var inimigo = inimigo_scene.instantiate()
-		inimigo.player = $CanvasGroup/Player/playerpos
-		inimigo.position = $"Spawns/spawn inimigo local 2".global_position
-		#inimigo.position = local_aleatorio.position
-		add_child(inimigo)
-	
+
 func contador_morte_inimigo():
 	inimigos_mortos += 1
 
@@ -51,3 +41,15 @@ func _on_area_2d_area_entered(area):
 			print("mudanca")
 			get_tree().change_scene_to_file("res://Scenes/Layouts/Main 2.tscn")
 	#get_tree().call_group("logica", "ir_para_fase_2")
+
+
+func _on_spawn_inimigo_timeout():
+	if inimigos_mortos < 5:
+		randomize()
+		var numero_nos = $Spawns.get_children()
+		var local_aleatorio = numero_nos[randi()% numero_nos.size()]
+		var inimigo = inimigo_scene.instantiate()
+		inimigo.player = $CanvasGroup/Player/playerpos
+		#inimigo.position = $"Spawns/spawn inimigo local 2".global_position
+		inimigo.position = local_aleatorio.position
+		add_child(inimigo)
