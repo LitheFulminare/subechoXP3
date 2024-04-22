@@ -45,6 +45,8 @@ func contador_morte_inimigo():
 
 
 func _on_area_2d_area_entered(area):
-	#if inimigos_mortos >= meta_fase1:
-	#if area.is_in_group("player"):
-	get_tree().call_group("logica", "ir_para_fase_2")
+	if inimigos_mortos >= meta_fase1:
+		if area.is_in_group("player"):
+			print("mudanca")
+			get_tree().change_scene_to_file("res://Scenes/Layouts/Main 2.tscn")
+	#get_tree().call_group("logica", "ir_para_fase_2")

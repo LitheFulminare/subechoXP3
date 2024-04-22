@@ -15,4 +15,5 @@ func Iniciar():
 	get_tree().change_scene_to_packed(level1)
 	
 func ir_para_fase_2():
-	get_tree().change_scene_to_packed(debug)
+	pass
+	#get_tree().change_scene_to_packed(debug)
