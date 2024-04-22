@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 @export var speed = 500
-@export var acceleration = 500
-@export var friction = 100
+@export var acceleration = 4500
+@export var friction = 400
 @export var life = 100
 @export var energy = 100
 @export var arma1_tipo = 1
