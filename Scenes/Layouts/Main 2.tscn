@@ -168,6 +168,21 @@ text = "Energia: 100
 "
 metadata/_edit_use_anchors_ = true
 
+[node name="Inimigos mortos" type="RichTextLabel" parent="UI"]
+z_index = 2
+offset_left = 15.0
+offset_top = 51.0
+offset_right = 241.0
+offset_bottom = 111.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/shadow_outline_size = 0
+text = "Inimigos mortos:
+"
+metadata/_edit_use_anchors_ = true
+
 [node name="CanvasGroup" type="CanvasGroup" parent="."]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="CanvasGroup"]

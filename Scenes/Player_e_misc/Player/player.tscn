@@ -58,7 +58,7 @@ fill = 1
 fill_from = Vector2(0.495413, 0.477064)
 fill_to = Vector2(0, 0)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 light_mask = 0
 position = Vector2(1044, 422)
 collision_layer = 2
