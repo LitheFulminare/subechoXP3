@@ -156,8 +156,8 @@ func _on_flash_timeout():
 func _on_tiro_1_cooldown_timeout():
 	t1_cd = false
 
-func _on_area_2d_area_entered(area):
-	print("colisao")
+func _on_area_2d_area_entered(area): 
+	print("colisao") #essa linha nao tá sendo chamada
 	if area.is_in_group("inimigo"):
 		print("colisao com inimigo")
 		

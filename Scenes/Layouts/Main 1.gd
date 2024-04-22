@@ -24,6 +24,8 @@ func _process(delta):
 	if inimigos_mortos >= meta_fase1:
 		meta_fase_batida()
 		
+	
+	
 func meta_fase_batida():
 	$CanvasGroup/SaidaVerdeDesligada.visible = false
 	$CanvasGroup/SaidaVerdeLigada.visible = true
