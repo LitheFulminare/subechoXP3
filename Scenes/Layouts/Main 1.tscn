@@ -161,7 +161,6 @@ metadata/_edit_use_anchors_ = true
 [node name="CanvasGroup" type="CanvasGroup" parent="."]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="CanvasGroup"]
-visible = false
 light_mask = 3
 color = Color(0, 0, 0, 1)
 
@@ -297,6 +296,7 @@ editor_draw_limits = true
 environment = SubResource("Environment_wadha")
 
 [node name="spawn inimigo" type="Timer" parent="."]
+wait_time = 6.0
 autostart = true
 
 [node name="Spawns" type="Node2D" parent="."]
@@ -322,7 +322,7 @@ position = Vector2(1548, 435)
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Saida/Area2D"]
-position = Vector2(498, 253)
+position = Vector2(2480, 887)
 shape = SubResource("RectangleShape2D_bpofp")
 
 [connection signal="timeout" from="spawn inimigo" to="." method="_on_spawn_inimigo_timeout"]
