@@ -295,7 +295,7 @@ adjustment_enabled = true
 adjustment_brightness = 0.83
 adjustment_saturation = 1.67
 
-[node name="Main 1" type="Node2D"]
+[node name="Main 1" type="Node2D" groups=["logica"]]
 script = ExtResource("1_5phib")
 inimigo_scene = ExtResource("2_j3ugg")
 
@@ -476,6 +476,9 @@ environment = SubResource("Environment_wadha")
 [node name="spawn inimigo" type="Timer" parent="."]
 autostart = true
 
+[node name="spawn 2 inimigo" type="Timer" parent="."]
+autostart = true
+
 [node name="Spawns" type="Node2D" parent="."]
 
 [node name="spawn inimigo local 1" type="Marker2D" parent="Spawns"]
@@ -492,3 +495,5 @@ position = Vector2(1137, 887)
 
 [node name="spawn inimigo local 5" type="Marker2D" parent="Spawns"]
 position = Vector2(1607, 152)
+
+[connection signal="timeout" from="spawn 2 inimigo" to="." method="_on_spawn_2_inimigo_timeout"]
