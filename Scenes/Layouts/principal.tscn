@@ -67,6 +67,7 @@ texture = ExtResource("3_1t3nj")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 visible = false
+layout_mode = 0
 offset_left = 735.0
 offset_top = 478.0
 offset_right = 1759.0

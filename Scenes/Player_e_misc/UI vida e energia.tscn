@@ -31,7 +31,7 @@ offset_top = 1.405
 offset_right = 32.0
 offset_bottom = 33.405
 scale = Vector2(0.5, 0.5)
-tooltip_text = "teste
+tooltip_text = "Vida
 "
 texture = ExtResource("2_i2mve")
 
@@ -42,6 +42,7 @@ offset_top = 15.71
 offset_right = 38.0
 offset_bottom = 55.71
 scale = Vector2(0.5, 0.5)
+tooltip_text = "Energia"
 texture = ExtResource("3_4c3ru")
 
 [node name="Inimigos" type="TextureRect" parent="."]
@@ -51,4 +52,6 @@ offset_top = 33.025
 offset_right = 38.0
 offset_bottom = 73.025
 scale = Vector2(0.5, 0.5)
+tooltip_text = "Inimigos mortos
+"
 texture = ExtResource("4_78pnf")
