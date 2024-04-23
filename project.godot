@@ -17,6 +17,10 @@ run/max_fps=120
 boot_splash/use_filter=false
 config/icon="res://sprites/Misc/logo.png"
 
+[autoload]
+
+Global="*res://Misc/Global.gd"
+
 [debug]
 
 settings/stdout/print_gpu_profile=true

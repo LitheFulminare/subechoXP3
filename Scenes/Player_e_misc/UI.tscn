@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://bihvs66fe1w10"]
+
+[ext_resource type="Texture2D" uid="uid://dptcrnjsun5yc" path="res://sprites/UI/ui_fundo.png" id="1_qvqql"]
+[ext_resource type="Texture2D" uid="uid://k3xbrcdobeo6" path="res://sprites/UI/ui_integridade.png" id="2_hntr2"]
+
+[node name="UI vida e energia" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Fundo" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_qvqql")
+
+[node name="Vida" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+scale = Vector2(0.385, 0.385)
+tooltip_text = "teste
+"
+texture = ExtResource("2_hntr2")

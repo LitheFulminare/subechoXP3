@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://d2tg02cwm2lik"]
+
+[ext_resource type="Texture2D" uid="uid://dptcrnjsun5yc" path="res://sprites/UI/ui_fundo.png" id="1_w4str"]
+[ext_resource type="Texture2D" uid="uid://k3xbrcdobeo6" path="res://sprites/UI/ui_integridade.png" id="2_i2mve"]
+[ext_resource type="Texture2D" uid="uid://dodar4y8l22tq" path="res://sprites/UI/ui_energia_cheia.png" id="3_4c3ru"]
+[ext_resource type="Texture2D" uid="uid://bhfpeobfxndf2" path="res://sprites/UI/ui_inimigos.png" id="4_78pnf"]
+
+[node name="UI vida e energia" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_right = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Fundo" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 33.0
+offset_bottom = 53.0
+texture = ExtResource("1_w4str")
+patch_margin_left = 10
+patch_margin_top = 11
+patch_margin_right = 10
+patch_margin_bottom = 11
+
+[node name="Vida" type="TextureRect" parent="."]
+layout_mode = 0
+offset_top = 1.405
+offset_right = 32.0
+offset_bottom = 33.405
+scale = Vector2(0.5, 0.5)
+tooltip_text = "teste
+"
+texture = ExtResource("2_i2mve")
+
+[node name="Energia" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 15.71
+offset_right = 38.0
+offset_bottom = 55.71
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_4c3ru")
+
+[node name="Inimigos" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 33.025
+offset_right = 38.0
+offset_bottom = 73.025
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_78pnf")
