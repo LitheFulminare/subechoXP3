@@ -110,6 +110,11 @@ func tiro1():
 	if not t1_cd && life > 0 && energy > 0:
 		targetPosition = get_global_mouse_position()
 		var gun_Position = $"Spawn Tiro 1".global_position
+		
+		if arma1_tipo == 1:
+			gun_Position = $"Spawn Tiro 1".global_position
+		elif arma1_tipo == 2:
+			gun_Position = $"Spawn Tiro 1".global_position
 		shootDirection = (targetPosition - gun_Position).normalized()
 		
 		@warning_ignore("shadowed_variable")
