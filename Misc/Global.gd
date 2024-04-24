@@ -3,7 +3,7 @@ extends Node
 var current_scene = null
 
 func _ready():
-	var root  = get_tree().root
+	var root = get_tree().root
 	current_scene = root.get_child(root.get_child_count() - 1)
 
 
@@ -16,7 +16,7 @@ func goto_scene(path):
 	
 func _deferred_goto_scene(path):
 	# It is now safe to remove the current scene.
-	current_scene.free()
+	current_scene.queue_free()
 
 	# Load the new scene.
 	var s = ResourceLoader.load(path)

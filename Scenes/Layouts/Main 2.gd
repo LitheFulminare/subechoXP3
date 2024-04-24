@@ -7,13 +7,17 @@ var inimigos_mortos = 0
 var meta_fase2 = 5
 
 func _ready():
-	pass
+	$CanvasGroup/Player.position = $"Player Spawn".global_position
+	$CanvasGroup/Player/Camera2D.position = $"Player Spawn".global_position
 
 func _process(delta):
 	
-	$UI/Integridade.text = "Integridade: " + str($CanvasGroup/Player.life)
-	$UI/Energia.text = "Energia: " + str($CanvasGroup/Player.energy)
-	$"UI/Inimigos mortos".text = "inimigos mortos: " + str(inimigos_mortos)
+	#$UI/Integridade.text = "Integridade: " + str($CanvasGroup/Player.life)
+	#$UI/Energia.text = "Energia: " + str($CanvasGroup/Player.energy)
+	#$"UI/Inimigos mortos".text = "inimigos mortos: " + str(inimigos_mortos)
+	$"UI/UI vida e energia/Texto Vida".text = str($CanvasGroup/Player.life)
+	$"UI/UI vida e energia/Texto Energia".text = str($CanvasGroup/Player.energy)
+	$"UI/UI vida e energia/Texto Inimigos Mortos".text = str(inimigos_mortos) + "/5"
 
 	if Input.is_action_pressed("restart"):
 		restart()

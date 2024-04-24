@@ -1,8 +1,9 @@
-[gd_scene load_steps=28 format=3 uid="uid://pe5fywnxqt84"]
+[gd_scene load_steps=29 format=3 uid="uid://pe5fywnxqt84"]
 
 [ext_resource type="Script" path="res://Scenes/Layouts/Main 2.gd" id="1_r7km2"]
 [ext_resource type="PackedScene" uid="uid://bijwkls1lldy4" path="res://Scenes/Props/Pedra.tscn" id="2_g5he7"]
 [ext_resource type="PackedScene" uid="uid://bj18jjcb7eo50" path="res://Scenes/Inimigos/inimigo.tscn" id="2_j3ugg"]
+[ext_resource type="PackedScene" uid="uid://d2tg02cwm2lik" path="res://Scenes/Player_e_misc/UI vida e energia.tscn" id="3_r3bhl"]
 [ext_resource type="Texture2D" uid="uid://cr1yy7kq7r2sn" path="res://sprites/Props/BG_Rock.png" id="4_d6mua"]
 [ext_resource type="Texture2D" uid="uid://bte6svm5o0n4t" path="res://sprites/Props/Rock.png" id="5_0eanc"]
 [ext_resource type="PackedScene" uid="uid://dfd261wrcyq1c" path="res://Scenes/Props/Lixo/Garrafa.tscn" id="5_mdin4"]
@@ -160,6 +161,7 @@ inimigo_scene = ExtResource("2_j3ugg")
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="Integridade" type="RichTextLabel" parent="UI"]
+visible = false
 z_index = 2
 offset_left = 14.0
 offset_top = 12.0
@@ -175,6 +177,7 @@ text = "Integridade: 100
 metadata/_edit_use_anchors_ = true
 
 [node name="Energia" type="RichTextLabel" parent="UI"]
+visible = false
 z_index = 2
 offset_left = 14.0
 offset_top = 32.0
@@ -190,6 +193,7 @@ text = "Energia: 100
 metadata/_edit_use_anchors_ = true
 
 [node name="Inimigos mortos" type="RichTextLabel" parent="UI"]
+visible = false
 z_index = 2
 offset_left = 15.0
 offset_top = 51.0
@@ -203,6 +207,9 @@ theme_override_constants/shadow_outline_size = 0
 text = "Inimigos mortos:
 "
 metadata/_edit_use_anchors_ = true
+
+[node name="UI vida e energia" parent="UI" instance=ExtResource("3_r3bhl")]
+scale = Vector2(4.455, 4.455)
 
 [node name="CanvasGroup" type="CanvasGroup" parent="."]
 
@@ -307,7 +314,7 @@ texture = SubResource("GradientTexture2D_rly4j")
 
 [node name="Player" parent="CanvasGroup" instance=ExtResource("5_qvshv")]
 light_mask = 1
-position = Vector2(208, 1425)
+position = Vector2(220, 1403)
 scale = Vector2(0.992109, 0.984466)
 speed = 200
 acceleration = 150
@@ -322,6 +329,9 @@ editor_draw_screen = false
 editor_draw_limits = true
 
 [node name="playerpos" type="Node2D" parent="CanvasGroup/Player"]
+
+[node name="Player Spawn" type="Marker2D" parent="."]
+position = Vector2(218, 1408)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_wadha")
