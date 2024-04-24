@@ -109,11 +109,12 @@ func Sonar():
 func tiro1():
 	if not t1_cd && life > 0 && energy > 0:
 		targetPosition = get_global_mouse_position()
-		shootDirection = (targetPosition - global_position).normalized()
+		var gun_Position = $"Spawn Tiro 1".global_position
+		shootDirection = (targetPosition - gun_Position).normalized()
 		
 		@warning_ignore("shadowed_variable")
 		var tiro1 = tiro1Path.instantiate()
-		tiro1.set_bullet(global_position, targetPosition)
+		tiro1.set_bullet(gun_Position, targetPosition)
 		tiro1.tipoTiro(arma1_tipo)
 		get_parent().add_child(tiro1)
 		tiro1.position = $"Spawn Tiro 1".global_position
