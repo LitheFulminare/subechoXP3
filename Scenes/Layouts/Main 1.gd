@@ -14,7 +14,10 @@ func _process(delta):
 	$UI/Integridade.text = "Integridade: " + str($CanvasGroup/Player.life)
 	$UI/Energia.text = "Energia: " + str($CanvasGroup/Player.energy)
 	$"UI/Inimigos mortos".text = "inimigos mortos: " + str(inimigos_mortos) + "/5"
-
+	$"UI/UI vida e energia/Texto Vida".text = str($CanvasGroup/Player.life)
+	$"UI/UI vida e energia/Texto Energia".text = str($CanvasGroup/Player.energy)
+	$"UI/UI vida e energia/Texto Inimigos Mortos".text = str(inimigos_mortos) + "/5"
+	
 	if Input.is_action_pressed("restart"):
 		restart()
 	
