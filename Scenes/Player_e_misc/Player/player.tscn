@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://e4g3db01cv23"]
+[gd_scene load_steps=15 format=3 uid="uid://e4g3db01cv23"]
 
 [ext_resource type="Script" path="res://Scenes/Player_e_misc/Player/CharacterBody2D.gd" id="1_k0pig"]
 [ext_resource type="Texture2D" uid="uid://fcjwgbvtu06l" path="res://sprites/player/Casco/Casco1.png" id="2_r5lx4"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://r2uor4w348v2" path="res://Scenes/Player_e_misc/Player/Turbina/Turbina v1.tscn" id="6_iu35p"]
 [ext_resource type="Texture2D" uid="uid://cvae20cgax3sk" path="res://sprites/player/Sonar/sonar1_2.png" id="7_3ljv3"]
 [ext_resource type="PackedScene" uid="uid://drvd8bhk4plho" path="res://Scenes/Player_e_misc/Player/Arma 1/Arma 1.tscn" id="7_dot8c"]
+[ext_resource type="Texture2D" uid="uid://021a14v6yo3d" path="res://sprites/Misc/Luz.jpg" id="7_quusu"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a0lt3"]
 animations = [{
@@ -36,15 +37,15 @@ animations = [{
 radius = 500.0
 
 [sub_resource type="Gradient" id="Gradient_sbpw5"]
-colors = PackedColorArray(0.613281, 0.764343, 1, 1, 0, 0, 0, 1)
+colors = PackedColorArray(0.611765, 0.764706, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_w4kjf"]
 gradient = SubResource("Gradient_sbpw5")
 width = 128
 height = 128
 fill = 1
-fill_from = Vector2(0.5, 0.522936)
-fill_to = Vector2(0.853211, 0.853211)
+fill_from = Vector2(0.481651, 0.509174)
+fill_to = Vector2(0.133028, 0.830275)
 
 [sub_resource type="Gradient" id="Gradient_xpgn4"]
 offsets = PackedFloat32Array(0, 0.655844)
@@ -115,6 +116,12 @@ shadow_color = Color(0, 0.27451, 1, 0)
 texture = SubResource("GradientTexture2D_w4kjf")
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
+
+[node name="LIght 2" type="PointLight2D" parent="."]
+position = Vector2(140, -8)
+scale = Vector2(1.44596, 1.44596)
+color = Color(0.611765, 0.764706, 1, 1)
+texture = ExtResource("7_quusu")
 
 [node name="Sonar" type="PointLight2D" parent="."]
 visible = false

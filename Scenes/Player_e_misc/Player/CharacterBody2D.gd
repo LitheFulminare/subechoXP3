@@ -82,6 +82,7 @@ func _process(delta):
 	else:
 		$Sprite/TurbinaV1/Sprites.stop()
 		
+	$"LIght 2".look_at(get_global_mouse_position())
 
 
 func _on_energy_timer_timeout():

@@ -7,8 +7,9 @@ var inimigos_mortos = 0
 var meta_fase2 = 5
 
 func _ready():
-	$CanvasGroup/Player.position = $"Player Spawn".global_position
-	$CanvasGroup/Player/Camera2D.position = $"Player Spawn".global_position
+	#$CanvasGroup/Player.position = $"Player Spawn".global_position
+	#$CanvasGroup/Player/Camera2D.position = $"Player Spawn".global_position
+	pass
 
 func _process(delta):
 	
