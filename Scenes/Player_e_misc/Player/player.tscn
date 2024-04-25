@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://r2uor4w348v2" path="res://Scenes/Player_e_misc/Player/Turbina/Turbina v1.tscn" id="6_iu35p"]
 [ext_resource type="Texture2D" uid="uid://cvae20cgax3sk" path="res://sprites/player/Sonar/sonar1_2.png" id="7_3ljv3"]
 [ext_resource type="PackedScene" uid="uid://drvd8bhk4plho" path="res://Scenes/Player_e_misc/Player/Arma 1/Arma 1.tscn" id="7_dot8c"]
-[ext_resource type="Texture2D" uid="uid://021a14v6yo3d" path="res://sprites/Misc/Luz.jpg" id="7_quusu"]
+[ext_resource type="Texture2D" uid="uid://r8vhexq3sysx" path="res://sprites/Misc/Luz.png" id="7_sqbml"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a0lt3"]
 animations = [{
@@ -118,10 +118,13 @@ metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
 [node name="LIght 2" type="PointLight2D" parent="."]
-position = Vector2(140, -8)
-scale = Vector2(1.44596, 1.44596)
+modulate = Color(0, 0.368627, 1, 1)
+scale = Vector2(1.44596, 2.47599)
 color = Color(0.611765, 0.764706, 1, 1)
-texture = ExtResource("7_quusu")
+energy = 1.5
+shadow_enabled = true
+texture = ExtResource("7_sqbml")
+offset = Vector2(253, 0)
 
 [node name="Sonar" type="PointLight2D" parent="."]
 visible = false

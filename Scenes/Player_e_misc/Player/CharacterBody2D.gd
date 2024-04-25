@@ -3,10 +3,14 @@ extends CharacterBody2D
 @export var speed = 500
 @export var acceleration = 4500
 @export var friction = 400
-@export var life = 100
-@export var energy = 100
+#@export var life = 100
+#@export var energy = 100
 @export var arma1_tipo = 1
 
+var life = player_vars.max_life
+var energy = player_vars.max_energy
+
+var current_speed : float
 var invincible = false
 var sonar = false
 var input = Vector2.ZERO
@@ -51,6 +55,7 @@ func player_movement(delta):
 	var collision = move_and_collide(velocity * delta)
 	if collision:
 		if not invincible && life > 0:
+			#print("var colisao = true")
 			life -= 10
 			velocity = Vector2.ZERO
 			invincible = true
@@ -62,8 +67,13 @@ func _ready():
 
 @warning_ignore("unused_parameter")
 func _process(delta):
-	#if energy <= 0:
-	#	energy = 0
+	player_vars.current_life = life
+	player_vars.current_energy = energy
+
+	current_speed = abs(velocity.x) + abs(velocity.y)
+	
+	if energy <= 0:
+		energy = 0
 	#if Input.is_action_pressed("Right"):
 	#	energy -= 1
 	if Input.is_action_pressed("Sonar"):
@@ -153,11 +163,14 @@ func _on_i_frames_timeout():
 	invincible = false
 	$Flash.stop()
 	$Light.energy = 1
+	$"LIght 2".energy = 1.5
 
 
 func _on_flash_timeout():
 	var t = randf()
+	var t2 = randf()
 	$Light.energy = t
+	$"LIght 2".energy = t2
 
 
 func _on_tiro_1_cooldown_timeout():
@@ -188,5 +201,18 @@ func mudarArma1():
 			
 		mudarA1_cd = true
 		$"mudarArma1 Cooldown".start()
+		
+func death_no_life():
+	$Sprite.visible = false
+	$Light.visible = false
+	$"LIght 2".visible = false
+	$Sonar.visible = false
+	
+func death_no_energy():
+	var tween = create_tween()
+	tween.tween_property($Light, "energy", 0, 1)
+	tween.parallel().tween_property($"LIght 2", "energy", 0, 2) 
+	
+
 func _on_mudar_arma_1_cooldown_timeout():
 	mudarA1_cd = false
