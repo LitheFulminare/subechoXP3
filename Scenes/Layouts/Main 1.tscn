@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cpg157q5cbli7"]
+[gd_scene load_steps=29 format=3 uid="uid://cpg157q5cbli7"]
 
 [ext_resource type="Script" path="res://Scenes/Layouts/Main 1.gd" id="1_rloub"]
 [ext_resource type="PackedScene" uid="uid://e4g3db01cv23" path="res://Scenes/Player_e_misc/Player/player.tscn" id="1_tgyws"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://i07d0qta5c7" path="res://Scenes/Props/Lixo/Plastico.tscn" id="9_rkp7y"]
 [ext_resource type="PackedScene" uid="uid://bj18jjcb7eo50" path="res://Scenes/Inimigos/inimigo.tscn" id="10_0ay53"]
 [ext_resource type="Texture2D" uid="uid://d004737er7nqm" path="res://sprites/Misc/Fundo Menu.png" id="10_lgyam"]
+[ext_resource type="PackedScene" uid="uid://ofrdbaojdppx" path="res://Scenes/Props/Plantas/Alga.tscn" id="13_onmmr"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ki1ap"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -253,6 +254,15 @@ limit_right = 2385
 limit_bottom = 1630
 editor_draw_screen = false
 editor_draw_limits = true
+
+[node name="Alga" parent="CanvasGroup" instance=ExtResource("13_onmmr")]
+position = Vector2(510, 1452)
+
+[node name="Alga2" parent="CanvasGroup" instance=ExtResource("13_onmmr")]
+position = Vector2(576, 1452)
+
+[node name="Alga3" parent="CanvasGroup" instance=ExtResource("13_onmmr")]
+position = Vector2(642, 1452)
 
 [node name="Player Spawn" type="Marker2D" parent="."]
 position = Vector2(294, 266)
