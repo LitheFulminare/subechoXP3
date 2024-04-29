@@ -221,6 +221,20 @@ position = Vector2(636, 611)
 [node name="Peixe3" parent="CanvasGroup/Props" instance=ExtResource("11_mkerf")]
 position = Vector2(1327, 1140)
 
+[node name="Plantas" type="Node2D" parent="CanvasGroup"]
+
+[node name="Alga" parent="CanvasGroup/Plantas" instance=ExtResource("13_onmmr")]
+position = Vector2(510, 1452)
+
+[node name="Alga2" parent="CanvasGroup/Plantas" instance=ExtResource("13_onmmr")]
+position = Vector2(576, 1452)
+
+[node name="Alga3" parent="CanvasGroup/Plantas" instance=ExtResource("13_onmmr")]
+position = Vector2(642, 1452)
+
+[node name="Coral" parent="CanvasGroup/Plantas" instance=ExtResource("14_qs6bb")]
+position = Vector2(882, 1440)
+
 [node name="BG" type="NinePatchRect" parent="CanvasGroup"]
 z_index = -1
 offset_right = 706.0
@@ -265,18 +279,6 @@ limit_right = 2385
 limit_bottom = 1630
 editor_draw_screen = false
 editor_draw_limits = true
-
-[node name="Alga" parent="CanvasGroup" instance=ExtResource("13_onmmr")]
-position = Vector2(510, 1452)
-
-[node name="Alga2" parent="CanvasGroup" instance=ExtResource("13_onmmr")]
-position = Vector2(576, 1452)
-
-[node name="Alga3" parent="CanvasGroup" instance=ExtResource("13_onmmr")]
-position = Vector2(642, 1452)
-
-[node name="Coral" parent="CanvasGroup" instance=ExtResource("14_qs6bb")]
-position = Vector2(882, 1440)
 
 [node name="Player Spawn" type="Marker2D" parent="."]
 position = Vector2(715, 1348)
