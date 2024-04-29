@@ -1,0 +1,89 @@
+[gd_scene load_steps=13 format=3 uid="uid://djg8j2ghtmxc5"]
+
+[ext_resource type="Texture2D" uid="uid://cbu21x0ribvm2" path="res://sprites/Projeteis e partículas/morte_inimigo.png" id="1_he0ln"]
+[ext_resource type="Script" path="res://Scenes/Player_e_misc/Particulas e projéteis/Explosão morte inimigo.gd" id="1_ktok0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b2ld0"]
+atlas = ExtResource("1_he0ln")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nyo6m"]
+atlas = ExtResource("1_he0ln")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_88yta"]
+atlas = ExtResource("1_he0ln")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tp5y5"]
+atlas = ExtResource("1_he0ln")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ehy4a"]
+atlas = ExtResource("1_he0ln")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_de8yh"]
+atlas = ExtResource("1_he0ln")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x1jk3"]
+atlas = ExtResource("1_he0ln")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ru0o2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b2ld0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nyo6m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_88yta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tp5y5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ehy4a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_de8yh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x1jk3")
+}],
+"loop": false,
+"name": &"morte inimigo",
+"speed": 13.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_8hjsh"]
+offsets = PackedFloat32Array(0.0149254, 1)
+colors = PackedColorArray(0.785156, 0.367515, 0.141083, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0bayc"]
+gradient = SubResource("Gradient_8hjsh")
+fill = 1
+fill_from = Vector2(0.482906, 0.482906)
+fill_to = Vector2(0.84188, 0.183761)
+
+[node name="ExplosãoMorteInimigo" type="Node2D"]
+scale = Vector2(4, 4)
+script = ExtResource("1_ktok0")
+
+[node name="animacao" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.592157, 0, 1, 1)
+scale = Vector2(1.32813, 1.32813)
+sprite_frames = SubResource("SpriteFrames_ru0o2")
+animation = &"morte inimigo"
+frame = 6
+frame_progress = 1.0
+
+[node name="luz" type="PointLight2D" parent="."]
+position = Vector2(4.76837e-07, -4.76837e-07)
+scale = Vector2(2.137, 2.137)
+energy = 0.8
+texture = SubResource("GradientTexture2D_0bayc")

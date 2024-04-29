@@ -56,6 +56,7 @@ func player_movement(delta):
 	
 	var collision = move_and_collide(velocity * delta)
 	if collision:
+		print(collision.get_collider())
 		#print(get_last_slide_collision().get_collider())
 		if not invincible && life > 0:
 			#print("var colisao = true")

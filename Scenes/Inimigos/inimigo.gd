@@ -8,7 +8,7 @@ var speed = 100
 @export var vida = 5
 @export var dano = 5
 
-const explosaoPath = preload("res://Scenes/Player_e_misc/Particulas e projéteis/explosao.tscn")
+const explosaoPath = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Explosão morte inimigo.tscn")
 #const tiro1 = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Tiro 1.tscn")
 
 func _ready():
@@ -26,10 +26,10 @@ func _process(delta):
 
 func morte():
 	# código pra spawnar a explosao, ela vai ser outra sprite no jogo final
-	#var explosao = explosaoPath.instantiate()
-	#get_parent().add_child(explosao)
-	#explosao.position = $Sprite.global_position
-	#explosao.anim()
+	var explosao = explosaoPath.instantiate()
+	get_parent().add_child(explosao)
+	explosao.position = $Sprite.global_position
+	explosao.anim("morte inimigo")
 	get_tree().call_group("logica", "contador_morte_inimigo")
 	queue_free()
 	

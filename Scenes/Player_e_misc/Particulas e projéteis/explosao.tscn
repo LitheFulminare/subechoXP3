@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://l2ilsdatkvrq"]
+[gd_scene load_steps=22 format=3 uid="uid://l2ilsdatkvrq"]
 
 [ext_resource type="Texture2D" uid="uid://lu0potrhrxxp" path="res://sprites/Projeteis e partículas/explosao.png" id="1_cascl"]
 [ext_resource type="Script" path="res://Scenes/Player_e_misc/Particulas e projéteis/explosao.gd" id="1_xk7uc"]
+[ext_resource type="Texture2D" uid="uid://cbu21x0ribvm2" path="res://sprites/Projeteis e partículas/morte_inimigo.png" id="3_05s3a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yfkd5"]
 atlas = ExtResource("1_cascl")
@@ -31,6 +32,34 @@ region = Rect2(160, 0, 32, 32)
 atlas = ExtResource("1_cascl")
 region = Rect2(192, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_b2ld0"]
+atlas = ExtResource("3_05s3a")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nyo6m"]
+atlas = ExtResource("3_05s3a")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_88yta"]
+atlas = ExtResource("3_05s3a")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tp5y5"]
+atlas = ExtResource("3_05s3a")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ehy4a"]
+atlas = ExtResource("3_05s3a")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_de8yh"]
+atlas = ExtResource("3_05s3a")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x1jk3"]
+atlas = ExtResource("3_05s3a")
+region = Rect2(192, 0, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_hbdhe"]
 animations = [{
 "frames": [{
@@ -58,14 +87,40 @@ animations = [{
 "loop": false,
 "name": &"default",
 "speed": 13.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b2ld0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nyo6m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_88yta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tp5y5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ehy4a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_de8yh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x1jk3")
+}],
+"loop": false,
+"name": &"morte inimigo",
+"speed": 13.0
 }]
 
-[sub_resource type="Gradient" id="Gradient_8hjsh"]
+[sub_resource type="Gradient" id="Gradient_hbref"]
 offsets = PackedFloat32Array(0.0149254, 1)
 colors = PackedColorArray(0.785156, 0.367515, 0.141083, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_odhjx"]
-gradient = SubResource("Gradient_8hjsh")
+gradient = SubResource("Gradient_hbref")
 fill = 1
 fill_from = Vector2(0.482906, 0.482906)
 fill_to = Vector2(0.84188, 0.183761)
@@ -74,14 +129,12 @@ fill_to = Vector2(0.84188, 0.183761)
 radius = 58.5048
 
 [node name="Explosao" type="Node2D"]
-scale = Vector2(4, 4.02071)
+scale = Vector2(4, 4)
 script = ExtResource("1_xk7uc")
 
 [node name="animacao" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.32813, 1.32813)
 sprite_frames = SubResource("SpriteFrames_hbdhe")
-frame = 6
-frame_progress = 1.0
 
 [node name="luz" type="PointLight2D" parent="."]
 position = Vector2(4.76837e-07, -4.76837e-07)

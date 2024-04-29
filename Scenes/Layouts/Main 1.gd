@@ -59,7 +59,7 @@ func game_over_no_life():
 	explosao.position = $CanvasGroup/Player.global_position
 	explosao.scale = explosao.scale * 1.5
 	$CanvasGroup/Player.death_no_life()
-	explosao.anim()
+	explosao.anim("default")
 	await get_tree().create_timer(3).timeout
 	Global.goto_scene("res://Scenes/Layouts/principal.tscn")
 	
@@ -114,7 +114,7 @@ func _on_barril_explosivo_explosao_barril(global_position):
 	$CanvasGroup.add_child(explosao)
 	explosao.position = global_position
 	#explosao.get_child(2).visible = false
-	explosao.anim()
+	explosao.anim("default")
 
 
 func _on_player_died_by_explosion():
