@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1jhputu6hg38"
-path="res://.godot/imported/plastico.png-6c9901d83822509811a04e75b9fb0c3f.ctex"
+uid="uid://txyedw3ulqta"
+path="res://.godot/imported/barrill.png-807f8dd95bd928131acd5cf0222f77d1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Props/plastico.png"
-dest_files=["res://.godot/imported/plastico.png-6c9901d83822509811a04e75b9fb0c3f.ctex"]
+source_file="res://sprites/Props/Lixo/barrill.png"
+dest_files=["res://.godot/imported/barrill.png-807f8dd95bd928131acd5cf0222f77d1.ctex"]
 
 [params]
 

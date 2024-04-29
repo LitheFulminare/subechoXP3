@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://txyedw3ulqta"
-path="res://.godot/imported/barrill.png-9a534403cdc931308510ae34e1c951a8.ctex"
+uid="uid://da7stmyvbbdto"
+path="res://.godot/imported/garrafa.png-2118e552f0f8718cfdc5fa2da0adb5a5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Props/barrill.png"
-dest_files=["res://.godot/imported/barrill.png-9a534403cdc931308510ae34e1c951a8.ctex"]
+source_file="res://sprites/Props/Lixo/garrafa.png"
+dest_files=["res://.godot/imported/garrafa.png-2118e552f0f8718cfdc5fa2da0adb5a5.ctex"]
 
 [params]
 

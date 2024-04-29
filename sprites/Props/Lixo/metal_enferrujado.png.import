@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://5cibbpds0pw7"
-path="res://.godot/imported/metal_enferrujado.png-a75808b781440bdd64ee5f9837d9ace0.ctex"
+path="res://.godot/imported/metal_enferrujado.png-c056ccc1513092deba87684d31bfd519.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Props/metal_enferrujado.png"
-dest_files=["res://.godot/imported/metal_enferrujado.png-a75808b781440bdd64ee5f9837d9ace0.ctex"]
+source_file="res://sprites/Props/Lixo/metal_enferrujado.png"
+dest_files=["res://.godot/imported/metal_enferrujado.png-c056ccc1513092deba87684d31bfd519.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://da7stmyvbbdto"
-path="res://.godot/imported/garrafa.png-f60890e8b0aee61a412183b31219b4fa.ctex"
+uid="uid://uhnmwmn8fewr"
+path="res://.godot/imported/coral.png-a53272b21dcd32a925999f8182cc0c7f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Props/garrafa.png"
-dest_files=["res://.godot/imported/garrafa.png-f60890e8b0aee61a412183b31219b4fa.ctex"]
+source_file="res://sprites/Props/Plantas/coral.png"
+dest_files=["res://.godot/imported/coral.png-a53272b21dcd32a925999f8182cc0c7f.ctex"]
 
 [params]
 

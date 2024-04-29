@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://busy4y73si6ky"]
 
-[ext_resource type="Texture2D" uid="uid://txyedw3ulqta" path="res://sprites/Props/barrill.png" id="1_8spcv"]
+[ext_resource type="Texture2D" uid="uid://txyedw3ulqta" path="res://sprites/Props/Lixo/barrill.png" id="1_8spcv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rb1qx"]
 size = Vector2(51, 62)

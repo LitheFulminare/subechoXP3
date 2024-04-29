@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dfd261wrcyq1c"]
 
-[ext_resource type="Texture2D" uid="uid://da7stmyvbbdto" path="res://sprites/Props/garrafa.png" id="1_8e046"]
+[ext_resource type="Texture2D" uid="uid://da7stmyvbbdto" path="res://sprites/Props/Lixo/garrafa.png" id="1_8e046"]
 
 [node name="Garrafa" type="Node2D"]
 

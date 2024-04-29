@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cpg157q5cbli7"]
+[gd_scene load_steps=30 format=3 uid="uid://cpg157q5cbli7"]
 
 [ext_resource type="Script" path="res://Scenes/Layouts/Main 1.gd" id="1_rloub"]
 [ext_resource type="PackedScene" uid="uid://e4g3db01cv23" path="res://Scenes/Player_e_misc/Player/player.tscn" id="1_tgyws"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bj18jjcb7eo50" path="res://Scenes/Inimigos/inimigo.tscn" id="10_0ay53"]
 [ext_resource type="Texture2D" uid="uid://d004737er7nqm" path="res://sprites/Misc/Fundo Menu.png" id="10_lgyam"]
 [ext_resource type="PackedScene" uid="uid://ofrdbaojdppx" path="res://Scenes/Props/Plantas/Alga.tscn" id="13_onmmr"]
+[ext_resource type="PackedScene" uid="uid://b4c3j715n4txj" path="res://Scenes/Props/Plantas/Coral.tscn" id="14_qs6bb"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ki1ap"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -264,8 +265,11 @@ position = Vector2(576, 1452)
 [node name="Alga3" parent="CanvasGroup" instance=ExtResource("13_onmmr")]
 position = Vector2(642, 1452)
 
+[node name="Coral" parent="CanvasGroup" instance=ExtResource("14_qs6bb")]
+position = Vector2(882, 1440)
+
 [node name="Player Spawn" type="Marker2D" parent="."]
-position = Vector2(294, 266)
+position = Vector2(715, 1348)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_wadha")

@@ -10,6 +10,10 @@ var gameover = false
 
 func _ready():
 	$CanvasGroup/Player.position = $"Player Spawn".global_position
+	#$CanvasGroup/Coral/Sprite2D.modulate = Color(randf(),randf(),randf())
+	#$CanvasGroup/Alga/Sprite2D.modulate = Color(randf(),randf(),randf())
+	#$CanvasGroup/Alga2/Sprite2D.modulate = Color(randf(),randf(),randf())
+	#$CanvasGroup/Alga3/Sprite2D.modulate = Color(randf(),randf(),randf())
 
 func _process(delta):
 	

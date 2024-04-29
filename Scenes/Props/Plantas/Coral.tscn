@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4c3j715n4txj"]
+
+[ext_resource type="Texture2D" uid="uid://uhnmwmn8fewr" path="res://sprites/Props/Plantas/coral.png" id="1_kbbha"]
+
+[node name="Coral" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("1_kbbha")
+
+[node name="Luz" type="PointLight2D" parent="."]
+texture = ExtResource("1_kbbha")
+texture_scale = 3.0
