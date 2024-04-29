@@ -294,6 +294,7 @@ position = Vector2(291, 254)
 environment = SubResource("Environment_wadha")
 
 [node name="spawn inimigo" type="Timer" parent="."]
+wait_time = 6.0
 autostart = true
 
 [node name="Spawns" type="Node2D" parent="."]
