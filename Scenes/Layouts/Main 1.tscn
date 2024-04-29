@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://cpg157q5cbli7"]
+[gd_scene load_steps=32 format=3 uid="uid://cpg157q5cbli7"]
 
 [ext_resource type="Script" path="res://Scenes/Layouts/Main 1.gd" id="1_rloub"]
 [ext_resource type="PackedScene" uid="uid://e4g3db01cv23" path="res://Scenes/Player_e_misc/Player/player.tscn" id="1_tgyws"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bj18jjcb7eo50" path="res://Scenes/Inimigos/inimigo.tscn" id="10_0ay53"]
 [ext_resource type="Texture2D" uid="uid://d004737er7nqm" path="res://sprites/Misc/Fundo Menu.png" id="10_lgyam"]
 [ext_resource type="PackedScene" uid="uid://cai6mbx73lvsh" path="res://Scenes/Props/Lixo/Peixe.tscn" id="11_mkerf"]
+[ext_resource type="PackedScene" uid="uid://d05ltudced4tw" path="res://Scenes/Props/Lixo/Barril explosivo.tscn" id="12_nl35w"]
 [ext_resource type="PackedScene" uid="uid://ofrdbaojdppx" path="res://Scenes/Props/Plantas/Alga.tscn" id="13_onmmr"]
 [ext_resource type="PackedScene" uid="uid://b4c3j715n4txj" path="res://Scenes/Props/Plantas/Coral.tscn" id="14_qs6bb"]
 
@@ -121,11 +122,11 @@ inimigo_scene = ExtResource("10_0ay53")
 offset_right = -1917.0
 offset_bottom = -1080.0
 scale = Vector2(4.455, 4.455)
+metadata/_edit_use_anchors_ = true
 
 [node name="CanvasGroup" type="CanvasGroup" parent="."]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="CanvasGroup"]
-visible = false
 light_mask = 3
 color = Color(0, 0, 0, 1)
 
@@ -221,6 +222,9 @@ position = Vector2(636, 611)
 [node name="Peixe3" parent="CanvasGroup/Props" instance=ExtResource("11_mkerf")]
 position = Vector2(1327, 1140)
 
+[node name="BarrilExplosivo" parent="CanvasGroup/Props" instance=ExtResource("12_nl35w")]
+position = Vector2(447, 684)
+
 [node name="Plantas" type="Node2D" parent="CanvasGroup"]
 
 [node name="Alga" parent="CanvasGroup/Plantas" instance=ExtResource("13_onmmr")]
@@ -281,7 +285,7 @@ editor_draw_screen = false
 editor_draw_limits = true
 
 [node name="Player Spawn" type="Marker2D" parent="."]
-position = Vector2(715, 1348)
+position = Vector2(291, 254)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_wadha")
@@ -316,5 +320,7 @@ collision_mask = 2
 position = Vector2(2480, 887)
 shape = SubResource("RectangleShape2D_bpofp")
 
+[connection signal="explosao_barril" from="CanvasGroup/Props/BarrilExplosivo" to="." method="_on_barril_explosivo_explosao_barril"]
+[connection signal="died_by_explosion" from="CanvasGroup/Player" to="." method="_on_player_died_by_explosion"]
 [connection signal="timeout" from="spawn inimigo" to="." method="_on_spawn_inimigo_timeout"]
 [connection signal="area_entered" from="Saida/Area2D" to="." method="_on_area_2d_area_entered"]

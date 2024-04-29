@@ -29,6 +29,7 @@ func _process(delta):
 	
 	$"UI/UI vida e energia/Texto Inimigos Mortos".text = str(inimigos_mortos) + "/5"
 	
+	
 	if Input.is_action_pressed("restart"):
 		if not gameover:
 			game_over_no_life()
@@ -106,3 +107,17 @@ func restart():
 		#inimigo.position = $"Spawns/spawn inimigo local 2".global_position
 		#inimigo.position = local_aleatorio.position
 		#add_child(inimigo)
+
+
+func _on_barril_explosivo_explosao_barril(global_position):
+	var explosao = explosaoPath.instantiate()
+	$CanvasGroup.add_child(explosao)
+	explosao.position = global_position
+	#explosao.get_child(2).visible = false
+	explosao.anim()
+
+
+func _on_player_died_by_explosion():
+	if not gameover:
+		game_over_no_life()
+		gameover = true

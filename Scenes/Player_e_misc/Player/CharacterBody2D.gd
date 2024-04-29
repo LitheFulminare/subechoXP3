@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal died_by_explosion
+
 @export var speed = 500
 @export var acceleration = 4500
 @export var friction = 400
@@ -216,3 +218,6 @@ func death_no_energy():
 
 func _on_mudar_arma_1_cooldown_timeout():
 	mudarA1_cd = false
+	
+#func kaboom():
+	#died_by_explosion.emit()
