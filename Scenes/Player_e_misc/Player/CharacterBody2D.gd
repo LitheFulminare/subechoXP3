@@ -56,6 +56,7 @@ func player_movement(delta):
 	
 	var collision = move_and_collide(velocity * delta)
 	if collision:
+		#print(get_last_slide_collision().get_collider())
 		if not invincible && life > 0:
 			#print("var colisao = true")
 			life -= 10
@@ -95,7 +96,6 @@ func _process(delta):
 		$Sprite/TurbinaV1/Sprites.stop()
 		
 	$"LIght 2".look_at(get_global_mouse_position())
-
 
 func _on_energy_timer_timeout():
 	energy -= 1

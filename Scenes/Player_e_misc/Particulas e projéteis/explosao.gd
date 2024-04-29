@@ -9,9 +9,7 @@ func _ready():
 func _process(delta):
 	pass
 	#position = get_node("Spawn Tiro 1").global_position
-	
 
-	
 func anim():
 	
 	$animacao.play()
@@ -25,3 +23,5 @@ func anim():
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("player"):
 		body.life = 0
+	elif body.is_in_group("inimigo"):
+		body.vida = 0

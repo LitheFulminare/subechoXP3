@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://nw80kvmtl88d"]
+[gd_scene load_steps=13 format=3 uid="uid://nw80kvmtl88d"]
 
 [ext_resource type="PackedScene" uid="uid://d2tg02cwm2lik" path="res://Scenes/Player_e_misc/UI vida e energia.tscn" id="1_63vxx"]
 [ext_resource type="PackedScene" uid="uid://e4g3db01cv23" path="res://Scenes/Player_e_misc/Player/player.tscn" id="1_f2gr2"]
 [ext_resource type="PackedScene" uid="uid://bj18jjcb7eo50" path="res://Scenes/Inimigos/inimigo.tscn" id="2_sgn0r"]
 [ext_resource type="Texture2D" uid="uid://bte6svm5o0n4t" path="res://sprites/Props/Rock.png" id="3_gx4tq"]
+[ext_resource type="PackedScene" uid="uid://d05ltudced4tw" path="res://Scenes/Props/Lixo/Barril explosivo.tscn" id="5_tnopl"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_funj0"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -88,3 +89,5 @@ layer_0/tile_data = PackedInt32Array(0, 131072, 0, 65536, 131072, 1, 1, 196608, 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false
 color = Color(0, 0, 0, 1)
+
+[node name="BarrilExplosivo" parent="." instance=ExtResource("5_tnopl")]
