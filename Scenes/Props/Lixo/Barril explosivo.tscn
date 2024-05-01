@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_51l5j"]
 size = Vector2(60, 72)
 
-[node name="BarrilExplosivo" type="StaticBody2D"]
+[node name="BarrilExplosivo" type="StaticBody2D" groups=["explosivo"]]
 script = ExtResource("1_4tc0u")
 
 [node name="Area2D" type="Area2D" parent="." groups=["explosivo"]]

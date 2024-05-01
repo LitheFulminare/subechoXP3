@@ -21,3 +21,7 @@ func _on_area_2d_area_entered(area):
 		area.get_parent().queue_free()
 		explosao_barril.emit(global_position)
 		queue_free()
+		
+func kaboom():
+	explosao_barril.emit(global_position)
+	queue_free()

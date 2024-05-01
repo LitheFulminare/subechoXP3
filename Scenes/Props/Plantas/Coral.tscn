@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://uhnmwmn8fewr" path="res://sprites/Props/Plantas/coral.png" id="1_kbbha"]
 
-[node name="Coral" type="Node2D"]
+[node name="Coral" type="Node2D" groups=["coral"]]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(3, 3)
