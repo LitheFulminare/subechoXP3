@@ -85,5 +85,5 @@ frame_progress = 1.0
 [node name="luz" type="PointLight2D" parent="."]
 position = Vector2(4.76837e-07, -4.76837e-07)
 scale = Vector2(2.137, 2.137)
-energy = 0.8
+energy = 0.5
 texture = SubResource("GradientTexture2D_0bayc")
