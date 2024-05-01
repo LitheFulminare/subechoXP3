@@ -64,7 +64,12 @@ func player_movement(delta):
 		#print(get_last_slide_collision().get_collider())
 		if not invincible && life > 0:
 			#print("var colisao = true")
-			life -= 10
+			print("velocidade: " + str(current_speed))
+			var dano_tomado = int(current_speed/20)
+			if dano_tomado < 1:
+				dano_tomado = 1
+			life -= dano_tomado
+			#life = int(life)
 			velocity = Vector2.ZERO
 			invincible = true
 			damage_effect()
