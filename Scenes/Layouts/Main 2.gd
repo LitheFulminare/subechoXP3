@@ -11,6 +11,7 @@ var gameover = false
 func _ready():
 	$CanvasGroup/Player.life = player_vars.current_life
 	$CanvasGroup/Player.energy = player_vars.current_energy
+	$CanvasGroup/Player.scrap = player_vars.current_scrap
 	
 	#$CanvasGroup/Player.position = $"Player Spawn".global_position
 	#$CanvasGroup/Player/Camera2D.position = $"Player Spawn".global_position

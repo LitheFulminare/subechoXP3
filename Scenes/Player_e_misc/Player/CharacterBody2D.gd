@@ -12,7 +12,6 @@ signal died_by_explosion
 var life = player_vars.max_life
 var energy = player_vars.max_energy
 var scrap = 0
-
 var current_speed : float
 var invincible = false
 var sonar = false
@@ -78,6 +77,7 @@ func _ready():
 func _process(delta):
 	player_vars.current_life = life
 	player_vars.current_energy = energy
+	player_vars.current_scrap = scrap
 
 	current_speed = abs(velocity.x) + abs(velocity.y)
 	
