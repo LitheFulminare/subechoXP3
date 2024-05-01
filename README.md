@@ -1,6 +1,4 @@
-subecho XP3
-
-"Resonat Abyssi"
+"Abyssal Cleaner, XP3"
 
 Precisa fazer:
 	BG com parallax
