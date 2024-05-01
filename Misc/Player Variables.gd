@@ -5,6 +5,7 @@ var max_energy = 100
 
 var current_life : float
 var current_energy : float
+var current_scrap : int
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

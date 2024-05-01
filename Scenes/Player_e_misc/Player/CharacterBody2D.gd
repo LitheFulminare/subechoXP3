@@ -5,12 +5,13 @@ signal died_by_explosion
 @export var speed = 500
 @export var acceleration = 4500
 @export var friction = 400
+@export var arma1_tipo = 1
 #@export var life = 100
 #@export var energy = 100
-@export var arma1_tipo = 1
 
 var life = player_vars.max_life
 var energy = player_vars.max_energy
+var scrap = 0
 
 var current_speed : float
 var invincible = false
