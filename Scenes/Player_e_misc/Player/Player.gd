@@ -81,6 +81,8 @@ func player_movement(delta):
 			#$iFrames.start()
 
 func _ready():
+	
+	# checa qual o tipo de arma e carrega particulas, hitbox, etc
 	if weapon_type == "Gen-EricV1":
 		tiro1Path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Tiro 1.tscn") 
 		muzz1Path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Muzzle 1.tscn")
