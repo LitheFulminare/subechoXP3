@@ -92,7 +92,7 @@ func _ready():
 		$"Tiro 1 cooldown".wait_time = 0.8
 		
 	if weapon_type == "Gen-EricV2":
-		tiro1Path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Tiro 1.tscn") 
+		tiro1Path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Tiro 2.tscn") 
 		muzz2Path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Muzzle 2.tscn")
 		$"Colisão Gen-EricV2".disabled = false
 		$"Area2D/Colisão Gen-EricV2".disabled = false
