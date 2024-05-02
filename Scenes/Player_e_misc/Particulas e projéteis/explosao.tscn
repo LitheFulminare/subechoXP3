@@ -84,7 +84,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_mutrs")
 }],
-"loop": false,
+"loop": true,
 "name": &"default",
 "speed": 13.0
 }, {
@@ -126,7 +126,7 @@ fill_from = Vector2(0.482906, 0.482906)
 fill_to = Vector2(0.84188, 0.183761)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1dy2e"]
-radius = 58.5048
+radius = 27.0046
 
 [node name="Explosao" type="Node2D"]
 scale = Vector2(4, 4)
@@ -135,6 +135,7 @@ script = ExtResource("1_xk7uc")
 [node name="animacao" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.32813, 1.32813)
 sprite_frames = SubResource("SpriteFrames_hbdhe")
+frame_progress = 0.168691
 
 [node name="luz" type="PointLight2D" parent="."]
 position = Vector2(4.76837e-07, -4.76837e-07)
