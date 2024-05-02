@@ -13,7 +13,7 @@ signal died_by_explosion
 
 var life = player_vars.max_life
 var energy = player_vars.max_energy
-var weapon_type = "Gen-EricV2" #player_vars.weapon_type
+var weapon_type = "Gen-EricV1" #player_vars.weapon_type
 var scrap = 0
 var current_speed : float
 var invincible = false
@@ -87,6 +87,7 @@ func _ready():
 		$"Colisão Gen-EricV1".disabled = false
 		$"Area2D/Colisão Gen-EricV1".disabled = false
 		$"Sprite/Arma1/Sprites 1".visible = true
+		$"Tiro 1 cooldown".wait_time = 0.8
 		
 	if weapon_type == "Gen-EricV2":
 		tiro1Path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Tiro 1.tscn") 
@@ -94,6 +95,7 @@ func _ready():
 		$"Colisão Gen-EricV2".disabled = false
 		$"Area2D/Colisão Gen-EricV2".disabled = false
 		$"Sprite/Arma1/Sprites 2".visible = true
+		$"Tiro 1 cooldown".wait_time = 0.3
 	#pass
 
 @warning_ignore("unused_parameter")
