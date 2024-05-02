@@ -236,12 +236,12 @@ func _on_mudar_arma_1_cooldown_timeout():
 
 
 func collect(type):
-	var scrap_earned
+	var scrap_earned = 0
 	
 	if type == "plastic":
 		scrap_earned = randi_range(1,2)
 		
-	if type == "bootle":
+	if type == "bottle":
 		scrap_earned = randi_range(3,5)
 		
 	if type == "fish":

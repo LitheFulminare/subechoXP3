@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://dfd261wrcyq1c"]
+[gd_scene load_steps=4 format=3 uid="uid://dfd261wrcyq1c"]
 
 [ext_resource type="Texture2D" uid="uid://da7stmyvbbdto" path="res://sprites/Props/Lixo/garrafa.png" id="1_8e046"]
+[ext_resource type="PackedScene" uid="uid://dcko6bdi3rg0c" path="res://Scenes/Props/collectable.tscn" id="2_y6x1k"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n40i2"]
+radius = 11.6082
 
 [node name="Garrafa" type="Node2D"]
 
@@ -8,3 +12,11 @@
 position = Vector2(24.5, 24.5)
 scale = Vector2(2.53125, 2.53125)
 texture = ExtResource("1_8e046")
+
+[node name="Collectable" parent="." instance=ExtResource("2_y6x1k")]
+type = "bottle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectable"]
+position = Vector2(27, 25)
+scale = Vector2(8.01203, 8.35162)
+shape = SubResource("CircleShape2D_n40i2")

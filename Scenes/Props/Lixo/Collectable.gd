@@ -1,6 +1,6 @@
 extends Area2D
 
-@export_enum("plastic", "bootle", "fish", "metal") var type: String
+@export_enum("plastic", "bottle", "fish", "metal") var type: String
 @export var scrap_value : int
 
 var player_in_area = false
@@ -18,7 +18,7 @@ func _process(delta):
 func _on_area_entered(area):
 	if area.is_in_group("player"):
 		player_in_area = true
-
+	
 
 func _on_area_exited(area):
 	if area.is_in_group("player"):

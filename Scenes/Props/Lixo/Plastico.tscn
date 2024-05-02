@@ -1,9 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://i07d0qta5c7"]
+[gd_scene load_steps=4 format=3 uid="uid://i07d0qta5c7"]
 
 [ext_resource type="Texture2D" uid="uid://c1jhputu6hg38" path="res://sprites/Props/Lixo/plastico.png" id="1_2ktn3"]
+[ext_resource type="PackedScene" uid="uid://dcko6bdi3rg0c" path="res://Scenes/Props/collectable.tscn" id="2_m24iu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6k65m"]
+radius = 76.0
 
 [node name="Plastico" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("1_2ktn3")
+
+[node name="Collectable" parent="." instance=ExtResource("2_m24iu")]
+type = "plastic"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectable"]
+shape = SubResource("CircleShape2D_6k65m")

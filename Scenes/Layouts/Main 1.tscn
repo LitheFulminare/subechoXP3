@@ -127,6 +127,7 @@ metadata/_edit_use_anchors_ = true
 [node name="CanvasGroup" type="CanvasGroup" parent="."]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="CanvasGroup"]
+visible = false
 light_mask = 3
 color = Color(0, 0, 0, 1)
 

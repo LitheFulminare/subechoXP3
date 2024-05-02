@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://cai6mbx73lvsh"]
+[gd_scene load_steps=4 format=3 uid="uid://cai6mbx73lvsh"]
 
 [ext_resource type="Texture2D" uid="uid://hmkwuolcfa58" path="res://sprites/Props/Lixo/peixe.png" id="1_wx1bt"]
+[ext_resource type="PackedScene" uid="uid://dcko6bdi3rg0c" path="res://Scenes/Props/collectable.tscn" id="2_ovwsi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a57hp"]
+radius = 125.196
 
 [node name="Peixe" type="Node2D"]
 position = Vector2(268, 140)
@@ -8,3 +12,9 @@ position = Vector2(268, 140)
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(3, 3)
 texture = ExtResource("1_wx1bt")
+
+[node name="Collectable" parent="." instance=ExtResource("2_ovwsi")]
+type = "fish"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectable"]
+shape = SubResource("CircleShape2D_a57hp")

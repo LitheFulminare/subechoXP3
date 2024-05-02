@@ -8,8 +8,8 @@ radius = 11.0
 height = 76.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lt16s"]
-radius = 52.0
-height = 104.0
+radius = 63.0
+height = 126.0
 
 [node name="MetalEnferrujado" type="StaticBody2D"]
 
