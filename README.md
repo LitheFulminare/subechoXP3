@@ -10,12 +10,13 @@ Precisa fazer:
 	loja entre os levels
 	loja de arma no menu
 	perks no final de cada fase
+	desenhar/importar muzzle da PM
 	
 	
-	nomes das armas 
+	armas 
 	
-	Gen-EricV1
-	Gen-EricV2
+	--Gen-EricV1--
+	--Gen-EricV2--
 	Peacemaker (12)
 	Imperium (laser)
 	Killerbee (drill)

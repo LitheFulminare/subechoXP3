@@ -96,6 +96,20 @@ func _ready():
 		$"Area2D/Colisão Gen-EricV2".disabled = false
 		$"Sprite/Arma1/Sprites 2".visible = true
 		$"Tiro 1 cooldown".wait_time = 0.3
+		
+	if weapon_type == "Peacemaker":
+		tiro1Path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Tiro 1.tscn") 
+		$"Colisão Peacemaker".disabled = false
+		$"Area2D/Colisão Peacemaker".disabled = false
+		$"Sprite/Arma1/Sprites 3".visible = true
+		$"Tiro 1 cooldown".wait_time = 1
+		
+	if weapon_type == "Imperium":
+		tiro1Path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Tiro 1.tscn")
+		$"Colisão Imperium".disabled = false
+		$"Area2D/Colisão Imperium".disabled = false
+		$"Sprite/Arma1/Sprites 4".visible = true
+		$"Tiro 1 cooldown".wait_time = 0.2
 	#pass
 
 @warning_ignore("unused_parameter")

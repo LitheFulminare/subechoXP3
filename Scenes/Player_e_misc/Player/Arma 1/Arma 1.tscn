@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://drvd8bhk4plho"]
+[gd_scene load_steps=16 format=3 uid="uid://drvd8bhk4plho"]
 
 [ext_resource type="Texture2D" uid="uid://cocbp3s5ii87t" path="res://sprites/player/Arma/arma1.png" id="1_crkei"]
 [ext_resource type="Texture2D" uid="uid://bnlpirhmgpg26" path="res://sprites/player/Arma/arma_rapida_base1.png" id="2_t6nh2"]
+[ext_resource type="Texture2D" uid="uid://d308e0ev5mr7k" path="res://sprites/player/Arma/escopeta_peacemaker.png" id="3_u420q"]
+[ext_resource type="Texture2D" uid="uid://bq5bb6sxfhq6h" path="res://sprites/player/Arma/aramalaser_imperium.png" id="4_l1h7q"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_e0eqn"]
 animations = [{
@@ -32,8 +34,59 @@ animations = [{
 "texture": SubResource("AtlasTexture_b7riw")
 }],
 "loop": true,
-"name": &"Arma 2 v2",
+"name": &"Peace",
 "speed": 3.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l756c"]
+atlas = ExtResource("3_u420q")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nu7a3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l756c")
+}],
+"loop": false,
+"name": &"Peacemaker",
+"speed": 3.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85rqf"]
+atlas = ExtResource("4_l1h7q")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_no527"]
+atlas = ExtResource("4_l1h7q")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3vt3h"]
+atlas = ExtResource("4_l1h7q")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0aet2"]
+atlas = ExtResource("4_l1h7q")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bk5l2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_85rqf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_no527")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3vt3h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0aet2")
+}],
+"loop": false,
+"name": &"Imperium",
+"speed": 10.0
 }]
 
 [node name="Arma1" type="Node2D"]
@@ -47,5 +100,20 @@ animation = &"Arma 1 v1"
 visible = false
 position = Vector2(-3, 0)
 sprite_frames = SubResource("SpriteFrames_4j4mm")
-animation = &"Arma 2 v2"
-autoplay = "Arma 2 v2"
+animation = &"Peace"
+autoplay = "Peace"
+
+[node name="Sprites 3" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(-3, 0)
+sprite_frames = SubResource("SpriteFrames_nu7a3")
+animation = &"Peacemaker"
+
+[node name="Sprites 4" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(-3, 0)
+sprite_frames = SubResource("SpriteFrames_bk5l2")
+animation = &"Imperium"
+autoplay = "Imperium"
+frame = 3
+frame_progress = 1.0
