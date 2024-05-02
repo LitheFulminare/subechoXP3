@@ -213,9 +213,6 @@ z_index = 2
 position = Vector2(644, 1295)
 scale = Vector2(1.57482, 1.57482)
 
-[node name="Peixe" parent="CanvasGroup/Props" instance=ExtResource("11_mkerf")]
-position = Vector2(197, 128)
-
 [node name="Peixe2" parent="CanvasGroup/Props" instance=ExtResource("11_mkerf")]
 position = Vector2(636, 611)
 

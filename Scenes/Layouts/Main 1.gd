@@ -29,6 +29,8 @@ func _process(delta):
 	
 	$"UI/UI vida e energia/Texto Inimigos Mortos".text = str(inimigos_mortos) + "/5"
 	
+	$"UI/UI vida e energia/Texto scrap".text = str($CanvasGroup/Player.scrap)
+	
 	
 	if Input.is_action_pressed("restart"):
 		if not gameover:
