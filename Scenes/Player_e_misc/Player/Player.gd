@@ -240,7 +240,7 @@ func _on_area_2d_area_exited(area):
 	if area.is_in_group("inimigo"):
 		on_collision_with_enemy = false
 	
-func mudarArma1():
+func mudarArma1(): # essa função provavelmente n vai ser usada
 	if not mudarA1_cd:
 		if arma1_tipo == 1:
 			arma1_tipo = 2
