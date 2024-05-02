@@ -3,7 +3,19 @@
 Precisa fazer:
 	BG com parallax
 	colocar mais props e randomizar
-	coletar lixo 
+	--coletar lixo--
+	lixo brilha quando chega perto/particula de coletar lixo
+	sprite do lixo na UI
+	implementar armas e muzzles
 	loja entre os levels
 	loja de arma no menu
 	perks no final de cada fase
+	
+	
+	nomes das armas 
+	
+	Gen-EricV1
+	Gen-EricV2
+	Peacemaker (12)
+	Imperium (laser)
+	Killerbee (drill)

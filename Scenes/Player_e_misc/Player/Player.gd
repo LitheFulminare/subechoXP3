@@ -3,6 +3,7 @@ extends CharacterBody2D
 signal died_by_explosion
 #signal collect(type)
 
+#@export_enum("Gen-EricV1", "Gen-EricV2", "Peacemaker", "Imperium", "Killerbee") var weapon_type: String
 @export var speed = 500
 @export var acceleration = 4500
 @export var friction = 400
@@ -12,6 +13,7 @@ signal died_by_explosion
 
 var life = player_vars.max_life
 var energy = player_vars.max_energy
+var weapon_type = player_vars.weapon_type
 var scrap = 0
 var current_speed : float
 var invincible = false
