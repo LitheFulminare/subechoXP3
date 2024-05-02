@@ -6,3 +6,4 @@ Precisa fazer:
 	coletar lixo 
 	loja entre os levels
 	loja de arma no menu
+	perks no final de cada fase
