@@ -186,7 +186,6 @@ position = Vector2(-45, -15)
 scale = Vector2(4.09669, 4.09669)
 polygon = PackedVector2Array(-5.1261, 6.10249, -3.1733, 6.10249, -3.17329, 7.07888, 1.70869, 7.07888, 1.70869, 6.10249, 2.68509, 6.10249, 4.63788, -5.61429, 1.70869, -6.59068, -3.17329, -6.59068, -5.1261, -5.61429)
 
-[connection signal="collect" from="." to="." method="_on_collect"]
 [connection signal="timeout" from="Energy timer" to="." method="_on_energy_timer_timeout"]
 [connection signal="timeout" from="Sonar cooldown" to="." method="_on_sonar_cooldown_timeout"]
 [connection signal="timeout" from="iFrames" to="." method="_on_i_frames_timeout"]
