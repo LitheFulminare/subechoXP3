@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 signal died_by_explosion
+signal collect(type)
 
 @export var speed = 500
 @export var acceleration = 4500
@@ -232,3 +233,21 @@ func _on_mudar_arma_1_cooldown_timeout():
 	
 #func kaboom():
 	#died_by_explosion.emit()
+
+
+func _on_collect(type):
+	var scrap_earned
+	
+	if type == "plastic":
+		scrap_earned = randi_range(1,2)
+		
+	if type == "bootle":
+		scrap_earned = randi_range(3,5)
+		
+	if type == "fish":
+		scrap_earned = randi_range(6,8)
+	
+	if type == "metal":
+		scrap_earned = randi_range(8,12)
+		
+	scrap += scrap_earned

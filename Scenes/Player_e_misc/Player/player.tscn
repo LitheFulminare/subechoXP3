@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://e4g3db01cv23"]
 
-[ext_resource type="Script" path="res://Scenes/Player_e_misc/Player/CharacterBody2D.gd" id="1_k0pig"]
+[ext_resource type="Script" path="res://Scenes/Player_e_misc/Player/Player.gd" id="1_b66x1"]
 [ext_resource type="Texture2D" uid="uid://fcjwgbvtu06l" path="res://sprites/player/Casco/Casco1.png" id="2_r5lx4"]
 [ext_resource type="Texture2D" uid="uid://vjb3rydk6640" path="res://sprites/player/Sonar/sonar1.png" id="6_22ess"]
 [ext_resource type="PackedScene" uid="uid://r2uor4w348v2" path="res://Scenes/Player_e_misc/Player/Turbina/Turbina v1.tscn" id="6_iu35p"]
@@ -64,7 +64,7 @@ light_mask = 0
 position = Vector2(1044, 422)
 collision_layer = 2
 collision_mask = 7
-script = ExtResource("1_k0pig")
+script = ExtResource("1_b66x1")
 
 [node name="Sprite" type="Area2D" parent="."]
 position = Vector2(-2, -1.99999)
@@ -186,6 +186,7 @@ position = Vector2(-45, -15)
 scale = Vector2(4.09669, 4.09669)
 polygon = PackedVector2Array(-5.1261, 6.10249, -3.1733, 6.10249, -3.17329, 7.07888, 1.70869, 7.07888, 1.70869, 6.10249, 2.68509, 6.10249, 4.63788, -5.61429, 1.70869, -6.59068, -3.17329, -6.59068, -5.1261, -5.61429)
 
+[connection signal="collect" from="." to="." method="_on_collect"]
 [connection signal="timeout" from="Energy timer" to="." method="_on_energy_timer_timeout"]
 [connection signal="timeout" from="Sonar cooldown" to="." method="_on_sonar_cooldown_timeout"]
 [connection signal="timeout" from="iFrames" to="." method="_on_i_frames_timeout"]
