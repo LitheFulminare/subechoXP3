@@ -13,7 +13,7 @@ signal died_by_explosion
 
 var life = player_vars.max_life
 var energy = player_vars.max_energy
-var weapon_type = player_vars.weapon_type
+var weapon_type = "Gen-EricV2" #player_vars.weapon_type
 var scrap = 0
 var current_speed : float
 var invincible = false
@@ -28,9 +28,9 @@ var shootDirection: Vector2
 
 var tween
 
-const tiro1Path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Tiro 1.tscn") 
-const muzz1Path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Muzzle 1.tscn")
-const muzz2Path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Muzzle 2.tscn")
+var tiro1Path #preload("res://Scenes/Player_e_misc/Particulas e projéteis/Tiro 1.tscn") 
+var muzz1Path #preload("res://Scenes/Player_e_misc/Particulas e projéteis/Muzzle 1.tscn")
+var muzz2Path #preload("res://Scenes/Player_e_misc/Particulas e projéteis/Muzzle 2.tscn")
 
 func _physics_process(delta):
 	player_movement(delta)
@@ -81,7 +81,20 @@ func player_movement(delta):
 			#$iFrames.start()
 
 func _ready():
-	pass
+	if weapon_type == "Gen-EricV1":
+		tiro1Path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Tiro 1.tscn") 
+		muzz1Path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Muzzle 1.tscn")
+		$"Colisão Gen-EricV1".disabled = false
+		$"Area2D/Colisão Gen-EricV1".disabled = false
+		$"Sprite/Arma1/Sprites 1".visible = true
+		
+	if weapon_type == "Gen-EricV2":
+		tiro1Path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Tiro 1.tscn") 
+		muzz2Path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Muzzle 2.tscn")
+		$"Colisão Gen-EricV2".disabled = false
+		$"Area2D/Colisão Gen-EricV2".disabled = false
+		$"Sprite/Arma1/Sprites 2".visible = true
+	#pass
 
 @warning_ignore("unused_parameter")
 func _process(delta):
@@ -153,17 +166,17 @@ func tiro1():
 		@warning_ignore("shadowed_variable")
 		var tiro1 = tiro1Path.instantiate()
 		tiro1.set_bullet(gun_Position, targetPosition)
-		tiro1.tipoTiro(arma1_tipo)
+		tiro1.tipoTiro(weapon_type)
 		get_parent().add_child(tiro1)
 		tiro1.position = $"Spawn Tiro 1".global_position
 		
-		if arma1_tipo == 1: # arma lenta
+		if weapon_type == "Gen-EricV1": # arma lenta
 			var muzz = muzz1Path.instantiate()
 			get_parent().add_child(muzz)
 			#$"Spawn Tiro 1".add_child(muzz)
 			muzz.position = $Muzz1Local.global_position
 			muzz.anim()
-		elif arma1_tipo == 2: # arma rapida
+		if weapon_type == "Gen-EricV2": # arma rapida
 			var muzz = muzz2Path.instantiate()
 			get_parent().add_child(muzz)
 			#$"Spawn Tiro 1".add_child(muzz)

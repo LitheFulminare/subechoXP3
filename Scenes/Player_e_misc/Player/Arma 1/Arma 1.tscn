@@ -39,6 +39,7 @@ animations = [{
 [node name="Arma1" type="Node2D"]
 
 [node name="Sprites 1" type="AnimatedSprite2D" parent="."]
+visible = false
 sprite_frames = SubResource("SpriteFrames_e0eqn")
 animation = &"Arma 1 v1"
 
