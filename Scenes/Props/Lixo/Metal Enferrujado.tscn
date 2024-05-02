@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cfd07pxyjtad3"]
 
 [ext_resource type="Texture2D" uid="uid://5cibbpds0pw7" path="res://sprites/Props/Lixo/metal_enferrujado.png" id="1_mcin5"]
-[ext_resource type="PackedScene" uid="uid://dcko6bdi3rg0c" path="res://Scenes/Props/collectable.tscn" id="2_pxyod"]
+[ext_resource type="PackedScene" uid="uid://dcko6bdi3rg0c" path="res://Scenes/Props/Misc/collectable.tscn" id="2_pxyod"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jqo6k"]
 radius = 11.0

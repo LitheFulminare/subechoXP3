@@ -19,6 +19,7 @@ var sonar = false
 var input = Vector2.ZERO
 var t1_cd = false
 var mudarA1_cd = false
+var on_collision_with_enemy = false
 
 var targetPosition: Vector2
 var shootDirection: Vector2
@@ -63,18 +64,19 @@ func player_movement(delta):
 			#get_tree().call_group("explosivo", "kaboom")
 			#print("colisao explosivo")
 		#print(get_last_slide_collision().get_collider())
-		if not invincible && life > 0:
+		if not invincible && life > 0 && not collision.get_collider().is_in_group("inimigo"):
 			#print("var colisao = true")
-			print("velocidade: " + str(current_speed))
-			var dano_tomado = int(current_speed/20)
-			if dano_tomado < 1:
-				dano_tomado = 1
-			life -= dano_tomado
-			#life = int(life)
-			velocity = Vector2.ZERO
-			invincible = true
-			damage_effect()
-			$iFrames.start()
+			take_damage("cenario")
+			#print("velocidade: " + str(current_speed))
+			#var dano_tomado = int(current_speed/20)
+			#if dano_tomado < 1:
+				#dano_tomado = 1
+			#life -= dano_tomado
+			##life = int(life)
+			#velocity = Vector2.ZERO
+			#invincible = true
+			#damage_effect()
+			#$iFrames.start()
 
 func _ready():
 	pass
@@ -108,6 +110,10 @@ func _process(delta):
 		$Sprite/TurbinaV1/Sprites.stop()
 		
 	$"LIght 2".look_at(get_global_mouse_position())
+	
+	if on_collision_with_enemy == true && not invincible:
+		take_damage("inimigo")
+		
 
 func _on_energy_timer_timeout():
 	energy -= 1
@@ -191,10 +197,16 @@ func _on_tiro_1_cooldown_timeout():
 	t1_cd = false
 
 func _on_area_2d_area_entered(area): 
-	print("colisao") #essa linha nao tá sendo chamada
+	#print("colisao")
 	if area.is_in_group("inimigo"):
-		print("colisao com inimigo")
+		on_collision_with_enemy = true
+		#take_damage("inimigo")
+		#print("colisao com inimigo")
 		
+func _on_area_2d_area_exited(area):
+	if area.is_in_group("inimigo"):
+		on_collision_with_enemy = false
+	
 func mudarArma1():
 	if not mudarA1_cd:
 		if arma1_tipo == 1:
@@ -251,3 +263,24 @@ func collect(type):
 		scrap_earned = randi_range(8,12)
 		
 	scrap += scrap_earned
+	
+func take_damage(type):
+	#print("velocidade: " + str(current_speed))
+	var dano_tomado = 0
+	
+	if type == "cenario":
+		dano_tomado = int(current_speed/20)
+		if dano_tomado < 1:
+			dano_tomado = 1
+	if type == "inimigo":
+		dano_tomado = 10
+	
+	life -= dano_tomado
+	#life = int(life)
+	velocity = Vector2.ZERO
+	invincible = true
+	damage_effect()
+	$iFrames.start()
+
+
+

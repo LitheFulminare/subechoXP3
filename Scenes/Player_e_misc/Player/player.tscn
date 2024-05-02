@@ -193,3 +193,4 @@ polygon = PackedVector2Array(-5.1261, 6.10249, -3.1733, 6.10249, -3.17329, 7.078
 [connection signal="timeout" from="Tiro 1 cooldown" to="." method="_on_tiro_1_cooldown_timeout"]
 [connection signal="timeout" from="mudarArma1 Cooldown" to="." method="_on_mudar_arma_1_cooldown_timeout"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

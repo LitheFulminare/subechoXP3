@@ -1,7 +1,7 @@
 [gd_scene load_steps=29 format=3 uid="uid://pe5fywnxqt84"]
 
 [ext_resource type="Script" path="res://Scenes/Layouts/Main 2.gd" id="1_r7km2"]
-[ext_resource type="PackedScene" uid="uid://bijwkls1lldy4" path="res://Scenes/Props/Pedra.tscn" id="2_g5he7"]
+[ext_resource type="PackedScene" uid="uid://bijwkls1lldy4" path="res://Scenes/Props/Misc/Pedra.tscn" id="2_g5he7"]
 [ext_resource type="PackedScene" uid="uid://bj18jjcb7eo50" path="res://Scenes/Inimigos/inimigo.tscn" id="2_j3ugg"]
 [ext_resource type="PackedScene" uid="uid://d2tg02cwm2lik" path="res://Scenes/Player_e_misc/UI vida e energia.tscn" id="3_r3bhl"]
 [ext_resource type="Texture2D" uid="uid://cr1yy7kq7r2sn" path="res://sprites/Props/BG_Rock.png" id="4_d6mua"]
