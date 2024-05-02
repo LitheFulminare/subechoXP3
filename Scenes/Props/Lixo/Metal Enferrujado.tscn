@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cfd07pxyjtad3"]
 
 [ext_resource type="Texture2D" uid="uid://5cibbpds0pw7" path="res://sprites/Props/Lixo/metal_enferrujado.png" id="1_mcin5"]
-[ext_resource type="Script" path="res://Scenes/Props/Lixo/Collectable.gd" id="2_0360w"]
+[ext_resource type="PackedScene" uid="uid://dcko6bdi3rg0c" path="res://Scenes/Props/collectable.tscn" id="2_pxyod"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jqo6k"]
 radius = 11.0
@@ -22,15 +22,9 @@ position = Vector2(1, -1)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_jqo6k")
 
-[node name="Collectable" type="Area2D" parent="."]
-collision_mask = 3
-script = ExtResource("2_0360w")
-type = "metal"
+[node name="Collectable" parent="." instance=ExtResource("2_pxyod")]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Collectable"]
 position = Vector2(1, -1)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_lt16s")
-
-[connection signal="area_entered" from="Collectable" to="Collectable" method="_on_area_entered"]
-[connection signal="area_exited" from="Collectable" to="Collectable" method="_on_area_exited"]

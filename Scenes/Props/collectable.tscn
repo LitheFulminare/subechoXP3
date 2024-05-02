@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcko6bdi3rg0c"]
+
+[ext_resource type="Script" path="res://Scenes/Props/Lixo/Collectable.gd" id="1_nju7f"]
+
+[node name="Collectable" type="Area2D"]
+collision_mask = 3
+script = ExtResource("1_nju7f")
+type = "metal"
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
