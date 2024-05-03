@@ -2,8 +2,8 @@ extends Node
 
 var max_life = 100
 var max_energy = 100
-var weapon_type : String
 
+var weapon_type : String
 var current_life : float
 var current_energy : float
 var current_scrap : int
