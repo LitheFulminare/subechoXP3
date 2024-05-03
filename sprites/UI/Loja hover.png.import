@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnrt2aotnq7cm"
-path="res://.godot/imported/menu_loja.png-c9938622cbad976a850aedaec23fce19.ctex"
+uid="uid://cbk5sdfo8fvra"
+path="res://.godot/imported/Loja hover.png-b26598bac13e0eb4a8c2c3c966888b39.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/UI/menu_loja.png"
-dest_files=["res://.godot/imported/menu_loja.png-c9938622cbad976a850aedaec23fce19.ctex"]
+source_file="res://sprites/UI/Loja hover.png"
+dest_files=["res://.godot/imported/Loja hover.png-b26598bac13e0eb4a8c2c3c966888b39.ctex"]
 
 [params]
 

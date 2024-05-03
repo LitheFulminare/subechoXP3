@@ -241,25 +241,26 @@ func _on_area_2d_area_exited(area):
 		on_collision_with_enemy = false
 	
 func mudarArma1(): # essa função provavelmente n vai ser usada
-	if not mudarA1_cd:
-		if arma1_tipo == 1:
-			arma1_tipo = 2
-			$"Colisão arma 1 v1".disabled = true
-			$"Colisão arma 1 v2".disabled = false
-			$"Sprite/Arma1/Sprites 1".visible = false
-			$"Sprite/Arma1/Sprites 2".visible = true
-			$"Tiro 1 cooldown".wait_time = 0.25
-		
-		else:
-			arma1_tipo = 1
-			$"Colisão arma 1 v1".disabled = false
-			$"Colisão arma 1 v2".disabled = true
-			$"Sprite/Arma1/Sprites 1".visible = true
-			$"Sprite/Arma1/Sprites 2".visible = false
-			$"Tiro 1 cooldown".wait_time = 0.8
-			
-		mudarA1_cd = true
-		$"mudarArma1 Cooldown".start()
+	pass
+	#if not mudarA1_cd:
+		#if arma1_tipo == 1:
+			#arma1_tipo = 2
+			#$"Colisão arma 1 v1".disabled = true
+			#$"Colisão arma 1 v2".disabled = false
+			#$"Sprite/Arma1/Sprites 1".visible = false
+			#$"Sprite/Arma1/Sprites 2".visible = true
+			#$"Tiro 1 cooldown".wait_time = 0.25
+		#
+		#else:
+			#arma1_tipo = 1
+			#$"Colisão arma 1 v1".disabled = false
+			#$"Colisão arma 1 v2".disabled = true
+			#$"Sprite/Arma1/Sprites 1".visible = true
+			#$"Sprite/Arma1/Sprites 2".visible = false
+			#$"Tiro 1 cooldown".wait_time = 0.8
+			#
+		#mudarA1_cd = true
+		#$"mudarArma1 Cooldown".start()
 		
 func death_no_life():
 	$Sprite.visible = false

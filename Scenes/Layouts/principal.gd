@@ -27,3 +27,7 @@ func _on_play_pressed():
 
 func _on_exit_pressed():
 	get_tree().quit()
+
+
+func _on_loja_pressed():
+	Global.goto_scene("res://Scenes/Layouts/Loja.tscn")

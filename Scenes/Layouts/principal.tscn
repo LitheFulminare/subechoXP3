@@ -1,11 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://dcx7feowrrqld"]
+[gd_scene load_steps=12 format=3 uid="uid://dcx7feowrrqld"]
 
 [ext_resource type="Script" path="res://Scenes/Layouts/principal.gd" id="1_e73b0"]
 [ext_resource type="Texture2D" uid="uid://uie5340u063a" path="res://sprites/UI/menu_iniciar_normal.png" id="2_axhwn"]
 [ext_resource type="Texture2D" uid="uid://d004737er7nqm" path="res://sprites/Misc/Fundo Menu.png" id="2_ohhcl"]
 [ext_resource type="Texture2D" uid="uid://bwqpfk8odlhvg" path="res://sprites/UI/menu_iniciar_pressed.png" id="3_1ednh"]
 [ext_resource type="Texture2D" uid="uid://clmblbqskq5bj" path="res://sprites/UI/menu_sair_normal.png" id="4_cgrym"]
+[ext_resource type="Texture2D" uid="uid://y2hrgsrqd82f" path="res://sprites/UI/Loja normal.png" id="4_j1g0c"]
 [ext_resource type="Texture2D" uid="uid://cfxkmgiylsfr1" path="res://sprites/UI/menu_sair_pressed.png" id="5_jv3jv"]
+[ext_resource type="Texture2D" uid="uid://cbk5sdfo8fvra" path="res://sprites/UI/Loja hover.png" id="5_yn47w"]
 [ext_resource type="Texture2D" uid="uid://cmo1f2xlty8mv" path="res://sprites/Misc/LOGO_ABYSSAL.png" id="7_er35a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vondv"]
@@ -42,6 +44,13 @@ size_flags_vertical = 4
 texture_normal = ExtResource("2_axhwn")
 texture_hover = ExtResource("3_1ednh")
 
+[node name="Loja" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("4_j1g0c")
+texture_hover = ExtResource("5_yn47w")
+
 [node name="Exit" type="TextureButton" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -63,4 +72,5 @@ scale = Vector2(12.0625, 12.0625)
 texture = ExtResource("7_er35a")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Loja" to="." method="_on_loja_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
