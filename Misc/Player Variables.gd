@@ -2,11 +2,13 @@ extends Node
 
 var max_life = 100
 var max_energy = 100
+var first_weapon = 1
 
 var weapon_type : String
 var current_life : float
 var current_energy : float
 var current_scrap : int
+var current_weapon
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

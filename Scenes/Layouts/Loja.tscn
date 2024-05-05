@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bxl8bwuwmncwy"]
+[gd_scene load_steps=22 format=3 uid="uid://bxl8bwuwmncwy"]
 
 [ext_resource type="Script" path="res://Scenes/Layouts/Loja.gd" id="1_85ebf"]
 [ext_resource type="Texture2D" uid="uid://dk53duvqcol4h" path="res://sprites/UI/Botão direito default.png" id="2_aujog"]
@@ -6,6 +6,15 @@
 [ext_resource type="Texture2D" uid="uid://bl063bt71htkf" path="res://sprites/UI/Botão esquerdo default.png" id="5_jlm4b"]
 [ext_resource type="Texture2D" uid="uid://c02fwc7nnfe30" path="res://sprites/UI/Botão esquerdo hover.png" id="6_a3n4v"]
 [ext_resource type="Texture2D" uid="uid://d004737er7nqm" path="res://sprites/Misc/Fundo Menu.png" id="6_py2c1"]
+[ext_resource type="Texture2D" uid="uid://clmblbqskq5bj" path="res://sprites/UI/menu_sair_normal.png" id="7_7gc2a"]
+[ext_resource type="Texture2D" uid="uid://cocbp3s5ii87t" path="res://sprites/player/Arma/arma1.png" id="7_to2j0"]
+[ext_resource type="Texture2D" uid="uid://bnlpirhmgpg26" path="res://sprites/player/Arma/arma_rapida_base1.png" id="8_47ys0"]
+[ext_resource type="Texture2D" uid="uid://cfxkmgiylsfr1" path="res://sprites/UI/menu_sair_pressed.png" id="8_svdxp"]
+[ext_resource type="Texture2D" uid="uid://fcjwgbvtu06l" path="res://sprites/player/Casco/Casco1.png" id="9_qcp8d"]
+[ext_resource type="Texture2D" uid="uid://vjb3rydk6640" path="res://sprites/player/Sonar/sonar1.png" id="10_sng4s"]
+[ext_resource type="Texture2D" uid="uid://cvae20cgax3sk" path="res://sprites/player/Sonar/sonar1_2.png" id="11_1rwnm"]
+[ext_resource type="PackedScene" uid="uid://drvd8bhk4plho" path="res://Scenes/Player_e_misc/Player/Arma 1/Arma 1.tscn" id="12_0rwp4"]
+[ext_resource type="PackedScene" uid="uid://r2uor4w348v2" path="res://Scenes/Player_e_misc/Player/Turbina/Turbina v1.tscn" id="13_8r24x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yh4qi"]
 texture = ExtResource("6_py2c1")
@@ -18,6 +27,69 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSet" id="TileSet_fsyub"]
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_yh4qi")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kcasi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_qcp8d")
+}],
+"loop": true,
+"name": &"casco 1",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_37ou7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_sng4s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_1rwnm")
+}],
+"loop": true,
+"name": &"Sonar 1",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vbo0k"]
+atlas = ExtResource("8_47ys0")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ji3m5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_to2j0")
+}],
+"loop": false,
+"name": &"Gen-EricV1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vbo0k")
+}],
+"loop": true,
+"name": &"Gen-EricV2",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Imperium",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Killerbee",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Peacemaker",
+"speed": 5.0
+}]
 
 [node name="Loja" type="Control"]
 layout_mode = 3
@@ -52,3 +124,60 @@ size_flags_horizontal = 4
 size_flags_vertical = 8
 texture_normal = ExtResource("2_aujog")
 texture_hover = ExtResource("3_t4qn5")
+
+[node name="Voltar" type="TextureButton" parent="."]
+layout_mode = 2
+offset_left = 892.0
+offset_top = 859.0
+offset_right = 924.0
+offset_bottom = 879.0
+scale = Vector2(5, 5)
+size_flags_horizontal = 4
+size_flags_vertical = 8
+texture_normal = ExtResource("7_7gc2a")
+texture_hover = ExtResource("8_svdxp")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 595.0
+offset_top = 244.0
+offset_right = 1315.0
+offset_bottom = 800.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite" type="Area2D" parent="MarginContainer"]
+position = Vector2(328, 180)
+scale = Vector2(10, 10)
+metadata/_edit_group_ = true
+
+[node name="Casco" type="AnimatedSprite2D" parent="MarginContainer/Sprite"]
+sprite_frames = SubResource("SpriteFrames_kcasi")
+animation = &"casco 1"
+
+[node name="Sonar" type="AnimatedSprite2D" parent="MarginContainer/Sprite"]
+position = Vector2(0, 1.01725e-05)
+sprite_frames = SubResource("SpriteFrames_37ou7")
+animation = &"Sonar 1"
+
+[node name="Arma1" parent="MarginContainer/Sprite" instance=ExtResource("12_0rwp4")]
+position = Vector2(7, 7)
+
+[node name="TurbinaV1" parent="MarginContainer/Sprite" instance=ExtResource("13_8r24x")]
+position = Vector2(-11, -3)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MarginContainer"]
+visible = false
+position = Vector2(211, 151)
+scale = Vector2(15, 15)
+sprite_frames = SubResource("SpriteFrames_ji3m5")
+animation = &"Gen-EricV1"
+
+[connection signal="pressed" from="Left" to="." method="_on_left_pressed"]
+[connection signal="pressed" from="Right" to="." method="_on_right_pressed"]
+[connection signal="pressed" from="Voltar" to="." method="_on_voltar_pressed"]

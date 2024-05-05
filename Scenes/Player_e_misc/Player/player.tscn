@@ -160,22 +160,24 @@ disabled = true
 
 [node name="Colisão Gen-EricV2" type="CollisionPolygon2D" parent="."]
 visible = false
-position = Vector2(-12, 0)
-polygon = PackedVector2Array(-6, 10, -6, 30, -26, 43, -26, 66, 26, 66, 26, 34, 63, 34, 82, 14, 74, 2, 62, 2)
+position = Vector2(0, 16)
+polygon = PackedVector2Array(-6, -2, -6, 30, -26, 43, -26, 66, 26, 66, 26, 34, 63, 34, 82, 14, 74, 2, 57, 2, 58, -2)
 disabled = true
 
 [node name="Colisão Peacemaker" type="CollisionPolygon2D" parent="."]
 visible = false
-position = Vector2(-12, 0)
-polygon = PackedVector2Array(-18, 46, -2, 46, -2, 42, 2, 42, 2, 34, 70, 34, 70, 14, -18, 14)
+position = Vector2(12, -4)
+polygon = PackedVector2Array(-18, 46, -2, 46, -2, 42, 2, 42, 2, 34, 70, 34, 70, 14, 38, 6, -18, 14)
 disabled = true
 
 [node name="Colisão Imperium" type="CollisionPolygon2D" parent="."]
 visible = false
-polygon = PackedVector2Array(-30, 58, -10, 58, -10, 34, 6, 50, 22, 50, 34, 34, 58, 34, 58, 10, -22, 10, -22, 22, -30, 22)
+position = Vector2(16, 4)
+polygon = PackedVector2Array(-30, 58, -10, 58, -10, 34, 6, 50, 22, 50, 34, 34, 58, 34, 58, 10, 34, -2, -22, 22, -30, 22)
 disabled = true
 
 [node name="Colisão turbina 1" type="CollisionPolygon2D" parent="."]
+visible = false
 position = Vector2(-45, -15)
 scale = Vector2(4.09669, 4.09669)
 polygon = PackedVector2Array(-5.1261, 6.10249, -3.1733, 6.10249, -3.17329, 7.07888, 1.70869, 7.07888, 1.70869, 6.10249, 2.68509, 6.10249, 4.63788, -5.61429, 1.70869, -6.59068, -3.17329, -6.59068, -5.1261, -5.61429)
@@ -186,7 +188,6 @@ collision_layer = 2
 collision_mask = 5
 
 [node name="Colisão arma" type="CollisionPolygon2D" parent="Area2D"]
-visible = false
 position = Vector2(25.6217, 25.9091)
 scale = Vector2(3.98686, 3.98686)
 polygon = PackedVector2Array(-5.9249, 3.03269, 4.10806, 3.03269, 4.10806, 5.03928, 9.12454, 5.03928, 9.12454, -5.99697, 6.11465, -5.99697, -8, -4, -7.93149, -0.980492, -5.9249, 0.0228043)
@@ -209,17 +210,18 @@ polygon = PackedVector2Array(-5.9249, 3.03269, 4.10806, 3.03269, 4.10806, 5.0392
 disabled = true
 
 [node name="Colisão Gen-EricV2" type="CollisionPolygon2D" parent="Area2D"]
-position = Vector2(-12, 0)
-polygon = PackedVector2Array(-6, 10, -6, 30, -26, 43, -26, 66, 26, 66, 26, 34, 63, 34, 82, 14, 74, 2, 62, 2)
+position = Vector2(0, 16)
+polygon = PackedVector2Array(-6, -2, -6, 30, -26, 43, -26, 66, 26, 66, 26, 34, 63, 34, 82, 14, 74, 2, 57, 2, 58, -2)
 disabled = true
 
 [node name="Colisão Peacemaker" type="CollisionPolygon2D" parent="Area2D"]
-position = Vector2(-12, 0)
-polygon = PackedVector2Array(-18, 46, -2, 46, -2, 42, 2, 42, 2, 34, 70, 34, 70, 14, -18, 14)
+position = Vector2(12, -4)
+polygon = PackedVector2Array(-18, 46, -2, 46, -2, 42, 2, 42, 2, 34, 70, 34, 70, 14, 38, 6, -18, 14)
 disabled = true
 
 [node name="Colisão Imperium" type="CollisionPolygon2D" parent="Area2D"]
-polygon = PackedVector2Array(-30, 58, -10, 58, -10, 34, 6, 50, 22, 50, 34, 34, 58, 34, 58, 10, -22, 10, -22, 22, -30, 22)
+position = Vector2(16, 4)
+polygon = PackedVector2Array(-30, 58, -10, 58, -10, 34, 6, 50, 22, 50, 34, 34, 58, 34, 58, 10, 34, -2, -22, 22, -30, 22)
 disabled = true
 
 [connection signal="timeout" from="Energy timer" to="." method="_on_energy_timer_timeout"]

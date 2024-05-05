@@ -98,20 +98,20 @@ animation = &"Arma 1 v1"
 
 [node name="Sprites 2" type="AnimatedSprite2D" parent="."]
 visible = false
-position = Vector2(-3, 0)
+position = Vector2(0, 4)
 sprite_frames = SubResource("SpriteFrames_4j4mm")
 animation = &"Peace"
 autoplay = "Peace"
 
 [node name="Sprites 3" type="AnimatedSprite2D" parent="."]
 visible = false
-position = Vector2(-3, 0)
+position = Vector2(3, -1)
 sprite_frames = SubResource("SpriteFrames_nu7a3")
 animation = &"Peacemaker"
 
 [node name="Sprites 4" type="AnimatedSprite2D" parent="."]
 visible = false
-position = Vector2(-3, 0)
+position = Vector2(1, 1)
 sprite_frames = SubResource("SpriteFrames_bk5l2")
 animation = &"Imperium"
 autoplay = "Imperium"
