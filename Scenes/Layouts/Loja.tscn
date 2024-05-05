@@ -95,6 +95,8 @@ animations = [{
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_85ebf")
+metadata/_edit_horizontal_guides_ = [897.0]
+metadata/_edit_vertical_guides_ = [960.0]
 
 [node name="TileMap" type="TileMap" parent="."]
 z_index = -1
@@ -127,10 +129,10 @@ texture_hover = ExtResource("3_t4qn5")
 
 [node name="Voltar" type="TextureButton" parent="."]
 layout_mode = 2
-offset_left = 892.0
-offset_top = 859.0
-offset_right = 924.0
-offset_bottom = 879.0
+offset_left = 880.0
+offset_top = 897.0
+offset_right = 912.0
+offset_bottom = 911.0
 scale = Vector2(5, 5)
 size_flags_horizontal = 4
 size_flags_vertical = 8
@@ -152,7 +154,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Sprite" type="Area2D" parent="MarginContainer"]
-position = Vector2(328, 180)
+position = Vector2(345, 180)
 scale = Vector2(10, 10)
 metadata/_edit_group_ = true
 
