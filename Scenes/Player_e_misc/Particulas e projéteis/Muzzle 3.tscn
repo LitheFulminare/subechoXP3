@@ -1,0 +1,84 @@
+[gd_scene load_steps=13 format=3 uid="uid://bhgtrma65y0qm"]
+
+[ext_resource type="Script" path="res://Scenes/Player_e_misc/Particulas e projéteis/Muzzle 3.gd" id="1_mgcle"]
+[ext_resource type="Texture2D" uid="uid://2qbfuqcww15t" path="res://sprites/Projeteis e partículas/muzzle_escopeta.png" id="2_xd5bx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ifkyp"]
+atlas = ExtResource("2_xd5bx")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4l7iy"]
+atlas = ExtResource("2_xd5bx")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6fr71"]
+atlas = ExtResource("2_xd5bx")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4luej"]
+atlas = ExtResource("2_xd5bx")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqunn"]
+atlas = ExtResource("2_xd5bx")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ngyp"]
+atlas = ExtResource("2_xd5bx")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0qxm"]
+atlas = ExtResource("2_xd5bx")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u5qnx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ifkyp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4l7iy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6fr71")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4luej")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hqunn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ngyp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0qxm")
+}],
+"loop": false,
+"name": &"default",
+"speed": 13.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_jdehp"]
+colors = PackedColorArray(1, 0.515625, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8iodw"]
+gradient = SubResource("Gradient_jdehp")
+fill = 1
+fill_from = Vector2(0.504587, 0.5)
+fill_to = Vector2(0.133028, 0.137615)
+
+[node name="Muzzle" type="Node2D"]
+scale = Vector2(4, 4)
+script = ExtResource("1_mgcle")
+
+[node name="animacao" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_u5qnx")
+frame = 6
+frame_progress = 1.0
+
+[node name="luz" type="PointLight2D" parent="."]
+position = Vector2(0.25, 0.25)
+scale = Vector2(1.14063, 1.14063)
+texture = SubResource("GradientTexture2D_8iodw")

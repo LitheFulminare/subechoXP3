@@ -7,6 +7,7 @@ func _ready():
 	
 	if player_vars.current_weapon == null:  # se nenhuma arma tiver sido selecionada antes,
 		weapon_preview = 1                  # ele vai escolher a arma 1
+		weapon_selected = 1                
 		player_vars.current_weapon = 1
 	else:
 		weapon_preview = player_vars.current_weapon
@@ -40,6 +41,15 @@ func switch_weapon():
 		$"MarginContainer/Sprite/Arma1/Sprites 4".visible = true
 
 
-func _on_voltar_pressed():
+func _on_voltar_pressed(): # mudar para weapon selected
+	if weapon_preview == 1:
+		player_vars.weapon_type = "Gen-EricV1"
+	elif weapon_preview == 2:
+		player_vars.weapon_type = "Gen-EricV2"
+	elif weapon_preview == 3:
+		player_vars.weapon_type = "Peacemaker"
+	elif weapon_preview == 4:
+		player_vars.weapon_type = "Imperium"
+
 	player_vars.current_weapon = weapon_preview # trocar isso pela arma selecionada
 	Global.goto_scene("res://Scenes/Layouts/principal.tscn")

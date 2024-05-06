@@ -140,11 +140,14 @@ texture_scale = 0.25
 [node name="Spawn Tiro 1" type="Marker2D" parent="."]
 position = Vector2(65, 24)
 
+[node name="Spawn Tiro 2" type="Marker2D" parent="."]
+position = Vector2(88, 35)
+
 [node name="Muzz1Local" type="Marker2D" parent="."]
 position = Vector2(65, 24)
 
 [node name="Muzz2Local" type="Marker2D" parent="."]
-position = Vector2(118, 17)
+position = Vector2(126, 37)
 
 [node name="Colisão Geral" type="CollisionPolygon2D" parent="."]
 position = Vector2(-41, 5)
