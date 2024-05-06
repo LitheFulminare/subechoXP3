@@ -6,10 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://bl063bt71htkf" path="res://sprites/UI/Botão esquerdo default.png" id="5_jlm4b"]
 [ext_resource type="Texture2D" uid="uid://c02fwc7nnfe30" path="res://sprites/UI/Botão esquerdo hover.png" id="6_a3n4v"]
 [ext_resource type="Texture2D" uid="uid://d004737er7nqm" path="res://sprites/Misc/Fundo Menu.png" id="6_py2c1"]
-[ext_resource type="Texture2D" uid="uid://clmblbqskq5bj" path="res://sprites/UI/menu_sair_normal.png" id="7_7gc2a"]
+[ext_resource type="Texture2D" uid="uid://do1dywod4baf2" path="res://sprites/UI/voltar normal.png" id="7_sk3sh"]
 [ext_resource type="Texture2D" uid="uid://cocbp3s5ii87t" path="res://sprites/player/Arma/arma1.png" id="7_to2j0"]
 [ext_resource type="Texture2D" uid="uid://bnlpirhmgpg26" path="res://sprites/player/Arma/arma_rapida_base1.png" id="8_47ys0"]
-[ext_resource type="Texture2D" uid="uid://cfxkmgiylsfr1" path="res://sprites/UI/menu_sair_pressed.png" id="8_svdxp"]
+[ext_resource type="Texture2D" uid="uid://8j8owedgc630" path="res://sprites/UI/voltar hover.png" id="8_vqknp"]
 [ext_resource type="Texture2D" uid="uid://fcjwgbvtu06l" path="res://sprites/player/Casco/Casco1.png" id="9_qcp8d"]
 [ext_resource type="Texture2D" uid="uid://vjb3rydk6640" path="res://sprites/player/Sonar/sonar1.png" id="10_sng4s"]
 [ext_resource type="Texture2D" uid="uid://cvae20cgax3sk" path="res://sprites/player/Sonar/sonar1_2.png" id="11_1rwnm"]
@@ -129,15 +129,15 @@ texture_hover = ExtResource("3_t4qn5")
 
 [node name="Voltar" type="TextureButton" parent="."]
 layout_mode = 2
-offset_left = 880.0
+offset_left = 850.0
 offset_top = 897.0
-offset_right = 912.0
+offset_right = 894.0
 offset_bottom = 911.0
 scale = Vector2(5, 5)
 size_flags_horizontal = 4
 size_flags_vertical = 8
-texture_normal = ExtResource("7_7gc2a")
-texture_hover = ExtResource("8_svdxp")
+texture_normal = ExtResource("7_sk3sh")
+texture_hover = ExtResource("8_vqknp")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
