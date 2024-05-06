@@ -109,7 +109,7 @@ func _ready():
 		$"Area2D/Colisão Peacemaker".disabled = false
 		$"Sprite/Arma1/Sprites 3".visible = true
 		$"Tiro 1 cooldown".wait_time = 1
-		gun_Position = $"Spawn Tiro 1".global_position
+		gun_Position = $"Spawn Tiro 3".global_position
 		
 	if weapon_type == "Imperium":
 		tiro1Path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Tiro 1.tscn")
@@ -117,7 +117,6 @@ func _ready():
 		$"Area2D/Colisão Imperium".disabled = false
 		$"Sprite/Arma1/Sprites 4".visible = true
 		$"Tiro 1 cooldown".wait_time = 0.2
-	#pass
 
 @warning_ignore("unused_parameter")
 func _process(delta):
@@ -178,12 +177,6 @@ func Sonar():
 func tiro1():
 	if not t1_cd && life > 0 && energy > 0:
 		targetPosition = get_global_mouse_position()
-		#var gun_Position = $"Spawn Tiro 1".global_position
-		
-		#if arma1_tipo == 1:
-			#gun_Position = $"Spawn Tiro 1".global_position
-		#elif arma1_tipo == 2:
-			#gun_Position = $"Spawn Tiro 1".global_position
 			
 		shootDirection = (targetPosition - gun_Position).normalized()
 		
@@ -199,19 +192,11 @@ func tiro1():
 		muzz.anim()
 		# reduzir
 		if weapon_type == "Gen-EricV1": # arma lenta
-			#var muzz = muzz1Path.instantiate()
-			#get_parent().add_child(muzz)
-			#$"Spawn Tiro 1".add_child(muzz)
 			muzz.position = $Muzz1Local.global_position
-			#muzz.anim()
 		if weapon_type == "Gen-EricV2": # arma rapida
-			#var muzz = muzz1Path.instantiate()
-			#get_parent().add_child(muzz)
-			#$"Spawn Tiro 1".add_child(muzz)
-			muzz.position = $Muzz2Local.global_position
-			#muzz.anim()
+			muzz.position = $Muzz1Local2.global_position
 		if weapon_type == "Peacemaker":
-			muzz.position = $Muzz1Local.global_position
+			muzz.position = $Muzz1Local3.global_position
 		
 		t1_cd = true
 		$"Tiro 1 cooldown".start()

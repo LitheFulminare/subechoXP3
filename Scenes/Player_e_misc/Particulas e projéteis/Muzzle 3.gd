@@ -15,5 +15,5 @@ func anim():
 	var tween = create_tween()
 	tween.tween_property($luz, "scale", Vector2.ZERO, 1)
 	tween.parallel().tween_property($luz, "energy", 0, 1) 
-	await get_tree().create_timer(0.3846).timeout
+	await get_tree().create_timer(0.5384).timeout
 	queue_free()
