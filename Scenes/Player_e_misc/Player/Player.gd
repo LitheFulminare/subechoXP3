@@ -82,6 +82,9 @@ func player_movement(delta):
 			#$iFrames.start()
 
 func _ready():
+	# se nenhuma arma foi selecionada, ele pega a primeira
+	if weapon_type == "":
+		weapon_type = "Gen-EricV1"
 	
 	# checa qual o tipo de arma e carrega particulas, hitbox, etc
 	if weapon_type == "Gen-EricV1":
@@ -179,23 +182,25 @@ func tiro1():
 		targetPosition = get_global_mouse_position()
 			
 		shootDirection = (targetPosition - gun_Position).normalized()
-		
 		@warning_ignore("shadowed_variable")
 		var tiro1 = tiro1Path.instantiate()
 		tiro1.set_bullet(gun_Position, targetPosition)
 		tiro1.tipoTiro(weapon_type)
 		get_parent().add_child(tiro1)
-		tiro1.position = gun_Position
+		#tiro1.position = gun_Position
 		
 		var muzz = muzz1Path.instantiate()
 		get_parent().add_child(muzz)
 		muzz.anim()
 		# reduzir
 		if weapon_type == "Gen-EricV1": # arma lenta
+			tiro1.position = $"Spawn Tiro 1".global_position
 			muzz.position = $Muzz1Local.global_position
 		if weapon_type == "Gen-EricV2": # arma rapida
+			tiro1.position = $"Spawn Tiro 2".global_position
 			muzz.position = $Muzz1Local2.global_position
 		if weapon_type == "Peacemaker":
+			tiro1.position = $"Spawn Tiro 3".global_position
 			muzz.position = $Muzz1Local3.global_position
 		
 		t1_cd = true

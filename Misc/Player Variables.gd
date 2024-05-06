@@ -8,7 +8,9 @@ var weapon_type : String
 var current_life : float
 var current_energy : float
 var current_scrap : int
-var current_weapon
+var current_weapon = ""
+
+var preview : int
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
