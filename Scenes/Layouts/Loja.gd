@@ -11,14 +11,7 @@ func _ready():
 	else:
 		weapon_preview = player_vars.current_weapon
 		
-	if weapon_preview == 1:
-		$"MarginContainer/Sprite/Arma1/Sprites 1".visible = true
-	elif weapon_preview == 2:
-		$"MarginContainer/Sprite/Arma1/Sprites 2".visible = true
-	elif weapon_preview == 3:
-		$"MarginContainer/Sprite/Arma1/Sprites 3".visible = true
-	elif weapon_preview == 4:
-		$"MarginContainer/Sprite/Arma1/Sprites 4".visible = true
+	switch_weapon()
 
 
 func _on_right_pressed():
