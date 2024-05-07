@@ -129,13 +129,13 @@ metadata/_edit_use_anchors_ = true
 anchors_preset = 2
 anchor_top = 1.0
 anchor_right = 0.0
-offset_left = 3.0
-offset_top = -79.0
-offset_right = 3.0
-offset_bottom = -79.0
+offset_left = 14.0
+offset_top = -118.0
+offset_right = 14.0
+offset_bottom = -118.0
 grow_horizontal = 1
 grow_vertical = 0
-scale = Vector2(4.455, 4.455)
+scale = Vector2(5.7, 5.7)
 
 [node name="CanvasGroup" type="CanvasGroup" parent="."]
 
