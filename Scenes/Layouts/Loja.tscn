@@ -133,12 +133,11 @@ texture_normal = ExtResource("2_aujog")
 texture_hover = ExtResource("3_t4qn5")
 
 [node name="Selecionar" type="TextureButton" parent="."]
-visible = false
 layout_mode = 2
 offset_left = 800.0
-offset_top = 767.0
+offset_top = 772.0
 offset_right = 864.0
-offset_bottom = 779.0
+offset_bottom = 784.0
 scale = Vector2(5, 5)
 size_flags_horizontal = 4
 size_flags_vertical = 8
@@ -146,11 +145,12 @@ texture_normal = ExtResource("9_ae3l1")
 texture_hover = ExtResource("10_8u3bc")
 
 [node name="Comprar" type="TextureButton" parent="."]
+visible = false
 layout_mode = 2
 offset_left = 833.0
-offset_top = 767.0
+offset_top = 772.0
 offset_right = 884.0
-offset_bottom = 779.0
+offset_bottom = 784.0
 scale = Vector2(5, 5)
 size_flags_horizontal = 4
 size_flags_vertical = 8
@@ -160,9 +160,9 @@ texture_hover = ExtResource("10_3i1oq")
 [node name="Voltar" type="TextureButton" parent="."]
 layout_mode = 2
 offset_left = 850.0
-offset_top = 862.0
+offset_top = 857.0
 offset_right = 894.0
-offset_bottom = 876.0
+offset_bottom = 871.0
 scale = Vector2(5, 5)
 size_flags_horizontal = 4
 size_flags_vertical = 8
@@ -174,9 +174,9 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_right = 0.0
-offset_left = 1.0
+offset_left = 5.0
 offset_top = 956.0
-offset_right = 182.0
+offset_right = 186.0
 offset_bottom = 984.0
 grow_horizontal = 1
 grow_vertical = 0
