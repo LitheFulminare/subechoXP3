@@ -14,7 +14,7 @@ signal died_by_explosion
 var life = player_vars.max_life
 var energy = player_vars.max_energy
 var weapon_type = player_vars.weapon_type
-var scrap = 0
+var scrap : int
 var current_speed : float
 var invincible = false
 var sonar = false
@@ -83,6 +83,7 @@ func player_movement(delta):
 
 func _ready():
 	# se nenhuma arma foi selecionada, ele pega a primeira
+	scrap = player_vars.current_scrap
 	if weapon_type == "":
 		weapon_type = "Gen-EricV1"
 	

@@ -236,8 +236,26 @@ position = Vector2(576, 1452)
 [node name="Alga3" parent="CanvasGroup/Plantas" instance=ExtResource("13_onmmr")]
 position = Vector2(642, 1452)
 
+[node name="Alga4" parent="CanvasGroup/Plantas" instance=ExtResource("13_onmmr")]
+position = Vector2(426, 684)
+
+[node name="Alga5" parent="CanvasGroup/Plantas" instance=ExtResource("13_onmmr")]
+position = Vector2(1255, 396)
+
+[node name="Alga6" parent="CanvasGroup/Plantas" instance=ExtResource("13_onmmr")]
+position = Vector2(1189, 396)
+
 [node name="Coral" parent="CanvasGroup/Plantas" instance=ExtResource("14_qs6bb")]
-position = Vector2(882, 1440)
+position = Vector2(1320, 1488)
+
+[node name="Coral2" parent="CanvasGroup/Plantas" instance=ExtResource("14_qs6bb")]
+position = Vector2(1392, 1488)
+
+[node name="Coral3" parent="CanvasGroup/Plantas" instance=ExtResource("14_qs6bb")]
+position = Vector2(1795, 192)
+
+[node name="Coral4" parent="CanvasGroup/Plantas" instance=ExtResource("14_qs6bb")]
+position = Vector2(1723, 192)
 
 [node name="BG" type="NinePatchRect" parent="CanvasGroup"]
 z_index = -1
