@@ -180,46 +180,34 @@ func Sonar():
 func tiro1():
 	if not t1_cd && life > 0 && energy > 0:
 		
-		gun_Position = $"Spawn Tiro 1".global_position
 		targetPosition = get_global_mouse_position()
-		shootDirection = (targetPosition - gun_Position).normalized()
-		#@warning_ignore("shadowed_variable")
 		var tiro1 = tiro1Path.instantiate()
+		
+		var muzz = muzz1Path.instantiate()
+		get_parent().add_child(muzz)
+		muzz.anim()
+		
+		if weapon_type == "Gen-EricV1":
+			gun_Position = $"Spawn Tiro 1".global_position
+			tiro1.position = $"Spawn Tiro 1".global_position
+			muzz.position = $Muzz1Local.global_position
+			
+		if weapon_type == "Gen-EricV2":
+			gun_Position = $"Spawn Tiro 2".global_position
+			tiro1.position = $"Spawn Tiro 2".global_position
+			muzz.position = $Muzz1Local2.global_position
+			
+		if weapon_type == "Peacemaker":
+			gun_Position = $"Spawn Tiro 3".global_position
+			tiro1.position = $"Spawn Tiro 3".global_position
+			muzz.position = $Muzz1Local3.global_position
+
+		shootDirection = (targetPosition - gun_Position).normalized()
 		tiro1.set_bullet(gun_Position, targetPosition)
 		tiro1.tipoTiro(weapon_type)
 		get_parent().add_child(tiro1)
 		tiro1.position = gun_Position
 		
-		var muzz = muzz1Path.instantiate()
-		get_parent().add_child(muzz)
-		muzz.anim()
-		# reduzir
-		if weapon_type == "Gen-EricV1": # arma lenta
-			#gun_Position = $"Spawn Tiro 1".global_position
-			#shootDirection = (targetPosition - gun_Position).normalized()
-			#@warning_ignore("shadowed_variable")
-			#var tiro1 = tiro1Path.instantiate()
-			#tiro1.set_bullet(gun_Position, targetPosition)
-			tiro1.position = $"Spawn Tiro 1".global_position
-			muzz.position = $Muzz1Local.global_position
-			
-		#if weapon_type == "Gen-EricV2": # arma rapida
-			#shootDirection = (targetPosition - gun_Position).normalized()
-			#@warning_ignore("shadowed_variable")
-			#var tiro1 = tiro1Path.instantiate()
-			#tiro1.set_bullet(gun_Position, targetPosition)
-			#tiro1.position = $"Spawn Tiro 2".global_position
-			#muzz.position = $Muzz1Local2.global_position
-		#if weapon_type == "Peacemaker":
-			#shootDirection = (targetPosition - gun_Position).normalized()
-			#@warning_ignore("shadowed_variable")
-			#var tiro1 = tiro1Path.instantiate()
-			#tiro1.set_bullet(gun_Position, targetPosition)
-			#tiro1.position = $"Spawn Tiro 3".global_position
-			#muzz.position = $Muzz1Local3.global_position
-			
-		#tiro1.tipoTiro(weapon_type)
-		#get_parent().add_child(tiro1)
 		t1_cd = true
 		$"Tiro 1 cooldown".start()
 
