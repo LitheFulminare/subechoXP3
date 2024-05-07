@@ -1,10 +1,11 @@
-[gd_scene load_steps=32 format=3 uid="uid://cpg157q5cbli7"]
+[gd_scene load_steps=33 format=3 uid="uid://cpg157q5cbli7"]
 
 [ext_resource type="Script" path="res://Scenes/Layouts/Main 1.gd" id="1_rloub"]
 [ext_resource type="PackedScene" uid="uid://e4g3db01cv23" path="res://Scenes/Player_e_misc/Player/player.tscn" id="1_tgyws"]
 [ext_resource type="PackedScene" uid="uid://bijwkls1lldy4" path="res://Scenes/Props/Misc/Pedra.tscn" id="2_k77am"]
 [ext_resource type="Texture2D" uid="uid://bte6svm5o0n4t" path="res://sprites/Props/Rock.png" id="3_fihjn"]
-[ext_resource type="PackedScene" uid="uid://d2tg02cwm2lik" path="res://Scenes/Player_e_misc/UI vida e energia.tscn" id="3_shoqp"]
+[ext_resource type="PackedScene" uid="uid://d2tg02cwm2lik" path="res://Scenes/Player_e_misc/UI/UI vida e energia.tscn" id="3_shoqp"]
+[ext_resource type="PackedScene" uid="uid://8q3v8osdokef" path="res://Scenes/Player_e_misc/UI/UI scrap.tscn" id="4_btpcf"]
 [ext_resource type="Texture2D" uid="uid://da5o8qogsuwxq" path="res://sprites/Props/sheet pedra.png" id="5_1vk6g"]
 [ext_resource type="PackedScene" uid="uid://dfd261wrcyq1c" path="res://Scenes/Props/Lixo/Garrafa.tscn" id="6_gca85"]
 [ext_resource type="PackedScene" uid="uid://busy4y73si6ky" path="res://Scenes/Props/Lixo/Barril.tscn" id="7_cegly"]
@@ -123,6 +124,18 @@ offset_right = -1917.0
 offset_bottom = -1080.0
 scale = Vector2(4.455, 4.455)
 metadata/_edit_use_anchors_ = true
+
+[node name="UI Scrap" parent="UI" instance=ExtResource("4_btpcf")]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_right = 0.0
+offset_left = 3.0
+offset_top = -79.0
+offset_right = 3.0
+offset_bottom = -79.0
+grow_horizontal = 1
+grow_vertical = 0
+scale = Vector2(4.455, 4.455)
 
 [node name="CanvasGroup" type="CanvasGroup" parent="."]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://nw80kvmtl88d"]
 
-[ext_resource type="PackedScene" uid="uid://d2tg02cwm2lik" path="res://Scenes/Player_e_misc/UI vida e energia.tscn" id="1_63vxx"]
+[ext_resource type="PackedScene" uid="uid://d2tg02cwm2lik" path="res://Scenes/Player_e_misc/UI/UI vida e energia.tscn" id="1_63vxx"]
 [ext_resource type="PackedScene" uid="uid://e4g3db01cv23" path="res://Scenes/Player_e_misc/Player/player.tscn" id="1_f2gr2"]
 [ext_resource type="PackedScene" uid="uid://bj18jjcb7eo50" path="res://Scenes/Inimigos/inimigo.tscn" id="2_sgn0r"]
 [ext_resource type="Texture2D" uid="uid://bte6svm5o0n4t" path="res://sprites/Props/Rock.png" id="3_gx4tq"]

@@ -3,7 +3,13 @@ extends Control
 var weapon_preview : int # a arma que o jogador vê
 #var weapon_selected : int # a arma que o jogador tem selecionado
 
+var Peacemaker = false
+var Imperium = false
+var Killerbee = false
+
 func _ready():
+	
+	$"UI Scrap/Texto scrap".text = str(player_vars.current_scrap)
 	
 	if player_vars.weapon_type == "":  # se nenhuma arma tiver sido selecionada antes,
 		weapon_preview = 1             # ele vai escolher a arma 1
@@ -18,7 +24,7 @@ func _ready():
 
 
 func _on_right_pressed():
-	if weapon_preview < 4:
+	if weapon_preview < 4: # weapon_preview deve ser menor que o número de armas
 		# esconde a sprite atual, muda a var do preview e chama a função que relaliza a troca de arma
 		$MarginContainer/Sprite/Arma1.get_child(weapon_preview-1).visible = false
 		weapon_preview += 1

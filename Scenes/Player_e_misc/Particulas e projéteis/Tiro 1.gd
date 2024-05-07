@@ -8,7 +8,7 @@ var direction = Vector2.ZERO
 func tipoTiro(weapon_type):
 	var type = weapon_type
 	if type == "Gen-EricV1":
-		dano = 3
+		dano = 4
 	if type == "Gen-EricV2":
 		dano = 1
 

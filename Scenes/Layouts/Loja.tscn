@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bxl8bwuwmncwy"]
+[gd_scene load_steps=27 format=3 uid="uid://bxl8bwuwmncwy"]
 
 [ext_resource type="Script" path="res://Scenes/Layouts/Loja.gd" id="1_85ebf"]
 [ext_resource type="Texture2D" uid="uid://dk53duvqcol4h" path="res://sprites/UI/Botão direito default.png" id="2_aujog"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://cvae20cgax3sk" path="res://sprites/player/Sonar/sonar1_2.png" id="11_1rwnm"]
 [ext_resource type="PackedScene" uid="uid://drvd8bhk4plho" path="res://Scenes/Player_e_misc/Player/Arma 1/Arma 1.tscn" id="12_0rwp4"]
 [ext_resource type="PackedScene" uid="uid://r2uor4w348v2" path="res://Scenes/Player_e_misc/Player/Turbina/Turbina v1.tscn" id="13_8r24x"]
+[ext_resource type="PackedScene" uid="uid://8q3v8osdokef" path="res://Scenes/Player_e_misc/UI/UI scrap.tscn" id="13_iqerh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yh4qi"]
 texture = ExtResource("6_py2c1")
@@ -132,11 +133,12 @@ texture_normal = ExtResource("2_aujog")
 texture_hover = ExtResource("3_t4qn5")
 
 [node name="Selecionar" type="TextureButton" parent="."]
+visible = false
 layout_mode = 2
 offset_left = 800.0
-offset_top = 817.0
+offset_top = 767.0
 offset_right = 864.0
-offset_bottom = 829.0
+offset_bottom = 779.0
 scale = Vector2(5, 5)
 size_flags_horizontal = 4
 size_flags_vertical = 8
@@ -144,12 +146,11 @@ texture_normal = ExtResource("9_ae3l1")
 texture_hover = ExtResource("10_8u3bc")
 
 [node name="Comprar" type="TextureButton" parent="."]
-visible = false
 layout_mode = 2
 offset_left = 833.0
-offset_top = 817.0
+offset_top = 767.0
 offset_right = 884.0
-offset_bottom = 829.0
+offset_bottom = 779.0
 scale = Vector2(5, 5)
 size_flags_horizontal = 4
 size_flags_vertical = 8
@@ -159,14 +160,27 @@ texture_hover = ExtResource("10_3i1oq")
 [node name="Voltar" type="TextureButton" parent="."]
 layout_mode = 2
 offset_left = 850.0
-offset_top = 897.0
+offset_top = 862.0
 offset_right = 894.0
-offset_bottom = 911.0
+offset_bottom = 876.0
 scale = Vector2(5, 5)
 size_flags_horizontal = 4
 size_flags_vertical = 8
 texture_normal = ExtResource("7_sk3sh")
 texture_hover = ExtResource("8_vqknp")
+
+[node name="UI Scrap" parent="." instance=ExtResource("13_iqerh")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_right = 0.0
+offset_left = 1.0
+offset_top = 956.0
+offset_right = 182.0
+offset_bottom = 984.0
+grow_horizontal = 1
+grow_vertical = 0
+scale = Vector2(6.21, 6.21)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1

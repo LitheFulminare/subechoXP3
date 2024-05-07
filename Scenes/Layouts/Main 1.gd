@@ -29,7 +29,9 @@ func _process(delta):
 	
 	$"UI/UI vida e energia/Texto Inimigos Mortos".text = str(inimigos_mortos) + "/5"
 	
-	$"UI/UI vida e energia/Texto scrap".text = str($CanvasGroup/Player.scrap)
+	#if $CanvasGroup/Player.scrap > 0:
+	$"UI/UI Scrap/Texto scrap".text = str($CanvasGroup/Player.scrap)
+	#else: $"UI/UI Scrap".text = "0"
 	
 	
 	if Input.is_action_pressed("restart"):

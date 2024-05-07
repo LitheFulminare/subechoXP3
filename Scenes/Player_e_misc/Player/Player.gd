@@ -103,7 +103,7 @@ func _ready():
 		$"Colisão Gen-EricV2".disabled = false
 		$"Area2D/Colisão Gen-EricV2".disabled = false
 		$"Sprite/Arma1/Sprites 2".visible = true
-		$"Tiro 1 cooldown".wait_time = 0.3
+		$"Tiro 1 cooldown".wait_time = 0.35
 		gun_Position = $"Spawn Tiro 2".global_position
 		
 	if weapon_type == "Peacemaker":
