@@ -5,12 +5,13 @@ Precisa fazer:
 	colocar mais props e randomizar
 	--coletar lixo--
 	lixo brilha quando chega perto/particula de coletar lixo
-	sprite do lixo na UI
+	--sprite do lixo na UI--
 	implementar armas e muzzles
 	loja entre os levels
 	loja de arma no menu
 	perks no final de cada fase
-	desenhar/importar muzzle da PM
+	mostrar status no final de cada fase
+	--desenhar/importar muzzle da PM--
 	
 	
 	armas 
