@@ -13,7 +13,7 @@ signal died_by_explosion
 
 var life = player_vars.max_life
 var energy = player_vars.max_energy
-var weapon_type = player_vars.weapon_type #trocar para weapon_type
+var weapon_type = player_vars.weapon_type
 var scrap = 0
 var current_speed : float
 var invincible = false
@@ -317,7 +317,6 @@ func take_damage(type):
 		dano_tomado = 10
 	
 	life -= dano_tomado
-	#life = int(life)
 	velocity = Vector2.ZERO
 	invincible = true
 	damage_effect()
