@@ -126,13 +126,14 @@ func _ready():
 
 @warning_ignore("unused_parameter")
 func _process(delta):
+	#print(get_local_mouse_position())
 	player_vars.current_life = life
 	player_vars.current_energy = energy
 	player_vars.current_scrap = scrap
 
 	current_speed = abs(velocity.x) + abs(velocity.y)
 	
-	$"Precision Limit".look_at(get_global_mouse_position())
+	#$"Precision Limit".look_at(get_global_mouse_position())
 	
 	if energy <= 0:
 		energy = 0
@@ -184,6 +185,11 @@ func Sonar():
 		
 func tiro1():
 	if not t1_cd && life > 0 && energy > 0:
+		
+		var aim_limit = get_local_mouse_position().clamp(Vector2(-300,-300),Vector2(300,300))
+		
+		print("imprecisão x: "  + str(aim_limit.x))
+		print("imprecisão y: "  + str(aim_limit.y))
 		
 		targetPosition = get_global_mouse_position()
 		
