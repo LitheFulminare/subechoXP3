@@ -126,7 +126,9 @@ func _ready():
 
 @warning_ignore("unused_parameter")
 func _process(delta):
-	#print(get_local_mouse_position())
+	
+	$Aim.position = get_local_mouse_position().clamp(Vector2(-300,-300),Vector2(300,300))
+	
 	player_vars.current_life = life
 	player_vars.current_energy = energy
 	player_vars.current_scrap = scrap
@@ -191,7 +193,7 @@ func tiro1():
 		print("imprecisão x: "  + str(aim_limit.x))
 		print("imprecisão y: "  + str(aim_limit.y))
 		
-		targetPosition = get_global_mouse_position()
+		targetPosition = $Aim.global_position
 		
 		
 		var shots = 1

@@ -130,6 +130,12 @@ shadow_filter_smooth = 1.9
 texture = SubResource("GradientTexture2D_s5eh0")
 texture_scale = 0.25
 
+[node name="Aim" type="Marker2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Aim"]
+offset_right = 40.0
+offset_bottom = 40.0
+
 [node name="Spawn Tiro 1" type="Marker2D" parent="."]
 position = Vector2(65, 24)
 

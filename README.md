@@ -19,6 +19,8 @@ Precisa fazer:
 	mostrar status de cada arma
 	perks no final de cada fase
 	mostrar status no final de cada run
+	
+	player.gd ver o $Aim para arrumar a mira das armas e da escopeta
 
 Já feito:
 	--coletar lixo--
