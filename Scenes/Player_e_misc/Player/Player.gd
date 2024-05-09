@@ -7,7 +7,7 @@ signal died_by_explosion
 @export var speed = 500
 @export var acceleration = 4500
 @export var friction = 400
-@export var arma1_tipo = 1
+#@export var arma1_tipo = 1
 #@export var life = 100
 #@export var energy = 100
 
@@ -20,7 +20,7 @@ var invincible = false
 var sonar = false
 var input = Vector2.ZERO
 var t1_cd = false
-var mudarA1_cd = false
+#var mudarA1_cd = false
 var on_collision_with_enemy = false
 
 var targetPosition: Vector2
@@ -97,7 +97,7 @@ func _ready():
 		$"Tiro 1 cooldown".wait_time = 0.8
 		#gun_Position = $"Spawn Tiro 1".global_position
 		
-	if weapon_type == "Gen-EricV2":
+	elif weapon_type == "Gen-EricV2":
 		tiro1Path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Tiro 2.tscn") 
 		muzz1Path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Muzzle 2.tscn")
 		$"Colisão Gen-EricV2".disabled = false
@@ -106,7 +106,7 @@ func _ready():
 		$"Tiro 1 cooldown".wait_time = 0.35
 		gun_Position = $"Spawn Tiro 2".global_position
 		
-	if weapon_type == "Peacemaker":
+	elif weapon_type == "Peacemaker":
 		tiro1Path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Tiro 1.tscn") 
 		muzz1Path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Muzzle 3.tscn")
 		$"Colisão Peacemaker".disabled = false
@@ -115,7 +115,7 @@ func _ready():
 		$"Tiro 1 cooldown".wait_time = 1
 		gun_Position = $"Spawn Tiro 3".global_position
 		
-	if weapon_type == "Imperium":
+	elif weapon_type == "Imperium":
 		tiro1Path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Tiro 1.tscn")
 		$"Colisão Imperium".disabled = false
 		$"Area2D/Colisão Imperium".disabled = false
