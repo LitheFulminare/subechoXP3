@@ -15,6 +15,7 @@ var life = player_vars.max_life
 var energy = player_vars.max_energy
 var weapon_type = player_vars.weapon_type
 var scrap : int
+var spread : int
 var current_speed : float
 var invincible = false
 var sonar = false
@@ -114,6 +115,7 @@ func _ready():
 		$"Sprite/Arma1/Sprites 3".visible = true
 		$"Tiro 1 cooldown".wait_time = 1
 		gun_Position = $"Spawn Tiro 3".global_position
+		spread = 70
 		
 	elif weapon_type == "Imperium":
 		tiro1Path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Tiro 1.tscn")
@@ -129,6 +131,8 @@ func _process(delta):
 	player_vars.current_scrap = scrap
 
 	current_speed = abs(velocity.x) + abs(velocity.y)
+	
+	$"Precision Limit".look_at(get_global_mouse_position())
 	
 	if energy <= 0:
 		energy = 0
@@ -208,14 +212,11 @@ func tiro1():
 			muzz.position = $Muzz1Local3.global_position
 			shots = 3
 		
-		#if weapon_type == "Peacemaker":
-			#pass
-		
 		for i in shots:
 			
 			tiro1 = tiro1Path.instantiate()
 			shootDirection = (targetPosition - gun_Position).normalized()
-			targetPosition += Vector2(randi_range(-50,50),randi_range(-50,50))
+			targetPosition += Vector2(randi_range(-spread,spread),randi_range(-spread,spread))
 			tiro1.set_bullet(gun_Position, targetPosition)
 			
 			

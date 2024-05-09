@@ -11,13 +11,17 @@ func tipoTiro(weapon_type):
 		dano = 4
 	if type == "Gen-EricV2":
 		dano = 1
+	if type == "Peacemaker":
+		dano = 2
 
 func set_bullet(position, targetPosition):
 	global_position = position
 	direction = (targetPosition - position).normalized()
 	rotation_degrees = rad_to_deg(position.angle_to_point(targetPosition))
 	
+	
 func _physics_process(delta):
+
 	position += direction * speed * delta
 
 func _on_area_2d_body_entered(body):
