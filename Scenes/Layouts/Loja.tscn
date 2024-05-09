@@ -133,6 +133,7 @@ texture_normal = ExtResource("2_aujog")
 texture_hover = ExtResource("3_t4qn5")
 
 [node name="Selecionar" type="TextureButton" parent="."]
+visible = false
 layout_mode = 2
 offset_left = 800.0
 offset_top = 772.0
@@ -145,7 +146,6 @@ texture_normal = ExtResource("9_ae3l1")
 texture_hover = ExtResource("10_8u3bc")
 
 [node name="Comprar" type="TextureButton" parent="."]
-visible = false
 layout_mode = 2
 offset_left = 833.0
 offset_top = 772.0
@@ -192,7 +192,7 @@ anchor_bottom = 0.5
 offset_left = 595.0
 offset_top = 244.0
 offset_right = 1315.0
-offset_bottom = 800.0
+offset_bottom = 765.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -226,4 +226,5 @@ animation = &"Gen-EricV1"
 [connection signal="pressed" from="Left" to="." method="_on_left_pressed"]
 [connection signal="pressed" from="Right" to="." method="_on_right_pressed"]
 [connection signal="pressed" from="Selecionar" to="." method="_on_selecionar_pressed"]
+[connection signal="pressed" from="Comprar" to="." method="_on_comprar_pressed"]
 [connection signal="pressed" from="Voltar" to="." method="_on_voltar_pressed"]

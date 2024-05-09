@@ -7,8 +7,8 @@ func _ready():
 	current_scene = root.get_child(root.get_child_count() - 1)
 
 
-func _process(delta):
-	pass
+#func _process(delta):
+	#pass
 	
 func goto_scene(path):
 
@@ -16,8 +16,9 @@ func goto_scene(path):
 	
 func _deferred_goto_scene(path):
 	# It is now safe to remove the current scene.
+	
 	current_scene.queue_free()
-
+	
 	# Load the new scene.
 	var s = ResourceLoader.load(path)
 
