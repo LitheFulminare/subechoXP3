@@ -184,7 +184,7 @@ func tiro1():
 		targetPosition = get_global_mouse_position()
 		
 		
-		var shots : int
+		var shots = 1
 		var tiro1 = tiro1Path.instantiate()
 		
 		var muzz = muzz1Path.instantiate()
@@ -195,28 +195,25 @@ func tiro1():
 			gun_Position = $"Spawn Tiro 1".global_position
 			tiro1.position = $"Spawn Tiro 1".global_position
 			muzz.position = $Muzz1Local.global_position
-			shots = 1
 			
 		elif weapon_type == "Gen-EricV2":
 			gun_Position = $"Spawn Tiro 2".global_position
 			tiro1.position = $"Spawn Tiro 2".global_position
 			muzz.position = $Muzz1Local2.global_position
 			targetPosition += Vector2(randi_range(-50,50),randi_range(-50,50))
-			shots = 1
 			
 		elif weapon_type == "Peacemaker":
 			gun_Position = $"Spawn Tiro 3".global_position
 			tiro1.position = $"Spawn Tiro 3".global_position
 			muzz.position = $Muzz1Local3.global_position
-			#shots = 3
+			shots = 3
 		
 		#if weapon_type == "Peacemaker":
 			#pass
 		
-		shots = 10
-		const spread = deg_to_rad(15)
 		for i in shots:
 			
+			tiro1 = tiro1Path.instantiate()
 			shootDirection = (targetPosition - gun_Position).normalized()
 			targetPosition += Vector2(randi_range(-50,50),randi_range(-50,50))
 			tiro1.set_bullet(gun_Position, targetPosition)
