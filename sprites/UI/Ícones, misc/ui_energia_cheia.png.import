@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://k3xbrcdobeo6"
-path="res://.godot/imported/ui_integridade.png-95838baf9a3b38cd07bd72ca565cecbe.ctex"
+uid="uid://dodar4y8l22tq"
+path="res://.godot/imported/ui_energia_cheia.png-65af0737795ff05843d3f49af77d9255.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/UI/ui_integridade.png"
-dest_files=["res://.godot/imported/ui_integridade.png-95838baf9a3b38cd07bd72ca565cecbe.ctex"]
+source_file="res://sprites/UI/Ícones, misc/ui_energia_cheia.png"
+dest_files=["res://.godot/imported/ui_energia_cheia.png-65af0737795ff05843d3f49af77d9255.ctex"]
 
 [params]
 

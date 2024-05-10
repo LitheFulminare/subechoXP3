@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://do1dywod4baf2"
-path="res://.godot/imported/voltar normal.png-e23799b1394f8056aab3bf7779f8f32f.ctex"
+uid="uid://c02fwc7nnfe30"
+path="res://.godot/imported/Botão esquerdo hover.png-a1aed98a5c403efe40c714b46ec588e5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/UI/voltar normal.png"
-dest_files=["res://.godot/imported/voltar normal.png-e23799b1394f8056aab3bf7779f8f32f.ctex"]
+source_file="res://sprites/UI/Botões/Botão esquerdo hover.png"
+dest_files=["res://.godot/imported/Botão esquerdo hover.png-a1aed98a5c403efe40c714b46ec588e5.ctex"]
 
 [params]
 

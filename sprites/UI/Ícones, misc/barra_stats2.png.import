@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dk53duvqcol4h"
-path="res://.godot/imported/Botão direito default.png-b47f475095101a53fd06581e2337c602.ctex"
+uid="uid://d3hj4xg7t40du"
+path="res://.godot/imported/barra_stats2.png-bf8dac34dcdff27aba105de5371a54fc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/UI/Botão direito default.png"
-dest_files=["res://.godot/imported/Botão direito default.png-b47f475095101a53fd06581e2337c602.ctex"]
+source_file="res://sprites/UI/Ícones, misc/barra_stats2.png"
+dest_files=["res://.godot/imported/barra_stats2.png-bf8dac34dcdff27aba105de5371a54fc.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8j8owedgc630"
-path="res://.godot/imported/voltar hover.png-d5bd6b30da0a93baba5893e6d0cb5f1a.ctex"
+uid="uid://cfxkmgiylsfr1"
+path="res://.godot/imported/menu_sair_pressed.png-bbd3a5a0049499ceeb097c613fa90228.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/UI/voltar hover.png"
-dest_files=["res://.godot/imported/voltar hover.png-d5bd6b30da0a93baba5893e6d0cb5f1a.ctex"]
+source_file="res://sprites/UI/Botões/menu_sair_pressed.png"
+dest_files=["res://.godot/imported/menu_sair_pressed.png-bbd3a5a0049499ceeb097c613fa90228.ctex"]
 
 [params]
 

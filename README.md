@@ -16,6 +16,7 @@ Precisa fazer:
 	implementar sistema de precisão (randomizar angulo dos tiros)
 	loja entre os levels
 	melhorar a interface na loja (colocar quanto custa, deixar arma cinza, feedback que comprou)
+	icones para as barras na loja, texto breve explicando cada arma
 	mostrar status de cada arma
 	perks no final de cada fase
 	mostrar status no final de cada run

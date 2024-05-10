@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dl4bpic0ffxks"
-path="res://.godot/imported/Botão direito hover.png-1444004f1be78de044fe60cb127249f3.ctex"
+uid="uid://k3xbrcdobeo6"
+path="res://.godot/imported/ui_integridade.png-63ee93538f6947fe2071abb9843c239a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/UI/Botão direito hover.png"
-dest_files=["res://.godot/imported/Botão direito hover.png-1444004f1be78de044fe60cb127249f3.ctex"]
+source_file="res://sprites/UI/Ícones, misc/ui_integridade.png"
+dest_files=["res://.godot/imported/ui_integridade.png-63ee93538f6947fe2071abb9843c239a.ctex"]
 
 [params]
 

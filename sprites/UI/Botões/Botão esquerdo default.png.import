@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://v8t8yq6kyx30"
-path="res://.godot/imported/Selecionar normal.png-35cc84ebd9747aeb95963d08e8888837.ctex"
+uid="uid://bl063bt71htkf"
+path="res://.godot/imported/Botão esquerdo default.png-59220306b706dcd8ae28d53dbf957ef4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/UI/Selecionar normal.png"
-dest_files=["res://.godot/imported/Selecionar normal.png-35cc84ebd9747aeb95963d08e8888837.ctex"]
+source_file="res://sprites/UI/Botões/Botão esquerdo default.png"
+dest_files=["res://.godot/imported/Botão esquerdo default.png-59220306b706dcd8ae28d53dbf957ef4.ctex"]
 
 [params]
 

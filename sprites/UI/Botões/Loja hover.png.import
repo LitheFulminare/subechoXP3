@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c02fwc7nnfe30"
-path="res://.godot/imported/Botão esquerdo hover.png-45d7d2c8ed76b473b4e204f69ed226cb.ctex"
+uid="uid://cbk5sdfo8fvra"
+path="res://.godot/imported/Loja hover.png-a20d4719205929417343d16ae4dc24f2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/UI/Botão esquerdo hover.png"
-dest_files=["res://.godot/imported/Botão esquerdo hover.png-45d7d2c8ed76b473b4e204f69ed226cb.ctex"]
+source_file="res://sprites/UI/Botões/Loja hover.png"
+dest_files=["res://.godot/imported/Loja hover.png-a20d4719205929417343d16ae4dc24f2.ctex"]
 
 [params]
 

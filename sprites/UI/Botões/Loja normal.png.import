@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhfpeobfxndf2"
-path="res://.godot/imported/ui_inimigos.png-82199903bdea16c2b60c0e5e613e2e0a.ctex"
+uid="uid://y2hrgsrqd82f"
+path="res://.godot/imported/Loja normal.png-4a6d5ea251d7cb087ec18b8d9a6ec36e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/UI/ui_inimigos.png"
-dest_files=["res://.godot/imported/ui_inimigos.png-82199903bdea16c2b60c0e5e613e2e0a.ctex"]
+source_file="res://sprites/UI/Botões/Loja normal.png"
+dest_files=["res://.godot/imported/Loja normal.png-4a6d5ea251d7cb087ec18b8d9a6ec36e.ctex"]
 
 [params]
 

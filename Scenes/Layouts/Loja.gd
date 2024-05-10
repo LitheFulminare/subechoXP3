@@ -43,27 +43,36 @@ func _on_left_pressed():
 func switch_weapon():
 	
 	# troca as armas mostradas e determina se o jogador tem a arma ou não
+	# tb atualiza as barras de status
 	if weapon_preview == 1:
 		$"MarginContainer/Sprite/Arma1/Sprites 1".visible = true
 		$Selecionar.visible = true
 		$Comprar.visible = false
+		$"Damage bar".value = 50
+		$"Fire rate bar".value = 25
 		
 	elif weapon_preview == 2:
 		$"MarginContainer/Sprite/Arma1/Sprites 2".visible = true
 		$Selecionar.visible = true
 		$Comprar.visible = false
+		$"Damage bar".value = 20
+		$"Fire rate bar".value = 65
 		
 	elif weapon_preview == 3:
 		$"MarginContainer/Sprite/Arma1/Sprites 3".visible = true
 		if player_vars.Peacemaker == false:
 			$Selecionar.visible = false
 			$Comprar.visible = true
+			$"Damage bar".value = 32
+			$"Fire rate bar".value = 20
 			
 	elif weapon_preview == 4:
 		$"MarginContainer/Sprite/Arma1/Sprites 4".visible = true
 		if player_vars.Imperium == false:
 			$Selecionar.visible = false
 			$Comprar.visible = true
+			$"Damage bar".value = 35
+			$"Fire rate bar".value = 68
 
 
 func _on_voltar_pressed():

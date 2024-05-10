@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dodar4y8l22tq"
-path="res://.godot/imported/ui_energia_cheia.png-52b884334433f9542d297b735c946607.ctex"
+uid="uid://cb13ogy25gpxl"
+path="res://.godot/imported/scrap.png-0d8c53298a5e029af538bd746a279079.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/UI/ui_energia_cheia.png"
-dest_files=["res://.godot/imported/ui_energia_cheia.png-52b884334433f9542d297b735c946607.ctex"]
+source_file="res://sprites/UI/Ícones, misc/scrap.png"
+dest_files=["res://.godot/imported/scrap.png-0d8c53298a5e029af538bd746a279079.ctex"]
 
 [params]
 

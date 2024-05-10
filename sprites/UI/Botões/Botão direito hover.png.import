@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3gabbr76vhc1"
-path="res://.godot/imported/ui_energia.png-661e876106e7be753099c40d7d628de1.ctex"
+uid="uid://dl4bpic0ffxks"
+path="res://.godot/imported/Botão direito hover.png-081b08303519004cb2f10108abebc9e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/UI/ui_energia.png"
-dest_files=["res://.godot/imported/ui_energia.png-661e876106e7be753099c40d7d628de1.ctex"]
+source_file="res://sprites/UI/Botões/Botão direito hover.png"
+dest_files=["res://.godot/imported/Botão direito hover.png-081b08303519004cb2f10108abebc9e9.ctex"]
 
 [params]
 

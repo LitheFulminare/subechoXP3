@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://uie5340u063a"
-path="res://.godot/imported/menu_iniciar_normal.png-d91bb1c14b09a193c4694f580d44758c.ctex"
+uid="uid://3gabbr76vhc1"
+path="res://.godot/imported/ui_energia.png-701dc9f0612f04ebe5120980d62ed614.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/UI/menu_iniciar_normal.png"
-dest_files=["res://.godot/imported/menu_iniciar_normal.png-d91bb1c14b09a193c4694f580d44758c.ctex"]
+source_file="res://sprites/UI/Ícones, misc/ui_energia.png"
+dest_files=["res://.godot/imported/ui_energia.png-701dc9f0612f04ebe5120980d62ed614.ctex"]
 
 [params]
 

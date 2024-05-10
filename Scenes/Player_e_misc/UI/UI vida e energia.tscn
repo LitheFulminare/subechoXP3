@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://d2tg02cwm2lik"]
 
-[ext_resource type="Texture2D" uid="uid://dptcrnjsun5yc" path="res://sprites/UI/ui_fundo.png" id="1_w4str"]
-[ext_resource type="Texture2D" uid="uid://k3xbrcdobeo6" path="res://sprites/UI/ui_integridade.png" id="2_i2mve"]
-[ext_resource type="Texture2D" uid="uid://dodar4y8l22tq" path="res://sprites/UI/ui_energia_cheia.png" id="3_4c3ru"]
-[ext_resource type="Texture2D" uid="uid://bhfpeobfxndf2" path="res://sprites/UI/ui_inimigos.png" id="4_78pnf"]
+[ext_resource type="Texture2D" uid="uid://dptcrnjsun5yc" path="res://sprites/UI/Ícones, misc/ui_fundo.png" id="1_w4str"]
+[ext_resource type="Texture2D" uid="uid://k3xbrcdobeo6" path="res://sprites/UI/Ícones, misc/ui_integridade.png" id="2_i2mve"]
+[ext_resource type="Texture2D" uid="uid://dodar4y8l22tq" path="res://sprites/UI/Ícones, misc/ui_energia_cheia.png" id="3_4c3ru"]
+[ext_resource type="Texture2D" uid="uid://bhfpeobfxndf2" path="res://sprites/UI/Ícones, misc/ui_inimigos.png" id="4_78pnf"]
 [ext_resource type="FontFile" uid="uid://2jd17kesj1hy" path="res://Misc/VCR_OSD_MONO_1.001.ttf" id="5_b1hc6"]
 
 [sub_resource type="Image" id="Image_e8oe4"]

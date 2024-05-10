@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwtbijy6imku5"
-path="res://.godot/imported/Comprar hover.png-f4dd257109599e315080b118acf26317.ctex"
+uid="uid://dptcrnjsun5yc"
+path="res://.godot/imported/ui_fundo.png-71ec49fed06f564e45977e0cffdbeff4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/UI/Comprar hover.png"
-dest_files=["res://.godot/imported/Comprar hover.png-f4dd257109599e315080b118acf26317.ctex"]
+source_file="res://sprites/UI/Ícones, misc/ui_fundo.png"
+dest_files=["res://.godot/imported/ui_fundo.png-71ec49fed06f564e45977e0cffdbeff4.ctex"]
 
 [params]
 
