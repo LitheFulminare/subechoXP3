@@ -76,7 +76,7 @@ func player_movement(delta):
 			#if dano_tomado < 1:
 				#dano_tomado = 1
 			#life -= dano_tomado
-			##life = int(life)
+			#life = int(life)
 			#velocity = Vector2.ZERO
 			#invincible = true
 			#damage_effect()
@@ -188,13 +188,11 @@ func Sonar():
 func tiro1():
 	if not t1_cd && life > 0 && energy > 0:
 		
-		var aim_limit = get_local_mouse_position().clamp(Vector2(-300,-300),Vector2(300,300))
-		
-		print("imprecisão x: "  + str(aim_limit.x))
-		print("imprecisão y: "  + str(aim_limit.y))
-		
-		targetPosition = $Aim.global_position
-		
+		#var aim_limit = get_local_mouse_position().clamp(Vector2(-300,-300),Vector2(300,300))
+		#print("imprecisão x: "  + str(aim_limit.x))
+		#print("imprecisão y: "  + str(aim_limit.y))
+
+		targetPosition = get_global_mouse_position()
 		
 		var shots = 1
 		var tiro1 = tiro1Path.instantiate()
@@ -218,6 +216,7 @@ func tiro1():
 			gun_Position = $"Spawn Tiro 3".global_position
 			tiro1.position = $"Spawn Tiro 3".global_position
 			muzz.position = $Muzz1Local3.global_position
+			targetPosition = $Aim.global_position
 			shots = 3
 		
 		for i in shots:

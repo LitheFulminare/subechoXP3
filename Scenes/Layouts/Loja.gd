@@ -60,19 +60,25 @@ func switch_weapon():
 		
 	elif weapon_preview == 3:
 		$"MarginContainer/Sprite/Arma1/Sprites 3".visible = true
+		$"Damage bar".value = 32
+		$"Fire rate bar".value = 20
 		if player_vars.Peacemaker == false:
 			$Selecionar.visible = false
 			$Comprar.visible = true
-			$"Damage bar".value = 32
-			$"Fire rate bar".value = 20
+		else:
+			$Selecionar.visible = true
+			$Comprar.visible = false
 			
 	elif weapon_preview == 4:
 		$"MarginContainer/Sprite/Arma1/Sprites 4".visible = true
+		$"Damage bar".value = 35
+		$"Fire rate bar".value = 68
 		if player_vars.Imperium == false:
 			$Selecionar.visible = false
 			$Comprar.visible = true
-			$"Damage bar".value = 35
-			$"Fire rate bar".value = 68
+		else:
+			$Selecionar.visible = true
+			$Comprar.visible = false
 
 
 func _on_voltar_pressed():
@@ -100,13 +106,13 @@ func _on_selecionar_pressed():
 
 func _on_comprar_pressed():
 	if weapon_preview == 3 && player_vars.Peacemaker == false && player_vars.current_scrap >= 50:
-		player_vars.current_scrap -= 50
 		player_vars.Peacemaker = true
+		player_vars.current_scrap -= 50
 		$Selecionar.visible = true
 		$Comprar.visible = false
 		
 	if weapon_preview == 4 && player_vars.Imperium == false && player_vars.current_scrap >= 100:
-		player_vars.current_scrap -= 100
 		player_vars.Imperium = true
+		player_vars.current_scrap -= 100
 		$Selecionar.visible = true
 		$Comprar.visible = false
