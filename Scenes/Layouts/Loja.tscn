@@ -103,7 +103,7 @@ layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_85ebf")
 metadata/_edit_horizontal_guides_ = [897.0, 797.0, 847.0]
-metadata/_edit_vertical_guides_ = [960.0, 1070.0, 780.0]
+metadata/_edit_vertical_guides_ = [960.0]
 
 [node name="TileMap" type="TileMap" parent="."]
 z_index = -1

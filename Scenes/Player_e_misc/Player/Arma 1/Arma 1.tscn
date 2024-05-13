@@ -105,7 +105,6 @@ autoplay = "Peace"
 
 [node name="Sprites 3" type="AnimatedSprite2D" parent="."]
 visible = false
-modulate = Color(0.226707, 0.226708, 0.226707, 0.67451)
 position = Vector2(3, -1)
 sprite_frames = SubResource("SpriteFrames_nu7a3")
 animation = &"Peacemaker"
