@@ -1,6 +1,10 @@
 extends Control
 
 var weapon_preview : int # a arma que o jogador vê
+var desc_arma_1
+var desc_arma_2
+var desc_arma_3
+var desc_arma_4
 #var weapon_selected : int # a arma que o jogador tem selecionado
 
 # boolean se o jogador tem a arma desbloqueada ou não
@@ -9,6 +13,12 @@ var weapon_preview : int # a arma que o jogador vê
 #var Killerbee = false
 
 func _ready():
+	desc_arma_1 = "res://Misc/Textos/Desc arma 1.txt"
+	desc_arma_2 = "res://Misc/Textos/Desc arma 2.txt"
+	desc_arma_3 = "res://Misc/Textos/Desc arma 3.txt"
+	desc_arma_4 = "res://Misc/Textos/Desc arma 4.txt"
+	
+	#desc_arma_1 = FileAccess.open(desc_arma_1,FileAccess.READ).get_as_text()
 	
 	if player_vars.weapon_type == "":  # se nenhuma arma tiver sido selecionada antes,
 		weapon_preview = 1             # ele vai escolher a arma 1
@@ -51,7 +61,7 @@ func switch_weapon():
 		$"Damage bar".value = 50
 		$"Fire rate bar".value = 25
 		$MarginContainer/Sprite/Arma1.modulate = Color(1, 1, 1, 1)
-		$"MarginContainer2/Descrição".text = "Descrição da arma 1"
+		$"MarginContainer2/Descrição".text = FileAccess.open(desc_arma_1,FileAccess.READ).get_as_text()
 		
 	elif weapon_preview == 2:
 		$"MarginContainer/Sprite/Arma1/Sprites 2".visible = true
@@ -60,13 +70,13 @@ func switch_weapon():
 		$"Damage bar".value = 20
 		$"Fire rate bar".value = 65
 		$MarginContainer/Sprite/Arma1.modulate = Color(1, 1, 1, 1)
-		$"MarginContainer2/Descrição".text = "Descrição arma 2"
+		$"MarginContainer2/Descrição".text =FileAccess.open(desc_arma_2,FileAccess.READ).get_as_text()
 		
 	elif weapon_preview == 3:
 		$"MarginContainer/Sprite/Arma1/Sprites 3".visible = true
 		$"Damage bar".value = 32
 		$"Fire rate bar".value = 20
-		$"MarginContainer2/Descrição".text = "Descrição arma 3"
+		$"MarginContainer2/Descrição".text = FileAccess.open(desc_arma_3,FileAccess.READ).get_as_text()
 		if player_vars.Peacemaker == false:
 			$Selecionar.visible = false
 			$Comprar.visible = true
@@ -81,7 +91,7 @@ func switch_weapon():
 		$"MarginContainer/Sprite/Arma1/Sprites 4".visible = true
 		$"Damage bar".value = 35
 		$"Fire rate bar".value = 68
-		$"MarginContainer2/Descrição".text = "Descrição arma 4"
+		$"MarginContainer2/Descrição".text = FileAccess.open(desc_arma_4,FileAccess.READ).get_as_text()
 		if player_vars.Imperium == false:
 			$Selecionar.visible = false
 			$Comprar.visible = true
