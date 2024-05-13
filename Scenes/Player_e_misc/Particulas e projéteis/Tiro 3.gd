@@ -14,7 +14,7 @@ func tipoTiro(weapon_type):
 	if type == "Peacemaker":
 		dano = 2
 	if type == "Imperium":
-		dano == 1
+		dano = 1
 
 func set_bullet(position, targetPosition):
 	global_position = position
@@ -33,3 +33,4 @@ func _on_area_2d_body_entered(body):
 		#if body.is_in_group("inimigo"):
 			#queue_free()
 	
+

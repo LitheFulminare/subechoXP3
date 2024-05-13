@@ -146,6 +146,9 @@ position = Vector2(88, 35)
 [node name="Spawn Tiro 3" type="Marker2D" parent="."]
 position = Vector2(78.635, 19)
 
+[node name="Spawn Tiro 4" type="Marker2D" parent="."]
+position = Vector2(83.93, 26)
+
 [node name="Muzz1Local" type="Marker2D" parent="."]
 position = Vector2(65, 24)
 
@@ -154,6 +157,9 @@ position = Vector2(126, 37)
 
 [node name="Muzz1Local3" type="Marker2D" parent="."]
 position = Vector2(123.67, 19)
+
+[node name="Muzz1Local4" type="Marker2D" parent="."]
+position = Vector2(119.88, 27.67)
 
 [node name="Colisão Geral" type="CollisionPolygon2D" parent="."]
 position = Vector2(-41, 5)

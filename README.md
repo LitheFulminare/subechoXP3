@@ -10,9 +10,6 @@ Armas
 Precisa fazer:
 	BG com parallax (problema de n interagir com Canvas Modulate)
 	colocar mais props e randomizar
-	lixo brilha quando chega perto/particula de coletar lixo (??)
-	spread da PM
-	implementar a Imperium
 	loja entre os levels
 	melhorar a interface na loja (colocar quanto custa, deixar arma cinza, feedback que comprou)
 	icones para as barras na loja, texto breve explicando cada arma
@@ -20,11 +17,17 @@ Precisa fazer:
 	perks no final de cada fase
 	mostrar status no final de cada run
 	
+	lixo brilha quando chega perto/particula de coletar lixo (??)
+	melhorar spread da PM (??)
+	fazer a arma girar no mouse (??)
+	
 
 Já feito:
-	--coletar lixo--
-	--sprite do lixo na UI--
-	--loja de arma no menu--
-	--importar muzzle da PM--
-	--sistema de precisão (randomizar angulo dos tiros)--
+	coletar lixo
+	sprite do lixo na UI
+	loja de arma no menu
+	importar muzzle da PM
+	sistema de precisão (randomizar angulo dos tiros)
+	Imperium
+	
 	

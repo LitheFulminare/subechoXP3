@@ -1,0 +1,71 @@
+[gd_scene load_steps=11 format=3 uid="uid://dyy2bjyksa1on"]
+
+[ext_resource type="Script" path="res://Scenes/Player_e_misc/Particulas e projéteis/Muzzle 4.gd" id="1_lgtim"]
+[ext_resource type="Texture2D" uid="uid://dusjy4k8vdo1p" path="res://sprites/Projeteis e partículas/muzzle_armalaser.png" id="2_dkovd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_til65"]
+atlas = ExtResource("2_dkovd")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cqkw3"]
+atlas = ExtResource("2_dkovd")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mpl4w"]
+atlas = ExtResource("2_dkovd")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2i540"]
+atlas = ExtResource("2_dkovd")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qx0xj"]
+atlas = ExtResource("2_dkovd")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g47xi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_til65")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cqkw3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mpl4w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2i540")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qx0xj")
+}],
+"loop": false,
+"name": &"default",
+"speed": 13.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_jdehp"]
+colors = PackedColorArray(1, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_oyayu"]
+gradient = SubResource("Gradient_jdehp")
+fill = 1
+fill_from = Vector2(0.504587, 0.5)
+fill_to = Vector2(0.133028, 0.137615)
+
+[node name="Muzzle4" type="Node2D"]
+scale = Vector2(4, 4)
+script = ExtResource("1_lgtim")
+
+[node name="animacao" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_g47xi")
+frame = 4
+frame_progress = 1.0
+
+[node name="luz" type="PointLight2D" parent="."]
+position = Vector2(-3.5, -0.5)
+scale = Vector2(1.33534, 1.491)
+energy = 0.25
+texture = SubResource("GradientTexture2D_oyayu")

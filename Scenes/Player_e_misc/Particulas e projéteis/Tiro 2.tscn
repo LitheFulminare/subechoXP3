@@ -3,20 +3,20 @@
 [ext_resource type="Script" path="res://Scenes/Player_e_misc/Particulas e projéteis/Tiro 1.gd" id="1_jw8yi"]
 [ext_resource type="Texture2D" uid="uid://b8xnl337pdvex" path="res://sprites/Projeteis e partículas/bala_rapida.png" id="2_l6ai6"]
 
-[sub_resource type="Gradient" id="Gradient_58ohc"]
+[sub_resource type="Gradient" id="Gradient_rjorm"]
 offsets = PackedFloat32Array(0.00649351, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ltj45"]
-gradient = SubResource("Gradient_58ohc")
+gradient = SubResource("Gradient_rjorm")
 fill_from = Vector2(1, 0.509174)
 fill_to = Vector2(0, 0.518349)
 
-[sub_resource type="Gradient" id="Gradient_eebm2"]
+[sub_resource type="Gradient" id="Gradient_ialwd"]
 colors = PackedColorArray(1, 0.65625, 0, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_3f0of"]
-gradient = SubResource("Gradient_eebm2")
+gradient = SubResource("Gradient_ialwd")
 fill = 1
 fill_from = Vector2(0.458716, 0.46789)
 fill_to = Vector2(1, 0.486239)

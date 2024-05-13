@@ -118,11 +118,13 @@ func _ready():
 		spread = 70
 		
 	elif weapon_type == "Imperium":
-		tiro1Path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Tiro 1.tscn")
+		tiro1Path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Tiro 3.tscn")
+		muzz1Path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Muzzle 4.tscn")
 		$"Colisão Imperium".disabled = false
 		$"Area2D/Colisão Imperium".disabled = false
 		$"Sprite/Arma1/Sprites 4".visible = true
 		$"Tiro 1 cooldown".wait_time = 0.2
+		gun_Position = $"Spawn Tiro 3".global_position
 
 @warning_ignore("unused_parameter")
 func _process(delta):
@@ -218,6 +220,11 @@ func tiro1():
 			muzz.position = $Muzz1Local3.global_position
 			targetPosition = $Aim.global_position
 			shots = 3
+			
+		elif weapon_type == "Imperium":
+			gun_Position = $"Spawn Tiro 4".global_position
+			tiro1.position = $"Spawn Tiro 4".global_position
+			muzz.position = $Muzz1Local4.global_position
 		
 		for i in shots:
 			

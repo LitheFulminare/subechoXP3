@@ -258,9 +258,9 @@ animation = &"Gen-EricV1"
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_left = 1294.0
+offset_left = 1295.0
 offset_top = 180.0
-offset_right = 1830.0
+offset_right = 1831.0
 offset_bottom = 596.0
 
 [node name="Descrição" type="RichTextLabel" parent="MarginContainer2"]
@@ -271,6 +271,21 @@ theme_override_font_sizes/normal_font_size = 29
 text = "Custo: 50
 
 Essa é uma arma que dá dano nos inimigos, e se tomarem dano suficiente eles morrem. Também é capaz de dar mais de 1 tiro por jogo."
+
+[node name="MarginContainer3" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 1295.0
+offset_top = 78.0
+offset_right = 1878.0
+offset_bottom = 182.0
+
+[node name="Nome da arma" type="RichTextLabel" parent="MarginContainer3"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.6, 0.898039, 0.313726, 1)
+theme_override_fonts/normal_font = ExtResource("23_esi8y")
+theme_override_font_sizes/normal_font_size = 48
+text = "Nome da arma
+"
 
 [connection signal="pressed" from="Left" to="." method="_on_left_pressed"]
 [connection signal="pressed" from="Right" to="." method="_on_right_pressed"]

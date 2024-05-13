@@ -57,6 +57,7 @@ func switch_weapon():
 		$"Damage bar".value = 50
 		$"Fire rate bar".value = 25
 		$MarginContainer/Sprite/Arma1.modulate = Color(1, 1, 1, 1)
+		$"MarginContainer3/Nome da arma".text = "Gen-EricV1"
 		$"MarginContainer2/Descrição".text = FileAccess.open(desc_arma_1,FileAccess.READ).get_as_text()
 		
 	elif weapon_preview == 2:
@@ -66,12 +67,14 @@ func switch_weapon():
 		$"Damage bar".value = 20
 		$"Fire rate bar".value = 65
 		$MarginContainer/Sprite/Arma1.modulate = Color(1, 1, 1, 1)
+		$"MarginContainer3/Nome da arma".text = "Gen-EricV2"
 		$"MarginContainer2/Descrição".text =FileAccess.open(desc_arma_2,FileAccess.READ).get_as_text()
 		
 	elif weapon_preview == 3:
 		$"MarginContainer/Sprite/Arma1/Sprites 3".visible = true
 		$"Damage bar".value = 32
 		$"Fire rate bar".value = 20
+		$"MarginContainer3/Nome da arma".text = "Peacemaker"
 		$"MarginContainer2/Descrição".text = FileAccess.open(desc_arma_3,FileAccess.READ).get_as_text()
 		if player_vars.Peacemaker == false:
 			$Selecionar.visible = false
@@ -87,6 +90,7 @@ func switch_weapon():
 		$"MarginContainer/Sprite/Arma1/Sprites 4".visible = true
 		$"Damage bar".value = 35
 		$"Fire rate bar".value = 68
+		$"MarginContainer3/Nome da arma".text = "Imperium"
 		$"MarginContainer2/Descrição".text = FileAccess.open(desc_arma_4,FileAccess.READ).get_as_text()
 		if player_vars.Imperium == false:
 			$Selecionar.visible = false
