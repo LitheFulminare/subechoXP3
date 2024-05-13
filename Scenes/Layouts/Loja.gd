@@ -1,28 +1,24 @@
 extends Control
 
 var weapon_preview : int # a arma que o jogador vê
+
+# descrição de cada arma
 var desc_arma_1
 var desc_arma_2
 var desc_arma_3
 var desc_arma_4
-#var weapon_selected : int # a arma que o jogador tem selecionado
-
-# boolean se o jogador tem a arma desbloqueada ou não
-#var Peacemaker = false
-#var Imperium = false
-#var Killerbee = false
 
 func _ready():
+	# as variaveis das descrições armazenam um .txt que vai ser mostrado depois
 	desc_arma_1 = "res://Misc/Textos/Desc arma 1.txt"
 	desc_arma_2 = "res://Misc/Textos/Desc arma 2.txt"
 	desc_arma_3 = "res://Misc/Textos/Desc arma 3.txt"
 	desc_arma_4 = "res://Misc/Textos/Desc arma 4.txt"
 	
-	#desc_arma_1 = FileAccess.open(desc_arma_1,FileAccess.READ).get_as_text()
 	
 	if player_vars.weapon_type == "":  # se nenhuma arma tiver sido selecionada antes,
 		weapon_preview = 1             # ele vai escolher a arma 1
-		#weapon_selected = 1     
+		
 		player_vars.weapon_type = "Gen-EricV1"            
 		player_vars.current_weapon = 1
 		player_vars.preview = 1
@@ -130,12 +126,8 @@ func _on_comprar_pressed():
 		player_vars.Peacemaker = true
 		player_vars.current_scrap -= 50
 		switch_weapon()
-		#$Selecionar.visible = true
-		#$Comprar.visible = false
 		
 	if weapon_preview == 4 && player_vars.Imperium == false && player_vars.current_scrap >= 100:
 		player_vars.Imperium = true
 		player_vars.current_scrap -= 100
 		switch_weapon()
-		#$Selecionar.visible = true
-		#$Comprar.visible = false
