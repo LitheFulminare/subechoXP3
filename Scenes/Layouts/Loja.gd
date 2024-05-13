@@ -51,6 +51,7 @@ func switch_weapon():
 		$"Damage bar".value = 50
 		$"Fire rate bar".value = 25
 		$MarginContainer/Sprite/Arma1.modulate = Color(1, 1, 1, 1)
+		$"MarginContainer2/Descrição".text = "Descrição da arma 1"
 		
 	elif weapon_preview == 2:
 		$"MarginContainer/Sprite/Arma1/Sprites 2".visible = true
@@ -59,11 +60,13 @@ func switch_weapon():
 		$"Damage bar".value = 20
 		$"Fire rate bar".value = 65
 		$MarginContainer/Sprite/Arma1.modulate = Color(1, 1, 1, 1)
+		$"MarginContainer2/Descrição".text = "Descrição arma 2"
 		
 	elif weapon_preview == 3:
 		$"MarginContainer/Sprite/Arma1/Sprites 3".visible = true
 		$"Damage bar".value = 32
 		$"Fire rate bar".value = 20
+		$"MarginContainer2/Descrição".text = "Descrição arma 3"
 		if player_vars.Peacemaker == false:
 			$Selecionar.visible = false
 			$Comprar.visible = true
@@ -78,11 +81,11 @@ func switch_weapon():
 		$"MarginContainer/Sprite/Arma1/Sprites 4".visible = true
 		$"Damage bar".value = 35
 		$"Fire rate bar".value = 68
+		$"MarginContainer2/Descrição".text = "Descrição arma 4"
 		if player_vars.Imperium == false:
 			$Selecionar.visible = false
 			$Comprar.visible = true
 			$MarginContainer/Sprite/Arma1.modulate = Color(0.65, 0.65, 0.65, 0.65)
-			#$MarginContainer/Sprite/Arma1.modulate = Color(0.9, 0.9, 0.9, 0.9)
 		else:
 			$Selecionar.visible = true
 			$Comprar.visible = false
@@ -116,11 +119,13 @@ func _on_comprar_pressed():
 	if weapon_preview == 3 && player_vars.Peacemaker == false && player_vars.current_scrap >= 50:
 		player_vars.Peacemaker = true
 		player_vars.current_scrap -= 50
-		$Selecionar.visible = true
-		$Comprar.visible = false
+		switch_weapon()
+		#$Selecionar.visible = true
+		#$Comprar.visible = false
 		
 	if weapon_preview == 4 && player_vars.Imperium == false && player_vars.current_scrap >= 100:
 		player_vars.Imperium = true
 		player_vars.current_scrap -= 100
-		$Selecionar.visible = true
-		$Comprar.visible = false
+		switch_weapon()
+		#$Selecionar.visible = true
+		#$Comprar.visible = false

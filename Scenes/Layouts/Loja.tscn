@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bxl8bwuwmncwy"]
+[gd_scene load_steps=30 format=3 uid="uid://bxl8bwuwmncwy"]
 
 [ext_resource type="Script" path="res://Scenes/Layouts/Loja.gd" id="1_85ebf"]
 [ext_resource type="Texture2D" uid="uid://dk53duvqcol4h" path="res://sprites/UI/Botões/Botão direito default.png" id="2_aujog"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://drvd8bhk4plho" path="res://Scenes/Player_e_misc/Player/Arma 1/Arma 1.tscn" id="12_0rwp4"]
 [ext_resource type="PackedScene" uid="uid://r2uor4w348v2" path="res://Scenes/Player_e_misc/Player/Turbina/Turbina v1.tscn" id="13_8r24x"]
 [ext_resource type="PackedScene" uid="uid://8q3v8osdokef" path="res://Scenes/Player_e_misc/UI/UI scrap.tscn" id="13_iqerh"]
+[ext_resource type="FontFile" uid="uid://2jd17kesj1hy" path="res://Misc/VCR_OSD_MONO_1.001.ttf" id="23_esi8y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yh4qi"]
 texture = ExtResource("6_py2c1")
@@ -254,6 +255,22 @@ position = Vector2(211, 151)
 scale = Vector2(15, 15)
 sprite_frames = SubResource("SpriteFrames_ji3m5")
 animation = &"Gen-EricV1"
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 1294.0
+offset_top = 180.0
+offset_right = 1830.0
+offset_bottom = 596.0
+
+[node name="Descrição" type="RichTextLabel" parent="MarginContainer2"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.6, 0.898039, 0.313726, 1)
+theme_override_fonts/normal_font = ExtResource("23_esi8y")
+theme_override_font_sizes/normal_font_size = 29
+text = "Custo: 50
+
+Essa é uma arma que dá dano nos inimigos, e se tomarem dano suficiente eles morrem. Também é capaz de dar mais de 1 tiro por jogo."
 
 [connection signal="pressed" from="Left" to="." method="_on_left_pressed"]
 [connection signal="pressed" from="Right" to="." method="_on_right_pressed"]
