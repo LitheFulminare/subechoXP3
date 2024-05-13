@@ -65,6 +65,8 @@ func switch_weapon():
 		if player_vars.Peacemaker == false:
 			$Selecionar.visible = false
 			$Comprar.visible = true
+			$MarginContainer/Sprite/Arma1.modulate = Color(0.9, 0.9, 0.9, 0.9)
+			
 		else:
 			$Selecionar.visible = true
 			$Comprar.visible = false
