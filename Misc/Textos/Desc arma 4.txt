@@ -1,3 +1,4 @@
-Custo: algum outro numero
+Custo: 100
 
-desc arma 4
+Arma laser. Dispara um tiro contínuo, com bastante alcance e dano. Tem chance de ser uma referência nem um pouco óbvia a uma franquia muito desconhecida.
+

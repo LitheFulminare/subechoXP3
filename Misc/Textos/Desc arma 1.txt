@@ -1,1 +1,2 @@
-Aqui vai a descrição da arma 1
+Arma base do submarino. Lenta, mas com um bom dano. É tão genérica que tivemos de mudar o nome dela.
+
