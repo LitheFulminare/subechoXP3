@@ -34,6 +34,7 @@ scale = Vector2(5.7, 5.7)
 [node name="CanvasGroup" type="CanvasGroup" parent="."]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="CanvasGroup"]
+visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="Player" parent="CanvasGroup" instance=ExtResource("3_pn154")]
