@@ -7,7 +7,7 @@ var first_weapon = 1
 var weapon_type : String
 var current_life : float
 var current_energy : float
-var current_scrap : int
+var current_scrap = 300
 var current_weapon = ""
 
 # UI da loja
