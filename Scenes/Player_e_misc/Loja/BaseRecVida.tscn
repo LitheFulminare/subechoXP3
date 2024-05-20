@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://c2o5uc5sspr57"]
+
+[ext_resource type="Texture2D" uid="uid://cpxdedk7i8nla" path="res://sprites/Loja in game/bigorna.png" id="1_1jd24"]
+[ext_resource type="Script" path="res://Scenes/Player_e_misc/Loja/StoreInteractable.gd" id="1_7wxhc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ohgns"]
+size = Vector2(22, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s8sct"]
+radius = 40.1123
+
+[node name="BaseRecVida" type="StaticBody2D"]
+script = ExtResource("1_7wxhc")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_1jd24")
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 8)
+shape = SubResource("RectangleShape2D_ohgns")
+
+[node name="Buy area" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="Collider" type="CollisionShape2D" parent="Buy area"]
+shape = SubResource("CircleShape2D_s8sct")
+
+[connection signal="area_entered" from="Buy area" to="." method="_on_buy_area_area_entered"]
+[connection signal="area_exited" from="Buy area" to="." method="_on_buy_area_area_exited"]

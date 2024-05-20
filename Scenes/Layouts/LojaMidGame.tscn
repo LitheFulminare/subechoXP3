@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://d1pje2hup8ea6"]
+[gd_scene load_steps=8 format=3 uid="uid://d1pje2hup8ea6"]
 
 [ext_resource type="PackedScene" uid="uid://d2tg02cwm2lik" path="res://Scenes/Player_e_misc/UI/UI vida e energia.tscn" id="1_1wjsv"]
 [ext_resource type="Script" path="res://Scenes/Layouts/LojaMidGame.gd" id="1_7qn0a"]
 [ext_resource type="PackedScene" uid="uid://8q3v8osdokef" path="res://Scenes/Player_e_misc/UI/UI scrap.tscn" id="2_bklwr"]
 [ext_resource type="PackedScene" uid="uid://e4g3db01cv23" path="res://Scenes/Player_e_misc/Player/player.tscn" id="3_pn154"]
+[ext_resource type="PackedScene" uid="uid://c2o5uc5sspr57" path="res://Scenes/Player_e_misc/Loja/BaseRecVida.tscn" id="4_nhqbp"]
+[ext_resource type="PackedScene" uid="uid://da20fitkathkr" path="res://Scenes/Player_e_misc/Loja/BaseRecEnergia.tscn" id="5_76bnt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wc7xb"]
 size = Vector2(1940, 105)
@@ -37,6 +39,16 @@ scale = Vector2(5.7, 5.7)
 visible = false
 color = Color(0, 0, 0, 1)
 
+[node name="Interactables" type="Node2D" parent="CanvasGroup"]
+
+[node name="BaseRecVida" parent="CanvasGroup/Interactables" instance=ExtResource("4_nhqbp")]
+position = Vector2(415, 592)
+scale = Vector2(4, 4)
+
+[node name="BaseRecEnergia" parent="CanvasGroup/Interactables" instance=ExtResource("5_76bnt")]
+position = Vector2(795, 592)
+scale = Vector2(4, 4)
+
 [node name="Player" parent="CanvasGroup" instance=ExtResource("3_pn154")]
 light_mask = 1
 z_index = 1
@@ -55,12 +67,12 @@ limit_bottom = 1080
 editor_draw_screen = false
 editor_draw_limits = true
 
-[node name="Area2D" type="StaticBody2D" parent="CanvasGroup"]
+[node name="Floor" type="StaticBody2D" parent="CanvasGroup"]
 position = Vector2(0, 656)
 collision_layer = 7
 collision_mask = 7
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasGroup/Area2D"]
+[node name="Collider" type="CollisionShape2D" parent="CanvasGroup/Floor"]
 position = Vector2(960, 52.5)
 shape = SubResource("RectangleShape2D_wc7xb")
 
@@ -68,6 +80,7 @@ shape = SubResource("RectangleShape2D_wc7xb")
 z_index = -1
 offset_right = 1929.0
 offset_bottom = 1091.0
+metadata/_edit_lock_ = true
 
 [node name="BG2" type="ColorRect" parent="CanvasGroup"]
 z_index = -1
@@ -75,3 +88,4 @@ offset_top = 656.0
 offset_right = 1929.0
 offset_bottom = 763.0
 color = Color(0.00784314, 0, 1, 1)
+metadata/_edit_lock_ = true

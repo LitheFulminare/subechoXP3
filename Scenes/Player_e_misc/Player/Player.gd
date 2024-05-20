@@ -337,6 +337,13 @@ func collect(type):
 		
 	scrap += scrap_earned
 	
+func regen(stat):
+	match stat:
+		"Recuperar vida":
+			life = player_vars.max_life
+		"Recuperar energia":
+			energy = player_vars.max_energy
+	
 func take_damage(type):
 	#print("velocidade: " + str(current_speed))
 	var dano_tomado = 0
