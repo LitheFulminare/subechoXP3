@@ -15,6 +15,9 @@ func interact():
 	if not depleted:
 		depleted = true
 		get_tree().call_group("player", "regen", interact_type)
+		
+		if interact_type == "Recuperar energia":
+			$Sprite.play("default") # fica travado no ultimo frame
 
 
 	#match interact_type:
