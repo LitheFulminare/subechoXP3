@@ -44,8 +44,8 @@ func _process(delta):
 		if not gameover:
 			game_over_no_energy()
 	
-	#if inimigos_mortos >= meta_fase1:
-		#meta_fase_batida()
+	if inimigos_mortos >= meta_fase2:
+		meta_fase_batida()
 		
 func meta_fase_batida():
 	pass
@@ -78,7 +78,7 @@ func _on_area_2d_area_entered(area):
 	#if inimigos_mortos >= meta_fase2:
 		#if area.is_in_group("player"):
 			#print("mudanca")
-			#get_tree().change_scene_to_file("res://Scenes/Layouts/Main 2.tscn")
+			#get_tree().change_scene_to_file("res://Scenes/Layouts/Main 3.tscn")
 
 func _on_spawn_2_inimigo_timeout():
 	if inimigos_mortos < 5:
