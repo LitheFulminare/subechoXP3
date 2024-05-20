@@ -1428,6 +1428,7 @@ scale = Vector2(7.39062, 3.75)
 texture = SubResource("GradientTexture2D_g0n5d")
 
 [node name="SaidaVerdeLigada" type="PointLight2D" parent="CanvasGroup"]
+visible = false
 position = Vector2(2159.5, 888)
 scale = Vector2(7.39062, 3.75)
 texture = SubResource("GradientTexture2D_aualc")
