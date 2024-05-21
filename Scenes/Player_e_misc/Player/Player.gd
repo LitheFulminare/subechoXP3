@@ -69,18 +69,9 @@ func player_movement(delta):
 			#print("colisao explosivo")
 		#print(get_last_slide_collision().get_collider())
 		if not invincible && life > 0 && not collision.get_collider().is_in_group("inimigo"):
-			#print("var colisao = true")
-			take_damage("cenario")
-			#print("velocidade: " + str(current_speed))
-			#var dano_tomado = int(current_speed/20)
-			#if dano_tomado < 1:
-				#dano_tomado = 1
-			#life -= dano_tomado
-			#life = int(life)
-			#velocity = Vector2.ZERO
-			#invincible = true
-			#damage_effect()
-			#$iFrames.start()
+			if not collision.get_collider().is_in_group("ignore collision"):
+				#print("var colisao = true")
+				take_damage("cenario")
 
 func _ready():
 	# se nenhuma arma foi selecionada, ele pega a primeira
@@ -250,7 +241,6 @@ func damage_effect():
 func _on_sonar_cooldown_timeout():
 	sonar = false
 
-
 func _on_i_frames_timeout():
 	invincible = false
 	$Flash.stop()
@@ -336,7 +326,23 @@ func collect(type):
 		scrap_earned = randi_range(8,12)
 		
 	scrap += scrap_earned
+
+func regen(stat):
+	match stat:
+		"Recuperar vida":
+			life = player_vars.max_life
+		"Recuperar energia":
+			energy = player_vars.max_energy
 	
+func change_stat(stat, qtd):
+	match stat:
+		"life":
+			life += qtd
+		"energy":
+			energy += qtd
+		"scrap":
+			scrap += qtd
+
 func take_damage(type):
 	#print("velocidade: " + str(current_speed))
 	var dano_tomado = 0

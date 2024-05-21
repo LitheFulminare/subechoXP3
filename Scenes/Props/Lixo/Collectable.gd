@@ -18,6 +18,7 @@ func _process(delta):
 func _on_area_entered(area):
 	if area.is_in_group("player"):
 		player_in_area = true
+		print("debug entrou")
 	
 
 func _on_area_exited(area):
