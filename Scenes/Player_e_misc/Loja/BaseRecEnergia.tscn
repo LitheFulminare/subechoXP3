@@ -1,7 +1,8 @@
-[gd_scene load_steps=23 format=3 uid="uid://da20fitkathkr"]
+[gd_scene load_steps=22 format=3 uid="uid://da20fitkathkr"]
 
 [ext_resource type="Script" path="res://Scenes/Player_e_misc/Loja/StoreInteractable.gd" id="1_6fijx"]
 [ext_resource type="Texture2D" uid="uid://cjiksj1avfapf" path="res://sprites/Loja in game/recup_energia.png" id="2_a54up"]
+[ext_resource type="Texture2D" uid="uid://r8vhexq3sysx" path="res://sprites/Misc/Luz.png" id="3_tvb3g"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_apr8i"]
 atlas = ExtResource("2_a54up")
@@ -102,13 +103,6 @@ animations = [{
 "speed": 48.0
 }]
 
-[sub_resource type="Gradient" id="Gradient_dxiyk"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_oj6rg"]
-gradient = SubResource("Gradient_dxiyk")
-fill_from = Vector2(0.5, 0)
-fill_to = Vector2(0.5, 1)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ohgns"]
 size = Vector2(22, 16)
 
@@ -134,10 +128,14 @@ interact_type = "Recuperar energia"
 sprite_frames = SubResource("SpriteFrames_3tohv")
 
 [node name="Light" type="PointLight2D" parent="."]
-visible = false
-position = Vector2(0.5, 4.5)
-scale = Vector2(0.265625, 0.359375)
-texture = SubResource("GradientTexture2D_oj6rg")
+z_index = 1
+texture_filter = 2
+position = Vector2(-9.53674e-07, 4)
+rotation = -1.5708
+scale = Vector2(0.16644, 0.278541)
+color = Color(0.611765, 0.764706, 1, 1)
+energy = 1.5
+texture = ExtResource("3_tvb3g")
 
 [node name="Collider" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 8)

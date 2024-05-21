@@ -81,10 +81,11 @@ offset_right = 1929.0
 offset_bottom = 1091.0
 metadata/_edit_lock_ = true
 
-[node name="BG2" type="ColorRect" parent="CanvasGroup"]
-z_index = -1
+[node name="FLoorColor" type="ColorRect" parent="CanvasGroup"]
+light_mask = 2
+z_index = 1
 offset_top = 656.0
 offset_right = 1929.0
-offset_bottom = 763.0
+offset_bottom = 1035.0
 color = Color(0.00784314, 0, 1, 1)
 metadata/_edit_lock_ = true

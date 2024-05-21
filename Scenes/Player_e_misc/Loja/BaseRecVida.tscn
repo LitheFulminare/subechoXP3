@@ -1,14 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://c2o5uc5sspr57"]
+[gd_scene load_steps=6 format=3 uid="uid://c2o5uc5sspr57"]
 
 [ext_resource type="Texture2D" uid="uid://cpxdedk7i8nla" path="res://sprites/Loja in game/bigorna.png" id="1_1jd24"]
 [ext_resource type="Script" path="res://Scenes/Player_e_misc/Loja/StoreInteractable.gd" id="1_7wxhc"]
-
-[sub_resource type="Gradient" id="Gradient_5ajh4"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_eviie"]
-gradient = SubResource("Gradient_5ajh4")
-fill_from = Vector2(0.5, 0)
-fill_to = Vector2(0.5, 1)
+[ext_resource type="Texture2D" uid="uid://r8vhexq3sysx" path="res://sprites/Misc/Luz.png" id="3_wcb7m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ohgns"]
 size = Vector2(22, 16)
@@ -24,10 +18,14 @@ interact_type = "Recuperar vida"
 texture = ExtResource("1_1jd24")
 
 [node name="Light" type="PointLight2D" parent="."]
-visible = false
-position = Vector2(-1, 4.5)
-scale = Vector2(0.34375, 0.359375)
-texture = SubResource("GradientTexture2D_eviie")
+z_index = 1
+texture_filter = 2
+position = Vector2(-9.53674e-07, 4)
+rotation = 4.71239
+scale = Vector2(0.16644, 0.278541)
+color = Color(0.611765, 0.764706, 1, 1)
+energy = 1.5
+texture = ExtResource("3_wcb7m")
 
 [node name="Collider" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 8)

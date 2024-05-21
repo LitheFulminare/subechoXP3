@@ -8,8 +8,8 @@ extends StaticBody2D
 var player_in_area = false
 var depleted = false
 
-#func _ready():
-	#$Light.visible = false
+func _ready():
+	$Light.visible = false
 
 func _input(event):
 	if Input.is_action_pressed("Interact") && player_in_area:

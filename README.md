@@ -1,5 +1,8 @@
 "Abyssal Cleaner, XP3"
 
+importante lembrar:
+	Na LojaMidGame, o light mask do holofote do chao/suporte deve ser diferente da mask do holofote
+
 Armas
 	Gen-EricV1
 	Gen-EricV2
