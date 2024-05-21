@@ -154,6 +154,18 @@ value = 55.0
 texture_under = SubResource("CompressedTexture2D_mns7f")
 texture_progress = SubResource("CompressedTexture2D_appps")
 
+[node name="text x3" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 1185.0
+offset_top = 530.0
+offset_right = 1454.0
+offset_bottom = 759.0
+theme_override_colors/default_color = Color(0.6, 0.898039, 0.313726, 1)
+theme_override_fonts/normal_font = ExtResource("23_esi8y")
+theme_override_font_sizes/normal_font_size = 43
+text = "x3
+"
+
 [node name="Left" type="TextureButton" parent="."]
 layout_mode = 2
 offset_left = 534.0
@@ -328,18 +340,6 @@ texture = ExtResource("25_also2")
 [node name="Precisão" type="TextureRect" parent="MarginContainer4/VFlowContainer"]
 layout_mode = 2
 texture = ExtResource("26_h7nqc")
-
-[node name="text x3" type="RichTextLabel" parent="."]
-layout_mode = 0
-offset_left = 1185.0
-offset_top = 530.0
-offset_right = 1454.0
-offset_bottom = 759.0
-theme_override_colors/default_color = Color(0.6, 0.898039, 0.313726, 1)
-theme_override_fonts/normal_font = ExtResource("23_esi8y")
-theme_override_font_sizes/normal_font_size = 43
-text = "x3
-"
 
 [connection signal="pressed" from="Left" to="." method="_on_left_pressed"]
 [connection signal="pressed" from="Right" to="." method="_on_right_pressed"]
