@@ -250,7 +250,6 @@ func damage_effect():
 func _on_sonar_cooldown_timeout():
 	sonar = false
 
-
 func _on_i_frames_timeout():
 	invincible = false
 	$Flash.stop()
@@ -336,7 +335,7 @@ func collect(type):
 		scrap_earned = randi_range(8,12)
 		
 	scrap += scrap_earned
-	
+
 func regen(stat):
 	match stat:
 		"Recuperar vida":
@@ -344,6 +343,15 @@ func regen(stat):
 		"Recuperar energia":
 			energy = player_vars.max_energy
 	
+func change_stat(stat, qtd):
+	match stat:
+		"life":
+			life += qtd
+		"energy":
+			energy += qtd
+		"scrap":
+			scrap += qtd
+
 func take_damage(type):
 	#print("velocidade: " + str(current_speed))
 	var dano_tomado = 0

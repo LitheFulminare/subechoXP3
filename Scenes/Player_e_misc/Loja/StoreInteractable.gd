@@ -8,13 +8,17 @@ extends StaticBody2D
 var player_in_area = false
 var depleted = false
 
+#func _ready():
+	#$Light.visible = false
+
 func _input(event):
 	if Input.is_action_pressed("Interact") && player_in_area:
 		interact()
 
 func interact():
-	if not depleted:
+	if not depleted && player_vars.current_scrap >= 70:
 		depleted = true
+		get_tree().call_group("player", "change_stat", "scrap", -70)
 		get_tree().call_group("player", "regen", interact_type)
 		
 		if interact_type == "Recuperar energia":
@@ -33,8 +37,10 @@ func interact():
 func _on_buy_area_area_entered(area):
 	if area.is_in_group("player"):
 		player_in_area = true
+		$Light.visible = true
 
 
 func _on_buy_area_area_exited(area):
 	if area.is_in_group("player"):
 		player_in_area = false
+		$Light.visible = false
