@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://d1pje2hup8ea6"]
+[gd_scene load_steps=10 format=3 uid="uid://d1pje2hup8ea6"]
 
 [ext_resource type="PackedScene" uid="uid://d2tg02cwm2lik" path="res://Scenes/Player_e_misc/UI/UI vida e energia.tscn" id="1_1wjsv"]
 [ext_resource type="Script" path="res://Scenes/Layouts/LojaMidGame.gd" id="1_7qn0a"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://e4g3db01cv23" path="res://Scenes/Player_e_misc/Player/player.tscn" id="3_pn154"]
 [ext_resource type="PackedScene" uid="uid://c2o5uc5sspr57" path="res://Scenes/Player_e_misc/Loja/BaseRecVida.tscn" id="4_nhqbp"]
 [ext_resource type="PackedScene" uid="uid://da20fitkathkr" path="res://Scenes/Player_e_misc/Loja/BaseRecEnergia.tscn" id="5_76bnt"]
+[ext_resource type="PackedScene" uid="uid://c2xpi37g636ng" path="res://Scenes/Player_e_misc/Loja/PUvida.tscn" id="6_6lfav"]
+[ext_resource type="PackedScene" uid="uid://dgetijbqxnchl" path="res://Scenes/Player_e_misc/Loja/PUenergia.tscn" id="7_j7gty"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wc7xb"]
 size = Vector2(1940, 105)
@@ -46,6 +48,14 @@ scale = Vector2(4, 4)
 
 [node name="BaseRecEnergia" parent="CanvasGroup/Interactables" instance=ExtResource("5_76bnt")]
 position = Vector2(795, 592)
+scale = Vector2(4, 4)
+
+[node name="PU Vida" parent="CanvasGroup/Interactables" instance=ExtResource("6_6lfav")]
+position = Vector2(1189, 596)
+scale = Vector2(4, 4)
+
+[node name="PU Energia" parent="CanvasGroup/Interactables" instance=ExtResource("7_j7gty")]
+position = Vector2(1730, 592)
 scale = Vector2(4, 4)
 
 [node name="Player" parent="CanvasGroup" instance=ExtResource("3_pn154")]

@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://c2xpi37g636ng"]
+
+[ext_resource type="Script" path="res://Scenes/Player_e_misc/Loja/StoreInteractable.gd" id="1_4brpx"]
+[ext_resource type="Texture2D" uid="uid://dvoc50k00388d" path="res://sprites/Loja in game/integup.png" id="2_blekk"]
+[ext_resource type="Texture2D" uid="uid://r8vhexq3sysx" path="res://sprites/Misc/Luz.png" id="3_6d4l4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ohgns"]
+size = Vector2(22, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s8sct"]
+radius = 40.1123
+
+[node name="PU Vida" type="StaticBody2D"]
+script = ExtResource("1_4brpx")
+powerup_type = "+ vida"
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_blekk")
+
+[node name="Light" type="PointLight2D" parent="."]
+z_index = 1
+texture_filter = 2
+position = Vector2(0, 4)
+rotation = 4.71239
+scale = Vector2(0.16644, 0.343501)
+color = Color(0.611765, 0.764706, 1, 1)
+energy = 1.5
+texture = ExtResource("3_6d4l4")
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 8)
+shape = SubResource("RectangleShape2D_ohgns")
+
+[node name="Buy area" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="Collider" type="CollisionShape2D" parent="Buy area"]
+shape = SubResource("CircleShape2D_s8sct")
+
+[connection signal="area_entered" from="Buy area" to="." method="_on_buy_area_area_entered"]
+[connection signal="area_exited" from="Buy area" to="." method="_on_buy_area_area_exited"]
