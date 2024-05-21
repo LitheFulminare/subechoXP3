@@ -51,29 +51,35 @@ func switch_weapon():
 	# troca as armas mostradas e determina se o jogador tem a arma ou não
 	# tb atualiza as barras de status
 	if weapon_preview == 1:
+		$"text x3".visible = false
 		$"MarginContainer/Sprite/Arma1/Sprites 1".visible = true
 		$Selecionar.visible = true
 		$Comprar.visible = false
 		$"Damage bar".value = 50
 		$"Fire rate bar".value = 25
+		$"Precision bar".value = 68
 		$MarginContainer/Sprite/Arma1.modulate = Color(1, 1, 1, 1)
 		$"MarginContainer3/Nome da arma".text = "Gen-EricV1"
 		$"MarginContainer2/Descrição".text = FileAccess.open(desc_arma_1,FileAccess.READ).get_as_text()
 		
 	elif weapon_preview == 2:
+		$"text x3".visible = false
 		$"MarginContainer/Sprite/Arma1/Sprites 2".visible = true
 		$Selecionar.visible = true
 		$Comprar.visible = false
 		$"Damage bar".value = 20
-		$"Fire rate bar".value = 65
+		$"Fire rate bar".value = 55
+		$"Precision bar".value = 40
 		$MarginContainer/Sprite/Arma1.modulate = Color(1, 1, 1, 1)
 		$"MarginContainer3/Nome da arma".text = "Gen-EricV2"
 		$"MarginContainer2/Descrição".text =FileAccess.open(desc_arma_2,FileAccess.READ).get_as_text()
 		
 	elif weapon_preview == 3:
+		$"text x3".visible = true
 		$"MarginContainer/Sprite/Arma1/Sprites 3".visible = true
 		$"Damage bar".value = 32
 		$"Fire rate bar".value = 20
+		$"Precision bar".value = 25
 		$"MarginContainer3/Nome da arma".text = "Peacemaker"
 		$"MarginContainer2/Descrição".text = FileAccess.open(desc_arma_3,FileAccess.READ).get_as_text()
 		if player_vars.Peacemaker == false:
@@ -87,9 +93,11 @@ func switch_weapon():
 			$MarginContainer/Sprite/Arma1.modulate = Color(1, 1, 1, 1)
 			
 	elif weapon_preview == 4:
+		$"text x3".visible = false
 		$"MarginContainer/Sprite/Arma1/Sprites 4".visible = true
 		$"Damage bar".value = 35
 		$"Fire rate bar".value = 68
+		$"Precision bar".value = 55
 		$"MarginContainer3/Nome da arma".text = "Imperium"
 		$"MarginContainer2/Descrição".text = FileAccess.open(desc_arma_4,FileAccess.READ).get_as_text()
 		if player_vars.Imperium == false:

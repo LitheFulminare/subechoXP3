@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bxl8bwuwmncwy"]
+[gd_scene load_steps=35 format=3 uid="uid://bxl8bwuwmncwy"]
 
 [ext_resource type="Script" path="res://Scenes/Layouts/Loja.gd" id="1_85ebf"]
 [ext_resource type="Texture2D" uid="uid://dk53duvqcol4h" path="res://sprites/UI/Botões/Botão direito default.png" id="2_aujog"]
@@ -23,6 +23,9 @@
 [ext_resource type="PackedScene" uid="uid://r2uor4w348v2" path="res://Scenes/Player_e_misc/Player/Turbina/Turbina v1.tscn" id="13_8r24x"]
 [ext_resource type="PackedScene" uid="uid://8q3v8osdokef" path="res://Scenes/Player_e_misc/UI/UI scrap.tscn" id="13_iqerh"]
 [ext_resource type="FontFile" uid="uid://2jd17kesj1hy" path="res://Misc/VCR_OSD_MONO_1.001.ttf" id="23_esi8y"]
+[ext_resource type="Texture2D" uid="uid://m3qc4obdbqd2" path="res://sprites/UI/Ícones, misc/icone_ataque.png" id="24_nwuot"]
+[ext_resource type="Texture2D" uid="uid://wf5wns32kr7a" path="res://sprites/UI/Ícones, misc/icone_velocidade.png" id="25_also2"]
+[ext_resource type="Texture2D" uid="uid://bsbxffay34w3t" path="res://sprites/UI/Ícones, misc/icone_mira.png" id="26_h7nqc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yh4qi"]
 texture = ExtResource("6_py2c1")
@@ -35,6 +38,12 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSet" id="TileSet_fsyub"]
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_yh4qi")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mns7f"]
+load_path = "res://.godot/imported/barra_stats1.png-7aea8a2b2c15a63207c5bdf29f5ad9b4.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_appps"]
+load_path = "res://.godot/imported/barra_stats2.png-bf8dac34dcdff27aba105de5371a54fc.ctex"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kcasi"]
 animations = [{
@@ -116,24 +125,33 @@ layer_0/tile_data = PackedInt32Array(0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0
 [node name="Damage bar" type="TextureProgressBar" parent="."]
 layout_mode = 2
 offset_left = 696.0
-offset_top = 479.0
+offset_top = 409.0
 offset_right = 760.0
-offset_bottom = 511.0
+offset_bottom = 441.0
 scale = Vector2(8.44, 8.44)
-value = 35.0
+value = 50.0
 texture_under = ExtResource("3_ac46k")
 texture_progress = ExtResource("4_bywjy")
 
 [node name="Fire rate bar" type="TextureProgressBar" parent="."]
 layout_mode = 2
 offset_left = 696.0
-offset_top = 554.0
+offset_top = 484.0
 offset_right = 760.0
-offset_bottom = 586.0
+offset_bottom = 516.0
 scale = Vector2(8.44, 8.44)
-value = 68.0
 texture_under = ExtResource("3_ac46k")
 texture_progress = ExtResource("4_bywjy")
+
+[node name="Precision bar" type="TextureProgressBar" parent="."]
+offset_left = 696.0
+offset_top = 564.0
+offset_right = 760.0
+offset_bottom = 596.0
+scale = Vector2(8.44, 8.44)
+value = 55.0
+texture_under = SubResource("CompressedTexture2D_mns7f")
+texture_progress = SubResource("CompressedTexture2D_appps")
 
 [node name="Left" type="TextureButton" parent="."]
 layout_mode = 2
@@ -230,7 +248,7 @@ metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
 [node name="Sprite" type="Area2D" parent="MarginContainer"]
-position = Vector2(345, 180)
+position = Vector2(345, 110)
 scale = Vector2(10, 10)
 metadata/_edit_group_ = true
 
@@ -285,6 +303,41 @@ theme_override_colors/default_color = Color(0.6, 0.898039, 0.313726, 1)
 theme_override_fonts/normal_font = ExtResource("23_esi8y")
 theme_override_font_sizes/normal_font_size = 48
 text = "Nome da arma
+"
+
+[node name="MarginContainer4" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 672.0
+offset_top = 513.0
+offset_right = 704.0
+offset_bottom = 628.0
+scale = Vector2(2.24, 2.24)
+
+[node name="VFlowContainer" type="VFlowContainer" parent="MarginContainer4"]
+layout_mode = 2
+
+[node name="Dano" type="TextureRect" parent="MarginContainer4/VFlowContainer"]
+layout_mode = 2
+texture = ExtResource("24_nwuot")
+
+[node name="Fire rate" type="TextureRect" parent="MarginContainer4/VFlowContainer"]
+layout_mode = 2
+texture = ExtResource("25_also2")
+
+[node name="Precisão" type="TextureRect" parent="MarginContainer4/VFlowContainer"]
+layout_mode = 2
+texture = ExtResource("26_h7nqc")
+
+[node name="text x3" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 1185.0
+offset_top = 530.0
+offset_right = 1454.0
+offset_bottom = 759.0
+theme_override_colors/default_color = Color(0.6, 0.898039, 0.313726, 1)
+theme_override_fonts/normal_font = ExtResource("23_esi8y")
+theme_override_font_sizes/normal_font_size = 43
+text = "x3
 "
 
 [connection signal="pressed" from="Left" to="." method="_on_left_pressed"]
