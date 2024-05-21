@@ -11,6 +11,7 @@ radius = 40.1123
 
 [node name="BaseRecVida" type="StaticBody2D"]
 script = ExtResource("1_7wxhc")
+interact_type = "Recuperar vida"
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_1jd24")
