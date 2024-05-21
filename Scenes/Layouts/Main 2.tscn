@@ -1,4 +1,4 @@
-[gd_scene load_steps=101 format=3 uid="uid://pe5fywnxqt84"]
+[gd_scene load_steps=103 format=3 uid="uid://pe5fywnxqt84"]
 
 [ext_resource type="Script" path="res://Scenes/Layouts/Main 2.gd" id="1_r7km2"]
 [ext_resource type="PackedScene" uid="uid://bijwkls1lldy4" path="res://Scenes/Props/Misc/Pedra.tscn" id="2_g5he7"]
@@ -16,6 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://da5o8qogsuwxq" path="res://sprites/Props/sheet pedra.png" id="8_7l0nt"]
 [ext_resource type="PackedScene" uid="uid://i07d0qta5c7" path="res://Scenes/Props/Lixo/Plastico.tscn" id="8_a53a4"]
 [ext_resource type="Texture2D" uid="uid://damdurv35goet" path="res://Scenes/layoutTeste/tilemapGG.png" id="8_lwokt"]
+[ext_resource type="PackedScene" uid="uid://ofrdbaojdppx" path="res://Scenes/Props/Plantas/Alga.tscn" id="17_ua6ah"]
+[ext_resource type="PackedScene" uid="uid://b4c3j715n4txj" path="res://Scenes/Props/Plantas/Coral.tscn" id="18_n5a0p"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ki1ap"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -701,6 +703,10 @@ inimigo_scene = ExtResource("2_j3ugg")
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="UI vida e energia" parent="UI" instance=ExtResource("3_r3bhl")]
+offset_left = 48.0
+offset_top = -88.0
+offset_right = 51.0
+offset_bottom = -88.0
 scale = Vector2(4.455, 4.455)
 
 [node name="CanvasGroup" type="CanvasGroup" parent="."]
@@ -814,7 +820,7 @@ texture = SubResource("GradientTexture2D_rly4j")
 
 [node name="Player" parent="CanvasGroup" instance=ExtResource("5_qvshv")]
 light_mask = 1
-position = Vector2(191, 1495)
+position = Vector2(200, 1451)
 scale = Vector2(0.992109, 0.984466)
 speed = 200
 acceleration = 150
@@ -829,6 +835,73 @@ editor_draw_screen = false
 editor_draw_limits = true
 
 [node name="playerpos" type="Node2D" parent="CanvasGroup/Player"]
+
+[node name="Plantas" type="Node2D" parent="CanvasGroup"]
+
+[node name="CoralPe01" parent="CanvasGroup/Plantas" instance=ExtResource("18_n5a0p")]
+position = Vector2(453, 1517)
+scale = Vector2(0.516552, 0.605347)
+
+[node name="Coral2" parent="CanvasGroup/Plantas" instance=ExtResource("18_n5a0p")]
+position = Vector2(2080, 1549)
+
+[node name="Coral3" parent="CanvasGroup/Plantas" instance=ExtResource("18_n5a0p")]
+position = Vector2(1881, 202)
+
+[node name="Coral4" parent="CanvasGroup/Plantas" instance=ExtResource("18_n5a0p")]
+position = Vector2(1720, 200)
+
+[node name="AlgaVPe01" parent="CanvasGroup/Plantas" instance=ExtResource("17_ua6ah")]
+position = Vector2(595, 1476)
+scale = Vector2(0.647537, 0.478418)
+
+[node name="AlgaVPe02" parent="CanvasGroup/Plantas" instance=ExtResource("17_ua6ah")]
+position = Vector2(640, 1477)
+scale = Vector2(0.647537, 0.478418)
+
+[node name="AlgaVPe03" parent="CanvasGroup/Plantas" instance=ExtResource("17_ua6ah")]
+position = Vector2(897, 998)
+scale = Vector2(0.647537, 0.478418)
+
+[node name="AlgaVPe04" parent="CanvasGroup/Plantas" instance=ExtResource("17_ua6ah")]
+position = Vector2(944, 1000)
+scale = Vector2(0.647537, 0.478418)
+
+[node name="AlgaVPe05" parent="CanvasGroup/Plantas" instance=ExtResource("17_ua6ah")]
+position = Vector2(989, 999)
+scale = Vector2(0.647537, 0.478418)
+
+[node name="AlgaVGr02" parent="CanvasGroup/Plantas" instance=ExtResource("17_ua6ah")]
+position = Vector2(1868, 1221)
+
+[node name="AlgaVGr03" parent="CanvasGroup/Plantas" instance=ExtResource("17_ua6ah")]
+position = Vector2(1017, 1554)
+
+[node name="Alga4" parent="CanvasGroup/Plantas" instance=ExtResource("17_ua6ah")]
+position = Vector2(2293, 1172)
+
+[node name="Alga5" parent="CanvasGroup/Plantas" instance=ExtResource("17_ua6ah")]
+position = Vector2(493, 1028)
+
+[node name="Alga6" parent="CanvasGroup/Plantas" instance=ExtResource("17_ua6ah")]
+position = Vector2(1046, 404)
+rotation = 0.0115602
+
+[node name="CoralPe02" parent="CanvasGroup/Plantas" instance=ExtResource("18_n5a0p")]
+position = Vector2(509, 1466)
+scale = Vector2(0.516552, 0.605347)
+
+[node name="CoralPe03" parent="CanvasGroup/Plantas" instance=ExtResource("18_n5a0p")]
+position = Vector2(1179, 1469)
+scale = Vector2(0.516552, 0.605347)
+
+[node name="CoralPe04" parent="CanvasGroup/Plantas" instance=ExtResource("18_n5a0p")]
+position = Vector2(1091, 1514)
+scale = Vector2(0.516552, 0.605347)
+
+[node name="CoralPe05" parent="CanvasGroup/Plantas" instance=ExtResource("18_n5a0p")]
+position = Vector2(1131, 1513)
+scale = Vector2(0.516552, 0.605347)
 
 [node name="Player Spawn" type="Marker2D" parent="."]
 position = Vector2(188, 1470)
