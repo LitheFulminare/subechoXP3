@@ -1,8 +1,6 @@
 extends StaticBody2D
 
 @export_enum("Recuperar vida", "Recuperar energia", "powerup" ) var interact_type: String = ""
-
-
 @export_enum("+ vida", "+ energia") var powerup_type : String = ""
 
 var player_in_area = false

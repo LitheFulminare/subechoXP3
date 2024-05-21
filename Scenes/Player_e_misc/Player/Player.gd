@@ -69,18 +69,9 @@ func player_movement(delta):
 			#print("colisao explosivo")
 		#print(get_last_slide_collision().get_collider())
 		if not invincible && life > 0 && not collision.get_collider().is_in_group("inimigo"):
-			#print("var colisao = true")
-			take_damage("cenario")
-			#print("velocidade: " + str(current_speed))
-			#var dano_tomado = int(current_speed/20)
-			#if dano_tomado < 1:
-				#dano_tomado = 1
-			#life -= dano_tomado
-			#life = int(life)
-			#velocity = Vector2.ZERO
-			#invincible = true
-			#damage_effect()
-			#$iFrames.start()
+			if not collision.get_collider().is_in_group("ignore collision"):
+				#print("var colisao = true")
+				take_damage("cenario")
 
 func _ready():
 	# se nenhuma arma foi selecionada, ele pega a primeira

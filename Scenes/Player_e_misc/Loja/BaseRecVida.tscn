@@ -10,7 +10,7 @@ size = Vector2(22, 16)
 [sub_resource type="CircleShape2D" id="CircleShape2D_s8sct"]
 radius = 40.1123
 
-[node name="BaseRecVida" type="StaticBody2D"]
+[node name="BaseRecVida" type="StaticBody2D" groups=["ignore collision"]]
 script = ExtResource("1_7wxhc")
 interact_type = "Recuperar vida"
 

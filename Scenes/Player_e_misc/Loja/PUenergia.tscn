@@ -4,13 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://bpdmc5uejdsyo" path="res://sprites/Loja in game/energiaup.png" id="2_f8053"]
 [ext_resource type="Texture2D" uid="uid://r8vhexq3sysx" path="res://sprites/Misc/Luz.png" id="3_0dm1i"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ohgns"]
-size = Vector2(22, 16)
+[sub_resource type="CircleShape2D" id="CircleShape2D_0g4d0"]
+radius = 15.0333
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s8sct"]
 radius = 40.1123
 
-[node name="PU Energia" type="StaticBody2D"]
+[node name="PU Energia" type="StaticBody2D" groups=["ignore collision"]]
 script = ExtResource("1_na4o7")
 powerup_type = "+ energia"
 
@@ -28,8 +28,7 @@ energy = 1.5
 texture = ExtResource("3_0dm1i")
 
 [node name="Collider" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 8)
-shape = SubResource("RectangleShape2D_ohgns")
+shape = SubResource("CircleShape2D_0g4d0")
 
 [node name="Buy area" type="Area2D" parent="."]
 collision_mask = 2
