@@ -1,18 +1,24 @@
 extends Control
 
 var weapon_preview : int # a arma que o jogador vê
-#var weapon_selected : int # a arma que o jogador tem selecionado
 
-# boolean se o jogador tem a arma desbloqueada ou não
-#var Peacemaker = false
-#var Imperium = false
-#var Killerbee = false
+# descrição de cada arma
+var desc_arma_1
+var desc_arma_2
+var desc_arma_3
+var desc_arma_4
 
 func _ready():
+	# as variaveis das descrições armazenam um .txt que vai ser mostrado depois
+	desc_arma_1 = "res://Misc/Textos/Desc arma 1.txt"
+	desc_arma_2 = "res://Misc/Textos/Desc arma 2.txt"
+	desc_arma_3 = "res://Misc/Textos/Desc arma 3.txt"
+	desc_arma_4 = "res://Misc/Textos/Desc arma 4.txt"
+	
 	
 	if player_vars.weapon_type == "":  # se nenhuma arma tiver sido selecionada antes,
 		weapon_preview = 1             # ele vai escolher a arma 1
-		#weapon_selected = 1     
+		
 		player_vars.weapon_type = "Gen-EricV1"            
 		player_vars.current_weapon = 1
 		player_vars.preview = 1
@@ -43,27 +49,65 @@ func _on_left_pressed():
 func switch_weapon():
 	
 	# troca as armas mostradas e determina se o jogador tem a arma ou não
+	# tb atualiza as barras de status
 	if weapon_preview == 1:
+		$"text x3".visible = false
 		$"MarginContainer/Sprite/Arma1/Sprites 1".visible = true
 		$Selecionar.visible = true
 		$Comprar.visible = false
+		$"Damage bar".value = 50
+		$"Fire rate bar".value = 25
+		$"Precision bar".value = 68
+		$MarginContainer/Sprite/Arma1.modulate = Color(1, 1, 1, 1)
+		$"MarginContainer3/Nome da arma".text = "Gen-EricV1"
+		$"MarginContainer2/Descrição".text = FileAccess.open(desc_arma_1,FileAccess.READ).get_as_text()
 		
 	elif weapon_preview == 2:
+		$"text x3".visible = false
 		$"MarginContainer/Sprite/Arma1/Sprites 2".visible = true
 		$Selecionar.visible = true
 		$Comprar.visible = false
+		$"Damage bar".value = 20
+		$"Fire rate bar".value = 55
+		$"Precision bar".value = 40
+		$MarginContainer/Sprite/Arma1.modulate = Color(1, 1, 1, 1)
+		$"MarginContainer3/Nome da arma".text = "Gen-EricV2"
+		$"MarginContainer2/Descrição".text =FileAccess.open(desc_arma_2,FileAccess.READ).get_as_text()
 		
 	elif weapon_preview == 3:
+		$"text x3".visible = true
 		$"MarginContainer/Sprite/Arma1/Sprites 3".visible = true
+		$"Damage bar".value = 32
+		$"Fire rate bar".value = 20
+		$"Precision bar".value = 25
+		$"MarginContainer3/Nome da arma".text = "Peacemaker"
+		$"MarginContainer2/Descrição".text = FileAccess.open(desc_arma_3,FileAccess.READ).get_as_text()
 		if player_vars.Peacemaker == false:
 			$Selecionar.visible = false
 			$Comprar.visible = true
+			$MarginContainer/Sprite/Arma1.modulate = Color(0.65, 0.65, 0.65, 0.65)
+			
+		else:
+			$Selecionar.visible = true
+			$Comprar.visible = false
+			$MarginContainer/Sprite/Arma1.modulate = Color(1, 1, 1, 1)
 			
 	elif weapon_preview == 4:
+		$"text x3".visible = false
 		$"MarginContainer/Sprite/Arma1/Sprites 4".visible = true
+		$"Damage bar".value = 35
+		$"Fire rate bar".value = 68
+		$"Precision bar".value = 55
+		$"MarginContainer3/Nome da arma".text = "Imperium"
+		$"MarginContainer2/Descrição".text = FileAccess.open(desc_arma_4,FileAccess.READ).get_as_text()
 		if player_vars.Imperium == false:
 			$Selecionar.visible = false
 			$Comprar.visible = true
+			$MarginContainer/Sprite/Arma1.modulate = Color(0.65, 0.65, 0.65, 0.65)
+		else:
+			$Selecionar.visible = true
+			$Comprar.visible = false
+			$MarginContainer/Sprite/Arma1.modulate = Color(1, 1, 1, 1)
 
 
 func _on_voltar_pressed():
@@ -91,13 +135,11 @@ func _on_selecionar_pressed():
 
 func _on_comprar_pressed():
 	if weapon_preview == 3 && player_vars.Peacemaker == false && player_vars.current_scrap >= 50:
-		player_vars.current_scrap -= 50
 		player_vars.Peacemaker = true
-		$Selecionar.visible = true
-		$Comprar.visible = false
+		player_vars.current_scrap -= 50
+		switch_weapon()
 		
 	if weapon_preview == 4 && player_vars.Imperium == false && player_vars.current_scrap >= 100:
-		player_vars.current_scrap -= 100
 		player_vars.Imperium = true
-		$Selecionar.visible = true
-		$Comprar.visible = false
+		player_vars.current_scrap -= 100
+		switch_weapon()

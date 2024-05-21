@@ -1,0 +1,279 @@
+[gd_scene load_steps=30 format=3 uid="uid://bxl8bwuwmncwy"]
+
+[ext_resource type="Script" path="res://Scenes/Layouts/Loja.gd" id="1_85ebf"]
+[ext_resource type="Texture2D" uid="uid://dk53duvqcol4h" path="res://sprites/UI/Botões/Botão direito default.png" id="2_aujog"]
+[ext_resource type="Texture2D" uid="uid://bccxyfrdeojt3" path="res://sprites/UI/Ícones, misc/barra_stats1.png" id="3_ac46k"]
+[ext_resource type="Texture2D" uid="uid://dl4bpic0ffxks" path="res://sprites/UI/Botões/Botão direito hover.png" id="3_t4qn5"]
+[ext_resource type="Texture2D" uid="uid://d3hj4xg7t40du" path="res://sprites/UI/Ícones, misc/barra_stats2.png" id="4_bywjy"]
+[ext_resource type="Texture2D" uid="uid://bl063bt71htkf" path="res://sprites/UI/Botões/Botão esquerdo default.png" id="5_jlm4b"]
+[ext_resource type="Texture2D" uid="uid://c02fwc7nnfe30" path="res://sprites/UI/Botões/Botão esquerdo hover.png" id="6_a3n4v"]
+[ext_resource type="Texture2D" uid="uid://d004737er7nqm" path="res://sprites/Misc/Fundo Menu.png" id="6_py2c1"]
+[ext_resource type="Texture2D" uid="uid://do1dywod4baf2" path="res://sprites/UI/Botões/voltar normal.png" id="7_sk3sh"]
+[ext_resource type="Texture2D" uid="uid://cocbp3s5ii87t" path="res://sprites/player/Arma/arma1.png" id="7_to2j0"]
+[ext_resource type="Texture2D" uid="uid://bnlpirhmgpg26" path="res://sprites/player/Arma/arma_rapida_base1.png" id="8_47ys0"]
+[ext_resource type="Texture2D" uid="uid://8j8owedgc630" path="res://sprites/UI/Botões/voltar hover.png" id="8_vqknp"]
+[ext_resource type="Texture2D" uid="uid://v8t8yq6kyx30" path="res://sprites/UI/Botões/Selecionar normal.png" id="9_ae3l1"]
+[ext_resource type="Texture2D" uid="uid://fcjwgbvtu06l" path="res://sprites/player/Casco/Casco1.png" id="9_qcp8d"]
+[ext_resource type="Texture2D" uid="uid://bu44xkmt1s00t" path="res://sprites/UI/Botões/Comprar normal.png" id="9_qyhdk"]
+[ext_resource type="Texture2D" uid="uid://dwtbijy6imku5" path="res://sprites/UI/Botões/Comprar hover.png" id="10_3i1oq"]
+[ext_resource type="Texture2D" uid="uid://c3pcnef1p3mve" path="res://sprites/UI/Botões/Selecionar hover.png" id="10_8u3bc"]
+[ext_resource type="Texture2D" uid="uid://vjb3rydk6640" path="res://sprites/player/Sonar/sonar1.png" id="10_sng4s"]
+[ext_resource type="Texture2D" uid="uid://cvae20cgax3sk" path="res://sprites/player/Sonar/sonar1_2.png" id="11_1rwnm"]
+[ext_resource type="PackedScene" uid="uid://drvd8bhk4plho" path="res://Scenes/Player_e_misc/Player/Arma 1/Arma 1.tscn" id="12_0rwp4"]
+[ext_resource type="PackedScene" uid="uid://r2uor4w348v2" path="res://Scenes/Player_e_misc/Player/Turbina/Turbina v1.tscn" id="13_8r24x"]
+[ext_resource type="PackedScene" uid="uid://8q3v8osdokef" path="res://Scenes/Player_e_misc/UI/UI scrap.tscn" id="13_iqerh"]
+[ext_resource type="FontFile" uid="uid://2jd17kesj1hy" path="res://Misc/VCR_OSD_MONO_1.001.ttf" id="23_esi8y"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yh4qi"]
+texture = ExtResource("6_py2c1")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_fsyub"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_yh4qi")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kcasi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_qcp8d")
+}],
+"loop": true,
+"name": &"casco 1",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_37ou7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_sng4s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_1rwnm")
+}],
+"loop": true,
+"name": &"Sonar 1",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vbo0k"]
+atlas = ExtResource("8_47ys0")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ji3m5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_to2j0")
+}],
+"loop": false,
+"name": &"Gen-EricV1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vbo0k")
+}],
+"loop": true,
+"name": &"Gen-EricV2",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Imperium",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Killerbee",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Peacemaker",
+"speed": 5.0
+}]
+
+[node name="Loja" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_85ebf")
+metadata/_edit_horizontal_guides_ = [897.0, 797.0, 847.0]
+metadata/_edit_vertical_guides_ = [960.0]
+
+[node name="TileMap" type="TileMap" parent="."]
+z_index = -1
+scale = Vector2(4, 4)
+tile_set = SubResource("TileSet_fsyub")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 65550, 0, 0, 131086, 0, 0, 196622, 0, 0, 262158, 0, 0, 327694, 0, 0, 393230, 0, 0, 458766, 0, 0, 524302, 0, 0, 524301, 0, 0, 524300, 0, 0, 524299, 0, 0, 524298, 0, 0, 524297, 0, 0, 524296, 0, 0, 524295, 0, 0, 524294, 0, 0, 524293, 0, 0, 524292, 0, 0, 524291, 0, 0, 524290, 0, 0, 524289, 0, 0, 524288, 0, 0, 458752, 0, 0, 393216, 0, 0, 327680, 0, 0, 262144, 0, 0, 196608, 0, 0, 131072, 0, 0, 65536, 0, 0, 327684, 0, 0, 262148, 0, 0, 196612, 0, 0, 131076, 0, 0, 65540, 0, 0, 65539, 0, 0, 65538, 0, 0, 65537, 0, 0, 131073, 0, 0, 196609, 0, 0, 262145, 0, 0, 327681, 0, 0, 393217, 0, 0, 458753, 0, 0, 458754, 0, 0, 393218, 0, 0, 327682, 0, 0, 262146, 0, 0, 196610, 0, 0, 131074, 0, 0, 131075, 0, 0, 196611, 0, 0, 262147, 0, 0, 327683, 0, 0, 393219, 0, 0, 458755, 0, 0, 458756, 0, 0, 393220, 0, 0, 393221, 0, 0, 327685, 0, 0, 262149, 0, 0, 196613, 0, 0, 131077, 0, 0, 65541, 0, 0, 65542, 0, 0, 131078, 0, 0, 196614, 0, 0, 262150, 0, 0, 327686, 0, 0, 393222, 0, 0, 458758, 0, 0, 458757, 0, 0, 458759, 0, 0, 393223, 0, 0, 327687, 0, 0, 262151, 0, 0, 196615, 0, 0, 131079, 0, 0, 65543, 0, 0, 65544, 0, 0, 131080, 0, 0, 196616, 0, 0, 262152, 0, 0, 327688, 0, 0, 393224, 0, 0, 458760, 0, 0, 458761, 0, 0, 393225, 0, 0, 327689, 0, 0, 262153, 0, 0, 196617, 0, 0, 131081, 0, 0, 65545, 0, 0, 65546, 0, 0, 131082, 0, 0, 196618, 0, 0, 262154, 0, 0, 327690, 0, 0, 393226, 0, 0, 458762, 0, 0, 458763, 0, 0, 393227, 0, 0, 327691, 0, 0, 262155, 0, 0, 196619, 0, 0, 131083, 0, 0, 65547, 0, 0, 65548, 0, 0, 131084, 0, 0, 196620, 0, 0, 262156, 0, 0, 327692, 0, 0, 393228, 0, 0, 458764, 0, 0, 458765, 0, 0, 393229, 0, 0, 327693, 0, 0, 262157, 0, 0, 196621, 0, 0, 131085, 0, 0, 65549, 0, 0)
+
+[node name="Damage bar" type="TextureProgressBar" parent="."]
+layout_mode = 2
+offset_left = 696.0
+offset_top = 479.0
+offset_right = 760.0
+offset_bottom = 511.0
+scale = Vector2(8.44, 8.44)
+value = 35.0
+texture_under = ExtResource("3_ac46k")
+texture_progress = ExtResource("4_bywjy")
+
+[node name="Fire rate bar" type="TextureProgressBar" parent="."]
+layout_mode = 2
+offset_left = 696.0
+offset_top = 554.0
+offset_right = 760.0
+offset_bottom = 586.0
+scale = Vector2(8.44, 8.44)
+value = 68.0
+texture_under = ExtResource("3_ac46k")
+texture_progress = ExtResource("4_bywjy")
+
+[node name="Left" type="TextureButton" parent="."]
+layout_mode = 2
+offset_left = 534.0
+offset_top = 797.0
+offset_right = 547.0
+offset_bottom = 817.0
+scale = Vector2(5, 5)
+tooltip_text = "Arma anterior"
+texture_normal = ExtResource("5_jlm4b")
+texture_hover = ExtResource("6_a3n4v")
+
+[node name="Right" type="TextureButton" parent="."]
+layout_mode = 2
+offset_left = 1312.56
+offset_top = 797.0
+offset_right = 1325.56
+offset_bottom = 817.0
+scale = Vector2(5, 5)
+size_flags_horizontal = 4
+size_flags_vertical = 8
+tooltip_text = "Próxima arma"
+texture_normal = ExtResource("2_aujog")
+texture_hover = ExtResource("3_t4qn5")
+
+[node name="Selecionar" type="TextureButton" parent="."]
+visible = false
+layout_mode = 2
+offset_left = 800.0
+offset_top = 772.0
+offset_right = 864.0
+offset_bottom = 784.0
+scale = Vector2(5, 5)
+size_flags_horizontal = 4
+size_flags_vertical = 8
+tooltip_text = "Escolher essa arma para a run"
+texture_normal = ExtResource("9_ae3l1")
+texture_hover = ExtResource("10_8u3bc")
+
+[node name="Comprar" type="TextureButton" parent="."]
+layout_mode = 2
+offset_left = 833.0
+offset_top = 772.0
+offset_right = 884.0
+offset_bottom = 784.0
+scale = Vector2(5, 5)
+size_flags_horizontal = 4
+size_flags_vertical = 8
+tooltip_text = "Gastar a sucata necessária para comprar a arma"
+texture_normal = ExtResource("9_qyhdk")
+texture_hover = ExtResource("10_3i1oq")
+
+[node name="Voltar" type="TextureButton" parent="."]
+layout_mode = 2
+offset_left = 850.0
+offset_top = 857.0
+offset_right = 894.0
+offset_bottom = 871.0
+scale = Vector2(5, 5)
+size_flags_horizontal = 4
+size_flags_vertical = 8
+tooltip_text = "Voltar ao menu"
+texture_normal = ExtResource("7_sk3sh")
+texture_hover = ExtResource("8_vqknp")
+
+[node name="UI Scrap" parent="." instance=ExtResource("13_iqerh")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_right = 0.0
+offset_left = 5.0
+offset_top = 956.0
+offset_right = 39.0
+offset_bottom = 984.0
+grow_horizontal = 1
+grow_vertical = 0
+scale = Vector2(6.21, 6.21)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 599.0
+offset_top = 155.0
+offset_right = 1319.0
+offset_bottom = 683.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Sprite" type="Area2D" parent="MarginContainer"]
+position = Vector2(345, 180)
+scale = Vector2(10, 10)
+metadata/_edit_group_ = true
+
+[node name="Casco" type="AnimatedSprite2D" parent="MarginContainer/Sprite"]
+sprite_frames = SubResource("SpriteFrames_kcasi")
+animation = &"casco 1"
+
+[node name="Sonar" type="AnimatedSprite2D" parent="MarginContainer/Sprite"]
+position = Vector2(0, 1.01725e-05)
+sprite_frames = SubResource("SpriteFrames_37ou7")
+animation = &"Sonar 1"
+
+[node name="Arma1" parent="MarginContainer/Sprite" instance=ExtResource("12_0rwp4")]
+position = Vector2(7, 7)
+
+[node name="TurbinaV1" parent="MarginContainer/Sprite" instance=ExtResource("13_8r24x")]
+position = Vector2(-11, -3)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MarginContainer"]
+visible = false
+position = Vector2(211, 151)
+scale = Vector2(15, 15)
+sprite_frames = SubResource("SpriteFrames_ji3m5")
+animation = &"Gen-EricV1"
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 1294.0
+offset_top = 180.0
+offset_right = 1830.0
+offset_bottom = 596.0
+
+[node name="Descrição" type="RichTextLabel" parent="MarginContainer2"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.6, 0.898039, 0.313726, 1)
+theme_override_fonts/normal_font = ExtResource("23_esi8y")
+theme_override_font_sizes/normal_font_size = 29
+text = "Custo: 50
+
+Essa é uma arma que dá dano nos inimigos, e se tomarem dano suficiente eles morrem. Também é capaz de dar mais de 1 tiro por jogo."
+
+[connection signal="pressed" from="Left" to="." method="_on_left_pressed"]
+[connection signal="pressed" from="Right" to="." method="_on_right_pressed"]
+[connection signal="pressed" from="Selecionar" to="." method="_on_selecionar_pressed"]
+[connection signal="pressed" from="Comprar" to="." method="_on_comprar_pressed"]
+[connection signal="pressed" from="Voltar" to="." method="_on_voltar_pressed"]

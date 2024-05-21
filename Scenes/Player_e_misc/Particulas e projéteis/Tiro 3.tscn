@@ -1,0 +1,108 @@
+[gd_scene load_steps=15 format=3 uid="uid://twpc473q6c7o"]
+
+[ext_resource type="Script" path="res://Scenes/Player_e_misc/Particulas e projéteis/Tiro 1.gd" id="1_28o44"]
+[ext_resource type="Texture2D" uid="uid://0snpqpmymtuk" path="res://sprites/Projeteis e partículas/tiro_laser.png" id="2_kjgsp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b413e"]
+atlas = ExtResource("2_kjgsp")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ywku"]
+atlas = ExtResource("2_kjgsp")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k1ba1"]
+atlas = ExtResource("2_kjgsp")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mihqw"]
+atlas = ExtResource("2_kjgsp")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ay86n"]
+atlas = ExtResource("2_kjgsp")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_165l3"]
+atlas = ExtResource("2_kjgsp")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r8lwm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b413e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ywku")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k1ba1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mihqw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ay86n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_165l3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 26.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_58ohc"]
+offsets = PackedFloat32Array(0.00649351, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1bu1l"]
+gradient = SubResource("Gradient_58ohc")
+fill_from = Vector2(1, 0.509174)
+fill_to = Vector2(0, 0.518349)
+
+[sub_resource type="Gradient" id="Gradient_eebm2"]
+colors = PackedColorArray(1, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vnbrv"]
+gradient = SubResource("Gradient_eebm2")
+fill = 1
+fill_from = Vector2(0.458716, 0.46789)
+fill_to = Vector2(1, 0.486239)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_og843"]
+size = Vector2(33.5, 4.5)
+
+[node name="Tiro3" type="Area2D"]
+scale = Vector2(4, 4)
+script = ExtResource("1_28o44")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_r8lwm")
+autoplay = "default"
+frame_progress = 0.200752
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+light_mask = 4
+position = Vector2(0.5, 0.5)
+scale = Vector2(0.515625, 0.046875)
+range_item_cull_mask = 7
+texture = SubResource("GradientTexture2D_1bu1l")
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(3, -1)
+scale = Vector2(2.21094, 0.882813)
+texture = SubResource("GradientTexture2D_vnbrv")
+
+[node name="Colisor" type="CollisionShape2D" parent="."]
+position = Vector2(0.25, 0.75)
+shape = SubResource("RectangleShape2D_og843")
+
+[node name="Area2D" type="Area2D" parent="." groups=["tiro"]]
+
+[node name="Colisor" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.25, 0.75)
+shape = SubResource("RectangleShape2D_og843")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

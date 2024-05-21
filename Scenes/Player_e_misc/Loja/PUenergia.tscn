@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://dgetijbqxnchl"]
+
+[ext_resource type="Script" path="res://Scenes/Player_e_misc/Loja/StoreInteractable.gd" id="1_na4o7"]
+[ext_resource type="Texture2D" uid="uid://bpdmc5uejdsyo" path="res://sprites/Loja in game/energiaup.png" id="2_f8053"]
+[ext_resource type="Texture2D" uid="uid://r8vhexq3sysx" path="res://sprites/Misc/Luz.png" id="3_0dm1i"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0g4d0"]
+radius = 15.0333
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s8sct"]
+radius = 40.1123
+
+[node name="PU Energia" type="StaticBody2D" groups=["ignore collision"]]
+script = ExtResource("1_na4o7")
+powerup_type = "+ energia"
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_f8053")
+
+[node name="Light" type="PointLight2D" parent="."]
+z_index = 1
+texture_filter = 2
+position = Vector2(0, 4)
+rotation = -1.5708
+scale = Vector2(0.16644, 0.343501)
+color = Color(0.611765, 0.764706, 1, 1)
+energy = 1.5
+texture = ExtResource("3_0dm1i")
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_0g4d0")
+
+[node name="Buy area" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="Collider" type="CollisionShape2D" parent="Buy area"]
+shape = SubResource("CircleShape2D_s8sct")
+
+[connection signal="area_entered" from="Buy area" to="." method="_on_buy_area_area_entered"]
+[connection signal="area_exited" from="Buy area" to="." method="_on_buy_area_area_exited"]

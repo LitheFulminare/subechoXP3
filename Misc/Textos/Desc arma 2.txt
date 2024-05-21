@@ -1,0 +1,2 @@
+Segunda arma base do submarino. Muito rápida, mas não causa muito dano. Não é tão genérica quanto a primeira, mas mesmo assim é bem patética.
+

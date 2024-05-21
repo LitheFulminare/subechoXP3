@@ -1,0 +1,2 @@
+Arma base do submarino. Lenta, mas com um bom dano. É tão genérica que tivemos de mudar o nome dela.
+

@@ -1,0 +1,4 @@
+Custo: 100
+
+Arma laser. Dispara um tiro contínuo, com bastante alcance e dano. Tem chance de ser uma referência nem um pouco óbvia a uma franquia muito desconhecida.
+

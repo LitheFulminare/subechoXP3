@@ -15,6 +15,7 @@ var life = player_vars.max_life
 var energy = player_vars.max_energy
 var weapon_type = player_vars.weapon_type
 var scrap : int
+var spread : int
 var current_speed : float
 var invincible = false
 var sonar = false
@@ -68,18 +69,9 @@ func player_movement(delta):
 			#print("colisao explosivo")
 		#print(get_last_slide_collision().get_collider())
 		if not invincible && life > 0 && not collision.get_collider().is_in_group("inimigo"):
-			#print("var colisao = true")
-			take_damage("cenario")
-			#print("velocidade: " + str(current_speed))
-			#var dano_tomado = int(current_speed/20)
-			#if dano_tomado < 1:
-				#dano_tomado = 1
-			#life -= dano_tomado
-			##life = int(life)
-			#velocity = Vector2.ZERO
-			#invincible = true
-			#damage_effect()
-			#$iFrames.start()
+			if not collision.get_collider().is_in_group("ignore collision"):
+				#print("var colisao = true")
+				take_damage("cenario")
 
 func _ready():
 	# se nenhuma arma foi selecionada, ele pega a primeira
@@ -114,21 +106,29 @@ func _ready():
 		$"Sprite/Arma1/Sprites 3".visible = true
 		$"Tiro 1 cooldown".wait_time = 1
 		gun_Position = $"Spawn Tiro 3".global_position
+		spread = 70
 		
 	elif weapon_type == "Imperium":
-		tiro1Path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Tiro 1.tscn")
+		tiro1Path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Tiro 3.tscn")
+		muzz1Path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Muzzle 4.tscn")
 		$"Colisão Imperium".disabled = false
 		$"Area2D/Colisão Imperium".disabled = false
 		$"Sprite/Arma1/Sprites 4".visible = true
 		$"Tiro 1 cooldown".wait_time = 0.2
+		gun_Position = $"Spawn Tiro 3".global_position
 
 @warning_ignore("unused_parameter")
 func _process(delta):
+	
+	$Aim.position = get_local_mouse_position().clamp(Vector2(-300,-300),Vector2(300,300))
+	
 	player_vars.current_life = life
 	player_vars.current_energy = energy
 	player_vars.current_scrap = scrap
 
 	current_speed = abs(velocity.x) + abs(velocity.y)
+	
+	#$"Precision Limit".look_at(get_global_mouse_position())
 	
 	if energy <= 0:
 		energy = 0
@@ -181,10 +181,13 @@ func Sonar():
 func tiro1():
 	if not t1_cd && life > 0 && energy > 0:
 		
+		#var aim_limit = get_local_mouse_position().clamp(Vector2(-300,-300),Vector2(300,300))
+		#print("imprecisão x: "  + str(aim_limit.x))
+		#print("imprecisão y: "  + str(aim_limit.y))
+
 		targetPosition = get_global_mouse_position()
 		
-		
-		var shots : int
+		var shots = 1
 		var tiro1 = tiro1Path.instantiate()
 		
 		var muzz = muzz1Path.instantiate()
@@ -195,30 +198,30 @@ func tiro1():
 			gun_Position = $"Spawn Tiro 1".global_position
 			tiro1.position = $"Spawn Tiro 1".global_position
 			muzz.position = $Muzz1Local.global_position
-			shots = 1
 			
 		elif weapon_type == "Gen-EricV2":
 			gun_Position = $"Spawn Tiro 2".global_position
 			tiro1.position = $"Spawn Tiro 2".global_position
 			muzz.position = $Muzz1Local2.global_position
 			targetPosition += Vector2(randi_range(-50,50),randi_range(-50,50))
-			shots = 1
 			
 		elif weapon_type == "Peacemaker":
 			gun_Position = $"Spawn Tiro 3".global_position
 			tiro1.position = $"Spawn Tiro 3".global_position
 			muzz.position = $Muzz1Local3.global_position
-			#shots = 3
+			targetPosition = $Aim.global_position
+			shots = 3
+			
+		elif weapon_type == "Imperium":
+			gun_Position = $"Spawn Tiro 4".global_position
+			tiro1.position = $"Spawn Tiro 4".global_position
+			muzz.position = $Muzz1Local4.global_position
 		
-		#if weapon_type == "Peacemaker":
-			#pass
-		
-		shots = 10
-		const spread = deg_to_rad(15)
 		for i in shots:
 			
+			tiro1 = tiro1Path.instantiate()
 			shootDirection = (targetPosition - gun_Position).normalized()
-			targetPosition += Vector2(randi_range(-50,50),randi_range(-50,50))
+			targetPosition += Vector2(randi_range(-spread,spread),randi_range(-spread,spread))
 			tiro1.set_bullet(gun_Position, targetPosition)
 			
 			
@@ -237,7 +240,6 @@ func damage_effect():
 		
 func _on_sonar_cooldown_timeout():
 	sonar = false
-
 
 func _on_i_frames_timeout():
 	invincible = false
@@ -324,7 +326,23 @@ func collect(type):
 		scrap_earned = randi_range(8,12)
 		
 	scrap += scrap_earned
+
+func regen(stat):
+	match stat:
+		"Recuperar vida":
+			life = player_vars.max_life
+		"Recuperar energia":
+			energy = player_vars.max_energy
 	
+func change_stat(stat, qtd):
+	match stat:
+		"life":
+			life += qtd
+		"energy":
+			energy += qtd
+		"scrap":
+			scrap += qtd
+
 func take_damage(type):
 	#print("velocidade: " + str(current_speed))
 	var dano_tomado = 0

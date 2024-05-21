@@ -1,0 +1,4 @@
+Custo: 50
+
+Escopeta. Causa bastante dano com um tiro em spread. Toda vez que você matar um inimigo, você PRECISA dizer uma frase de efeito.
+

@@ -17,20 +17,20 @@ func _ready():
 
 func _process(delta):
 	
-	if $CanvasGroup/Player.life >= 0:
-		$"UI/UI vida e energia/Texto Vida".text = str($CanvasGroup/Player.life)
-	else: 
-		$"UI/UI vida e energia/Texto Vida".text = "0"
-	
-	if $"CanvasGroup/Player".energy >= 0:
-		$"UI/UI vida e energia/Texto Energia".text = str($CanvasGroup/Player.energy)
-	else: 
-		$"UI/UI vida e energia/Texto Energia".text = "0"
+	#if $CanvasGroup/Player.life >= 0:
+		#$"UI/UI vida e energia/Texto Vida".text = str($CanvasGroup/Player.life)
+	#else: 
+		#$"UI/UI vida e energia/Texto Vida".text = "0"
+	#
+	#if $"CanvasGroup/Player".energy >= 0:
+		#$"UI/UI vida e energia/Texto Energia".text = str($CanvasGroup/Player.energy)
+	#else: 
+		#$"UI/UI vida e energia/Texto Energia".text = "0"
 	
 	$"UI/UI vida e energia/Texto Inimigos Mortos".text = str(inimigos_mortos) + "/5"
 	
 	#if $CanvasGroup/Player.scrap > 0:
-	$"UI/UI Scrap/Texto scrap".text = str($CanvasGroup/Player.scrap)
+	#$"UI/UI Scrap/Texto scrap".text = str($CanvasGroup/Player.scrap)
 	#else: $"UI/UI Scrap".text = "0"
 	
 	
@@ -100,24 +100,10 @@ func _on_spawn_inimigo_timeout():
 func restart():
 	Global.goto_scene("res://Scenes/Layouts/principal.tscn")
 
-
-#func _on_spawn_2_inimigo_timeout():
-	#if inimigos_mortos < 5:
-		#randomize()
-		#var numero_nos = $Spawns.get_children()
-		#var local_aleatorio = numero_nos[randi()% numero_nos.size()]
-		#var inimigo = inimigo_scene.instantiate()
-		#inimigo.player = $CanvasGroup/Player/playerpos
-		#inimigo.position = $"Spawns/spawn inimigo local 2".global_position
-		#inimigo.position = local_aleatorio.position
-		#add_child(inimigo)
-
-
 func _on_barril_explosivo_explosao_barril(global_position):
 	var explosao = explosaoPath.instantiate()
 	$CanvasGroup.add_child(explosao)
 	explosao.position = global_position
-	#explosao.get_child(2).visible = false
 	explosao.anim("default")
 
 

@@ -86,7 +86,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"Imperium",
-"speed": 10.0
+"speed": 6.0
 }]
 
 [node name="Arma1" type="Node2D"]

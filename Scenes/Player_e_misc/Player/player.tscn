@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://e4g3db01cv23"]
+[gd_scene load_steps=14 format=3 uid="uid://e4g3db01cv23"]
 
 [ext_resource type="Script" path="res://Scenes/Player_e_misc/Player/Player.gd" id="1_b66x1"]
 [ext_resource type="Texture2D" uid="uid://fcjwgbvtu06l" path="res://sprites/player/Casco/Casco1.png" id="2_r5lx4"]
@@ -32,9 +32,6 @@ animations = [{
 "name": &"Sonar 1",
 "speed": 5.0
 }]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_qow0k"]
-radius = 500.0
 
 [sub_resource type="Gradient" id="Gradient_sbpw5"]
 colors = PackedColorArray(0.611765, 0.764706, 1, 1, 0, 0, 0, 1)
@@ -104,10 +101,6 @@ wait_time = 0.8
 
 [node name="mudarArma1 Cooldown" type="Timer" parent="."]
 
-[node name="ShapeCast" type="ShapeCast2D" parent="."]
-visible = false
-shape = SubResource("CircleShape2D_qow0k")
-
 [node name="Light" type="PointLight2D" parent="."]
 position = Vector2(2, 5.00003)
 scale = Vector2(2.34375, 2.42188)
@@ -137,6 +130,13 @@ shadow_filter_smooth = 1.9
 texture = SubResource("GradientTexture2D_s5eh0")
 texture_scale = 0.25
 
+[node name="Aim" type="Marker2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Aim"]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+
 [node name="Spawn Tiro 1" type="Marker2D" parent="."]
 position = Vector2(65, 24)
 
@@ -146,6 +146,9 @@ position = Vector2(88, 35)
 [node name="Spawn Tiro 3" type="Marker2D" parent="."]
 position = Vector2(78.635, 19)
 
+[node name="Spawn Tiro 4" type="Marker2D" parent="."]
+position = Vector2(83.93, 26)
+
 [node name="Muzz1Local" type="Marker2D" parent="."]
 position = Vector2(65, 24)
 
@@ -154,6 +157,9 @@ position = Vector2(126, 37)
 
 [node name="Muzz1Local3" type="Marker2D" parent="."]
 position = Vector2(123.67, 19)
+
+[node name="Muzz1Local4" type="Marker2D" parent="."]
+position = Vector2(119.88, 27.67)
 
 [node name="Colisão Geral" type="CollisionPolygon2D" parent="."]
 position = Vector2(-41, 5)
@@ -186,7 +192,6 @@ polygon = PackedVector2Array(-30, 58, -10, 58, -10, 34, 6, 50, 22, 50, 34, 34, 5
 disabled = true
 
 [node name="Colisão turbina 1" type="CollisionPolygon2D" parent="."]
-visible = false
 position = Vector2(-45, -15)
 scale = Vector2(4.09669, 4.09669)
 polygon = PackedVector2Array(-5.1261, 6.10249, -3.1733, 6.10249, -3.17329, 7.07888, 1.70869, 7.07888, 1.70869, 6.10249, 2.68509, 6.10249, 4.63788, -5.61429, 1.70869, -6.59068, -3.17329, -6.59068, -5.1261, -5.61429)
