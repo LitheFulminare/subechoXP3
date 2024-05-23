@@ -191,6 +191,12 @@ position = Vector2(16, 4)
 polygon = PackedVector2Array(-30, 58, -10, 58, -10, 34, 6, 50, 22, 50, 34, 34, 58, 34, 58, 10, 34, -2, -22, 22, -30, 22)
 disabled = true
 
+[node name="Colisão Killerbee" type="CollisionPolygon2D" parent="."]
+visible = false
+position = Vector2(24, 16)
+polygon = PackedVector2Array(-50, 58, -42, 58, -42, 62, 42, 62, 42, 61, 42, 58, 46, 58, 46, 30, 42, 26, 46, 17, 70, 8, 38, -7, 38, -14, -54, -2, -54, 14, -38, 14, -38, 26, -50, 30)
+disabled = true
+
 [node name="Colisão turbina 1" type="CollisionPolygon2D" parent="."]
 position = Vector2(-45, -15)
 scale = Vector2(4.09669, 4.09669)
@@ -236,6 +242,11 @@ disabled = true
 [node name="Colisão Imperium" type="CollisionPolygon2D" parent="Area2D"]
 position = Vector2(16, 4)
 polygon = PackedVector2Array(-30, 58, -10, 58, -10, 34, 6, 50, 22, 50, 34, 34, 58, 34, 58, 10, 34, -2, -22, 22, -30, 22)
+disabled = true
+
+[node name="Colisão Killerbee" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(24, 16)
+polygon = PackedVector2Array(-50, 58, -42, 58, -42, 62, 42, 62, 42, 61, 42, 58, 46, 58, 46, 30, 42, 26, 46, 17, 70, 8, 38, -7, 38, -14, -54, -2, -54, 14, -38, 14, -38, 26, -50, 30)
 disabled = true
 
 [connection signal="timeout" from="Energy timer" to="." method="_on_energy_timer_timeout"]

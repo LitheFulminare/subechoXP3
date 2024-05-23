@@ -1,0 +1,3 @@
+Custo: 200
+
+Broca. Lança uma broca em linha reta, causando muito dano, mas demora para recarregar. Arma preferida do general Oitavos.
