@@ -1,27 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://byfxw24texrlw"]
+[gd_scene load_steps=11 format=3 uid="uid://byfxw24texrlw"]
 
 [ext_resource type="Texture2D" uid="uid://dh1tq3vdvqrkr" path="res://sprites/player/Arma/projetilbroca_killerbee.png" id="1_fhs7p"]
 [ext_resource type="Script" path="res://Scenes/Player_e_misc/Particulas e projéteis/Tiro 1.gd" id="1_oajbx"]
-
-[sub_resource type="Animation" id="Animation_gri6n"]
-resource_name = "Tiro4Anim"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"default"]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_lf24n"]
-_data = {
-"Tiro4Anim": SubResource("Animation_gri6n")
-}
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4f7d7"]
 atlas = ExtResource("1_fhs7p")
@@ -66,19 +46,16 @@ animations = [{
 "speed": 13.0
 }]
 
-[sub_resource type="Gradient" id="Gradient_n7fuu"]
+[sub_resource type="Gradient" id="Gradient_gl01u"]
+offsets = PackedFloat32Array(0, 0.175325, 0.409091, 1)
+colors = PackedColorArray(1, 0.309804, 0.105882, 1, 0.733205, 0.221408, 0.086596, 1, 0.34902, 0.0941176, 0.0588235, 1, 0, 0, 0, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_a1qhw"]
-gradient = SubResource("Gradient_n7fuu")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_pige2"]
+gradient = SubResource("Gradient_gl01u")
 
 [node name="Tiro4" type="Area2D"]
 scale = Vector2(4, 4)
 script = ExtResource("1_oajbx")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_lf24n")
-}
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_drl28")
@@ -87,13 +64,18 @@ frame_progress = 0.229582
 
 [node name="Light 1" type="PointLight2D" parent="."]
 position = Vector2(1, -0.5)
-scale = Vector2(0.25, 0.140625)
-texture = SubResource("GradientTexture2D_a1qhw")
+scale = Vector2(0.25, 0.141544)
+energy = 0.55
+texture = SubResource("GradientTexture2D_pige2")
 
 [node name="Colisor" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-7, -5, -7, 4, -4, 4, 9, 0, 9, -1, -4, -5)
+polygon = PackedVector2Array(-7, -5, -7, 4, 2.75, 3.75, 9, 0, 9, -1, 3, -5)
 
 [node name="Area2D" type="Area2D" parent="." groups=["tiro"]]
+collision_mask = 5
 
 [node name="Colisor" type="CollisionPolygon2D" parent="Area2D"]
-polygon = PackedVector2Array(-7, -5, -7, 4, -4, 4, 9, 0, 9, -1, -4, -5)
+polygon = PackedVector2Array(-7, -5, -7, 4, 2.75, 3.75, 9, 0, 9, -1, 3, -5)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

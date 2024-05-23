@@ -116,6 +116,7 @@ func switch_weapon():
 			$"Precision bar".value = 80
 			$"MarginContainer3/Nome da arma".text = "Killerbee"
 			$"MarginContainer2/Descrição".text = FileAccess.open(desc_arma_5,FileAccess.READ).get_as_text()
+			$"MarginContainer/Sprite/Arma1/Sprites 5".play("Loaded")
 			if player_vars.Killerbee == false:
 				$Selecionar.visible = false
 				$Comprar.visible = true

@@ -36,7 +36,7 @@ func morte():
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("tiro"):
 		var danoRec = area.get_parent().dano
-		print("tipo")
+		#print("dano recebido: " + str(danoRec))
 		danoTiro(danoRec)
 		
 func danoTiro(danoRec):

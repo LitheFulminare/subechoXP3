@@ -36,7 +36,7 @@ animations = [{
 size = Vector2(25, 29)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ktimd"]
-radius = 14.0
+radius = 14.274
 
 [node name="inimigo" type="CharacterBody2D" groups=["inimigo"]]
 position = Vector2(64, 46)
@@ -59,6 +59,7 @@ collision_mask = 3
 
 [node name="Colisor" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-1.5, 0.5)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_cgn2r")
 
 [node name="Colisor" type="CollisionShape2D" parent="."]

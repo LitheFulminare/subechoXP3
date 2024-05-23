@@ -14,9 +14,10 @@ func tipoTiro(weapon_type):
 		"Peacemaker":
 			dano = 2
 		"Imperium":
-			dano == 1
+			dano = 1
 		"Killerbee":
-			dano == 6
+			dano = 6
+			speed = 1000
 
 func set_bullet(position, targetPosition):
 	global_position = position
@@ -30,7 +31,8 @@ func _physics_process(delta):
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("pedra"):
 		queue_free()
-	#if tipo_tiro == 2: # tiro rápido/leve
-		#if body.is_in_group("inimigo"):
-			#queue_free()
-	
+
+func _on_area_2d_area_entered(area):
+	if area.is_in_group("inimigo"):
+		if !player_vars.bullet_penetration:
+			queue_free()

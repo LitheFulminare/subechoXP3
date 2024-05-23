@@ -53,6 +53,7 @@ position = Vector2(4, 0)
 shape = SubResource("RectangleShape2D_h7iu3")
 
 [node name="Area2D" type="Area2D" parent="." groups=["tiro"]]
+collision_mask = 5
 
 [node name="Colisor" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(4, 0)

@@ -159,7 +159,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"Loaded",
-"speed": 5.0
+"speed": 13.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -211,7 +211,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"Unloaded",
-"speed": 5.0
+"speed": 13.0
 }]
 
 [node name="Arma1" type="Node2D"]
