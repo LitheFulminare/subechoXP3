@@ -148,7 +148,7 @@ func _on_selecionar_pressed():
 		player_vars.weapon_type = "Imperium"
 		player_vars.preview = 4
 	elif weapon_preview == 5 && player_vars.Killerbee == true:
-		player_vars.weapon_type = "Killer Bee"
+		player_vars.weapon_type = "Killerbee"
 		player_vars.preview = 5
 
 

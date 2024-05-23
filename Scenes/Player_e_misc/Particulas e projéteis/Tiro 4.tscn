@@ -1,0 +1,74 @@
+[gd_scene load_steps=11 format=3 uid="uid://byfxw24texrlw"]
+
+[ext_resource type="Texture2D" uid="uid://dh1tq3vdvqrkr" path="res://sprites/player/Arma/projetilbroca_killerbee.png" id="1_fhs7p"]
+[ext_resource type="Script" path="res://Scenes/Player_e_misc/Particulas e projéteis/Tiro 1.gd" id="1_oajbx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4f7d7"]
+atlas = ExtResource("1_fhs7p")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_voeq8"]
+atlas = ExtResource("1_fhs7p")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eox2p"]
+atlas = ExtResource("1_fhs7p")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4j84v"]
+atlas = ExtResource("1_fhs7p")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2g5g7"]
+atlas = ExtResource("1_fhs7p")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_drl28"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4f7d7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_voeq8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eox2p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4j84v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2g5g7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 13.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_n7fuu"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_a1qhw"]
+gradient = SubResource("Gradient_n7fuu")
+
+[node name="Tiro4" type="Area2D"]
+scale = Vector2(4, 4)
+script = ExtResource("1_oajbx")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_drl28")
+autoplay = "default"
+frame_progress = 0.229582
+
+[node name="Light 1" type="PointLight2D" parent="."]
+position = Vector2(1, -0.5)
+scale = Vector2(0.25, 0.140625)
+texture = SubResource("GradientTexture2D_a1qhw")
+
+[node name="Colisor" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-7, -5, -7, 4, -4, 4, 9, 0, 9, -1, -4, -5)
+
+[node name="Area2D" type="Area2D" parent="." groups=["tiro"]]
+
+[node name="Colisor" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-7, -5, -7, 4, -4, 4, 9, 0, 9, -1, -4, -5)

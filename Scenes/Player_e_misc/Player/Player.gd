@@ -80,42 +80,51 @@ func _ready():
 		weapon_type = "Gen-EricV1"
 	
 	# checa qual o tipo de arma e carrega particulas, hitbox, etc
-	if weapon_type == "Gen-EricV1":
-		tiro1Path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Tiro 1.tscn") 
-		muzz1Path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Muzzle 1.tscn")
-		$"Colisão Gen-EricV1".disabled = false
-		$"Area2D/Colisão Gen-EricV1".disabled = false
-		$"Sprite/Arma1/Sprites 1".visible = true
-		$"Tiro 1 cooldown".wait_time = 0.8
-		#gun_Position = $"Spawn Tiro 1".global_position
+	match weapon_type:
+		"Gen-EricV1":
+			tiro1Path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Tiro 1.tscn") 
+			muzz1Path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Muzzle 1.tscn")
+			$"Colisão Gen-EricV1".disabled = false
+			$"Area2D/Colisão Gen-EricV1".disabled = false
+			$"Sprite/Arma1/Sprites 1".visible = true
+			$"Tiro 1 cooldown".wait_time = 0.8
+			#gun_Position = $"Spawn Tiro 1".global_position
 		
-	elif weapon_type == "Gen-EricV2":
-		tiro1Path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Tiro 2.tscn") 
-		muzz1Path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Muzzle 2.tscn")
-		$"Colisão Gen-EricV2".disabled = false
-		$"Area2D/Colisão Gen-EricV2".disabled = false
-		$"Sprite/Arma1/Sprites 2".visible = true
-		$"Tiro 1 cooldown".wait_time = 0.35
-		gun_Position = $"Spawn Tiro 2".global_position
+		"Gen-EricV2":
+			tiro1Path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Tiro 2.tscn") 
+			muzz1Path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Muzzle 2.tscn")
+			$"Colisão Gen-EricV2".disabled = false
+			$"Area2D/Colisão Gen-EricV2".disabled = false
+			$"Sprite/Arma1/Sprites 2".visible = true
+			$"Tiro 1 cooldown".wait_time = 0.35
+			gun_Position = $"Spawn Tiro 2".global_position
 		
-	elif weapon_type == "Peacemaker":
-		tiro1Path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Tiro 1.tscn") 
-		muzz1Path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Muzzle 3.tscn")
-		$"Colisão Peacemaker".disabled = false
-		$"Area2D/Colisão Peacemaker".disabled = false
-		$"Sprite/Arma1/Sprites 3".visible = true
-		$"Tiro 1 cooldown".wait_time = 1
-		gun_Position = $"Spawn Tiro 3".global_position
-		spread = 70
+		"Peacemaker":
+			tiro1Path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Tiro 1.tscn") 
+			muzz1Path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Muzzle 3.tscn")
+			$"Colisão Peacemaker".disabled = false
+			$"Area2D/Colisão Peacemaker".disabled = false
+			$"Sprite/Arma1/Sprites 3".visible = true
+			$"Tiro 1 cooldown".wait_time = 1
+			gun_Position = $"Spawn Tiro 3".global_position
+			spread = 70
 		
-	elif weapon_type == "Imperium":
-		tiro1Path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Tiro 3.tscn")
-		muzz1Path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Muzzle 4.tscn")
-		$"Colisão Imperium".disabled = false
-		$"Area2D/Colisão Imperium".disabled = false
-		$"Sprite/Arma1/Sprites 4".visible = true
-		$"Tiro 1 cooldown".wait_time = 0.2
-		gun_Position = $"Spawn Tiro 3".global_position
+		"Imperium":
+			tiro1Path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Tiro 3.tscn")
+			muzz1Path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Muzzle 4.tscn")
+			$"Colisão Imperium".disabled = false
+			$"Area2D/Colisão Imperium".disabled = false
+			$"Sprite/Arma1/Sprites 4".visible = true
+			$"Tiro 1 cooldown".wait_time = 0.2
+			gun_Position = $"Spawn Tiro 3".global_position
+		"Killerbee":
+			tiro1Path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Tiro 4.tscn")
+			muzz1Path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Muzzle 4.tscn")
+			$"Colisão Killerbee".disabled = false
+			$"Area2D/Colisão Killerbee".disabled = false
+			$"Sprite/Arma1/Sprites 5".visible = true
+			$"Tiro 1 cooldown".wait_time = 1.5
+			gun_Position = $"Spawn Tiro 5".global_position
 
 @warning_ignore("unused_parameter")
 func _process(delta):
@@ -194,28 +203,33 @@ func tiro1():
 		get_parent().add_child(muzz)
 		muzz.anim()
 		
-		if weapon_type == "Gen-EricV1":
-			gun_Position = $"Spawn Tiro 1".global_position
-			tiro1.position = $"Spawn Tiro 1".global_position
-			muzz.position = $Muzz1Local.global_position
-			
-		elif weapon_type == "Gen-EricV2":
-			gun_Position = $"Spawn Tiro 2".global_position
-			tiro1.position = $"Spawn Tiro 2".global_position
-			muzz.position = $Muzz1Local2.global_position
-			targetPosition += Vector2(randi_range(-50,50),randi_range(-50,50))
-			
-		elif weapon_type == "Peacemaker":
-			gun_Position = $"Spawn Tiro 3".global_position
-			tiro1.position = $"Spawn Tiro 3".global_position
-			muzz.position = $Muzz1Local3.global_position
-			targetPosition = $Aim.global_position
-			shots = 3
-			
-		elif weapon_type == "Imperium":
-			gun_Position = $"Spawn Tiro 4".global_position
-			tiro1.position = $"Spawn Tiro 4".global_position
-			muzz.position = $Muzz1Local4.global_position
+		match weapon_type:
+			"Gen-EricV1":
+				gun_Position = $"Spawn Tiro 1".global_position
+				tiro1.position = $"Spawn Tiro 1".global_position
+				muzz.position = $Muzz1Local.global_position
+				
+			"Gen-EricV2":
+				gun_Position = $"Spawn Tiro 2".global_position
+				tiro1.position = $"Spawn Tiro 2".global_position
+				muzz.position = $Muzz1Local2.global_position
+				targetPosition += Vector2(randi_range(-50,50),randi_range(-50,50))
+				
+			"Peacemaker":
+				gun_Position = $"Spawn Tiro 3".global_position
+				tiro1.position = $"Spawn Tiro 3".global_position
+				muzz.position = $Muzz1Local3.global_position
+				targetPosition = $Aim.global_position
+				shots = 3
+				
+			"Imperium":
+				gun_Position = $"Spawn Tiro 4".global_position
+				tiro1.position = $"Spawn Tiro 4".global_position
+				muzz.position = $Muzz1Local4.global_position
+			"Killerbee":
+				gun_Position = $"Spawn Tiro 5".global_position
+				tiro1.position = $"Spawn Tiro 5".global_position
+				muzz.visible = false
 		
 		for i in shots:
 			

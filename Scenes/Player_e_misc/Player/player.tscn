@@ -147,7 +147,10 @@ position = Vector2(88, 35)
 position = Vector2(78.635, 19)
 
 [node name="Spawn Tiro 4" type="Marker2D" parent="."]
-position = Vector2(83.93, 26)
+position = Vector2(99.9999, 26)
+
+[node name="Spawn Tiro 5" type="Marker2D" parent="."]
+position = Vector2(56.9999, 24)
 
 [node name="Muzz1Local" type="Marker2D" parent="."]
 position = Vector2(65, 24)
