@@ -328,7 +328,7 @@ func death_no_life():
 func death_no_energy():
 	var tween = create_tween()
 	tween.tween_property($Light, "energy", 0, 1)
-	tween.parallel().tween_property($"LIght 2", "energy", 0, 2) 
+	tween.parallel().tween_property($"Light 2", "energy", 0, 2) 
 	
 
 #func _on_mudar_arma_1_cooldown_timeout():
