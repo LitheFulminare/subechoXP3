@@ -110,7 +110,7 @@ texture = SubResource("GradientTexture2D_w4kjf")
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="LIght 2" type="PointLight2D" parent="."]
+[node name="Light 2" type="PointLight2D" parent="."]
 modulate = Color(0, 0.368627, 1, 1)
 scale = Vector2(1.44596, 2.47599)
 color = Color(0.611765, 0.764706, 1, 1)
@@ -147,7 +147,10 @@ position = Vector2(88, 35)
 position = Vector2(78.635, 19)
 
 [node name="Spawn Tiro 4" type="Marker2D" parent="."]
-position = Vector2(83.93, 26)
+position = Vector2(99.9999, 26)
+
+[node name="Spawn Tiro 5" type="Marker2D" parent="."]
+position = Vector2(56.9999, 24)
 
 [node name="Muzz1Local" type="Marker2D" parent="."]
 position = Vector2(65, 24)
@@ -189,6 +192,12 @@ disabled = true
 visible = false
 position = Vector2(16, 4)
 polygon = PackedVector2Array(-30, 58, -10, 58, -10, 34, 6, 50, 22, 50, 34, 34, 58, 34, 58, 10, 34, -2, -22, 22, -30, 22)
+disabled = true
+
+[node name="Colisão Killerbee" type="CollisionPolygon2D" parent="."]
+visible = false
+position = Vector2(24, 16)
+polygon = PackedVector2Array(-50, 58, -42, 58, -42, 62, 42, 62, 42, 61, 42, 58, 46, 58, 46, 30, 42, 26, 46, 17, 70, 8, 38, -7, 38, -14, -54, -2, -54, 14, -38, 14, -38, 26, -50, 30)
 disabled = true
 
 [node name="Colisão turbina 1" type="CollisionPolygon2D" parent="."]
@@ -236,6 +245,11 @@ disabled = true
 [node name="Colisão Imperium" type="CollisionPolygon2D" parent="Area2D"]
 position = Vector2(16, 4)
 polygon = PackedVector2Array(-30, 58, -10, 58, -10, 34, 6, 50, 22, 50, 34, 34, 58, 34, 58, 10, 34, -2, -22, 22, -30, 22)
+disabled = true
+
+[node name="Colisão Killerbee" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(24, 16)
+polygon = PackedVector2Array(-50, 58, -42, 58, -42, 62, 42, 62, 42, 61, 42, 58, 46, 58, 46, 30, 42, 26, 46, 17, 70, 8, 38, -7, 38, -14, -54, -2, -54, 14, -38, 14, -38, 26, -50, 30)
 disabled = true
 
 [connection signal="timeout" from="Energy timer" to="." method="_on_energy_timer_timeout"]

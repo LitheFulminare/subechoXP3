@@ -129,7 +129,7 @@ offset_top = 409.0
 offset_right = 760.0
 offset_bottom = 441.0
 scale = Vector2(8.44, 8.44)
-value = 50.0
+value = 75.0
 texture_under = ExtResource("3_ac46k")
 texture_progress = ExtResource("4_bywjy")
 
@@ -140,17 +140,18 @@ offset_top = 484.0
 offset_right = 760.0
 offset_bottom = 516.0
 scale = Vector2(8.44, 8.44)
-value = 55.0
+value = 20.0
 texture_under = ExtResource("3_ac46k")
 texture_progress = ExtResource("4_bywjy")
 
 [node name="Precision bar" type="TextureProgressBar" parent="."]
+layout_mode = 0
 offset_left = 696.0
 offset_top = 564.0
 offset_right = 760.0
 offset_bottom = 596.0
 scale = Vector2(8.44, 8.44)
-value = 55.0
+value = 80.0
 texture_under = SubResource("CompressedTexture2D_mns7f")
 texture_progress = SubResource("CompressedTexture2D_appps")
 

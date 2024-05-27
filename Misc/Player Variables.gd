@@ -13,10 +13,11 @@ var current_weapon = ""
 # UI da loja
 var preview : int
 
-# booleans se o jogador tem essas armas compradas ou não
+# booleans se o jogador tem essas armas compradas ou não (outros status de arma)
 var Peacemaker = false
 var Imperium = false
 var Killerbee = false
+var bullet_penetration = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
