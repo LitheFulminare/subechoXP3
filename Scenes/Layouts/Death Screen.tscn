@@ -61,12 +61,27 @@ text = "Sucata coletada: 45
 
 "
 
+[node name="Texto scrap gasta" type="RichTextLabel" parent="."]
+layout_mode = 2
+offset_left = 707.0
+offset_top = 391.0
+offset_right = 1919.0
+offset_bottom = 479.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.6, 0.898039, 0.313726, 1)
+theme_override_fonts/normal_font = ExtResource("3_oqj0l")
+theme_override_font_sizes/normal_font_size = 48
+text = "Sucata gasta: 20
+
+"
+
 [node name="Texto Inimigos mortos" type="RichTextLabel" parent="."]
 layout_mode = 2
-offset_left = 688.0
-offset_top = 420.0
-offset_right = 1924.0
-offset_bottom = 516.0
+offset_left = 682.0
+offset_top = 464.0
+offset_right = 1918.0
+offset_bottom = 560.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/default_color = Color(0.6, 0.898039, 0.313726, 1)

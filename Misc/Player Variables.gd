@@ -12,6 +12,7 @@ var current_weapon = ""
 
 # pontuações para mostrar depois que o jogo acaba / reseta quando recomeça
 var scrap_gained = 0
+var scrap_spent = 0
 var enemies_killed = 0
 
 # UI da loja

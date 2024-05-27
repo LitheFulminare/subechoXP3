@@ -371,6 +371,8 @@ func change_stat(stat, qtd):
 			energy += qtd
 		"scrap":
 			scrap += qtd
+			if qtd < 0:
+				player_vars.scrap_spent -= qtd
 
 func take_damage(type):
 	#print("velocidade: " + str(current_speed))
