@@ -9,7 +9,10 @@ var current_life : float
 var current_energy : float
 var current_scrap = 300
 var current_weapon = ""
-var scrap_gained = 0 # reset every death
+
+# pontuações para mostrar depois que o jogo acaba / reseta quando recomeça
+var scrap_gained = 0
+var enemies_killed = 0
 
 # UI da loja
 var preview : int

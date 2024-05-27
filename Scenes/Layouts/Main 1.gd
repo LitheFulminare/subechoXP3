@@ -76,6 +76,7 @@ func game_over_no_energy():
 
 func contador_morte_inimigo():
 	inimigos_mortos += 1
+	player_vars.enemies_killed += 1
 
 
 func _on_area_2d_area_entered(area):
