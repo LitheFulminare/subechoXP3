@@ -65,12 +65,12 @@ func game_over_no_life():
 	$CanvasGroup/Player.death_no_life()
 	explosao.anim("default")
 	await get_tree().create_timer(3).timeout
-	Global.goto_scene("res://Scenes/Layouts/principal.tscn")
+	Global.goto_scene("res://Scenes/Layouts/Death Screen.tscn")
 	
 func game_over_no_energy():
 	$CanvasGroup/Player.death_no_energy()
 	await get_tree().create_timer(3).timeout
-	Global.goto_scene("res://Scenes/Layouts/principal.tscn")
+	Global.goto_scene("res://Scenes/Layouts/Death Screen.tscn")
 
 
 

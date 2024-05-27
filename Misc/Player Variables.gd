@@ -9,6 +9,7 @@ var current_life : float
 var current_energy : float
 var current_scrap = 300
 var current_weapon = ""
+var scrap_gained = 0 # reset every death
 
 # UI da loja
 var preview : int

@@ -354,7 +354,8 @@ func collect(type):
 		scrap_earned = randi_range(8,12)
 		
 	scrap += scrap_earned
-
+	player_vars.scrap_gained += scrap_earned
+	
 func regen(stat):
 	match stat:
 		"Recuperar vida":
