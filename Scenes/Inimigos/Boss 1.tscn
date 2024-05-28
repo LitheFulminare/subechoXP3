@@ -292,10 +292,12 @@ parameters/Shoot/blend_position = Vector2(0, 0)
 [node name="Area2D" type="Area2D" parent="." groups=["inimigo"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
 position = Vector2(0, 4.5)
 shape = SubResource("RectangleShape2D_87sjq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, 4.5)
 shape = SubResource("RectangleShape2D_87sjq")
 
@@ -307,4 +309,12 @@ debug_enabled = true
 wait_time = 0.2
 autostart = true
 
+[node name="Melee Trigger" type="Area2D" parent="."]
+collision_mask = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Melee Trigger"]
+polygon = PackedVector2Array(-13, -7, -23, -34, -114, -41, -119, 34, -21, 34)
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="Melee Trigger" to="." method="_on_melee_trigger_area_entered"]
+[connection signal="area_exited" from="Melee Trigger" to="." method="_on_melee_trigger_area_exited"]

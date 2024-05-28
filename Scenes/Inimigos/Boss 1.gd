@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-
 @export var player:= Node2D
 @onready var nav_agent := $NavigationAgent2D as NavigationAgent2D
 
@@ -9,6 +8,11 @@ extends CharacterBody2D
 @export var speed = 80
 
 @onready var animation_tree : AnimationTree = $AnimationTree
+
+var player_close = false
+
+func _ready():
+	animation_tree.active = true
 
 func _physics_process(_delta: float) -> void:
 	var dir = to_local(nav_agent.get_next_path_position()).normalized()
@@ -22,3 +26,16 @@ func makepath() -> void:
 
 func _on_timer_timeout():
 	makepath()
+	
+func update_animation_parameters():
+	animation_tree["parameters/conditions/idle"] = true
+
+
+func _on_melee_trigger_area_entered(area):
+	if area.is_in_group("player"):
+		player_close = true
+
+
+func _on_melee_trigger_area_exited(area):
+	if area.is_in_group("player"):
+		player_close = false
