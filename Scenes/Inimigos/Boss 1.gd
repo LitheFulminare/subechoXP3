@@ -13,6 +13,9 @@ var player_close = false
 
 func _ready():
 	animation_tree.active = true
+	
+func _process(delta):
+	pass
 
 func _physics_process(_delta: float) -> void:
 	var dir = to_local(nav_agent.get_next_path_position()).normalized()
