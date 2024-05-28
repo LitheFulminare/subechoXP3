@@ -6,86 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://bc5gxkty6gjc3" path="res://sprites/Inimigos/Boss 1/boss1_ataque.png" id="3_hjkyq"]
 [ext_resource type="Texture2D" uid="uid://dogdke1w2e77g" path="res://sprites/Inimigos/Boss 1/boss1_projetil.png" id="4_ohgtc"]
 
-[sub_resource type="Animation" id="Animation_jy047"]
-resource_name = "Intro"
-length = 3.00002
-step = 0.166667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("1_vacoo")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:hframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [18]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5, 0.666667, 0.833333, 1, 1.16667, 1.33333, 1.5, 1.66667, 1.83333, 2, 2.16667, 2.33333, 2.5, 2.66667, 2.83333, 3),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 17]
-}
-
-[sub_resource type="Animation" id="Animation_8oe0k"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [null]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:hframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [8]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
 [sub_resource type="Animation" id="Animation_4cftc"]
 resource_name = "Idle"
 loop_mode = 1
@@ -127,6 +47,59 @@ tracks/2/keys = {
 "values": [0, 1, 2, 3, 4, 5]
 }
 
+[sub_resource type="Animation" id="Animation_jy047"]
+resource_name = "Intro"
+length = 3.00002
+step = 0.166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_vacoo")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [18]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5, 0.666667, 0.833333, 1, 1.16667, 1.33333, 1.5, 1.66667, 1.83333, 2, 2.16667, 2.33333, 2.5, 2.66667, 2.83333, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 17]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:intro_over")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
 [sub_resource type="Animation" id="Animation_0xqyv"]
 resource_name = "Melee"
 step = 0.166667
@@ -165,6 +138,45 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_8oe0k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_m2uo0"]
@@ -238,17 +250,21 @@ advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_p0a1g"]
 advance_mode = 2
+advance_condition = &"melee"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_iovbd"]
 switch_mode = 2
 advance_mode = 2
+advance_condition = &"idle"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qaf6q"]
 advance_mode = 2
+advance_condition = &"shoot"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wk11h"]
 switch_mode = 2
 advance_mode = 2
+advance_condition = &"idle"
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_kcihi"]
 states/Idle/node = SubResource("AnimationNodeAnimation_v4ie5")
@@ -261,6 +277,7 @@ states/Shoot/node = SubResource("AnimationNodeAnimation_6757o")
 states/Shoot/position = Vector2(479, 169)
 states/Start/position = Vector2(89, 100)
 transitions = ["Start", "Intro", SubResource("AnimationNodeStateMachineTransition_bc2yd"), "Intro", "Idle", SubResource("AnimationNodeStateMachineTransition_nieji"), "Idle", "Melee", SubResource("AnimationNodeStateMachineTransition_p0a1g"), "Melee", "Idle", SubResource("AnimationNodeStateMachineTransition_iovbd"), "Idle", "Shoot", SubResource("AnimationNodeStateMachineTransition_qaf6q"), "Shoot", "Idle", SubResource("AnimationNodeStateMachineTransition_wk11h")]
+graph_offset = Vector2(-146, 10)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_87sjq"]
 size = Vector2(62, 53)
@@ -278,11 +295,15 @@ libraries = {
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
+active = false
 libraries = {
 "": SubResource("AnimationLibrary_quono")
 }
 tree_root = SubResource("AnimationNodeStateMachine_kcihi")
 anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/idle = true
+parameters/conditions/melee = false
+parameters/conditions/shoot = false
 
 [node name="Area2D" type="Area2D" parent="." groups=["inimigo"]]
 
@@ -304,6 +325,14 @@ debug_enabled = true
 wait_time = 0.2
 autostart = true
 
+[node name="Melee timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="Shoot timer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
 [node name="Melee Trigger" type="Area2D" parent="."]
 collision_mask = 3
 
@@ -311,5 +340,7 @@ collision_mask = 3
 polygon = PackedVector2Array(-13, -7, -23, -34, -114, -41, -119, 34, -21, 34)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Melee timer" to="." method="_on_melee_timer_timeout"]
+[connection signal="timeout" from="Shoot timer" to="." method="_on_shoot_timeout"]
 [connection signal="area_entered" from="Melee Trigger" to="." method="_on_melee_trigger_area_entered"]
 [connection signal="area_exited" from="Melee Trigger" to="." method="_on_melee_trigger_area_exited"]

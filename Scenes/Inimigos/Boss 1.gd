@@ -9,14 +9,18 @@ extends CharacterBody2D
 
 @onready var animation_tree : AnimationTree = $AnimationTree
 
+@export var intro_over = false
 var player_close = false
+var melee_last_3s = false
+var shot_recently = false
 
 func _ready():
 	animation_tree.active = true
 	
 	
 func _process(delta):
-	update_animation_parameters()
+	if intro_over:
+		update_animation_parameters()
 
 func _physics_process(_delta: float) -> void:
 	var dir = to_local(nav_agent.get_next_path_position()).normalized()
@@ -33,7 +37,19 @@ func _on_timer_timeout():
 	#makepath()
 	
 func update_animation_parameters():
-	pass
+	if player_close && !melee_last_3s: 
+		animation_tree["parameters/conditions/melee"] = true
+		await get_tree().create_timer(0.1).timeout
+		animation_tree["parameters/conditions/melee"] = false
+		melee_last_3s = true
+		$"Melee timer".start()
+		
+	if !player_close && !shot_recently:
+		animation_tree["parameters/conditions/shoot"] = true
+		await get_tree().create_timer(0.1).timeout
+		animation_tree["parameters/conditions/shoot"] = false
+		shot_recently = true
+		$"Shoot timer".start()
 
 
 func _on_melee_trigger_area_entered(area):
@@ -44,3 +60,11 @@ func _on_melee_trigger_area_entered(area):
 func _on_melee_trigger_area_exited(area):
 	if area.is_in_group("player"):
 		player_close = false
+
+
+func _on_melee_timer_timeout():
+	melee_last_3s = false
+
+
+func _on_shoot_timeout():
+	shot_recently = false
