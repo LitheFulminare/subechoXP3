@@ -143,14 +143,17 @@ hframes = 8
 libraries = {
 "": SubResource("AnimationLibrary_quono")
 }
+autoplay = "Idle"
 
 [node name="Area2D" type="Area2D" parent="." groups=["inimigo"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
 position = Vector2(0, 4.5)
 shape = SubResource("RectangleShape2D_87sjq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, 4.5)
 shape = SubResource("RectangleShape2D_87sjq")
 
