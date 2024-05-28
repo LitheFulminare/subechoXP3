@@ -217,54 +217,56 @@ _data = {
 "Shoot": SubResource("Animation_m2uo0")
 }
 
-[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_4hhx5"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_v4ie5"]
+animation = &"Idle"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_55m6m"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_enwpl"]
+animation = &"Intro"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_inn87"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4vg2t"]
+animation = &"Melee"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_42i64"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6757o"]
+animation = &"Shoot"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_igyhh"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bc2yd"]
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ssn0x"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1n0nt"]
-advance_mode = 2
-advance_condition = &"melee"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_i6xc5"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_nieji"]
 switch_mode = 2
 advance_mode = 2
-advance_condition = &"idle"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3bmi3"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_p0a1g"]
 advance_mode = 2
-advance_condition = &"shoot"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ti777"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_iovbd"]
 switch_mode = 2
 advance_mode = 2
-advance_condition = &"idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qaf6q"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wk11h"]
+switch_mode = 2
+advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_kcihi"]
-states/Idle/node = SubResource("AnimationNodeBlendSpace2D_4hhx5")
-states/Idle/position = Vector2(363, 100)
-states/Intro/node = SubResource("AnimationNodeBlendSpace2D_55m6m")
-states/Intro/position = Vector2(217, 100)
-states/Melee/node = SubResource("AnimationNodeBlendSpace2D_inn87")
-states/Melee/position = Vector2(491, 39)
-states/Shoot/node = SubResource("AnimationNodeBlendSpace2D_42i64")
-states/Shoot/position = Vector2(491, 156)
+states/Idle/node = SubResource("AnimationNodeAnimation_v4ie5")
+states/Idle/position = Vector2(369, 100)
+states/Intro/node = SubResource("AnimationNodeAnimation_enwpl")
+states/Intro/position = Vector2(242, 100)
+states/Melee/node = SubResource("AnimationNodeAnimation_4vg2t")
+states/Melee/position = Vector2(479, 56)
+states/Shoot/node = SubResource("AnimationNodeAnimation_6757o")
+states/Shoot/position = Vector2(479, 169)
 states/Start/position = Vector2(89, 100)
-transitions = ["Start", "Intro", SubResource("AnimationNodeStateMachineTransition_igyhh"), "Intro", "Idle", SubResource("AnimationNodeStateMachineTransition_ssn0x"), "Idle", "Melee", SubResource("AnimationNodeStateMachineTransition_1n0nt"), "Melee", "Idle", SubResource("AnimationNodeStateMachineTransition_i6xc5"), "Idle", "Shoot", SubResource("AnimationNodeStateMachineTransition_3bmi3"), "Shoot", "Idle", SubResource("AnimationNodeStateMachineTransition_ti777")]
+transitions = ["Start", "Intro", SubResource("AnimationNodeStateMachineTransition_bc2yd"), "Intro", "Idle", SubResource("AnimationNodeStateMachineTransition_nieji"), "Idle", "Melee", SubResource("AnimationNodeStateMachineTransition_p0a1g"), "Melee", "Idle", SubResource("AnimationNodeStateMachineTransition_iovbd"), "Idle", "Shoot", SubResource("AnimationNodeStateMachineTransition_qaf6q"), "Shoot", "Idle", SubResource("AnimationNodeStateMachineTransition_wk11h")]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_87sjq"]
 size = Vector2(62, 53)
 
 [node name="Boss1" type="CharacterBody2D"]
+position = Vector2(654, 452)
 script = ExtResource("1_ebebe")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -281,13 +283,6 @@ libraries = {
 }
 tree_root = SubResource("AnimationNodeStateMachine_kcihi")
 anim_player = NodePath("../AnimationPlayer")
-parameters/conditions/idle = false
-parameters/conditions/melee = false
-parameters/conditions/shoot = false
-parameters/Idle/blend_position = Vector2(-0.4336, 0.322751)
-parameters/Intro/blend_position = Vector2(0, 0)
-parameters/Melee/blend_position = Vector2(0, 0)
-parameters/Shoot/blend_position = Vector2(0, 0)
 
 [node name="Area2D" type="Area2D" parent="." groups=["inimigo"]]
 

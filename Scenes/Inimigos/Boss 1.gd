@@ -14,8 +14,9 @@ var player_close = false
 func _ready():
 	animation_tree.active = true
 	
+	
 func _process(delta):
-	pass
+	update_animation_parameters()
 
 func _physics_process(_delta: float) -> void:
 	var dir = to_local(nav_agent.get_next_path_position()).normalized()
@@ -28,10 +29,11 @@ func makepath() -> void:
 
 
 func _on_timer_timeout():
-	makepath()
+	pass
+	#makepath()
 	
 func update_animation_parameters():
-	animation_tree["parameters/conditions/idle"] = true
+	pass
 
 
 func _on_melee_trigger_area_entered(area):
