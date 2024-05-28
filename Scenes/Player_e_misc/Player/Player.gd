@@ -354,7 +354,8 @@ func collect(type):
 		scrap_earned = randi_range(8,12)
 		
 	scrap += scrap_earned
-
+	player_vars.scrap_gained += scrap_earned
+	
 func regen(stat):
 	match stat:
 		"Recuperar vida":
@@ -370,6 +371,8 @@ func change_stat(stat, qtd):
 			energy += qtd
 		"scrap":
 			scrap += qtd
+			if qtd < 0:
+				player_vars.scrap_spent -= qtd
 
 func take_damage(type):
 	#print("velocidade: " + str(current_speed))

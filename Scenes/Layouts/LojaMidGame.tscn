@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://d1pje2hup8ea6"]
+[gd_scene load_steps=11 format=3 uid="uid://d1pje2hup8ea6"]
 
 [ext_resource type="PackedScene" uid="uid://d2tg02cwm2lik" path="res://Scenes/Player_e_misc/UI/UI vida e energia.tscn" id="1_1wjsv"]
 [ext_resource type="Script" path="res://Scenes/Layouts/LojaMidGame.gd" id="1_7qn0a"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://da20fitkathkr" path="res://Scenes/Player_e_misc/Loja/BaseRecEnergia.tscn" id="5_76bnt"]
 [ext_resource type="PackedScene" uid="uid://c2xpi37g636ng" path="res://Scenes/Player_e_misc/Loja/PUvida.tscn" id="6_6lfav"]
 [ext_resource type="PackedScene" uid="uid://dgetijbqxnchl" path="res://Scenes/Player_e_misc/Loja/PUenergia.tscn" id="7_j7gty"]
+[ext_resource type="Texture2D" uid="uid://d004737er7nqm" path="res://sprites/Misc/Fundo Menu.png" id="9_3iqao"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wc7xb"]
 size = Vector2(1940, 105)
@@ -39,6 +40,16 @@ scale = Vector2(5.7, 5.7)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="CanvasGroup"]
 color = Color(0, 0, 0, 1)
+
+[node name="BG" type="NinePatchRect" parent="CanvasGroup"]
+z_index = -1
+offset_right = 706.0
+offset_bottom = 448.0
+scale = Vector2(3.703, 3.703)
+texture = ExtResource("9_3iqao")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+metadata/_edit_lock_ = true
 
 [node name="Interactables" type="Node2D" parent="CanvasGroup"]
 
@@ -84,12 +95,6 @@ collision_mask = 7
 [node name="Collider" type="CollisionShape2D" parent="CanvasGroup/Floor"]
 position = Vector2(960, 52.5)
 shape = SubResource("RectangleShape2D_wc7xb")
-
-[node name="BG" type="ColorRect" parent="CanvasGroup"]
-z_index = -1
-offset_right = 1929.0
-offset_bottom = 1091.0
-metadata/_edit_lock_ = true
 
 [node name="FLoorColor" type="ColorRect" parent="CanvasGroup"]
 light_mask = 2
