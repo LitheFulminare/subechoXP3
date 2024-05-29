@@ -18,7 +18,10 @@ func tipoTiro(weapon_type):
 		"Killerbee":
 			dano = 6
 			speed = 1000
-
+		"Heartbreak":
+			dano = 99
+			speed = 800
+		
 func set_bullet(position, targetPosition):
 	global_position = position
 	direction = (targetPosition - position).normalized()
