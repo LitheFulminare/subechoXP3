@@ -1,5 +1,6 @@
 extends Node2D
 
+@export var pos := Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -7,9 +8,7 @@ func _ready():
 
 	
 func _process(delta):
-	pass
-	#position = get_node("Spawn Tiro 1").global_position
-	
+	global_position = pos.global_position
 
 	
 func anim():

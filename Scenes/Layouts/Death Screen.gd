@@ -15,6 +15,6 @@ func _ready():
 func _process(delta):
 	pass
 
-func _input(event):
-	if Input.is_anything_pressed():
-		Global.goto_scene("res://Scenes/Layouts/principal.tscn")
+
+func _on_continuar_pressed():
+	Global.goto_scene("res://Scenes/Layouts/principal.tscn")

@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dksy5aj62na7d"]
+[gd_scene load_steps=8 format=3 uid="uid://dksy5aj62na7d"]
 
 [ext_resource type="Texture2D" uid="uid://d004737er7nqm" path="res://sprites/Misc/Fundo Menu.png" id="1_4fv0u"]
 [ext_resource type="Script" path="res://Scenes/Layouts/Death Screen.gd" id="1_jgssh"]
 [ext_resource type="FontFile" uid="uid://2jd17kesj1hy" path="res://Misc/VCR_OSD_MONO_1.001.ttf" id="3_oqj0l"]
+[ext_resource type="Texture2D" uid="uid://clmblbqskq5bj" path="res://sprites/UI/Botões/menu_sair_normal.png" id="4_0atok"]
+[ext_resource type="Texture2D" uid="uid://cfxkmgiylsfr1" path="res://sprites/UI/Botões/menu_sair_pressed.png" id="5_f0gau"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vondv"]
 texture = ExtResource("1_4fv0u")
@@ -90,3 +92,15 @@ theme_override_font_sizes/normal_font_size = 48
 text = "Inimigos mortos: 12
 
 "
+
+[node name="Continuar" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 880.0
+offset_top = 898.0
+offset_right = 912.0
+offset_bottom = 912.0
+scale = Vector2(5, 5)
+texture_normal = ExtResource("4_0atok")
+texture_hover = ExtResource("5_f0gau")
+
+[connection signal="pressed" from="Continuar" to="." method="_on_continuar_pressed"]

@@ -21,24 +21,23 @@ var invincible = false
 var sonar = false
 var input = Vector2.ZERO
 var t1_cd = false
-#var mudarA1_cd = false
 var on_collision_with_enemy = false
+var dead = false
 
 var targetPosition: Vector2
 var shootDirection: Vector2
 
 var tween
 var gun_Position
-
-var tiro1Path #preload("res://Scenes/Player_e_misc/Particulas e projéteis/Tiro 1.tscn") 
-var muzz1Path #preload("res://Scenes/Player_e_misc/Particulas e projéteis/Muzzle 1.tscn")
-#var muzz2Path #preload("res://Scenes/Player_e_misc/Particulas e projéteis/Muzzle 2.tscn")
+var tiro1Path
+var muzz1Path
 
 func _physics_process(delta):
 	player_movement(delta)
 
 func get_input():
-
+	
+	
 	input.x = int(Input.is_action_pressed("Right")) - int(Input.is_action_pressed("Left"))
 	input.y = int(Input.is_action_pressed("Down")) - int(Input.is_action_pressed("Up"))
 	
@@ -46,31 +45,34 @@ func get_input():
 	
 func player_movement(delta):
 	
-	input = get_input()
-	if input == Vector2.ZERO:
-		
-		if velocity.length() > (friction * delta):
-			$Sprite/TurbinaV1/Sprites.play()
-			velocity -= velocity.normalized() * (friction * delta)
+	if !dead:
+		input = get_input()
+		if input == Vector2.ZERO:
+			
+			if velocity.length() > (friction * delta):
+				$Sprite/TurbinaV1/Sprites.play()
+				velocity -= velocity.normalized() * (friction * delta)
+			else:
+				velocity = Vector2.ZERO
+				$Sprite/TurbinaV1/Sprites.stop()
 		else:
-			velocity = Vector2.ZERO
-			$Sprite/TurbinaV1/Sprites.stop()
-	else:
-		velocity += (input * acceleration * delta)
-		velocity = velocity.limit_length(speed)
-	#move_and_slide()
-	
-	var collision = move_and_collide(velocity * delta)
-	if collision:
-		#print("colisao")
-		if collision.get_collider().is_in_group("explosivo"):
-			collision.get_collider().kaboom()
-		if not invincible && life > 0 && not collision.get_collider().is_in_group("inimigo"):
-			if not collision.get_collider().is_in_group("ignore collision"):
-				#print("var colisao = true")
-				take_damage("cenario")
+			velocity += (input * acceleration * delta)
+			velocity = velocity.limit_length(speed)
+		#move_and_slide()
+		
+		var collision = move_and_collide(velocity * delta)
+		if collision:
+			#print("colisao")
+			if collision.get_collider().is_in_group("explosivo"):
+				collision.get_collider().kaboom()
+			if not invincible && life > 0 && not collision.get_collider().is_in_group("inimigo"):
+				if not collision.get_collider().is_in_group("ignore collision"):
+					#print("var colisao = true")
+					take_damage("cenario")
 
 func _ready():
+	dead = false
+	
 	# se nenhuma arma foi selecionada, ele pega a primeira
 	scrap = player_vars.current_scrap
 	if weapon_type == "":
@@ -210,25 +212,26 @@ func tiro1():
 			"Gen-EricV1":
 				gun_Position = $"Spawn Tiro 1".global_position
 				tiro1.position = $"Spawn Tiro 1".global_position
-				muzz.position = $Muzz1Local.global_position
+				muzz.pos = $Muzz1Local
 				
 			"Gen-EricV2":
 				gun_Position = $"Spawn Tiro 2".global_position
 				tiro1.position = $"Spawn Tiro 2".global_position
-				muzz.position = $Muzz1Local2.global_position
+				muzz.pos = $Muzz1Local2
 				targetPosition += Vector2(randi_range(-50,50),randi_range(-50,50))
 				
 			"Peacemaker":
 				gun_Position = $"Spawn Tiro 3".global_position
 				tiro1.position = $"Spawn Tiro 3".global_position
-				muzz.position = $Muzz1Local3.global_position
+				muzz.pos = $Muzz1Local3
 				targetPosition = $Aim.global_position
 				shots = 3
 				
 			"Imperium":
 				gun_Position = $"Spawn Tiro 4".global_position
 				tiro1.position = $"Spawn Tiro 4".global_position
-				muzz.position = $Muzz1Local4.global_position
+				muzz.pos = $Muzz1Local4
+
 			"Killerbee":
 				gun_Position = $"Spawn Tiro 5".global_position
 				tiro1.position = $"Spawn Tiro 5".global_position
@@ -324,11 +327,13 @@ func death_no_life():
 	$Light.visible = false
 	$"Light 2".visible = false
 	$Sonar.visible = false
+	dead = true
 	
 func death_no_energy():
 	var tween = create_tween()
 	tween.tween_property($Light, "energy", 0, 1)
 	tween.parallel().tween_property($"Light 2", "energy", 0, 2) 
+	dead = true
 	
 
 #func _on_mudar_arma_1_cooldown_timeout():
