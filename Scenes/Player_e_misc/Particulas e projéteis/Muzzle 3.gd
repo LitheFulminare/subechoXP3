@@ -1,12 +1,13 @@
 extends Node2D
 
+@export var pos := Node2D
+
 func _ready():
 	pass
 
 	
 func _process(delta):
-	pass
-	#position = get_node("Spawn Tiro 1").global_position
+	global_position = pos.global_position
 	
 
 func anim():
