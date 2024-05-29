@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 signal shoot
 
+const bullet_path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Heartbreak projectile.tscn")
+
 @export var player:= Node2D
 @onready var nav_agent := $NavigationAgent2D as NavigationAgent2D
 
@@ -73,4 +75,11 @@ func _on_shoot_timeout():
 
 
 func _on_shoot():
-	print("boss shot")
+	var targetPosition = player.global_position
+	var bullet = bullet_path.instantiate()
+	var gun_Position = $"Bullet spawn".global_position
+	bullet.position = $"Bullet spawn".global_position
+	#var shootDirection = (targetPosition - gun_Position).normalized()
+	bullet.set_bullet(gun_Position, targetPosition)
+	bullet.tipo_tiro_boss(10)
+	get_parent().add_child(bullet)

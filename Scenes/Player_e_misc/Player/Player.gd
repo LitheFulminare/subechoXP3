@@ -4,8 +4,8 @@ signal died_by_explosion
 #signal collect(type)
 
 #@export_enum("Gen-EricV1", "Gen-EricV2", "Peacemaker", "Imperium", "Killerbee") var weapon_type: String
-@export var speed = 500
-@export var acceleration = 4500
+@export var speed = 200
+@export var acceleration = 150
 @export var friction = 400
 #@export var arma1_tipo = 1
 #@export var life = 100
@@ -388,6 +388,8 @@ func take_damage(type):
 		if dano_tomado < 1:
 			dano_tomado = 1
 	if type == "inimigo":
+		dano_tomado = 10
+	if type == "Heartbreak":
 		dano_tomado = 10
 	
 	life -= dano_tomado

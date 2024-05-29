@@ -319,6 +319,9 @@ parameters/conditions/idle = true
 parameters/conditions/melee = false
 parameters/conditions/shoot = false
 
+[node name="Bullet spawn" type="Marker2D" parent="."]
+position = Vector2(2, 7)
+
 [node name="Area2D" type="Area2D" parent="." groups=["inimigo"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]

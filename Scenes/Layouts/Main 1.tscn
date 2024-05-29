@@ -1444,8 +1444,6 @@ texture = SubResource("GradientTexture2D_rly4j")
 [node name="Player" parent="CanvasGroup" instance=ExtResource("1_tgyws")]
 light_mask = 1
 position = Vector2(245, 235)
-speed = 200
-acceleration = 150
 metadata/_edit_group_ = true
 
 [node name="playerpos" type="Node2D" parent="CanvasGroup/Player"]
