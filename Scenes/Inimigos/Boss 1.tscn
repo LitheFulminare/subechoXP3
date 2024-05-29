@@ -219,6 +219,20 @@ tracks/2/keys = {
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 }
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_on_shoot"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_quono"]
 _data = {
@@ -285,6 +299,7 @@ size = Vector2(62, 53)
 [node name="Boss1" type="CharacterBody2D"]
 position = Vector2(654, 452)
 script = ExtResource("1_ebebe")
+intro_over = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 hframes = 8
@@ -295,7 +310,6 @@ libraries = {
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-active = false
 libraries = {
 "": SubResource("AnimationLibrary_quono")
 }
@@ -339,6 +353,7 @@ collision_mask = 3
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Melee Trigger"]
 polygon = PackedVector2Array(-13, -7, -23, -34, -114, -41, -119, 34, -21, 34)
 
+[connection signal="shoot" from="." to="." method="_on_shoot"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Melee timer" to="." method="_on_melee_timer_timeout"]
 [connection signal="timeout" from="Shoot timer" to="." method="_on_shoot_timeout"]

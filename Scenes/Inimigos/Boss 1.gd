@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal shoot
+
 @export var player:= Node2D
 @onready var nav_agent := $NavigationAgent2D as NavigationAgent2D
 
@@ -68,3 +70,7 @@ func _on_melee_timer_timeout():
 
 func _on_shoot_timeout():
 	shot_recently = false
+
+
+func _on_shoot():
+	print("boss shot")
