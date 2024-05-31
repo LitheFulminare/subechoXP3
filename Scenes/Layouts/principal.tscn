@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dcx7feowrrqld"]
+[gd_scene load_steps=14 format=3 uid="uid://dcx7feowrrqld"]
 
 [ext_resource type="Script" path="res://Scenes/Layouts/principal.gd" id="1_e73b0"]
 [ext_resource type="Texture2D" uid="uid://uie5340u063a" path="res://sprites/UI/Botões/menu_iniciar_normal.png" id="2_axhwn"]
@@ -8,7 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://y2hrgsrqd82f" path="res://sprites/UI/Botões/Loja normal.png" id="4_j1g0c"]
 [ext_resource type="Texture2D" uid="uid://cfxkmgiylsfr1" path="res://sprites/UI/Botões/menu_sair_pressed.png" id="5_jv3jv"]
 [ext_resource type="Texture2D" uid="uid://cbk5sdfo8fvra" path="res://sprites/UI/Botões/Loja hover.png" id="5_yn47w"]
+[ext_resource type="Texture2D" uid="uid://pro1ymrw5jkq" path="res://sprites/UI/Botões/Creditos normal.png" id="6_1at7t"]
 [ext_resource type="Texture2D" uid="uid://cmo1f2xlty8mv" path="res://sprites/Misc/LOGO_ABYSSAL.png" id="7_er35a"]
+[ext_resource type="Texture2D" uid="uid://c41vdlwe37kfg" path="res://sprites/UI/Botões/Creditos hover.png" id="7_gajgv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vondv"]
 texture = ExtResource("2_ohhcl")
@@ -23,13 +25,14 @@ sources/1 = SubResource("TileSetAtlasSource_vondv")
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_e73b0")
+metadata/_edit_vertical_guides_ = [959.0]
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_left = 715.0
-offset_top = 341.0
-offset_right = 813.0
-offset_bottom = 431.0
+offset_left = 716.0
+offset_top = 462.0
+offset_right = 814.0
+offset_bottom = 552.0
 scale = Vector2(5, 5)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
@@ -53,11 +56,17 @@ tooltip_text = "Loja de armas"
 texture_normal = ExtResource("4_j1g0c")
 texture_hover = ExtResource("5_yn47w")
 
+[node name="Credits" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+tooltip_text = "Créditos do jogo"
+texture_normal = ExtResource("6_1at7t")
+texture_hover = ExtResource("7_gajgv")
+
 [node name="Exit" type="TextureButton" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-tooltip_text = "Sair do jogo"
+tooltip_text = "Fechar o jogo. Todo o progresso será perdido"
 texture_normal = ExtResource("4_cgrym")
 texture_hover = ExtResource("5_jv3jv")
 metadata/_edit_use_anchors_ = true
@@ -76,4 +85,5 @@ texture = ExtResource("7_er35a")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Loja" to="." method="_on_loja_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

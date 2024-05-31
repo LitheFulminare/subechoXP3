@@ -16,3 +16,7 @@ func _on_exit_pressed():
 
 func _on_loja_pressed():
 	Global.goto_scene("res://Scenes/Layouts/Loja.tscn")
+
+
+func _on_credits_pressed():
+	Global.goto_scene("res://Scenes/Layouts/creditos.tscn")

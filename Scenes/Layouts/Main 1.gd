@@ -1,7 +1,6 @@
 extends Node2D
 
 var explosaoPath = preload("res://Scenes/Player_e_misc/Particulas e projéteis/explosao.tscn")
-#var fase2 = preload("res://Scenes/Layouts/Main 2.tscn")
 
 @export var inimigo_scene : PackedScene
 var inimigos_mortos = 0
@@ -17,30 +16,14 @@ func _ready():
 
 func _process(delta):
 	
-	#if $CanvasGroup/Player.life >= 0:
-		#$"UI/UI vida e energia/Texto Vida".text = str($CanvasGroup/Player.life)
-	#else: 
-		#$"UI/UI vida e energia/Texto Vida".text = "0"
-	#
-	#if $"CanvasGroup/Player".energy >= 0:
-		#$"UI/UI vida e energia/Texto Energia".text = str($CanvasGroup/Player.energy)
-	#else: 
-		#$"UI/UI vida e energia/Texto Energia".text = "0"
-	
 	$"UI/UI vida e energia/Texto Inimigos Mortos".text = str(inimigos_mortos) + "/5"
-	
-	#if $CanvasGroup/Player.scrap > 0:
-	#$"UI/UI Scrap/Texto scrap".text = str($CanvasGroup/Player.scrap)
-	#else: $"UI/UI Scrap".text = "0"
-	
-	
+
 	if Input.is_action_pressed("restart"):
 		if not gameover:
 			game_over_no_life()
 			gameover = true
-		#restart()
 	
-	if $CanvasGroup/Player.life <= 0: #|| $CanvasGroup/Player.energy <= 0:
+	if $CanvasGroup/Player.life <= 0:
 		if not gameover:
 			game_over_no_life()
 			gameover = true
@@ -50,8 +33,6 @@ func _process(delta):
 	
 	if inimigos_mortos >= meta_fase1:
 		meta_fase_batida()
-		
-	
 	
 func meta_fase_batida():
 	$CanvasGroup/SaidaVerdeDesligada.visible = false
@@ -65,17 +46,18 @@ func game_over_no_life():
 	$CanvasGroup/Player.death_no_life()
 	explosao.anim("default")
 	await get_tree().create_timer(3).timeout
-	Global.goto_scene("res://Scenes/Layouts/principal.tscn")
+	Global.goto_scene("res://Scenes/Layouts/Death Screen.tscn")
 	
 func game_over_no_energy():
 	$CanvasGroup/Player.death_no_energy()
 	await get_tree().create_timer(3).timeout
-	Global.goto_scene("res://Scenes/Layouts/principal.tscn")
+	Global.goto_scene("res://Scenes/Layouts/Death Screen.tscn")
 
 
 
 func contador_morte_inimigo():
 	inimigos_mortos += 1
+	player_vars.enemies_killed += 1
 
 
 func _on_area_2d_area_entered(area):
@@ -83,8 +65,6 @@ func _on_area_2d_area_entered(area):
 		if area.is_in_group("player"):
 			print("mudanca")
 			Global.goto_scene("res://Scenes/Layouts/Main 2.tscn")
-	#get_tree().call_group("logica", "ir_para_fase_2")
-
 
 func _on_spawn_inimigo_timeout():
 	if inimigos_mortos < 5:
@@ -93,7 +73,6 @@ func _on_spawn_inimigo_timeout():
 		var local_aleatorio = numero_nos[randi()% numero_nos.size()]
 		var inimigo = inimigo_scene.instantiate()
 		inimigo.player = $CanvasGroup/Player/playerpos
-		#inimigo.position = $"Spawns/spawn inimigo local 2".global_position
 		inimigo.position = local_aleatorio.position
 		add_child(inimigo)
 		
