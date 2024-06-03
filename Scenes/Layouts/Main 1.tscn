@@ -1387,14 +1387,8 @@ z_index = 2
 [node name="Alga" parent="CanvasGroup/Plantas" instance=ExtResource("13_onmmr")]
 position = Vector2(508, 1465)
 
-[node name="Luz" parent="CanvasGroup/Plantas/Alga" index="1"]
-visible = true
-
 [node name="Alga2" parent="CanvasGroup/Plantas" instance=ExtResource("13_onmmr")]
 position = Vector2(1080, 1318)
-
-[node name="Luz" parent="CanvasGroup/Plantas/Alga2" index="1"]
-visible = true
 
 [node name="Alga3" parent="CanvasGroup/Plantas" instance=ExtResource("13_onmmr")]
 position = Vector2(791, 1459)

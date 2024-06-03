@@ -4,6 +4,7 @@ signal shoot
 
 const bullet_path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Heartbreak projectile.tscn")
 const explosion_path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Explosão morte inimigo.tscn")
+const slash_vfx_path = preload("res://Scenes/Inimigos/Slash effect.tscn")
 
 @export var player:= Node2D
 @onready var nav_agent := $NavigationAgent2D as NavigationAgent2D
@@ -100,6 +101,11 @@ func spawn_explosion():
 	explosion.scale = Vector2(1.5,1.5)
 	explosion.global_position = $"Explosion position".global_position
 
+func slash_vfx():
+	var slash = slash_vfx_path.instantiate()
+	add_child(slash)
+	#slash.scale = Vector2(2,2)
+	slash.global_position = $"Slash position".global_position
 
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("tiro"):

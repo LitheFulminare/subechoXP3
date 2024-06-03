@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://djwyti216nbjm"]
+[gd_scene load_steps=31 format=3 uid="uid://djwyti216nbjm"]
 
 [ext_resource type="Script" path="res://Scenes/Inimigos/Boss 1.gd" id="1_ebebe"]
 [ext_resource type="Texture2D" uid="uid://dtreh0jqdds83" path="res://sprites/Inimigos/Boss 1/boss1_intro.png" id="1_vacoo"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bc5gxkty6gjc3" path="res://sprites/Inimigos/Boss 1/boss1_ataque.png" id="3_hjkyq"]
 [ext_resource type="Texture2D" uid="uid://dogdke1w2e77g" path="res://sprites/Inimigos/Boss 1/boss1_projetil.png" id="4_ohgtc"]
 [ext_resource type="Texture2D" uid="uid://cnoypcs3oouyj" path="res://sprites/Inimigos/Boss 1/boss1_morte.png" id="6_tkeav"]
+[ext_resource type="PackedScene" uid="uid://b5k04chsag8sl" path="res://Scenes/Inimigos/Slash effect.tscn" id="7_2bh68"]
 
 [sub_resource type="Animation" id="Animation_op0mw"]
 resource_name = "Death"
@@ -221,6 +222,20 @@ tracks/2/keys = {
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5]
 }
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.833333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"slash_vfx"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_8oe0k"]
 length = 0.001
@@ -422,7 +437,6 @@ libraries = {
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-active = false
 libraries = {
 "": SubResource("AnimationLibrary_quono")
 }
@@ -435,6 +449,9 @@ parameters/conditions/shoot = false
 
 [node name="Bullet spawn" type="Marker2D" parent="."]
 position = Vector2(2, 7)
+
+[node name="Slash position" type="Marker2D" parent="."]
+position = Vector2(-53, 2)
 
 [node name="Explosion position" type="Marker2D" parent="."]
 position = Vector2(-1, -5)
@@ -472,6 +489,10 @@ collision_mask = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Melee Trigger"]
 polygon = PackedVector2Array(-13, -7, -23, -34, -114, -41, -119, 34, -21, 34)
+
+[node name="SlashEffect" parent="." instance=ExtResource("7_2bh68")]
+visible = false
+position = Vector2(-66, 1)
 
 [connection signal="shoot" from="." to="." method="_on_shoot"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

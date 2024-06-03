@@ -1,0 +1,96 @@
+[gd_scene load_steps=7 format=3 uid="uid://b5k04chsag8sl"]
+
+[ext_resource type="Texture2D" uid="uid://dw5mpf02e4ady" path="res://sprites/Inimigos/Boss 1/projetil_swipe.png" id="1_4y7sl"]
+
+[sub_resource type="Animation" id="Animation_tays5"]
+resource_name = "Default"
+length = 0.538465
+step = 0.0384615
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0384615, 0.0769231, 0.115385, 0.153846, 0.192308, 0.230769),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 3, 4, 5, 6, 6]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PointLight2D:energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.230769, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.3, 1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_1n1m2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t44gr"]
+_data = {
+"Default": SubResource("Animation_tays5"),
+"RESET": SubResource("Animation_1n1m2")
+}
+
+[sub_resource type="Gradient" id="Gradient_nc7v6"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.506494, 1)
+colors = PackedColorArray(0.84137, 9.62615e-08, 0.448228, 1, 0.710938, 0, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_sccpy"]
+gradient = SubResource("Gradient_nc7v6")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.876147, 0.105505)
+
+[node name="SlashEffect" type="Node2D"]
+position = Vector2(131, 103)
+scale = Vector2(1.5, 1.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_4y7sl")
+hframes = 7
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_t44gr")
+}
+autoplay = "Default"
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(9.53674e-07, -2)
+energy = 0.32
+texture = SubResource("GradientTexture2D_sccpy")
