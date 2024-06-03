@@ -14,15 +14,18 @@ const room_3 = "res://Scenes/Layouts/Main 3.tscn"
 #const room_9 = 
 #const room_10 = 
 
-
+var room_list = [room_1, room_2, room_3] #, room_4, room_5, room_6, room_7, room_8, room_9, room_10]
 
 func _ready():
 	var root = get_tree().root
 	current_scene = root.get_child(root.get_child_count() - 1)
 
+func next_room():
+	if current_room < 10:
+		current_room += 1
+		print("sala: " + str(room_list[current_room-1]))
+		goto_scene(room_list[current_room-1])
 
-
-	
 func goto_scene(path):
 
 	call_deferred("_deferred_goto_scene", path)
