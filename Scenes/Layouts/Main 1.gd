@@ -43,6 +43,7 @@ func game_over_no_life():
 	$CanvasGroup.add_child(explosao)
 	explosao.position = $CanvasGroup/Player.global_position
 	explosao.scale = explosao.scale * 1.5
+	explosao.get_node("luz").energy = 1
 	$CanvasGroup/Player.death_no_life()
 	explosao.anim("default")
 	await get_tree().create_timer(3).timeout

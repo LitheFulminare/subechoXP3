@@ -1,10 +1,93 @@
-[gd_scene load_steps=24 format=3 uid="uid://djwyti216nbjm"]
+[gd_scene load_steps=30 format=3 uid="uid://djwyti216nbjm"]
 
 [ext_resource type="Script" path="res://Scenes/Inimigos/Boss 1.gd" id="1_ebebe"]
 [ext_resource type="Texture2D" uid="uid://dtreh0jqdds83" path="res://sprites/Inimigos/Boss 1/boss1_intro.png" id="1_vacoo"]
 [ext_resource type="Texture2D" uid="uid://difbngo424xxu" path="res://sprites/Inimigos/Boss 1/boss1_idle.png" id="2_j5t0w"]
 [ext_resource type="Texture2D" uid="uid://bc5gxkty6gjc3" path="res://sprites/Inimigos/Boss 1/boss1_ataque.png" id="3_hjkyq"]
 [ext_resource type="Texture2D" uid="uid://dogdke1w2e77g" path="res://sprites/Inimigos/Boss 1/boss1_projetil.png" id="4_ohgtc"]
+[ext_resource type="Texture2D" uid="uid://cnoypcs3oouyj" path="res://sprites/Inimigos/Boss 1/boss1_morte.png" id="6_tkeav"]
+
+[sub_resource type="Animation" id="Animation_op0mw"]
+resource_name = "Death"
+length = 5.0001
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_tkeav")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"values": [{
+"args": [],
+"method": &"spawn_explosion"
+}, {
+"args": [],
+"method": &"spawn_explosion"
+}, {
+"args": [],
+"method": &"spawn_explosion"
+}, {
+"args": [],
+"method": &"spawn_explosion"
+}, {
+"args": [],
+"method": &"spawn_explosion"
+}, {
+"args": [],
+"method": &"spawn_explosion"
+}]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Explosion position:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4, 5),
+"transitions": PackedFloat32Array(7.77931e-05, 1e-05, 1e-05, 1e-05, 1e-05, 1e-05),
+"update": 0,
+"values": [Vector2(-13, -6), Vector2(-1, -5), Vector2(-3, 16), Vector2(15, 7), Vector2(8, -6), Vector2(4, -17)]
+}
 
 [sub_resource type="Animation" id="Animation_4cftc"]
 resource_name = "Idle"
@@ -47,10 +130,9 @@ tracks/2/keys = {
 "values": [0, 1, 2, 3, 4, 5]
 }
 
-[sub_resource type="Animation" id="Animation_jy047"]
+[sub_resource type="Animation" id="Animation_ayu2y"]
 resource_name = "Intro"
-length = 3.00002
-step = 0.166667
+length = 1.80001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -82,10 +164,10 @@ tracks/2/path = NodePath("Sprite2D:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5, 0.666667, 0.833333, 1, 1.16667, 1.33333, 1.5, 1.66667, 1.83333, 2, 2.16667, 2.33333, 2.5, 2.66667, 2.83333, 3),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 17]
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -94,7 +176,7 @@ tracks/3/path = NodePath(".:intro_over")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(3),
+"times": PackedFloat32Array(1.7),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
@@ -178,6 +260,18 @@ tracks/2/keys = {
 "update": 1,
 "values": [0]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Explosion position:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1, -5)]
+}
 
 [sub_resource type="Animation" id="Animation_m2uo0"]
 resource_name = "Shoot"
@@ -219,15 +313,33 @@ tracks/2/keys = {
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 }
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_on_shoot"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_quono"]
 _data = {
+"Death": SubResource("Animation_op0mw"),
 "Idle": SubResource("Animation_4cftc"),
-"Intro": SubResource("Animation_jy047"),
+"Intro": SubResource("Animation_ayu2y"),
 "Melee": SubResource("Animation_0xqyv"),
 "RESET": SubResource("Animation_8oe0k"),
 "Shoot": SubResource("Animation_m2uo0")
 }
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_s8c55"]
+animation = &"Death"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_v4ie5"]
 animation = &"Idle"
@@ -266,18 +378,32 @@ switch_mode = 2
 advance_mode = 2
 advance_condition = &"idle"
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4t6ve"]
+advance_mode = 2
+advance_condition = &"dead"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_krqax"]
+advance_mode = 2
+advance_condition = &"dead"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pt565"]
+advance_mode = 2
+advance_condition = &"dead"
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_kcihi"]
+states/Death/node = SubResource("AnimationNodeAnimation_s8c55")
+states/Death/position = Vector2(708, 100)
 states/Idle/node = SubResource("AnimationNodeAnimation_v4ie5")
 states/Idle/position = Vector2(369, 100)
 states/Intro/node = SubResource("AnimationNodeAnimation_enwpl")
 states/Intro/position = Vector2(242, 100)
 states/Melee/node = SubResource("AnimationNodeAnimation_4vg2t")
-states/Melee/position = Vector2(479, 56)
+states/Melee/position = Vector2(428, 23)
 states/Shoot/node = SubResource("AnimationNodeAnimation_6757o")
-states/Shoot/position = Vector2(479, 169)
+states/Shoot/position = Vector2(403, 183)
 states/Start/position = Vector2(89, 100)
-transitions = ["Start", "Intro", SubResource("AnimationNodeStateMachineTransition_bc2yd"), "Intro", "Idle", SubResource("AnimationNodeStateMachineTransition_nieji"), "Idle", "Melee", SubResource("AnimationNodeStateMachineTransition_p0a1g"), "Melee", "Idle", SubResource("AnimationNodeStateMachineTransition_iovbd"), "Idle", "Shoot", SubResource("AnimationNodeStateMachineTransition_qaf6q"), "Shoot", "Idle", SubResource("AnimationNodeStateMachineTransition_wk11h")]
-graph_offset = Vector2(-146, 10)
+transitions = ["Start", "Intro", SubResource("AnimationNodeStateMachineTransition_bc2yd"), "Intro", "Idle", SubResource("AnimationNodeStateMachineTransition_nieji"), "Idle", "Melee", SubResource("AnimationNodeStateMachineTransition_p0a1g"), "Melee", "Idle", SubResource("AnimationNodeStateMachineTransition_iovbd"), "Idle", "Shoot", SubResource("AnimationNodeStateMachineTransition_qaf6q"), "Shoot", "Idle", SubResource("AnimationNodeStateMachineTransition_wk11h"), "Melee", "Death", SubResource("AnimationNodeStateMachineTransition_4t6ve"), "Idle", "Death", SubResource("AnimationNodeStateMachineTransition_krqax"), "Shoot", "Death", SubResource("AnimationNodeStateMachineTransition_pt565")]
+graph_offset = Vector2(-19, -19)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_87sjq"]
 size = Vector2(62, 53)
@@ -285,6 +411,7 @@ size = Vector2(62, 53)
 [node name="Boss1" type="CharacterBody2D"]
 position = Vector2(654, 452)
 script = ExtResource("1_ebebe")
+intro_over = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 hframes = 8
@@ -301,9 +428,16 @@ libraries = {
 }
 tree_root = SubResource("AnimationNodeStateMachine_kcihi")
 anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/dead = false
 parameters/conditions/idle = true
 parameters/conditions/melee = false
 parameters/conditions/shoot = false
+
+[node name="Bullet spawn" type="Marker2D" parent="."]
+position = Vector2(2, 7)
+
+[node name="Explosion position" type="Marker2D" parent="."]
+position = Vector2(-1, -5)
 
 [node name="Area2D" type="Area2D" parent="." groups=["inimigo"]]
 
@@ -339,6 +473,8 @@ collision_mask = 3
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Melee Trigger"]
 polygon = PackedVector2Array(-13, -7, -23, -34, -114, -41, -119, 34, -21, 34)
 
+[connection signal="shoot" from="." to="." method="_on_shoot"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Melee timer" to="." method="_on_melee_timer_timeout"]
 [connection signal="timeout" from="Shoot timer" to="." method="_on_shoot_timeout"]

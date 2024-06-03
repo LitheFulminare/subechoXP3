@@ -2,6 +2,7 @@ extends Area2D
 
 var dano = 3
 var speed = 3000
+var enemy_proj = false
 
 var direction = Vector2.ZERO
 
@@ -18,7 +19,15 @@ func tipoTiro(weapon_type):
 		"Killerbee":
 			dano = 6
 			speed = 1000
-
+		"Heartbreak":
+			dano = 99
+			speed = 800
+			
+func tipo_tiro_boss(damage):
+	dano = damage
+	speed = 800
+	enemy_proj = true
+		
 func set_bullet(position, targetPosition):
 	global_position = position
 	direction = (targetPosition - position).normalized()
@@ -33,6 +42,10 @@ func _on_area_2d_body_entered(body):
 		queue_free()
 
 func _on_area_2d_area_entered(area):
-	if area.is_in_group("inimigo"):
-		if !player_vars.bullet_penetration:
-			queue_free()
+	if !enemy_proj:
+		if area.is_in_group("inimigo"):
+			if !player_vars.bullet_penetration:
+				queue_free()
+	elif area.is_in_group("player"):
+		get_tree().call_group("player", "take_damage", "Heartbreak")
+		queue_free()

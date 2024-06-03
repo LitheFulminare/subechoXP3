@@ -1,14 +1,27 @@
 extends Node
 
+var current_room = 0 # 0 é o menu, as salas vâo de 1 a 10r
 var current_scene = null
+
+const room_1 = "res://Scenes/Layouts/Main 1.tscn"
+const room_2 = "res://Scenes/Layouts/Main 2.tscn"
+const room_3 = "res://Scenes/Layouts/Main 3.tscn"
+#const room_4 = 
+#const room_5 = 
+#const room_6 = 
+#const room_7 = 
+#const room_8 = 
+#const room_9 = 
+#const room_10 = 
+
+
 
 func _ready():
 	var root = get_tree().root
 	current_scene = root.get_child(root.get_child_count() - 1)
 
 
-#func _process(delta):
-	#pass
+
 	
 func goto_scene(path):
 
