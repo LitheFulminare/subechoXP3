@@ -822,8 +822,6 @@ texture = SubResource("GradientTexture2D_rly4j")
 light_mask = 1
 position = Vector2(200, 1451)
 scale = Vector2(0.992109, 0.984466)
-speed = 200
-acceleration = 150
 metadata/_edit_group_ = true
 
 [node name="Camera2D" type="Camera2D" parent="CanvasGroup/Player"]
