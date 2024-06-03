@@ -8,8 +8,8 @@ func _process(delta):
 
 func _on_play_pressed():
 	Global.room_list.shuffle()
-	Global.next_room()
-	#Global.goto_scene("res://Scenes/Layouts/Main 1.tscn")
+	#Global.next_room()
+	Global.goto_scene("res://Scenes/Layouts/Main 1.tscn")
 
 
 func _on_exit_pressed():

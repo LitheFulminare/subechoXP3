@@ -64,8 +64,9 @@ func contador_morte_inimigo():
 func _on_area_2d_area_entered(area):
 	if inimigos_mortos >= meta_fase1:
 		if area.is_in_group("player"):
-			print("mudanca")
-			Global.goto_scene("res://Scenes/Layouts/Main 2.tscn")
+			#print("mudanca")
+			Global.next_room()
+			#Global.goto_scene("res://Scenes/Layouts/Main 2.tscn")
 
 func _on_spawn_inimigo_timeout():
 	if inimigos_mortos < 5:
