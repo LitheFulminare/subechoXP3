@@ -18,12 +18,16 @@ const explosion_path = preload("res://Scenes/Player_e_misc/Particulas e projéte
 var player_close = false
 var melee_last_3s = false
 var shot_recently = false
+var death_anim_over = false
 
 func _ready():
 	animation_tree.active = true
 	
 	
 func _process(delta):
+	#if life == 0:
+		#dead = true
+		#death_anim()
 	if intro_over:
 		update_animation_parameters()
 
@@ -55,7 +59,10 @@ func update_animation_parameters():
 		animation_tree["parameters/conditions/shoot"] = false
 		shot_recently = true
 		$"Shoot timer".start()
-
+		
+	if life <= 0:
+		animation_tree["parameters/conditions/dead"] = true
+		animation_tree["parameters/conditions/idle"] = false
 
 func _on_melee_trigger_area_entered(area):
 	if area.is_in_group("player"):
@@ -92,8 +99,13 @@ func spawn_explosion():
 
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("tiro"):
-		var damage_received = area.get_parent().dano
-		print(damage_received)
+		if !area.get_parent().enemy_proj:
+			var damage_received = area.get_parent().dano
+			#print(damage_received)
+			take_damage(damage_received)
 
 func take_damage(damage_received):
 	life -= damage_received
+
+func death_anim():
+	pass
