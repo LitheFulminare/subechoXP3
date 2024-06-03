@@ -96,8 +96,9 @@ func spawn_explosion():
 	var explosion = explosion_path.instantiate()
 	add_child(explosion)
 	explosion.anim("morte inimigo")
-	explosion.get_node("luz").energy = 3
+	explosion.get_node("luz").energy = 1.5
 	explosion.scale = Vector2(1.5,1.5)
+	explosion.global_position = $"Explosion position".global_position
 
 
 func _on_area_2d_area_entered(area):
