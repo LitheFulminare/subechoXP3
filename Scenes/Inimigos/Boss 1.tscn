@@ -353,18 +353,18 @@ advance_condition = &"dead"
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_kcihi"]
 states/Death/node = SubResource("AnimationNodeAnimation_s8c55")
-states/Death/position = Vector2(633, 94)
+states/Death/position = Vector2(708, 100)
 states/Idle/node = SubResource("AnimationNodeAnimation_v4ie5")
 states/Idle/position = Vector2(369, 100)
 states/Intro/node = SubResource("AnimationNodeAnimation_enwpl")
 states/Intro/position = Vector2(242, 100)
 states/Melee/node = SubResource("AnimationNodeAnimation_4vg2t")
-states/Melee/position = Vector2(479, 56)
+states/Melee/position = Vector2(428, 23)
 states/Shoot/node = SubResource("AnimationNodeAnimation_6757o")
-states/Shoot/position = Vector2(479, 169)
+states/Shoot/position = Vector2(403, 183)
 states/Start/position = Vector2(89, 100)
 transitions = ["Start", "Intro", SubResource("AnimationNodeStateMachineTransition_bc2yd"), "Intro", "Idle", SubResource("AnimationNodeStateMachineTransition_nieji"), "Idle", "Melee", SubResource("AnimationNodeStateMachineTransition_p0a1g"), "Melee", "Idle", SubResource("AnimationNodeStateMachineTransition_iovbd"), "Idle", "Shoot", SubResource("AnimationNodeStateMachineTransition_qaf6q"), "Shoot", "Idle", SubResource("AnimationNodeStateMachineTransition_wk11h"), "Melee", "Death", SubResource("AnimationNodeStateMachineTransition_4t6ve"), "Idle", "Death", SubResource("AnimationNodeStateMachineTransition_krqax"), "Shoot", "Death", SubResource("AnimationNodeStateMachineTransition_pt565")]
-graph_offset = Vector2(25, 24)
+graph_offset = Vector2(-19, -19)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_87sjq"]
 size = Vector2(62, 53)
