@@ -13,12 +13,12 @@ Armas
 Precisa fazer:
 	BG com parallax (problema de n interagir com Canvas Modulate)
 	colocar mais props e randomizar
-	loja entre os levels
+	fazer a loja aparecer (ela ja existe)
 	implementar os textos na loja (victor vai fazer)
 	icones para as barras na loja
-	perks no final de cada fase
-	mostrar status no final de cada run
 	
+	(se der tempo)
+	perks no final de cada fase
 	lixo brilha quando chega perto/particula de coletar lixo (??)
 	melhorar spread da PM (??)
 	fazer a arma girar no mouse (??)
@@ -32,5 +32,7 @@ Já feito:
 	sistema de precisão (randomizar angulo dos tiros)
 	Imperium
 	melhorar a interface na loja (colocar quanto custa, deixar arma cinza, feedback que comprou)
+	mostrar status no final de cada run
+	loja entre os levels
 	
 	
