@@ -1300,7 +1300,7 @@ position = Vector2(1780, 1403)
 
 [node name="Barril" parent="CanvasGroup/Props" instance=ExtResource("7_cegly")]
 z_index = 2
-position = Vector2(121, 1317)
+position = Vector2(117, 1318)
 
 [node name="Barril2" parent="CanvasGroup/Props" instance=ExtResource("7_cegly")]
 z_index = 2
@@ -1376,16 +1376,329 @@ position = Vector2(1532, 740)
 position = Vector2(974, 452)
 
 [node name="Coral" parent="CanvasGroup/Plantas" instance=ExtResource("14_qs6bb")]
-position = Vector2(1330, 1498)
+position = Vector2(1426, 1496)
 
 [node name="Coral2" parent="CanvasGroup/Plantas" instance=ExtResource("14_qs6bb")]
-position = Vector2(1718, 1453)
+position = Vector2(1742, 1448)
 
 [node name="Coral3" parent="CanvasGroup/Plantas" instance=ExtResource("14_qs6bb")]
-position = Vector2(1881, 154)
+position = Vector2(1856, 154)
 
 [node name="Coral4" parent="CanvasGroup/Plantas" instance=ExtResource("14_qs6bb")]
-position = Vector2(1720, 200)
+position = Vector2(1744, 201)
+
+[node name="AlgaVPe01" parent="CanvasGroup/Plantas" instance=ExtResource("13_onmmr")]
+top_level = true
+position = Vector2(465, 325)
+scale = Vector2(0.647537, 0.478418)
+
+[node name="AlgaVPe02" parent="CanvasGroup/Plantas" instance=ExtResource("13_onmmr")]
+top_level = true
+position = Vector2(510, 327)
+scale = Vector2(0.647537, 0.478418)
+
+[node name="CoralPe02" parent="CanvasGroup/Plantas" instance=ExtResource("14_qs6bb")]
+position = Vector2(606, 108)
+rotation = -2.22068
+scale = Vector2(0.516552, 0.605347)
+
+[node name="AlgaVPe03" parent="CanvasGroup/Plantas" instance=ExtResource("13_onmmr")]
+top_level = true
+position = Vector2(387, 107)
+rotation = -3.14052
+scale = Vector2(0.647537, 0.478418)
+
+[node name="AlgaVPe04" parent="CanvasGroup/Plantas" instance=ExtResource("13_onmmr")]
+top_level = true
+position = Vector2(428, 106)
+rotation = -3.14052
+scale = Vector2(0.647537, 0.478418)
+
+[node name="AlgaVPe05" parent="CanvasGroup/Plantas" instance=ExtResource("13_onmmr")]
+top_level = true
+position = Vector2(474, 106)
+rotation = -3.14052
+scale = Vector2(0.647537, 0.478418)
+
+[node name="AlgaVPe06" parent="CanvasGroup/Plantas" instance=ExtResource("13_onmmr")]
+top_level = true
+position = Vector2(111, 471)
+scale = Vector2(0.647537, 0.478418)
+
+[node name="AlgaVPe07" parent="CanvasGroup/Plantas" instance=ExtResource("13_onmmr")]
+top_level = true
+position = Vector2(163, 516)
+scale = Vector2(0.647537, 0.478418)
+
+[node name="AlgaVPe08" parent="CanvasGroup/Plantas" instance=ExtResource("13_onmmr")]
+position = Vector2(225, 902)
+scale = Vector2(0.647537, 0.478418)
+
+[node name="AlgaVPe09" parent="CanvasGroup/Plantas" instance=ExtResource("13_onmmr")]
+top_level = true
+position = Vector2(265, 904)
+scale = Vector2(0.647537, 0.478418)
+
+[node name="AlgaVPe10" parent="CanvasGroup/Plantas" instance=ExtResource("13_onmmr")]
+top_level = true
+position = Vector2(601, 634)
+rotation = -3.14052
+scale = Vector2(0.647537, 0.478418)
+
+[node name="AlgaVPe11" parent="CanvasGroup/Plantas" instance=ExtResource("13_onmmr")]
+top_level = true
+position = Vector2(557, 634)
+rotation = -3.14052
+scale = Vector2(0.647537, 0.478418)
+
+[node name="AlgaVPe12" parent="CanvasGroup/Plantas" instance=ExtResource("13_onmmr")]
+top_level = true
+position = Vector2(199, 1117)
+rotation = 3.13385
+scale = Vector2(0.647537, 0.478418)
+
+[node name="AlgaVPe13" parent="CanvasGroup/Plantas" instance=ExtResource("13_onmmr")]
+top_level = true
+position = Vector2(155, 1117)
+rotation = 3.13385
+scale = Vector2(0.647537, 0.478418)
+
+[node name="AlgaVPe14" parent="CanvasGroup/Plantas" instance=ExtResource("13_onmmr")]
+top_level = true
+position = Vector2(243, 1334)
+scale = Vector2(0.647537, 0.478418)
+
+[node name="AlgaVPe15" parent="CanvasGroup/Plantas" instance=ExtResource("13_onmmr")]
+top_level = true
+position = Vector2(987, 1383)
+scale = Vector2(0.647537, 0.478418)
+
+[node name="AlgaVPe16" parent="CanvasGroup/Plantas" instance=ExtResource("13_onmmr")]
+top_level = true
+position = Vector2(940, 1432)
+scale = Vector2(0.647537, 0.478418)
+
+[node name="AlgaVPe17" parent="CanvasGroup/Plantas" instance=ExtResource("13_onmmr")]
+top_level = true
+position = Vector2(1413, 230)
+scale = Vector2(0.647537, 0.478418)
+
+[node name="AlgaVPe18" parent="CanvasGroup/Plantas" instance=ExtResource("13_onmmr")]
+top_level = true
+position = Vector2(1368, 230)
+scale = Vector2(0.647537, 0.478418)
+
+[node name="CoralPe03" parent="CanvasGroup/Plantas" instance=ExtResource("14_qs6bb")]
+position = Vector2(1698, 219)
+rotation = -0.0421474
+scale = Vector2(0.516552, 0.605347)
+
+[node name="CoralPe04" parent="CanvasGroup/Plantas" instance=ExtResource("14_qs6bb")]
+position = Vector2(1794, 219)
+rotation = -0.0421474
+scale = Vector2(0.516552, 0.605347)
+
+[node name="AlgaVPe19" parent="CanvasGroup/Plantas" instance=ExtResource("13_onmmr")]
+top_level = true
+position = Vector2(1901, 184)
+scale = Vector2(0.647537, 0.478418)
+
+[node name="CoralPe05" parent="CanvasGroup/Plantas" instance=ExtResource("14_qs6bb")]
+position = Vector2(1311, 47)
+rotation = 2.63869
+scale = Vector2(0.516552, 0.605347)
+
+[node name="CoralPe06" parent="CanvasGroup/Plantas" instance=ExtResource("14_qs6bb")]
+position = Vector2(1275, 48)
+rotation = 3.50491
+scale = Vector2(0.516552, 0.605347)
+
+[node name="CoralPe07" parent="CanvasGroup/Plantas" instance=ExtResource("14_qs6bb")]
+position = Vector2(676, 347)
+rotation = -0.0421474
+scale = Vector2(0.516552, 0.605347)
+
+[node name="AlgaVPe20" parent="CanvasGroup/Plantas" instance=ExtResource("13_onmmr")]
+top_level = true
+position = Vector2(734, 114)
+rotation = 1.58096
+scale = Vector2(0.647537, 0.478418)
+
+[node name="AlgaVPe21" parent="CanvasGroup/Plantas" instance=ExtResource("13_onmmr")]
+top_level = true
+position = Vector2(1190, 683)
+rotation = -1.58018
+scale = Vector2(0.647537, 0.478418)
+
+[node name="AlgaVPe22" parent="CanvasGroup/Plantas" instance=ExtResource("13_onmmr")]
+top_level = true
+position = Vector2(1191, 637)
+rotation = -1.58018
+scale = Vector2(0.647537, 0.478418)
+
+[node name="AlgaVPe23" parent="CanvasGroup/Plantas" instance=ExtResource("13_onmmr")]
+top_level = true
+position = Vector2(1191, 590)
+rotation = -1.58018
+scale = Vector2(0.647537, 0.478418)
+
+[node name="AlgaVPe24" parent="CanvasGroup/Plantas" instance=ExtResource("13_onmmr")]
+top_level = true
+position = Vector2(797, 968)
+rotation = 0.894155
+scale = Vector2(0.647537, 0.478418)
+
+[node name="AlgaVPe25" parent="CanvasGroup/Plantas" instance=ExtResource("13_onmmr")]
+top_level = true
+position = Vector2(837, 998)
+rotation = -0.0304847
+scale = Vector2(0.647537, 0.478418)
+
+[node name="AlgaVPe26" parent="CanvasGroup/Plantas" instance=ExtResource("13_onmmr")]
+top_level = true
+position = Vector2(1361, 517)
+scale = Vector2(0.647537, 0.478418)
+
+[node name="AlgaVPe27" parent="CanvasGroup/Plantas" instance=ExtResource("13_onmmr")]
+top_level = true
+position = Vector2(1709, 540)
+rotation = -3.14052
+scale = Vector2(0.647537, 0.478418)
+
+[node name="AlgaVPe28" parent="CanvasGroup/Plantas" instance=ExtResource("13_onmmr")]
+top_level = true
+position = Vector2(1951, 778)
+rotation = -3.14052
+scale = Vector2(0.647537, 0.478418)
+
+[node name="AlgaVPe29" parent="CanvasGroup/Plantas" instance=ExtResource("13_onmmr")]
+top_level = true
+position = Vector2(1995, 778)
+rotation = -3.14052
+scale = Vector2(0.647537, 0.478418)
+
+[node name="AlgaVPe30" parent="CanvasGroup/Plantas" instance=ExtResource("13_onmmr")]
+top_level = true
+position = Vector2(2361, 765)
+rotation = -2.59195
+scale = Vector2(0.647537, 0.478418)
+
+[node name="AlgaVPe31" parent="CanvasGroup/Plantas" instance=ExtResource("13_onmmr")]
+top_level = true
+position = Vector2(1942, 1189)
+scale = Vector2(0.647537, 0.478418)
+
+[node name="AlgaVPe32" parent="CanvasGroup/Plantas" instance=ExtResource("13_onmmr")]
+top_level = true
+position = Vector2(1644, 1527)
+scale = Vector2(0.647537, 0.478418)
+
+[node name="AlgaVPe33" parent="CanvasGroup/Plantas" instance=ExtResource("13_onmmr")]
+top_level = true
+position = Vector2(1614, 1526)
+scale = Vector2(0.647537, 0.478418)
+
+[node name="AlgaVPe34" parent="CanvasGroup/Plantas" instance=ExtResource("13_onmmr")]
+top_level = true
+position = Vector2(1582, 1524)
+scale = Vector2(0.647537, 0.478418)
+
+[node name="CoralPe08" parent="CanvasGroup/Plantas" instance=ExtResource("14_qs6bb")]
+position = Vector2(1473, 1538)
+rotation = -0.644974
+scale = Vector2(0.516552, 0.605347)
+
+[node name="CoralPe09" parent="CanvasGroup/Plantas" instance=ExtResource("14_qs6bb")]
+position = Vector2(1504, 1539)
+rotation = 0.241867
+scale = Vector2(0.516552, 0.605347)
+
+[node name="CoralPe10" parent="CanvasGroup/Plantas" instance=ExtResource("14_qs6bb")]
+position = Vector2(1373, 1315)
+rotation = -2.31696
+scale = Vector2(0.516552, 0.605347)
+
+[node name="CoralPe11" parent="CanvasGroup/Plantas" instance=ExtResource("14_qs6bb")]
+position = Vector2(1506, 1318)
+rotation = -3.97337
+scale = Vector2(0.516552, 0.605347)
+
+[node name="CoralPe12" parent="CanvasGroup/Plantas" instance=ExtResource("14_qs6bb")]
+position = Vector2(1216, 1417)
+rotation = -0.0195174
+scale = Vector2(0.516552, 0.605347)
+
+[node name="CoralPe13" parent="CanvasGroup/Plantas" instance=ExtResource("14_qs6bb")]
+position = Vector2(1991, 1466)
+rotation = -0.0195174
+scale = Vector2(0.516552, 0.605347)
+
+[node name="CoralPe14" parent="CanvasGroup/Plantas" instance=ExtResource("14_qs6bb")]
+position = Vector2(1946, 1466)
+rotation = -0.0195174
+scale = Vector2(0.516552, 0.605347)
+
+[node name="CoralPe15" parent="CanvasGroup/Plantas" instance=ExtResource("14_qs6bb")]
+position = Vector2(1221, 985)
+rotation = -0.0195174
+scale = Vector2(0.516552, 0.605347)
+
+[node name="CoralPe16" parent="CanvasGroup/Plantas" instance=ExtResource("14_qs6bb")]
+position = Vector2(1782, 984)
+rotation = -0.0195174
+scale = Vector2(0.516552, 0.605347)
+
+[node name="CoralPe17" parent="CanvasGroup/Plantas" instance=ExtResource("14_qs6bb")]
+position = Vector2(1820, 986)
+rotation = -0.0195174
+scale = Vector2(0.516552, 0.605347)
+
+[node name="CoralPe18" parent="CanvasGroup/Plantas" instance=ExtResource("14_qs6bb")]
+position = Vector2(1856, 986)
+rotation = -0.0195174
+scale = Vector2(0.516552, 0.605347)
+
+[node name="AlgaVPe35" parent="CanvasGroup/Plantas" instance=ExtResource("13_onmmr")]
+top_level = true
+position = Vector2(1446, 1001)
+rotation = -0.0304847
+scale = Vector2(0.647537, 0.478418)
+
+[node name="AlgaVPe36" parent="CanvasGroup/Plantas" instance=ExtResource("13_onmmr")]
+top_level = true
+position = Vector2(1490, 1000)
+rotation = -0.0304847
+scale = Vector2(0.647537, 0.478418)
+
+[node name="CoralPe19" parent="CanvasGroup/Plantas" instance=ExtResource("14_qs6bb")]
+position = Vector2(637, 922)
+rotation = -2.27597
+scale = Vector2(0.516552, 0.605347)
+
+[node name="CoralPe20" parent="CanvasGroup/Plantas" instance=ExtResource("14_qs6bb")]
+position = Vector2(623, 893)
+rotation = -1.8993
+scale = Vector2(0.516552, 0.605347)
+
+[node name="CoralPe21" parent="CanvasGroup/Plantas" instance=ExtResource("14_qs6bb")]
+position = Vector2(90, 756)
+rotation = 0.867838
+scale = Vector2(0.516552, 0.605347)
+
+[node name="CoralPe22" parent="CanvasGroup/Plantas" instance=ExtResource("14_qs6bb")]
+position = Vector2(107, 788)
+rotation = 1.15222
+scale = Vector2(0.516552, 0.605347)
+
+[node name="CoralPe23" parent="CanvasGroup/Plantas" instance=ExtResource("14_qs6bb")]
+position = Vector2(1749, 456)
+rotation = -0.0195174
+scale = Vector2(0.516552, 0.605347)
+
+[node name="CoralPe24" parent="CanvasGroup/Plantas" instance=ExtResource("14_qs6bb")]
+position = Vector2(1712, 459)
+rotation = -0.0195174
+scale = Vector2(0.516552, 0.605347)
 
 [node name="BG" type="NinePatchRect" parent="CanvasGroup"]
 z_index = -1
@@ -1416,7 +1729,7 @@ texture = SubResource("GradientTexture2D_rly4j")
 
 [node name="Player" parent="CanvasGroup" instance=ExtResource("1_tgyws")]
 light_mask = 1
-position = Vector2(255, 234)
+position = Vector2(251, 228)
 metadata/_edit_group_ = true
 
 [node name="playerpos" type="Node2D" parent="CanvasGroup/Player"]
