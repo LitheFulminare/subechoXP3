@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://djwyti216nbjm"]
+[gd_scene load_steps=32 format=3 uid="uid://djwyti216nbjm"]
 
 [ext_resource type="Script" path="res://Scenes/Inimigos/Boss 1.gd" id="1_ebebe"]
 [ext_resource type="Texture2D" uid="uid://dtreh0jqdds83" path="res://sprites/Inimigos/Boss 1/boss1_intro.png" id="1_vacoo"]
@@ -97,6 +97,18 @@ tracks/4/keys = {
 "update": 0,
 "values": [Vector2(-13, -6), Vector2(-1, -5), Vector2(-3, 16), Vector2(15, 7), Vector2(8, -6), Vector2(4, -17)]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:death_anim_started")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_4cftc"]
 resource_name = "Idle"
@@ -189,6 +201,18 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:speed")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.7),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [80]
 }
 
 [sub_resource type="Animation" id="Animation_0xqyv"]
@@ -379,10 +403,15 @@ graph_offset = Vector2(-19, -19)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_87sjq"]
 size = Vector2(62, 53)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2s00m"]
+size = Vector2(116.5, 92.5)
+
 [node name="Boss1" type="CharacterBody2D"]
 position = Vector2(654, 452)
 script = ExtResource("1_ebebe")
+speed = 0
 intro_over = true
+death_anim_started = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 light_mask = 513
@@ -391,8 +420,8 @@ hframes = 6
 
 [node name="PointLight2D" type="PointLight2D" parent="Sprite2D"]
 light_mask = 512
-position = Vector2(2.00002, 4.00001)
-scale = Vector2(0.489014, 0.489014)
+position = Vector2(-9.00002, 5)
+scale = Vector2(0.674194, 0.674194)
 range_item_cull_mask = 512
 texture = SubResource("GradientTexture2D_dvb2t")
 
@@ -423,11 +452,19 @@ position = Vector2(-53, 2)
 position = Vector2(-13, -6)
 
 [node name="Area2D" type="Area2D" parent="." groups=["inimigo"]]
+collision_layer = 5
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-visible = false
 position = Vector2(0, 4.5)
 shape = SubResource("RectangleShape2D_87sjq")
+
+[node name="Stop aggro" type="Area2D" parent="."]
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stop aggro"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_2s00m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -458,6 +495,8 @@ polygon = PackedVector2Array(-13, -7, -23, -34, -114, -41, -119, 34, -21, 34)
 
 [connection signal="shoot" from="." to="." method="_on_shoot"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="Stop aggro" to="." method="_on_stop_aggro_area_entered"]
+[connection signal="area_exited" from="Stop aggro" to="." method="_on_stop_aggro_area_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Melee timer" to="." method="_on_melee_timer_timeout"]
 [connection signal="timeout" from="Shoot timer" to="." method="_on_shoot_timeout"]

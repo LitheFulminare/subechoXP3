@@ -53,6 +53,8 @@ sources/0 = SubResource("TileSetAtlasSource_w7cu8")
 position = Vector2(1213, 314)
 scale = Vector2(4, 4)
 player = NodePath("../Player")
+life = 40
+dano = 5
 
 [node name="Player" parent="." instance=ExtResource("2_fr3aj")]
 position = Vector2(421, 290)
