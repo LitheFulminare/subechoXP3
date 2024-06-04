@@ -741,7 +741,7 @@ rotation = -1.66511
 
 [node name="Garrafa3" parent="CanvasGroup/Props" instance=ExtResource("5_mdin4")]
 z_index = 2
-position = Vector2(1573, 636)
+position = Vector2(1580, 638)
 
 [node name="Barril" parent="CanvasGroup/Props" instance=ExtResource("6_xlwk1")]
 z_index = 2
@@ -890,6 +890,10 @@ scale = Vector2(0.516552, 0.605347)
 position = Vector2(1179, 1469)
 scale = Vector2(0.516552, 0.605347)
 
+[node name="Luz" parent="CanvasGroup/Plantas/CoralPe03" index="1"]
+visible = true
+energy = 1.29
+
 [node name="CoralPe04" parent="CanvasGroup/Plantas" instance=ExtResource("18_n5a0p")]
 position = Vector2(1091, 1514)
 scale = Vector2(0.516552, 0.605347)
@@ -921,17 +925,36 @@ scale = Vector2(0.647537, 0.478418)
 position = Vector2(73, 1574)
 scale = Vector2(0.647537, 0.478418)
 
+[node name="Luz" parent="CanvasGroup/Plantas/AlgaVPe09" index="1"]
+visible = true
+
 [node name="AlgaVPe10" parent="CanvasGroup/Plantas" instance=ExtResource("17_ua6ah")]
 position = Vector2(119, 1577)
 scale = Vector2(0.647537, 0.478418)
+
+[node name="Luz" parent="CanvasGroup/Plantas/AlgaVPe10" index="1"]
+visible = true
+position = Vector2(1.54431, -2.09027)
+energy = 2.59
 
 [node name="AlgaVPe11" parent="CanvasGroup/Plantas" instance=ExtResource("17_ua6ah")]
 position = Vector2(165, 1583)
 scale = Vector2(0.647537, 0.478418)
 
+[node name="Sprite2D" parent="CanvasGroup/Plantas/AlgaVPe11" index="0"]
+position = Vector2(0, -14.6316)
+
+[node name="Luz" parent="CanvasGroup/Plantas/AlgaVPe11" index="1"]
+visible = true
+position = Vector2(6.76169e-07, -14.6316)
+
 [node name="AlgaVPe12" parent="CanvasGroup/Plantas" instance=ExtResource("17_ua6ah")]
 position = Vector2(211, 1574)
 scale = Vector2(0.647537, 0.478418)
+
+[node name="Luz" parent="CanvasGroup/Plantas/AlgaVPe12" index="1"]
+visible = true
+energy = 2.44
 
 [node name="AlgaVPe13" parent="CanvasGroup/Plantas" instance=ExtResource("17_ua6ah")]
 position = Vector2(907, 1253)
@@ -956,14 +979,21 @@ scale = Vector2(0.647537, 0.478418)
 position = Vector2(1414, 1287)
 scale = Vector2(0.647537, 0.478418)
 
-[node name="AlgaVPe16" parent="CanvasGroup/Plantas" instance=ExtResource("17_ua6ah")]
-position = Vector2(677, 935)
-scale = Vector2(0.647537, 0.478418)
-
 [node name="CoralPe09" parent="CanvasGroup/Plantas" instance=ExtResource("18_n5a0p")]
 position = Vector2(45, 1398)
 rotation = 0.247698
 scale = Vector2(0.516552, 0.605347)
+
+[node name="Luz" parent="CanvasGroup/Plantas/CoralPe09" index="1"]
+visible = true
+
+[node name="AlgaVPe16" parent="CanvasGroup/Plantas" instance=ExtResource("17_ua6ah")]
+position = Vector2(677, 935)
+scale = Vector2(0.647537, 0.478418)
+
+[node name="Luz" parent="CanvasGroup/Plantas/AlgaVPe16" index="1"]
+visible = true
+energy = 0.86
 
 [node name="AlgaVPe17" parent="CanvasGroup/Plantas" instance=ExtResource("17_ua6ah")]
 position = Vector2(1558, 1037)
@@ -1006,6 +1036,9 @@ position = Vector2(2011, 1423)
 rotation = -2.9801
 scale = Vector2(0.516552, 0.605347)
 
+[node name="Luz" parent="CanvasGroup/Plantas/CoralPe10" index="1"]
+visible = true
+
 [node name="CoralPe11" parent="CanvasGroup/Plantas" instance=ExtResource("18_n5a0p")]
 position = Vector2(2291, 1261)
 rotation = -2.28205
@@ -1041,8 +1074,11 @@ scale = Vector2(0.516552, 0.605347)
 
 [node name="AlgaVPe25" parent="CanvasGroup/Plantas" instance=ExtResource("17_ua6ah")]
 position = Vector2(2357, 1016)
-rotation = -0.94972
+rotation = -1.01086
 scale = Vector2(0.647537, 0.478418)
+
+[node name="Luz" parent="CanvasGroup/Plantas/AlgaVPe25" index="1"]
+visible = true
 
 [node name="AlgaVPe26" parent="CanvasGroup/Plantas" instance=ExtResource("17_ua6ah")]
 position = Vector2(2358, 923)
@@ -1073,9 +1109,16 @@ scale = Vector2(0.516552, 0.605347)
 position = Vector2(1524, 663)
 scale = Vector2(0.647537, 0.478418)
 
+[node name="Luz" parent="CanvasGroup/Plantas/AlgaVPe27" index="1"]
+visible = true
+energy = 2.15
+
 [node name="AlgaVPe28" parent="CanvasGroup/Plantas" instance=ExtResource("17_ua6ah")]
 position = Vector2(1570, 666)
 scale = Vector2(0.647537, 0.478418)
+
+[node name="Luz" parent="CanvasGroup/Plantas/AlgaVPe28" index="1"]
+visible = true
 
 [node name="AlgaVPe29" parent="CanvasGroup/Plantas" instance=ExtResource("17_ua6ah")]
 position = Vector2(1748, 807)
@@ -1154,6 +1197,10 @@ position = Vector2(1188, 231)
 rotation = 2.78684
 scale = Vector2(0.516552, 0.605347)
 
+[node name="Luz" parent="CanvasGroup/Plantas/CoralPe24" index="1"]
+visible = true
+energy = 0.14
+
 [node name="AlgaVPe41" parent="CanvasGroup/Plantas" instance=ExtResource("17_ua6ah")]
 position = Vector2(1133, 100)
 rotation = 3.4238
@@ -1173,15 +1220,32 @@ position = Vector2(829, 54)
 rotation = 3.4238
 scale = Vector2(0.647537, 0.478418)
 
+[node name="Sprite2D" parent="CanvasGroup/Plantas/AlgaVPe43" index="0"]
+position = Vector2(-8.70629, -3.11223)
+
+[node name="Luz" parent="CanvasGroup/Plantas/AlgaVPe43" index="1"]
+visible = true
+position = Vector2(-8.70625, -7.01204)
+scale = Vector2(1.02083, 0.950004)
+
 [node name="AlgaVPe44" parent="CanvasGroup/Plantas" instance=ExtResource("17_ua6ah")]
 position = Vector2(779, 57)
 rotation = 3.05408
 scale = Vector2(0.647537, 0.478418)
 
+[node name="Luz" parent="CanvasGroup/Plantas/AlgaVPe44" index="1"]
+visible = true
+energy = 1.58
+
 [node name="AlgaVPe45" parent="CanvasGroup/Plantas" instance=ExtResource("17_ua6ah")]
 position = Vector2(887, 51)
 rotation = 3.05408
 scale = Vector2(0.647537, 0.478418)
+
+[node name="Luz" parent="CanvasGroup/Plantas/AlgaVPe45" index="1"]
+visible = true
+position = Vector2(2.57492e-05, -3.72529e-07)
+energy = 0.28
 
 [node name="AlgaVPe46" parent="CanvasGroup/Plantas" instance=ExtResource("17_ua6ah")]
 position = Vector2(265, 248)
@@ -1255,6 +1319,10 @@ position = Vector2(33, 1082)
 rotation = 1.0468
 scale = Vector2(0.516552, 0.605347)
 
+[node name="Luz" parent="CanvasGroup/Plantas/CoralPe33" index="1"]
+visible = true
+energy = 0.14
+
 [node name="CoralPe34" parent="CanvasGroup/Plantas" instance=ExtResource("18_n5a0p")]
 position = Vector2(263, 912)
 rotation = 2.65731
@@ -1295,10 +1363,19 @@ position = Vector2(251, 781)
 rotation = -0.794446
 scale = Vector2(0.647537, 0.478418)
 
+[node name="Luz" parent="CanvasGroup/Plantas/AlgaVPe55" index="1"]
+visible = true
+energy = 0.42
+
 [node name="CoralPe36" parent="CanvasGroup/Plantas" instance=ExtResource("18_n5a0p")]
 position = Vector2(37, 335)
 rotation = 2.30333
 scale = Vector2(0.516552, 0.605347)
+
+[node name="Luz" parent="CanvasGroup/Plantas/CoralPe36" index="1"]
+visible = true
+position = Vector2(-1.95503e-05, 1.16825e-05)
+energy = 0.28
 
 [node name="CoralPe37" parent="CanvasGroup/Plantas" instance=ExtResource("18_n5a0p")]
 position = Vector2(33, 443)
@@ -1343,3 +1420,23 @@ shape = SubResource("RectangleShape2D_ha13v")
 [connection signal="timeout" from="spawn 2 inimigo" to="." method="_on_spawn_2_inimigo_timeout"]
 
 [editable path="CanvasGroup/Plantas/Alga6"]
+[editable path="CanvasGroup/Plantas/CoralPe03"]
+[editable path="CanvasGroup/Plantas/AlgaVPe09"]
+[editable path="CanvasGroup/Plantas/AlgaVPe10"]
+[editable path="CanvasGroup/Plantas/AlgaVPe11"]
+[editable path="CanvasGroup/Plantas/AlgaVPe12"]
+[editable path="CanvasGroup/Plantas/CoralPe09"]
+[editable path="CanvasGroup/Plantas/AlgaVPe16"]
+[editable path="CanvasGroup/Plantas/CoralPe10"]
+[editable path="CanvasGroup/Plantas/AlgaVPe25"]
+[editable path="CanvasGroup/Plantas/AlgaVPe27"]
+[editable path="CanvasGroup/Plantas/AlgaVPe28"]
+[editable path="CanvasGroup/Plantas/CoralPe24"]
+[editable path="CanvasGroup/Plantas/AlgaVPe43"]
+[editable path="CanvasGroup/Plantas/AlgaVPe44"]
+[editable path="CanvasGroup/Plantas/AlgaVPe45"]
+[editable path="CanvasGroup/Plantas/Alga8"]
+[editable path="CanvasGroup/Plantas/Alga9"]
+[editable path="CanvasGroup/Plantas/CoralPe33"]
+[editable path="CanvasGroup/Plantas/AlgaVPe55"]
+[editable path="CanvasGroup/Plantas/CoralPe36"]

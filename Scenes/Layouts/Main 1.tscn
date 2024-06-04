@@ -1384,6 +1384,9 @@ position = Vector2(1742, 1448)
 [node name="Coral3" parent="CanvasGroup/Plantas" instance=ExtResource("14_qs6bb")]
 position = Vector2(1856, 154)
 
+[node name="Luz" parent="CanvasGroup/Plantas/Coral3" index="1"]
+visible = true
+
 [node name="Coral4" parent="CanvasGroup/Plantas" instance=ExtResource("14_qs6bb")]
 position = Vector2(1744, 201)
 
@@ -1430,6 +1433,12 @@ top_level = true
 position = Vector2(163, 516)
 scale = Vector2(0.647537, 0.478418)
 
+[node name="Luz" parent="CanvasGroup/Plantas/AlgaVPe07" index="1"]
+visible = true
+position = Vector2(2.25334, 1.08263)
+scale = Vector2(1.01477, 1.02255)
+energy = 3.02
+
 [node name="AlgaVPe08" parent="CanvasGroup/Plantas" instance=ExtResource("13_onmmr")]
 position = Vector2(225, 902)
 scale = Vector2(0.647537, 0.478418)
@@ -1467,6 +1476,10 @@ scale = Vector2(0.647537, 0.478418)
 top_level = true
 position = Vector2(243, 1334)
 scale = Vector2(0.647537, 0.478418)
+
+[node name="Luz" parent="CanvasGroup/Plantas/AlgaVPe14" index="1"]
+visible = true
+energy = 1.87
 
 [node name="AlgaVPe15" parent="CanvasGroup/Plantas" instance=ExtResource("13_onmmr")]
 top_level = true
@@ -1524,6 +1537,10 @@ position = Vector2(734, 114)
 rotation = 1.58096
 scale = Vector2(0.647537, 0.478418)
 
+[node name="Luz" parent="CanvasGroup/Plantas/AlgaVPe20" index="1"]
+visible = true
+energy = 1.72
+
 [node name="AlgaVPe21" parent="CanvasGroup/Plantas" instance=ExtResource("13_onmmr")]
 top_level = true
 position = Vector2(1190, 683)
@@ -1554,6 +1571,9 @@ position = Vector2(837, 998)
 rotation = -0.0304847
 scale = Vector2(0.647537, 0.478418)
 
+[node name="Luz" parent="CanvasGroup/Plantas/AlgaVPe25" index="1"]
+visible = true
+
 [node name="AlgaVPe26" parent="CanvasGroup/Plantas" instance=ExtResource("13_onmmr")]
 top_level = true
 position = Vector2(1361, 517)
@@ -1564,6 +1584,10 @@ top_level = true
 position = Vector2(1709, 540)
 rotation = -3.14052
 scale = Vector2(0.647537, 0.478418)
+
+[node name="Luz" parent="CanvasGroup/Plantas/AlgaVPe27" index="1"]
+visible = true
+energy = 2.44
 
 [node name="AlgaVPe28" parent="CanvasGroup/Plantas" instance=ExtResource("13_onmmr")]
 top_level = true
@@ -1582,6 +1606,9 @@ top_level = true
 position = Vector2(2361, 765)
 rotation = -2.59195
 scale = Vector2(0.647537, 0.478418)
+
+[node name="Luz" parent="CanvasGroup/Plantas/AlgaVPe30" index="1"]
+visible = true
 
 [node name="AlgaVPe31" parent="CanvasGroup/Plantas" instance=ExtResource("13_onmmr")]
 top_level = true
@@ -1628,6 +1655,10 @@ position = Vector2(1216, 1417)
 rotation = -0.0195174
 scale = Vector2(0.516552, 0.605347)
 
+[node name="Luz" parent="CanvasGroup/Plantas/CoralPe12" index="1"]
+visible = true
+energy = 1.29
+
 [node name="CoralPe13" parent="CanvasGroup/Plantas" instance=ExtResource("14_qs6bb")]
 position = Vector2(1991, 1466)
 rotation = -0.0195174
@@ -1664,11 +1695,19 @@ position = Vector2(1446, 1001)
 rotation = -0.0304847
 scale = Vector2(0.647537, 0.478418)
 
+[node name="Luz" parent="CanvasGroup/Plantas/AlgaVPe35" index="1"]
+visible = true
+energy = 2.73
+
 [node name="AlgaVPe36" parent="CanvasGroup/Plantas" instance=ExtResource("13_onmmr")]
 top_level = true
 position = Vector2(1490, 1000)
 rotation = -0.0304847
 scale = Vector2(0.647537, 0.478418)
+
+[node name="Luz" parent="CanvasGroup/Plantas/AlgaVPe36" index="1"]
+visible = true
+energy = 1.86
 
 [node name="CoralPe19" parent="CanvasGroup/Plantas" instance=ExtResource("14_qs6bb")]
 position = Vector2(637, 922)
@@ -1729,7 +1768,7 @@ texture = SubResource("GradientTexture2D_rly4j")
 
 [node name="Player" parent="CanvasGroup" instance=ExtResource("1_tgyws")]
 light_mask = 1
-position = Vector2(251, 228)
+position = Vector2(251, 225)
 metadata/_edit_group_ = true
 
 [node name="playerpos" type="Node2D" parent="CanvasGroup/Player"]
@@ -1743,7 +1782,7 @@ editor_draw_screen = false
 editor_draw_limits = true
 
 [node name="Player Spawn" type="Marker2D" parent="."]
-position = Vector2(255, 222)
+position = Vector2(255, 215)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_wadha")
@@ -1783,3 +1822,14 @@ shape = SubResource("RectangleShape2D_bpofp")
 [connection signal="died_by_explosion" from="CanvasGroup/Player" to="." method="_on_player_died_by_explosion"]
 [connection signal="timeout" from="spawn inimigo" to="." method="_on_spawn_inimigo_timeout"]
 [connection signal="area_entered" from="Saida/Area2D" to="." method="_on_area_2d_area_entered"]
+
+[editable path="CanvasGroup/Plantas/Coral3"]
+[editable path="CanvasGroup/Plantas/AlgaVPe07"]
+[editable path="CanvasGroup/Plantas/AlgaVPe14"]
+[editable path="CanvasGroup/Plantas/AlgaVPe20"]
+[editable path="CanvasGroup/Plantas/AlgaVPe25"]
+[editable path="CanvasGroup/Plantas/AlgaVPe27"]
+[editable path="CanvasGroup/Plantas/AlgaVPe30"]
+[editable path="CanvasGroup/Plantas/CoralPe12"]
+[editable path="CanvasGroup/Plantas/AlgaVPe35"]
+[editable path="CanvasGroup/Plantas/AlgaVPe36"]
