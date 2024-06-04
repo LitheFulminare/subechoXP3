@@ -6,7 +6,7 @@ const bullet_path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/
 const explosion_path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Explosão morte inimigo.tscn")
 const slash_vfx_path = preload("res://Scenes/Inimigos/Slash effect.tscn")
 
-@export var player:= Node2D
+@export var player := Node2D
 @onready var nav_agent := $NavigationAgent2D as NavigationAgent2D
 
 @export var life = 40
@@ -28,6 +28,7 @@ var shot_recently = false
 
 func _ready():
 	animation_tree.active = true
+	death_anim_started = false
 	
 	
 func _process(delta):
@@ -120,6 +121,9 @@ func slash_vfx():
 	add_child(slash)
 	#slash.scale = Vector2(2,2)
 	slash.global_position = $"Slash position".global_position
+	if player_close:
+		get_tree().call_group("player", "take_damage", "inimigo")
+		#player.take_damage("inimigo")
 
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("tiro"):
