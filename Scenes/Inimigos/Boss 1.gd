@@ -43,17 +43,29 @@ func _process(delta):
 
 func _physics_process(_delta: float) -> void:
 	var dir = to_local(nav_agent.get_next_path_position()).normalized()
+	
+	if velocity.x > 0 && !mirrored:
+		scale.x = -4
+		mirrored = true
+		dir.x = -dir.x
+	elif velocity.x <= 0 && mirrored:
+		scale.x = 4
+		mirrored = false
+		dir.x = -dir.x
+		
 	velocity = dir * speed
 	
 	move_and_slide()
 
-func flip():
-	if player.global_position.x > global_position.x && !mirrored:
-			scale.x = -4
-			mirrored = true
-	elif player.global_position.x < global_position.x && mirrored:
-		scale.x = 4
-		mirrored = false
+#func flip():
+	#if player.global_position.x > global_position.x && !mirrored:
+		#speed = -speed
+		#scale.x = -4
+		#mirrored = true
+	#elif player.global_position.x < global_position.x && mirrored:
+		#speed = -speed
+		#scale.x = 4
+		#mirrored = false
 
 func makepath() -> void:
 	nav_agent.target_position = player.global_position
