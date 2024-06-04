@@ -1,11 +1,20 @@
-[gd_scene load_steps=30 format=3 uid="uid://djwyti216nbjm"]
+[gd_scene load_steps=32 format=3 uid="uid://djwyti216nbjm"]
 
 [ext_resource type="Script" path="res://Scenes/Inimigos/Boss 1.gd" id="1_ebebe"]
 [ext_resource type="Texture2D" uid="uid://dtreh0jqdds83" path="res://sprites/Inimigos/Boss 1/boss1_intro.png" id="1_vacoo"]
 [ext_resource type="Texture2D" uid="uid://difbngo424xxu" path="res://sprites/Inimigos/Boss 1/boss1_idle.png" id="2_j5t0w"]
 [ext_resource type="Texture2D" uid="uid://bc5gxkty6gjc3" path="res://sprites/Inimigos/Boss 1/boss1_ataque.png" id="3_hjkyq"]
+[ext_resource type="Gradient" uid="uid://5ymorrtoq1bs" path="res://Misc/Pink and purple gradient.tres" id="3_smelp"]
 [ext_resource type="Texture2D" uid="uid://dogdke1w2e77g" path="res://sprites/Inimigos/Boss 1/boss1_projetil.png" id="4_ohgtc"]
 [ext_resource type="Texture2D" uid="uid://cnoypcs3oouyj" path="res://sprites/Inimigos/Boss 1/boss1_morte.png" id="6_tkeav"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dvb2t"]
+gradient = ExtResource("3_smelp")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.821101, 0.16055)
 
 [sub_resource type="Animation" id="Animation_op0mw"]
 resource_name = "Death"
@@ -84,9 +93,33 @@ tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0, 1, 2, 3, 4, 5),
-"transitions": PackedFloat32Array(7.77931e-05, 1e-05, 1e-05, 1e-05, 1e-05, 1e-05),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(-13, -6), Vector2(-1, -5), Vector2(-3, 16), Vector2(15, 7), Vector2(8, -6), Vector2(4, -17)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:speed")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:death_anim_started")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_4cftc"]
@@ -160,26 +193,38 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/path = NodePath(".:intro_over")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
+"times": PackedFloat32Array(1.7),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
 }
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath(".:intro_over")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:speed")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
 "times": PackedFloat32Array(1.7),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [80]
 }
 
 [sub_resource type="Animation" id="Animation_0xqyv"]
@@ -221,56 +266,19 @@ tracks/2/keys = {
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5]
 }
-
-[sub_resource type="Animation" id="Animation_8oe0k"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [null]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:hframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [8]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-tracks/3/type = "value"
+tracks/3/type = "method"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Explosion position:position")
+tracks/3/path = NodePath(".")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.833333),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-1, -5)]
+"values": [{
+"args": [],
+"method": &"slash_vfx"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_m2uo0"]
@@ -334,7 +342,6 @@ _data = {
 "Idle": SubResource("Animation_4cftc"),
 "Intro": SubResource("Animation_ayu2y"),
 "Melee": SubResource("Animation_0xqyv"),
-"RESET": SubResource("Animation_8oe0k"),
 "Shoot": SubResource("Animation_m2uo0")
 }
 
@@ -408,13 +415,26 @@ graph_offset = Vector2(-19, -19)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_87sjq"]
 size = Vector2(62, 53)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2s00m"]
+size = Vector2(116.5, 92.5)
+
 [node name="Boss1" type="CharacterBody2D"]
 position = Vector2(654, 452)
 script = ExtResource("1_ebebe")
+speed = 0
 intro_over = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-hframes = 8
+light_mask = 513
+texture = ExtResource("6_tkeav")
+hframes = 6
+
+[node name="PointLight2D" type="PointLight2D" parent="Sprite2D"]
+light_mask = 512
+position = Vector2(-9.00002, 5)
+scale = Vector2(0.674194, 0.674194)
+range_item_cull_mask = 512
+texture = SubResource("GradientTexture2D_dvb2t")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -436,15 +456,26 @@ parameters/conditions/shoot = false
 [node name="Bullet spawn" type="Marker2D" parent="."]
 position = Vector2(2, 7)
 
+[node name="Slash position" type="Marker2D" parent="."]
+position = Vector2(-53, 2)
+
 [node name="Explosion position" type="Marker2D" parent="."]
-position = Vector2(-1, -5)
+position = Vector2(-13, -6)
 
 [node name="Area2D" type="Area2D" parent="." groups=["inimigo"]]
+collision_layer = 5
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-visible = false
 position = Vector2(0, 4.5)
 shape = SubResource("RectangleShape2D_87sjq")
+
+[node name="Stop aggro" type="Area2D" parent="."]
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stop aggro"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_2s00m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -475,6 +506,8 @@ polygon = PackedVector2Array(-13, -7, -23, -34, -114, -41, -119, 34, -21, 34)
 
 [connection signal="shoot" from="." to="." method="_on_shoot"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="Stop aggro" to="." method="_on_stop_aggro_area_entered"]
+[connection signal="area_exited" from="Stop aggro" to="." method="_on_stop_aggro_area_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Melee timer" to="." method="_on_melee_timer_timeout"]
 [connection signal="timeout" from="Shoot timer" to="." method="_on_shoot_timeout"]

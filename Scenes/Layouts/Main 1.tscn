@@ -1497,3 +1497,6 @@ shape = SubResource("RectangleShape2D_bpofp")
 [connection signal="died_by_explosion" from="CanvasGroup/Player" to="." method="_on_player_died_by_explosion"]
 [connection signal="timeout" from="spawn inimigo" to="." method="_on_spawn_inimigo_timeout"]
 [connection signal="area_entered" from="Saida/Area2D" to="." method="_on_area_2d_area_entered"]
+
+[editable path="CanvasGroup/Plantas/Alga"]
+[editable path="CanvasGroup/Plantas/Alga2"]
