@@ -35,7 +35,7 @@ func _process(delta):
 	#if life == 0:
 		#dead = true
 		#death_anim()
-	flip()
+	#flip()
 	
 	if intro_over:
 		update_animation_parameters()
