@@ -1,6 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://b5k04chsag8sl"]
 
 [ext_resource type="Texture2D" uid="uid://dw5mpf02e4ady" path="res://sprites/Inimigos/Boss 1/projetil_swipe.png" id="1_4y7sl"]
+[ext_resource type="Gradient" uid="uid://5ymorrtoq1bs" path="res://Misc/Pink and purple gradient.tres" id="2_c5mip"]
 
 [sub_resource type="Animation" id="Animation_tays5"]
 resource_name = "Default"
@@ -64,13 +65,8 @@ _data = {
 "RESET": SubResource("Animation_1n1m2")
 }
 
-[sub_resource type="Gradient" id="Gradient_nc7v6"]
-interpolation_mode = 2
-offsets = PackedFloat32Array(0, 0.506494, 1)
-colors = PackedColorArray(0.84137, 9.62615e-08, 0.448228, 1, 0.710938, 0, 1, 1, 0, 0, 0, 1)
-
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_sccpy"]
-gradient = SubResource("Gradient_nc7v6")
+gradient = ExtResource("2_c5mip")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.876147, 0.105505)

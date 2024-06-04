@@ -9,7 +9,7 @@ const slash_vfx_path = preload("res://Scenes/Inimigos/Slash effect.tscn")
 @export var player:= Node2D
 @onready var nav_agent := $NavigationAgent2D as NavigationAgent2D
 
-@export var life = 1
+@export var life = 40
 @export var dano = 5
 @export var speed = 80
 
