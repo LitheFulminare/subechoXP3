@@ -1,0 +1,40 @@
+importante lembrar:
+	Na LojaMidGame, o light mask do holofote do chao/suporte deve ser diferente da mask do holofote
+	
+	Global.killed_last_boss_on_run --- controla se o jogador matou o ultimo boss ou nao na run atual,
+	é resetada no _ready() da cena Principal, o menu do jogo
+
+Armas
+	Gen-EricV1
+	Gen-EricV2
+	Peacemaker    (12)
+	Imperium      (laser)
+	Killerbee     (drill)
+
+Precisa fazer:
+	fazer boss 1 flipar
+	colocar mais props e randomizar (jef vai fazer isso)
+	fazer a loja aparecer (ela ja existe)
+	implementar arte na loja (victor vai fazer)
+	boss 2
+	
+	(se der tempo)
+	BG com parallax (problema de n interagir com Canvas Modulate)
+	perks no final de cada fase
+	lixo brilha quando chega perto/particula de coletar lixo (??)
+	melhorar spread da PM (??)
+	fazer a arma girar no mouse (??)
+	
+
+Já feito:
+	coletar lixo
+	sprite do lixo na UI
+	loja de arma no menu
+	importar muzzle da PM
+	sistema de precisão (randomizar angulo dos tiros)
+	melhorar a interface na loja (colocar quanto custa, deixar arma cinza, feedback que comprou)
+	mostrar status no final de cada run
+	loja entre os levels
+	boss 1
+	escolher level aleatorio da pool de salas possiveis
+	

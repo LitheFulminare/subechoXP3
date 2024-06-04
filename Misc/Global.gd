@@ -3,6 +3,8 @@ extends Node
 var current_room = 0 # 0 é o menu, as salas vâo de 1 a 10r
 var current_scene = null
 
+var killed_last_boss_on_run = false
+
 const room_1 = "res://Scenes/Layouts/Main 1.tscn"
 const room_2 = "res://Scenes/Layouts/Main 2.tscn"
 const room_3 = "res://Scenes/Layouts/Main 3.tscn"
@@ -25,6 +27,8 @@ func next_room():
 		current_room += 1
 		print("sala: " + str(room_list[current_room-1]))
 		goto_scene(room_list[current_room-1])
+	if current_room == 10:
+		goto_scene("res://Scenes/Layouts/Death Screen.tscn")
 
 func goto_scene(path):
 
