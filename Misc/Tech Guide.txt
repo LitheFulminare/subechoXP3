@@ -3,6 +3,9 @@ importante lembrar:
 	
 	Global.killed_last_boss_on_run --- controla se o jogador matou o ultimo boss ou nao na run atual,
 	é resetada no _ready() da cena Principal, o menu do jogo
+	
+	next_room() no Global pega o numero da sala pra pegar a lista aleatoria de salas e passar para a
+	próxima. ele também gera uma float random para ver se gera a loja antes ou depois
 
 Armas
 	Gen-EricV1
