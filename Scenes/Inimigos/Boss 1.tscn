@@ -484,6 +484,9 @@ position = Vector2(2, 7)
 [node name="Slash position" type="Marker2D" parent="."]
 position = Vector2(-53, 2)
 
+[node name="Slash position mirror" type="Marker2D" parent="."]
+position = Vector2(52, 2)
+
 [node name="Explosion position" type="Marker2D" parent="."]
 position = Vector2(-13, -6)
 

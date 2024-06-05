@@ -9,7 +9,7 @@ const slash_vfx_path = preload("res://Scenes/Inimigos/Slash effect.tscn")
 @export var player := Node2D
 @onready var nav_agent := $NavigationAgent2D as NavigationAgent2D
 
-@export var life = 40
+@export var life = 80
 @export var dano = 5
 @export var speed = 80
 
@@ -32,10 +32,16 @@ func _ready():
 	
 	
 func _process(delta):
-	#if life == 0:
-		#dead = true
-		#death_anim()
 	#flip()
+	
+	if player.position.x <= global_position.x:
+		$Sprite2D.flip_h = false
+		$"Melee Trigger/CollisionPolygon2D".rotation = deg_to_rad(0)
+		mirrored = false
+	else:
+		$Sprite2D.flip_h = true
+		$"Melee Trigger/CollisionPolygon2D".rotation = deg_to_rad(180)
+		mirrored = true
 	
 	if intro_over:
 		update_animation_parameters()
@@ -44,14 +50,14 @@ func _process(delta):
 func _physics_process(_delta: float) -> void:
 	var dir = to_local(nav_agent.get_next_path_position()).normalized()
 	
-	if velocity.x > 0 && !mirrored:
-		scale.x = -4
-		mirrored = true
-		dir.x = -dir.x
-	elif velocity.x <= 0 && mirrored:
-		scale.x = 4
-		mirrored = false
-		dir.x = -dir.x
+	#if velocity.x > 0 :#&& !mirrored:
+		#scale.x = -4
+		#mirrored = true
+		#dir.x = -dir.x
+	#elif velocity.x <= 0 :#&& mirrored:
+		#scale.x = 4
+		#mirrored = false
+		#dir.x = -dir.x
 		
 	velocity = dir * speed
 	
@@ -134,7 +140,12 @@ func slash_vfx():
 	var slash = slash_vfx_path.instantiate()
 	add_child(slash)
 	#slash.scale = Vector2(2,2)
-	slash.global_position = $"Slash position".global_position
+	if !mirrored:
+		slash.global_position = $"Slash position".global_position
+	else:
+		slash.global_position = $"Slash position mirror".global_position
+		slash.scale.x = -slash.scale.x
+
 	if player_close:
 		get_tree().call_group("player", "take_damage", "inimigo")
 		#player.take_damage("inimigo")
