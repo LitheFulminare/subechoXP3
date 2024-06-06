@@ -33,15 +33,15 @@ func _ready():
 	
 func _process(delta):
 	#flip()
-	
-	if player.position.x <= global_position.x:
-		$Sprite2D.flip_h = false
-		$"Melee Trigger/CollisionPolygon2D".rotation = deg_to_rad(0)
-		mirrored = false
-	else:
-		$Sprite2D.flip_h = true
-		$"Melee Trigger/CollisionPolygon2D".rotation = deg_to_rad(180)
-		mirrored = true
+	if !death_anim_started:
+		if player.position.x <= global_position.x:
+			$Sprite2D.flip_h = false
+			$"Melee Trigger/CollisionPolygon2D".rotation = deg_to_rad(0)
+			mirrored = false
+		else:
+			$Sprite2D.flip_h = true
+			$"Melee Trigger/CollisionPolygon2D".rotation = deg_to_rad(180)
+			mirrored = true
 	
 	if intro_over:
 		update_animation_parameters()
