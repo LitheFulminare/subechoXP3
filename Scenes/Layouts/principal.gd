@@ -1,6 +1,7 @@
 extends Control
 
 func _ready():
+	Global.killed_last_boss_on_run = false
 	Global.current_room = 0
 	
 func _process(delta):
@@ -8,8 +9,8 @@ func _process(delta):
 
 func _on_play_pressed():
 	Global.room_list.shuffle()
-	#Global.next_room()
-	Global.goto_scene("res://Scenes/Layouts/Main 1.tscn")
+	Global.next_room()
+	#Global.goto_scene("res://Scenes/Layouts/Main 1.tscn")
 
 
 func _on_exit_pressed():

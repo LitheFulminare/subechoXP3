@@ -3,6 +3,12 @@ extends Node
 var current_room = 0 # 0 é o menu, as salas vâo de 1 a 10r
 var current_scene = null
 
+var killed_last_boss_on_run = false
+
+var shop_room = false
+var shop_on_2 = false
+var shop_on_6 = false
+
 const room_1 = "res://Scenes/Layouts/Main 1.tscn"
 const room_2 = "res://Scenes/Layouts/Main 2.tscn"
 const room_3 = "res://Scenes/Layouts/Main 3.tscn"
@@ -22,9 +28,42 @@ func _ready():
 
 func next_room():
 	if current_room < 10:
-		current_room += 1
-		print("sala: " + str(room_list[current_room-1]))
-		goto_scene(room_list[current_room-1])
+		
+		if current_room == 2:
+			var random_float
+			if random_float <= 0.5:
+				shop_room = false
+				shop_on_2 = false
+			else:
+				shop_room = true
+				shop_on_2 = true
+		elif current_room == 3 && !shop_on_2:
+			shop_room == true
+
+		elif current_room == 6:
+			var random_float
+			if random_float <= 0.5:
+				shop_room = false
+				shop_on_6 = false
+			else:
+				shop_room = true
+				shop_on_6 = true
+		elif current_room == 7 && !shop_on_6:
+			shop_room = true
+		elif current_room == 9:
+			shop_room = true
+
+		if !shop_room:
+			current_room += 1
+			print("sala: " + str(room_list[current_room-1]))
+			goto_scene(room_list[current_room-1])
+		else:
+			shop_room = false
+			print("sala atual é a loja. a variavel current_room é " + str(current_room))
+			goto_scene("res://Scenes/Layouts/LojaMidGame.tscn")
+
+	if current_room == 10:
+		goto_scene("res://Scenes/Layouts/Death Screen.tscn")
 
 func goto_scene(path):
 
