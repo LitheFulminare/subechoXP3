@@ -10,6 +10,7 @@ func _process(delta):
 func _on_play_pressed():
 	Global.room_list.shuffle()
 	Global.next_room()
+	print(Global.room_list)
 	#Global.goto_scene("res://Scenes/Layouts/Main 1.tscn")
 
 

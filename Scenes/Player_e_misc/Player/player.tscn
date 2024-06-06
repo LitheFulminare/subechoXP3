@@ -85,7 +85,7 @@ position = Vector2(7, 7)
 position = Vector2(-11, -3)
 
 [node name="Energy timer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 3.0
 autostart = true
 
 [node name="Sonar cooldown" type="Timer" parent="."]

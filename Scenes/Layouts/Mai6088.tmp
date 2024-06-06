@@ -1,7 +1,6 @@
-[gd_scene load_steps=92 format=3 uid="uid://ck3e2nbkfvsdf"]
+[gd_scene load_steps=89 format=3 uid="uid://ck3e2nbkfvsdf"]
 
 [ext_resource type="Script" path="res://Scenes/Layouts/Main 3.gd" id="1_vrmbs"]
-[ext_resource type="PackedScene" uid="uid://bj18jjcb7eo50" path="res://Scenes/Inimigos/inimigo.tscn" id="2_468aj"]
 [ext_resource type="PackedScene" uid="uid://d2tg02cwm2lik" path="res://Scenes/Player_e_misc/UI/UI vida e energia.tscn" id="3_a33ke"]
 [ext_resource type="PackedScene" uid="uid://8q3v8osdokef" path="res://Scenes/Player_e_misc/UI/UI scrap.tscn" id="4_ofbr4"]
 [ext_resource type="PackedScene" uid="uid://bijwkls1lldy4" path="res://Scenes/Props/Misc/Pedra.tscn" id="4_woc68"]
@@ -643,17 +642,12 @@ adjustment_enabled = true
 adjustment_brightness = 0.83
 adjustment_saturation = 1.67
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hsxpj"]
-size = Vector2(229.375, 19.75)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rlbt0"]
-size = Vector2(232, 24)
-
 [node name="Main 1" type="Node2D" groups=["logica"]]
 script = ExtResource("1_vrmbs")
-inimigo_scene = ExtResource("2_468aj")
+meta_fase2 = null
 
 [node name="UI" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="UI vida e energia" parent="UI" instance=ExtResource("3_a33ke")]
 offset_top = -1.0
@@ -1162,9 +1156,9 @@ axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
 [node name="SaidaVerdeDesligada" type="PointLight2D" parent="CanvasGroup"]
-position = Vector2(166.898, 1347)
+position = Vector2(169, 1347)
 rotation = 1.56942
-scale = Vector2(7.39062, 4.03788)
+scale = Vector2(7.39062, 3.75)
 texture = SubResource("GradientTexture2D_u8vyl")
 
 [node name="SaidaVerdeLigada" type="PointLight2D" parent="CanvasGroup"]
@@ -1223,26 +1217,7 @@ position = Vector2(258, 935)
 [node name="spawn inimigo local 5" type="Marker2D" parent="Spawns"]
 position = Vector2(2163, 190)
 
-[node name="Saída" type="Node2D" parent="."]
-
-[node name="Area2D" type="Area2D" parent="Saída"]
-collision_mask = 3
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Saída/Area2D"]
-position = Vector2(166, 1450.13)
-shape = SubResource("RectangleShape2D_hsxpj")
-
-[node name="Boundary" type="StaticBody2D" parent="." groups=["boundary"]]
-position = Vector2(166, 1495)
-collision_mask = 7
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary"]
-position = Vector2(0, -18)
-shape = SubResource("RectangleShape2D_rlbt0")
-debug_color = Color(0.603922, 0.00392157, 0.831373, 0.419608)
-
 [connection signal="timeout" from="spawn 2 inimigo" to="." method="_on_spawn_2_inimigo_timeout"]
-[connection signal="area_entered" from="Saída/Area2D" to="." method="_on_area_2d_area_entered"]
 
 [editable path="CanvasGroup/Plantas/Alga"]
 [editable path="CanvasGroup/Plantas/Alga2"]

@@ -29,8 +29,12 @@ func _ready():
 func next_room():
 	if current_room < 10:
 		
+		if current_room == 0: # se for a primeira sala
+			player_vars.current_life = player_vars.max_life
+			player_vars.current_energy = player_vars.max_energy
+		
 		if current_room == 2:
-			var random_float
+			var random_float = randf()
 			if random_float <= 0.5:
 				shop_room = false
 				shop_on_2 = false
@@ -41,7 +45,7 @@ func next_room():
 			shop_room == true
 
 		elif current_room == 6:
-			var random_float
+			var random_float = randf()
 			if random_float <= 0.5:
 				shop_room = false
 				shop_on_6 = false
