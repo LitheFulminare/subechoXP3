@@ -94,7 +94,7 @@ func randomize_props():
 	for i in node_count:
 		var RN = randf()
 		var node = $CanvasGroup/Props.get_child(i)
-		if RN < 0.5:
+		if RN > 0.5:
 			node.queue_free()
 		
 func restart():
