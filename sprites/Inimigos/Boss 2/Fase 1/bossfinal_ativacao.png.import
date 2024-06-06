@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dosflf82i26si"
-path="res://.godot/imported/bossfinal_ataque3.png-1efb79eaca601c7baa5dad9683748a9e.ctex"
+uid="uid://b6wfoq0fqbsue"
+path="res://.godot/imported/bossfinal_ativacao.png-0a01bc0b63dc7df3fb3042d06aef61d0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Inimigos/Boss 2/bossfinal_ataque3.png"
-dest_files=["res://.godot/imported/bossfinal_ataque3.png-1efb79eaca601c7baa5dad9683748a9e.ctex"]
+source_file="res://sprites/Inimigos/Boss 2/Fase 1/bossfinal_ativacao.png"
+dest_files=["res://.godot/imported/bossfinal_ativacao.png-0a01bc0b63dc7df3fb3042d06aef61d0.ctex"]
 
 [params]
 

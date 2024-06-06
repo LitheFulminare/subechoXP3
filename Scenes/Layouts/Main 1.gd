@@ -11,8 +11,9 @@ func _ready():
 	$CanvasGroup/Player.position = $"Player Spawn".global_position
 	#$CanvasGroup/Coral/Sprite2D.modulate = Color(randf(),randf(),randf())
 	#$CanvasGroup/Alga/Sprite2D.modulate = Color(randf(),randf(),randf())
-	#$CanvasGroup/Alga2/Sprite2D.modulate = Color(randf(),randf(),randf())
-	#$CanvasGroup/Alga3/Sprite2D.modulate = Color(randf(),randf(),randf())
+	
+	randomize_plants()
+	randomize_props()
 
 func _process(delta):
 	
@@ -77,6 +78,24 @@ func _on_spawn_inimigo_timeout():
 		inimigo.player = $CanvasGroup/Player/playerpos
 		inimigo.position = local_aleatorio.position
 		add_child(inimigo)
+		
+func randomize_plants():
+	randomize()
+	var node_count = $CanvasGroup/Plantas.get_child_count()
+	for i in node_count:
+		var RN = randf()
+		var node = $CanvasGroup/Plantas.get_child(i)
+		if RN > 0.5:
+			node.queue_free()
+			
+func randomize_props():
+	randomize()
+	var node_count = $CanvasGroup/Props.get_child_count()
+	for i in node_count:
+		var RN = randf()
+		var node = $CanvasGroup/Props.get_child(i)
+		if RN > 0.5:
+			node.queue_free()
 		
 func restart():
 	Global.goto_scene("res://Scenes/Layouts/principal.tscn")
