@@ -5,7 +5,7 @@ var explosaoPath = preload("res://Scenes/Player_e_misc/Particulas e projéteis/e
 
 @export var inimigo_scene : PackedScene
 var inimigos_mortos = 0
-@export var meta_fase = 7
+@export var meta_fase = 6
 var gameover = false
 
 func _ready():
@@ -57,10 +57,11 @@ func _process(delta):
 		
 func meta_fase_batida():
 	$CanvasGroup/SaidaVerdeDesligada.visible = false
-	$CanvasGroup/SaidaVerde.visible = true
+	$CanvasGroup/SaidaVerdeLigada.visible = true
 
 func game_over_no_life():
 	if !gameover:
+		gameover = true
 		var explosao = explosaoPath.instantiate()
 		$CanvasGroup.add_child(explosao)
 		explosao.position = $CanvasGroup/Player.global_position
@@ -68,14 +69,14 @@ func game_over_no_life():
 		$CanvasGroup/Player.death_no_life()
 		explosao.anim("default")
 		await get_tree().create_timer(3).timeout
-		Global.goto_scene("res://Scenes/Layouts/Death Screen.tscn")
+		Global.goto_scene("res://Scenes/Layouts/principal.tscn")
 	
 func game_over_no_energy():
 	if !gameover:
 		gameover = true
 		$CanvasGroup/Player.death_no_energy()
 		await get_tree().create_timer(3).timeout
-		Global.goto_scene("res://Scenes/Layouts/Death Screen.tscn")
+		Global.goto_scene("res://Scenes/Layouts/principal.tscn")
 
 
 
@@ -96,10 +97,8 @@ func _on_spawn_2_inimigo_timeout():
 		var local_aleatorio = numero_nos[randi()% numero_nos.size()]
 		var inimigo = inimigo_scene.instantiate()
 		inimigo.player = $CanvasGroup/Player/playerpos
-		#inimigo.position = $"Spawns/spawn inimigo local 2".global_position
 		inimigo.position = local_aleatorio.position
 		add_child(inimigo)
 
 func restart():
-	#get_tree().change_scene_to_file("res://Scenes/Layouts/principal.tscn")
 	Global.goto_scene("res://Scenes/Layouts/principal.tscn")
