@@ -21,6 +21,7 @@ config/icon="res://sprites/Misc/logo.png"
 
 Global="*res://Misc/Global.gd"
 player_vars="*res://Misc/Player Variables.gd"
+lv_change="*res://Misc/Level change logic.gd"
 
 [debug]
 
@@ -97,6 +98,7 @@ Interact={
 
 [layer_names]
 
+2d_render/layer_10="boss highlight"
 2d_physics/layer_1="world"
 2d_physics/layer_2="player"
 2d_physics/layer_3="enemy"

@@ -67,8 +67,11 @@ func player_movement(delta):
 				collision.get_collider().kaboom()
 			if not invincible && life > 0 && not collision.get_collider().is_in_group("inimigo"):
 				if not collision.get_collider().is_in_group("ignore collision"):
-					#print("var colisao = true")
-					take_damage("cenario")
+					if !collision.get_collider().is_in_group("boundary"):
+						#print("var colisao = true")
+						take_damage("cenario")
+					else:
+						take_damage("invisible wall")
 
 func _ready():
 	dead = false
@@ -383,14 +386,17 @@ func take_damage(type):
 	#print("velocidade: " + str(current_speed))
 	var dano_tomado = 0
 	
-	if type == "cenario":
-		dano_tomado = int(current_speed/20)
-		if dano_tomado < 1:
-			dano_tomado = 1
-	if type == "inimigo":
-		dano_tomado = 10
-	if type == "Heartbreak":
-		dano_tomado = 10
+	match type:
+		"cenario":
+			dano_tomado = int(current_speed/20)
+			if dano_tomado < 1:
+				dano_tomado = 1
+		"inimigo":
+			dano_tomado = 10
+		"Heartbreak":
+			dano_tomado = 10
+		"invisible wall":
+			dano_tomado = 0
 	
 	life -= dano_tomado
 	velocity = Vector2.ZERO

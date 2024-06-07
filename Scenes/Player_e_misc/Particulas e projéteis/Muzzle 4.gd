@@ -7,7 +7,8 @@ func _ready():
 
 	
 func _process(delta):
-	global_position = pos.global_position
+	if player_vars.weapon_type != "Killerbee":
+		global_position = pos.global_position
 	
 
 func anim():

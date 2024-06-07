@@ -1,4 +1,4 @@
-[gd_scene load_steps=174 format=3 uid="uid://cpg157q5cbli7"]
+[gd_scene load_steps=175 format=3 uid="uid://cpg157q5cbli7"]
 
 [ext_resource type="Script" path="res://Scenes/Layouts/Main 1.gd" id="1_rloub"]
 [ext_resource type="PackedScene" uid="uid://e4g3db01cv23" path="res://Scenes/Player_e_misc/Player/player.tscn" id="1_tgyws"]
@@ -1224,7 +1224,10 @@ adjustment_brightness = 0.83
 adjustment_saturation = 1.67
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bpofp"]
-size = Vector2(161.875, 226.688)
+size = Vector2(52.9375, 224)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l4bnx"]
+size = Vector2(46, 309.5)
 
 [node name="Main 1" type="Node2D" groups=["logica"]]
 script = ExtResource("1_rloub")
@@ -1253,6 +1256,7 @@ scale = Vector2(5.7, 5.7)
 [node name="CanvasGroup" type="CanvasGroup" parent="."]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="CanvasGroup"]
+visible = false
 light_mask = 3
 color = Color(0, 0, 0, 1)
 
@@ -1823,8 +1827,17 @@ position = Vector2(1522, 435)
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Saida/Area2D"]
-position = Vector2(2480, 887)
+position = Vector2(2418, 887)
 shape = SubResource("RectangleShape2D_bpofp")
+
+[node name="Boundary" type="StaticBody2D" parent="." groups=["boundary"]]
+position = Vector2(2488, 882)
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary"]
+position = Vector2(-17, 17)
+shape = SubResource("RectangleShape2D_l4bnx")
+debug_color = Color(0.603922, 0.00392157, 0.831373, 0.419608)
 
 [connection signal="explosao_barril" from="CanvasGroup/Props/BarrilExplosivo" to="." method="_on_barril_explosivo_explosao_barril"]
 [connection signal="explosao_barril" from="CanvasGroup/Props/BarrilExplosivo2" to="." method="_on_barril_explosivo_explosao_barril"]
