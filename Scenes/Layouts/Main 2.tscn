@@ -351,8 +351,8 @@ polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_edyl4"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2u1fw"]
-polygon = PackedVector2Array(-8, 8, -8, -2.34375, -0.578125, 1.1875, 8, 5.75, 8, 8)
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_7fnkq"]
+polygon = PackedVector2Array(-8, -3.0625, -4.20313, -0.59375, 1.45313, 5.875, 8, 8, -8, 8)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_0pc3j"]
 polygon = PackedVector2Array(-8, 8, -8, -2.34375, 1.10938, -2.6875, 2.23438, -1.90625, 2.29688, -0.21875, 2.10938, 8)
@@ -366,8 +366,8 @@ polygon = PackedVector2Array(-8, -8, 2.14063, -8, 2.14063, 8, -8, 8)
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ta25r"]
 polygon = PackedVector2Array(-8, 2.03125, -8, -8, 2.17188, -8, 2.17188, 0.625, 0.765625, 1.875, -1.10938, 2.5)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_7824t"]
-polygon = PackedVector2Array(-8, 8, -8, 5.8125, 0.515625, 2.125, 8, -2.34375, 8, 8)
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_7rnx2"]
+polygon = PackedVector2Array(-0.015625, 5.78125, 4.79688, -0.125, 8, -2.90625, 8, 8, -8, 8)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_64yb7"]
 polygon = PackedVector2Array(3.95313, 2.625, 2.20313, 4.03125, 1.98438, 8, -8, 8, -8, -8, 8, -8, 8, 1.90625)
@@ -405,45 +405,45 @@ polygon = PackedVector2Array(-1.92188, -8, 8, -8, 8, 8, -8, 8, -8, -2.125, -4.20
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cm0bc"]
 texture = ExtResource("8_lwokt")
 4:0/0 = 0
-4:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_2u1fw")
+4:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_7fnkq")
 4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:0/0/physics_layer_0/angular_velocity = 0.0
-4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -6.31977, 0.0220966, -3.0052, 8, 1.72357, 8, 8, -8, 8)
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4.99394, -1.78986, -2.38649, 1.87825, 4.41942, 8, 5.15625, 8, 8, -8, 8)
 5:0/0 = 0
-5:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_7824t")
+5:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_7rnx2")
 5:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 5:0/0/physics_layer_0/angular_velocity = 0.0
-5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 8, 8, -6.31977, 2.54116, -3.93328, -2.45278, -1.01647, -8, 2.34229, -8, 8)
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 8, 8, -4.81717, 5.3254, -4.33103, 3.91118, -1.85616, -1.08276, 4.24264, -8, 5.3475, -8, 8)
 1:1/0 = 0
 1:1/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_h2pbt")
 1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:1/0/physics_layer_0/angular_velocity = 0.0
-1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.51563, -5.65625, -4.51563, -6.09375, 8, -6.09375, 8, 8, -5.51563, 8, -5.54688, -3.9375)
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.07813, -2.95313, -2.07813, -3.39063, 8, -3.42188, 8, 8, -3.54688, 8, -3.51563, -2.01563)
 2:1/0 = 0
 2:1/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_83mbf")
 2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:1/0/physics_layer_0/angular_velocity = 0.0
-2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -6.03125, 8, -6, 8, 8, -8, 8)
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -3.51563, 8, -3.51563, 8, 8, -8, 8)
 3:1/0 = 0
 3:1/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_ggqun")
 3:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:1/0/physics_layer_0/angular_velocity = 0.0
-3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -5.6875, 8, -5.71875, 8, 8, -8, 8)
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -3.51563, 8, -3.51563, 8, 8, -8, 8)
 4:1/0 = 0
 4:1/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_0pc3j")
 4:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:1/0/physics_layer_0/angular_velocity = 0.0
-4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -5.75, 4.45313, -5.84375, 5.60938, -5.53125, 5.95313, -4.53125, 6.04688, 8, -8, 8)
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -3.42188, 2.07813, -3.48438, 3.04688, -2.98438, 3.54688, -1.82813, 3.54688, 8, -8, 8)
 7:1/0 = 0
 7:1/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_rxq0v")
 7:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 7:1/0/physics_layer_0/angular_velocity = 0.0
-7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.51864, 8, -6.56284, -6.58493, 6.51864, -6.71752, 6.43025, 8)
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.23438, 8, -5.20313, -5, 5.14063, -5, 5.10938, 8)
 1:2/0 = 0
 1:2/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_geyrp")
 1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:2/0/physics_layer_0/angular_velocity = 0.0
-1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.57813, -8, 8, -8, 8, 8, -5.60938, 8)
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.51563, -8, 8, -8, 8, 8, -3.57813, 8)
 2:2/0 = 0
 2:2/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_6imbj")
 2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -458,17 +458,17 @@ texture = ExtResource("8_lwokt")
 4:2/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_cv8fo")
 4:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:2/0/physics_layer_0/angular_velocity = 0.0
-4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 6.0325, -8, 5.94412, 8, -8, 8)
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 3.54688, -8, 3.57813, 8, -8, 8)
 7:2/0 = 0
 7:2/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_553ah")
 7:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 7:2/0/physics_layer_0/angular_velocity = 0.0
-7:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.47445, -8, -6.47445, 8, 6.38606, 8, 6.43025, -8)
+7:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.23438, -8, -5.20313, 8, 5.04688, 8, 5.07813, -8)
 1:3/0 = 0
 1:3/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_7extp")
 1:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:3/0/physics_layer_0/angular_velocity = 0.0
-1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.60938, -8, 8, -8, 8, 8, -5.57813, 8)
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.60938, -8, 8, -8, 8, 8, -3.60938, 8)
 2:3/0 = 0
 2:3/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_kxqwq")
 2:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -483,47 +483,47 @@ texture = ExtResource("8_lwokt")
 4:3/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_3fidn")
 4:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:3/0/physics_layer_0/angular_velocity = 0.0
-4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 6.0325, -8, 5.98831, 8, -8, 8)
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 3.51563, -8, 3.51563, 8, -8, 8)
 7:3/0 = 0
 7:3/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_gp0r7")
 7:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 7:3/0/physics_layer_0/angular_velocity = 0.0
-7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.47445, -8, 6.38606, -8, 6.38606, 8, -6.51864, 8)
+7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.17188, -8, 5.10938, -8, 5.07813, 8, -5.07813, 8)
 1:4/0 = 0
 1:4/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_su0as")
 1:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:4/0/physics_layer_0/angular_velocity = 0.0
-1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.57813, -8, 8, -8, 8, 6, -3.70313, 6, -5.07813, 5.5, -5.60938, 4)
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.54688, -8, 8, -8, 8, 3.60938, -2.64063, 3.60938, -3.42188, 3.17188, -3.57813, 2.26563)
 2:4/0 = 0
 2:4/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_v3p51")
 2:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:4/0/physics_layer_0/angular_velocity = 0.0
-2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 5.96621, -8, 6.01041)
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 3.51563, -8, 3.51563)
 3:4/0 = 0
 3:4/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_hkw2p")
 3:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:4/0/physics_layer_0/angular_velocity = 0.0
-3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 6.03125, -8, 6)
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 3.54688, -8, 3.57813)
 4:4/0 = 0
 4:4/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_ta25r")
 4:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:4/0/physics_layer_0/angular_velocity = 0.0
-4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 5.98831, -8, 5.94412, 3.84489, 5.63476, 5.39169, 4.61829, 5.96621, -8, 6.01041)
+4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 3.42188, -8, 3.45313, 1.70313, 3.07813, 2.95313, 1.89063, 3.54688, -8, 3.51563)
 5:5/0 = 0
 5:5/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_64yb7")
 5:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 5:5/0/physics_layer_0/angular_velocity = 0.0
-5:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 5.03125, 5.76563, 5.03125, 4.98438, 6.03125, 5.01563, 8, -8, 8)
+5:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 4.4375, 5.57813, 4.59375, 4.70313, 5.9375, 4.67188, 8, -8, 8)
 6:5/0 = 0
 6:5/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_eden7")
 6:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 6:5/0/physics_layer_0/angular_velocity = 0.0
-6:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 5.03125, -8, 5.03125)
+6:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 4.552, -8, 4.64039)
 7:5/0 = 0
 7:5/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_muxm2")
 7:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 7:5/0/physics_layer_0/angular_velocity = 0.0
-7:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -4.92188, 8, -4.89063, 5.96875, -5.76563, 4.9375, -8, 4.96875)
+7:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -4.29688, 8, -4.29688, 5.40625, -5.48438, 4.4375, -8, 4.4375)
 0:6/0 = 0
 0:6/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_u38r2")
 0:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -548,12 +548,12 @@ texture = ExtResource("8_lwokt")
 5:6/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_oygke")
 5:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 5:6/0/physics_layer_0/angular_velocity = 0.0
-5:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 4.95313, -8, 4.98438, 8, -8, 8)
+5:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 4.48438, -8, 4.57813, 8, -8, 8)
 7:6/0 = 0
 7:6/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_lt335")
 7:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 7:6/0/physics_layer_0/angular_velocity = 0.0
-7:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4.98438, -8, 8, -8, 8, 8, -5.01563, 8)
+7:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4.51563, -8, 8, -8, 8, 8, -4.35938, 8)
 0:7/0 = 0
 0:7/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_854ve")
 0:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -578,17 +578,17 @@ texture = ExtResource("8_lwokt")
 5:7/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_gtn8r")
 5:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 5:7/0/physics_layer_0/angular_velocity = 0.0
-5:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 4.95313, -8, 4.92188, -6.28125, 5.95313, -4.96875, 8, -4.96875, 8, 8, -8, 8)
+5:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 4.85938, -8, 4.76563, -5.84375, 6.01563, -4.3125, 8, -4.1875, 8, 8, -8, 8)
 6:7/0 = 0
 6:7/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_t6iwd")
 6:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 6:7/0/physics_layer_0/angular_velocity = 0.0
-6:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -5.03125, 8, -5, 8, 8, -8, 8)
+6:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4.3125, 8, -4.28125, 8, 8, -8, 8)
 7:7/0 = 0
 7:7/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_kgmye")
 7:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 7:7/0/physics_layer_0/angular_velocity = 0.0
-7:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4.9375, -6.01563, -4.9375, -5.01563, -5.875, -5.01563, -8, 8, -8, 8, 8, -8, 8)
+7:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4.21875, -5.45313, -4.28125, -4.26563, -5.875, -4.32813, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kh8b6"]
 texture = ExtResource("6_6ays5")
@@ -736,7 +736,7 @@ position = Vector2(1772, 1258)
 
 [node name="Garrafa2" parent="CanvasGroup/Props" instance=ExtResource("5_mdin4")]
 z_index = 2
-position = Vector2(95, 1220)
+position = Vector2(94, 1222)
 rotation = -1.66511
 
 [node name="Garrafa3" parent="CanvasGroup/Props" instance=ExtResource("5_mdin4")]
@@ -754,7 +754,7 @@ scale = Vector2(1.555, 1.555)
 
 [node name="Barril3" parent="CanvasGroup/Props" instance=ExtResource("6_xlwk1")]
 z_index = 2
-position = Vector2(871, 1571)
+position = Vector2(863, 1577)
 rotation = 1.17178
 
 [node name="MetalEnferrujado" parent="CanvasGroup/Props" instance=ExtResource("7_6qrf2")]
@@ -817,7 +817,7 @@ texture = SubResource("GradientTexture2D_rly4j")
 
 [node name="Player" parent="CanvasGroup" instance=ExtResource("5_qvshv")]
 light_mask = 1
-position = Vector2(173, 1484)
+position = Vector2(193, 1477)
 scale = Vector2(0.992109, 0.984466)
 metadata/_edit_group_ = true
 
@@ -834,7 +834,7 @@ editor_draw_limits = true
 [node name="Plantas" type="Node2D" parent="CanvasGroup"]
 
 [node name="CoralPe01" parent="CanvasGroup/Plantas" instance=ExtResource("18_n5a0p")]
-position = Vector2(456, 1517)
+position = Vector2(461, 1517)
 scale = Vector2(0.516552, 0.605347)
 
 [node name="Coral2" parent="CanvasGroup/Plantas" instance=ExtResource("18_n5a0p")]
@@ -847,7 +847,7 @@ position = Vector2(1818, 247)
 position = Vector2(1724, 230)
 
 [node name="AlgaVPe01" parent="CanvasGroup/Plantas" instance=ExtResource("17_ua6ah")]
-position = Vector2(595, 1476)
+position = Vector2(596, 1479)
 scale = Vector2(0.647537, 0.478418)
 
 [node name="AlgaVPe02" parent="CanvasGroup/Plantas" instance=ExtResource("17_ua6ah")]
@@ -870,7 +870,7 @@ scale = Vector2(0.647537, 0.478418)
 position = Vector2(1868, 1221)
 
 [node name="AlgaVGr03" parent="CanvasGroup/Plantas" instance=ExtResource("17_ua6ah")]
-position = Vector2(1017, 1554)
+position = Vector2(1017, 1558)
 
 [node name="Alga4" parent="CanvasGroup/Plantas" instance=ExtResource("17_ua6ah")]
 position = Vector2(2293, 1172)
@@ -883,7 +883,7 @@ position = Vector2(1046, 404)
 rotation = 0.0115602
 
 [node name="CoralPe02" parent="CanvasGroup/Plantas" instance=ExtResource("18_n5a0p")]
-position = Vector2(509, 1466)
+position = Vector2(509, 1473)
 scale = Vector2(0.516552, 0.605347)
 
 [node name="CoralPe03" parent="CanvasGroup/Plantas" instance=ExtResource("18_n5a0p")]
@@ -892,14 +892,15 @@ scale = Vector2(0.516552, 0.605347)
 
 [node name="Luz" parent="CanvasGroup/Plantas/CoralPe03" index="1"]
 visible = true
+position = Vector2(0, 1.65195)
 energy = 1.29
 
 [node name="CoralPe04" parent="CanvasGroup/Plantas" instance=ExtResource("18_n5a0p")]
-position = Vector2(1091, 1514)
+position = Vector2(1092, 1520)
 scale = Vector2(0.516552, 0.605347)
 
 [node name="CoralPe05" parent="CanvasGroup/Plantas" instance=ExtResource("18_n5a0p")]
-position = Vector2(1131, 1513)
+position = Vector2(1132, 1521)
 scale = Vector2(0.516552, 0.605347)
 
 [node name="CoralPe06" parent="CanvasGroup/Plantas" instance=ExtResource("18_n5a0p")]
@@ -962,21 +963,21 @@ rotation = 3.966
 scale = Vector2(0.647537, 0.478418)
 
 [node name="CoralPe07" parent="CanvasGroup/Plantas" instance=ExtResource("18_n5a0p")]
-position = Vector2(1065, 1263)
+position = Vector2(1065, 1259)
 rotation = 2.6032
 scale = Vector2(0.516552, 0.605347)
 
 [node name="CoralPe08" parent="CanvasGroup/Plantas" instance=ExtResource("18_n5a0p")]
-position = Vector2(1122, 1217)
+position = Vector2(1120, 1214)
 rotation = 2.28663
 scale = Vector2(0.516552, 0.605347)
 
 [node name="AlgaVPe14" parent="CanvasGroup/Plantas" instance=ExtResource("17_ua6ah")]
-position = Vector2(1369, 1286)
+position = Vector2(1369, 1290)
 scale = Vector2(0.647537, 0.478418)
 
 [node name="AlgaVPe15" parent="CanvasGroup/Plantas" instance=ExtResource("17_ua6ah")]
-position = Vector2(1414, 1287)
+position = Vector2(1414, 1292)
 scale = Vector2(0.647537, 0.478418)
 
 [node name="CoralPe09" parent="CanvasGroup/Plantas" instance=ExtResource("18_n5a0p")]
@@ -984,8 +985,12 @@ position = Vector2(45, 1398)
 rotation = 0.247698
 scale = Vector2(0.516552, 0.605347)
 
+[node name="Sprite2D" parent="CanvasGroup/Plantas/CoralPe09" index="0"]
+position = Vector2(-1.85512, 7.21613)
+
 [node name="Luz" parent="CanvasGroup/Plantas/CoralPe09" index="1"]
 visible = true
+position = Vector2(-1.85512, 7.21613)
 
 [node name="AlgaVPe16" parent="CanvasGroup/Plantas" instance=ExtResource("17_ua6ah")]
 position = Vector2(677, 935)
@@ -1077,21 +1082,25 @@ position = Vector2(2357, 1016)
 rotation = -1.01086
 scale = Vector2(0.647537, 0.478418)
 
+[node name="Sprite2D" parent="CanvasGroup/Plantas/AlgaVPe25" index="0"]
+position = Vector2(10.1748, 25.9045)
+
 [node name="Luz" parent="CanvasGroup/Plantas/AlgaVPe25" index="1"]
 visible = true
+position = Vector2(10.9951, 27.6756)
 
 [node name="AlgaVPe26" parent="CanvasGroup/Plantas" instance=ExtResource("17_ua6ah")]
-position = Vector2(2358, 923)
+position = Vector2(2368, 924)
 rotation = -0.94972
 scale = Vector2(0.647537, 0.478418)
 
 [node name="CoralPe16" parent="CanvasGroup/Plantas" instance=ExtResource("18_n5a0p")]
-position = Vector2(2316, 528)
+position = Vector2(2329, 527)
 rotation = 3.11276
 scale = Vector2(0.516552, 0.605347)
 
 [node name="CoralPe17" parent="CanvasGroup/Plantas" instance=ExtResource("18_n5a0p")]
-position = Vector2(2277, 515)
+position = Vector2(2280, 519)
 rotation = 3.11276
 scale = Vector2(0.516552, 0.605347)
 
@@ -1101,7 +1110,7 @@ rotation = 3.11276
 scale = Vector2(0.516552, 0.605347)
 
 [node name="CoralPe19" parent="CanvasGroup/Plantas" instance=ExtResource("18_n5a0p")]
-position = Vector2(2185, 539)
+position = Vector2(2181, 535)
 rotation = 2.83845
 scale = Vector2(0.516552, 0.605347)
 
@@ -1137,17 +1146,17 @@ position = Vector2(1417, 759)
 scale = Vector2(0.647537, 0.478418)
 
 [node name="AlgaVPe33" parent="CanvasGroup/Plantas" instance=ExtResource("17_ua6ah")]
-position = Vector2(1609, 417)
+position = Vector2(1607, 412)
 rotation = 3.12562
 scale = Vector2(0.647537, 0.478418)
 
 [node name="AlgaVPe34" parent="CanvasGroup/Plantas" instance=ExtResource("17_ua6ah")]
-position = Vector2(1562, 424)
+position = Vector2(1557, 413)
 rotation = 3.12562
 scale = Vector2(0.647537, 0.478418)
 
 [node name="AlgaVPe35" parent="CanvasGroup/Plantas" instance=ExtResource("17_ua6ah")]
-position = Vector2(1984, 523)
+position = Vector2(1982, 527)
 scale = Vector2(0.647537, 0.478418)
 
 [node name="AlgaVPe36" parent="CanvasGroup/Plantas" instance=ExtResource("17_ua6ah")]
@@ -1160,11 +1169,11 @@ rotation = 0.443811
 scale = Vector2(0.516552, 0.605347)
 
 [node name="AlgaVPe37" parent="CanvasGroup/Plantas" instance=ExtResource("17_ua6ah")]
-position = Vector2(2147, 438)
+position = Vector2(2148, 432)
 scale = Vector2(0.647537, 0.478418)
 
 [node name="AlgaVPe38" parent="CanvasGroup/Plantas" instance=ExtResource("17_ua6ah")]
-position = Vector2(2200, 430)
+position = Vector2(2201, 426)
 scale = Vector2(0.647537, 0.478418)
 
 [node name="CoralPe21" parent="CanvasGroup/Plantas" instance=ExtResource("18_n5a0p")]
@@ -1178,12 +1187,12 @@ rotation = 2.96311
 scale = Vector2(0.516552, 0.605347)
 
 [node name="AlgaVPe39" parent="CanvasGroup/Plantas" instance=ExtResource("17_ua6ah")]
-position = Vector2(1773, 42)
+position = Vector2(1778, 48)
 rotation = 2.93223
 scale = Vector2(0.647537, 0.478418)
 
 [node name="AlgaVPe40" parent="CanvasGroup/Plantas" instance=ExtResource("17_ua6ah")]
-position = Vector2(1723, 36)
+position = Vector2(1717, 25)
 rotation = 2.93012
 scale = Vector2(0.647537, 0.478418)
 
@@ -1207,7 +1216,7 @@ rotation = 3.4238
 scale = Vector2(0.647537, 0.478418)
 
 [node name="AlgaVPe42" parent="CanvasGroup/Plantas" instance=ExtResource("17_ua6ah")]
-position = Vector2(1083, 103)
+position = Vector2(1083, 100)
 rotation = 3.05408
 scale = Vector2(0.647537, 0.478418)
 
@@ -1221,20 +1230,27 @@ rotation = 3.4238
 scale = Vector2(0.647537, 0.478418)
 
 [node name="Sprite2D" parent="CanvasGroup/Plantas/AlgaVPe43" index="0"]
-position = Vector2(-8.70629, -3.11223)
+position = Vector2(6.36296, -0.320765)
+rotation = -0.136362
 
 [node name="Luz" parent="CanvasGroup/Plantas/AlgaVPe43" index="1"]
 visible = true
-position = Vector2(-8.70625, -7.01204)
+position = Vector2(7.84618, -0.90284)
+rotation = -0.13245
 scale = Vector2(1.02083, 0.950004)
+energy = 0.28
 
 [node name="AlgaVPe44" parent="CanvasGroup/Plantas" instance=ExtResource("17_ua6ah")]
 position = Vector2(779, 57)
 rotation = 3.05408
 scale = Vector2(0.647537, 0.478418)
 
+[node name="Sprite2D" parent="CanvasGroup/Plantas/AlgaVPe44" index="0"]
+position = Vector2(-0.674873, 10.4111)
+
 [node name="Luz" parent="CanvasGroup/Plantas/AlgaVPe44" index="1"]
 visible = true
+position = Vector2(-0.674847, 10.4111)
 energy = 1.58
 
 [node name="AlgaVPe45" parent="CanvasGroup/Plantas" instance=ExtResource("17_ua6ah")]
@@ -1244,7 +1260,7 @@ scale = Vector2(0.647537, 0.478418)
 
 [node name="Luz" parent="CanvasGroup/Plantas/AlgaVPe45" index="1"]
 visible = true
-position = Vector2(2.57492e-05, -3.72529e-07)
+position = Vector2(2.57492e-05, 0)
 energy = 0.28
 
 [node name="AlgaVPe46" parent="CanvasGroup/Plantas" instance=ExtResource("17_ua6ah")]
@@ -1334,7 +1350,7 @@ rotation = 1.4927
 scale = Vector2(0.647537, 0.478418)
 
 [node name="AlgaVPe51" parent="CanvasGroup/Plantas" instance=ExtResource("17_ua6ah")]
-position = Vector2(58, 806)
+position = Vector2(50, 810)
 rotation = 1.4927
 scale = Vector2(0.647537, 0.478418)
 
