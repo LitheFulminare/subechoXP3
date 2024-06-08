@@ -836,7 +836,7 @@ texture = SubResource("GradientTexture2D_rly4j")
 
 [node name="Player" parent="CanvasGroup" instance=ExtResource("13_pd3wu")]
 light_mask = 1
-position = Vector2(371, 804)
+position = Vector2(323, 799)
 scale = Vector2(0.992109, 0.984466)
 metadata/_edit_group_ = true
 
