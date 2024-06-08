@@ -22,6 +22,7 @@ config/icon="res://sprites/Misc/logo.png"
 Global="*res://Misc/Global.gd"
 player_vars="*res://Misc/Player Variables.gd"
 lv_change="*res://Misc/Level change logic.gd"
+Ambience="*res://Scenes/Layouts/ambience.tscn"
 
 [debug]
 
