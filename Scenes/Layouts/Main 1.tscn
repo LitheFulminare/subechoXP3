@@ -1342,7 +1342,7 @@ scale = Vector2(1.57482, 1.57482)
 
 [node name="Plastico4" parent="CanvasGroup/Props" instance=ExtResource("9_rkp7y")]
 z_index = 2
-position = Vector2(739, 1421)
+position = Vector2(625, 1353)
 scale = Vector2(1.57482, 1.57482)
 
 [node name="Peixe2" parent="CanvasGroup/Props" instance=ExtResource("11_mkerf")]
@@ -1367,6 +1367,7 @@ position = Vector2(507, 1459)
 position = Vector2(1080, 1318)
 
 [node name="Alga3" parent="CanvasGroup/Plantas" instance=ExtResource("13_onmmr")]
+modulate = Color(0.588235, 0.305882, 0.0431373, 1)
 top_level = true
 position = Vector2(791, 1459)
 
@@ -1753,6 +1754,7 @@ rotation = -0.0195174
 scale = Vector2(0.516552, 0.605347)
 
 [node name="BG" type="NinePatchRect" parent="CanvasGroup"]
+modulate = Color(1, 0.745098, 0.988235, 1)
 z_index = -1
 offset_right = 706.0
 offset_bottom = 448.0
@@ -1781,7 +1783,7 @@ texture = SubResource("GradientTexture2D_rly4j")
 
 [node name="Player" parent="CanvasGroup" instance=ExtResource("1_tgyws")]
 light_mask = 1
-position = Vector2(306, 302)
+position = Vector2(258, 226)
 metadata/_edit_group_ = true
 
 [node name="playerpos" type="Node2D" parent="CanvasGroup/Player"]

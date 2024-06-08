@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=3 uid="uid://ck3e2nbkfvsdf"]
+[gd_scene load_steps=93 format=3 uid="uid://ck3e2nbkfvsdf"]
 
 [ext_resource type="Script" path="res://Scenes/Layouts/Main 3.gd" id="1_vrmbs"]
 [ext_resource type="PackedScene" uid="uid://bj18jjcb7eo50" path="res://Scenes/Inimigos/inimigo.tscn" id="2_468aj"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://ofrdbaojdppx" path="res://Scenes/Props/Plantas/Alga.tscn" id="14_fr0qi"]
 [ext_resource type="PackedScene" uid="uid://e4g3db01cv23" path="res://Scenes/Player_e_misc/Player/player.tscn" id="14_xahxk"]
 [ext_resource type="PackedScene" uid="uid://b4c3j715n4txj" path="res://Scenes/Props/Plantas/Coral.tscn" id="15_2gv1c"]
+[ext_resource type="Texture2D" uid="uid://d004737er7nqm" path="res://sprites/Misc/Fundo Menu.png" id="16_s08bw"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_djd63"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -656,11 +657,8 @@ inimigo_scene = ExtResource("2_468aj")
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="UI vida e energia" parent="UI" instance=ExtResource("3_a33ke")]
-offset_left = 1.0
-offset_top = -30.0
-offset_right = 4.0
-offset_bottom = -30.0
 scale = Vector2(4.455, 4.455)
+metadata/_edit_lock_ = true
 
 [node name="UI Scrap" parent="UI" instance=ExtResource("4_ofbr4")]
 anchors_preset = 2
@@ -1126,14 +1124,17 @@ rotation = -0.0288592
 scale = Vector2(0.647537, 0.478418)
 
 [node name="BG" type="NinePatchRect" parent="CanvasGroup"]
+modulate = Color(1, 0.745098, 0.988235, 1)
 z_index = -1
-offset_left = -35.0
-offset_right = 5197.0
-offset_bottom = 3216.0
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("13_13s3d")
+offset_left = -87.0
+offset_top = -142.0
+offset_right = 677.0
+offset_bottom = 320.0
+scale = Vector2(3.703, 3.703)
+texture = ExtResource("16_s08bw")
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
+metadata/_edit_lock_ = true
 
 [node name="SaidaVerdeDesligada" type="PointLight2D" parent="CanvasGroup"]
 position = Vector2(166.898, 1347)
@@ -1156,7 +1157,7 @@ texture = SubResource("GradientTexture2D_rly4j")
 
 [node name="Player" parent="CanvasGroup" instance=ExtResource("14_xahxk")]
 light_mask = 1
-position = Vector2(277, 59)
+position = Vector2(299, 79)
 scale = Vector2(0.992109, 0.984466)
 metadata/_edit_group_ = true
 
