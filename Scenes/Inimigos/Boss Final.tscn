@@ -148,6 +148,32 @@ tracks/3/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Nav timer:autostart")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Nav timer")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [-1],
+"method": &"start"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_qug4e"]
 length = 0.001
@@ -306,8 +332,8 @@ death_anim_started = true
 [node name="Sprite" type="Sprite2D" parent="."]
 light_mask = 513
 visibility_layer = 2
-texture = ExtResource("2_0cfd7")
-hframes = 30
+texture = ExtResource("4_qfo6u")
+hframes = 13
 
 [node name="PointLight2D" type="PointLight2D" parent="Sprite"]
 position = Vector2(-1, 1)
