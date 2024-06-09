@@ -9,8 +9,8 @@ colors = PackedColorArray(0, 0, 0, 1, 1, 0, 0, 1)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ykt7t"]
 gradient = SubResource("Gradient_sbpdc")
 fill = 1
-fill_from = Vector2(0.440367, 0.477064)
-fill_to = Vector2(0.899083, 0.458716)
+fill_from = Vector2(0.490826, 0.495413)
+fill_to = Vector2(0.926606, 0.53211)
 
 [sub_resource type="Animation" id="Animation_6i44o"]
 resource_name = "default"

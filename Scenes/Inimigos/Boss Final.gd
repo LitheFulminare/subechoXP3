@@ -25,9 +25,10 @@ var mirrored = false
 var player_close = false
 var melee_last_3s = false
 
-#var spike
+var spike
 var spike_active = false
 var spike_spinning_time = false
+var spike_on_cooldown = true
 
 var shot_recently = false
 @export var death_anim_started = false
@@ -36,6 +37,7 @@ var shot_recently = false
 func _ready():
 	animation_tree.active = true
 	death_anim_started = false
+	$"Spike cooldown".start()
 	
 	
 func _process(delta):
@@ -53,8 +55,8 @@ func _process(delta):
 		update_animation_parameters()
 		attacks()
 	
-	#if spike_active:
-		#spike.global_position = global_position
+	if spike_active:
+		spike.global_position = global_position
 
 func _physics_process(_delta: float) -> void:
 	var dir = to_local(nav_agent.get_next_path_position()).normalized()
@@ -66,26 +68,22 @@ func _physics_process(_delta: float) -> void:
 func makepath() -> void:
 	nav_agent.target_position = player.global_position
 
-
-func _on_timer_timeout():
-	if intro_over:
-		makepath()
-	
 func start_phase_2():
 	life = 100
 	
 func attacks():
-	if !spike_active:
+	if !spike_active && !spike_on_cooldown:
 		use_spike()
 		
 
 func use_spike():
-	var spike = spike_path.instantiate()
+	spike = spike_path.instantiate()
 	get_parent().add_child(spike)
 	spike.scale = Vector2(4,4)
-	spike.global_position = global_position
+	#spike.global_position = global_position
 	#spike.visibility_layer = 1
 	spike_active = true
+	$"Spike active time".start()
 
 func update_animation_parameters():
 	if player_close && !melee_last_3s && !spike_active: 
@@ -106,6 +104,11 @@ func update_animation_parameters():
 	if life <= 0:
 		animation_tree["parameters/conditions/dead1"] = true
 		animation_tree["parameters/conditions/idle1"] = false
+		spike_active = false
+		spike_on_cooldown = true
+		if spike != null:
+			spike.queue_free()
+		$"Spike active time".stop()
 
 func _on_melee_trigger_area_entered(area):
 	if area.is_in_group("player"):
@@ -184,3 +187,14 @@ func _on_main_hitbox_area_entered(area):
 
 func _on_spike_active_time_timeout():
 	spike_active = false
+	spike_on_cooldown = true
+	spike.queue_free()
+	$"Spike cooldown".start()
+
+func _on_spike_cooldown_timeout():
+	spike_on_cooldown = false
+
+
+func _on_nav_timer_timeout():
+	if intro_over:
+		makepath()

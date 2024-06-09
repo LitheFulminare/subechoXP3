@@ -332,6 +332,7 @@ parameters/conditions/idle1 = true
 parameters/conditions/melee = false
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+debug_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -357,10 +358,19 @@ wait_time = 3.0
 one_shot = true
 
 [node name="Spike active time" type="Timer" parent="."]
-wait_time = 5.833
+wait_time = 6.667
 one_shot = true
+
+[node name="Spike cooldown" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="Nav timer" type="Timer" parent="."]
+wait_time = 0.2
 
 [connection signal="area_entered" from="Main Hitbox" to="." method="_on_main_hitbox_area_entered"]
 [connection signal="area_entered" from="Melee trigger" to="." method="_on_melee_trigger_area_entered"]
 [connection signal="timeout" from="Melee timer" to="." method="_on_melee_timer_timeout"]
 [connection signal="timeout" from="Spike active time" to="." method="_on_spike_active_time_timeout"]
+[connection signal="timeout" from="Spike cooldown" to="." method="_on_spike_cooldown_timeout"]
+[connection signal="timeout" from="Nav timer" to="." method="_on_nav_timer_timeout"]
