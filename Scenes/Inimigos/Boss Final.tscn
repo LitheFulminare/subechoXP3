@@ -211,10 +211,10 @@ tracks/3/path = NodePath(".:death_anim_started")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 4.83333),
+"transitions": PackedFloat32Array(1, 1e-05),
 "update": 1,
-"values": [true]
+"values": [true, false]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -304,8 +304,8 @@ death_anim_started = true
 
 [node name="Sprite" type="Sprite2D" parent="."]
 light_mask = 513
-texture = ExtResource("4_qfo6u")
-hframes = 13
+texture = ExtResource("2_0cfd7")
+hframes = 30
 
 [node name="PointLight2D" type="PointLight2D" parent="Sprite"]
 position = Vector2(-1, 1)
