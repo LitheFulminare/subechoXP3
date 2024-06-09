@@ -4,6 +4,7 @@ signal shoot
 
 #const bullet_path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Heartbreak projectile.tscn")
 const spike_path = preload("res://Scenes/Inimigos/Spike.tscn")
+const needle_path = preload("res://Scenes/Inimigos/Agulha do além.tscn")
 const explosion_path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Explosão morte inimigo.tscn")
 #const slash_vfx_path = preload("res://Scenes/Inimigos/Slash effect.tscn")
 
@@ -32,6 +33,10 @@ var spike
 var spike_active = false
 var spike_spinning_time = false
 var spike_on_cooldown = true
+
+var needle
+var needle_active = false
+var needle_on_cooldown = false
 
 var shot_recently = false
 @export var death_anim_started = false
@@ -83,9 +88,13 @@ func start_phase_2():
 	life = 80
 	
 func attacks():
-	if !spike_active && !spike_on_cooldown && last_used != "spike":
-		use_spike()
-		last_used = "spike"
+	#if !spike_active && !spike_on_cooldown && last_used != "spike":
+		#use_spike()
+		#last_used = "spike"
+		
+	if !needle_active && !needle_on_cooldown:
+		use_needle()
+		last_used = "needle"
 	
 	if player_close && melee_attack:
 		get_tree().call_group("player", "take_damage", "inimigo")
@@ -98,6 +107,12 @@ func use_spike():
 	#spike.visibility_layer = 1
 	spike_active = true
 	$"Spike active time".start()
+	
+func use_needle():
+	needle = needle_path.instantiate()
+	get_parent().add_child(needle)
+	needle.global_position = player.global_position
+	needle_active = true
 
 func update_animation_parameters():
 	if player_close && !melee_last_3s && !spike_active && phase == 1:
@@ -204,6 +219,8 @@ func _on_spike_active_time_timeout():
 func _on_spike_cooldown_timeout():
 	spike_on_cooldown = false
 
+func _on_needle_cooldown_timeout():
+	needle_on_cooldown = false
 
 func _on_nav_timer_timeout():
 	if intro_over:

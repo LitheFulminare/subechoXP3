@@ -391,7 +391,7 @@ size = Vector2(53, 52)
 [sub_resource type="CircleShape2D" id="CircleShape2D_e1k72"]
 radius = 60.0083
 
-[node name="BossFinal" type="CharacterBody2D"]
+[node name="BossFinal" type="CharacterBody2D" groups=["boss", "boss final"]]
 visibility_layer = 3
 position = Vector2(876, 443)
 collision_layer = 5
@@ -467,6 +467,9 @@ one_shot = true
 wait_time = 8.0
 one_shot = true
 
+[node name="Needle Cooldown" type="Timer" parent="."]
+wait_time = 8.0
+
 [node name="Nav timer" type="Timer" parent="."]
 wait_time = 0.2
 
@@ -476,4 +479,5 @@ wait_time = 0.2
 [connection signal="timeout" from="Melee timer" to="." method="_on_melee_timer_timeout"]
 [connection signal="timeout" from="Spike active time" to="." method="_on_spike_active_time_timeout"]
 [connection signal="timeout" from="Spike cooldown" to="." method="_on_spike_cooldown_timeout"]
+[connection signal="timeout" from="Needle Cooldown" to="." method="_on_needle_cooldown_timeout"]
 [connection signal="timeout" from="Nav timer" to="." method="_on_nav_timer_timeout"]
