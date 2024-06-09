@@ -43,6 +43,9 @@ var shot_recently = false
 @export var death_anim_started = false
 #var death_anim_over = false
 
+var on_dash = false
+@export var dash_on_cooldown = false
+
 func _ready():
 	speed = 80
 	phase = 1
@@ -69,6 +72,9 @@ func _process(delta):
 	if intro_over:
 		update_animation_parameters()
 		attacks()
+		
+	if !on_dash:
+		$Sprite.position = Vector2(0,0)
 	
 	if spike_active && spike != null:
 		spike.global_position = global_position
@@ -85,12 +91,15 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 func makepath() -> void:
+	#pass
 	nav_agent.target_position = player.global_position
 
 func start_phase_2():
 	phase = 2
 	speed = 100
 	life = 80
+	death_anim_started = false
+	dash_on_cooldown = false
 	
 func attacks():
 	randomize()
@@ -126,6 +135,13 @@ func use_needle():
 	needle_follow_player = true
 	$"Needle active time".start()
 	$"Needle follow player".start()
+	
+func dash():
+	speed = 400
+	await get_tree().create_timer(0.833).timeout
+	speed = 20
+	await get_tree().create_timer(2).timeout
+	speed = 100
 
 func update_animation_parameters():
 	if player_close && !melee_last_3s && !spike_active && phase == 1:
@@ -135,15 +151,19 @@ func update_animation_parameters():
 		melee_last_3s = true
 		$"Melee timer".start()
 		
-	#if !player_close && !shot_recently:
+	#if !player_close && !shoot_on_cooldown:
 		#animation_tree["parameters/conditions/shoot"] = true
 		#await get_tree().create_timer(0.1).timeout
 		#animation_tree["parameters/conditions/shoot"] = false
 		#shot_recently = true
 		#$"Shoot timer".start()
+	
+	if !player_close && !dash_on_cooldown && !mirrored:
+		animation_tree["parameters/conditions/dash"] = true
+		await get_tree().create_timer(0.1).timeout
+		animation_tree["parameters/conditions/dash"] = false
 		
-		
-	if life <= 0:
+	if life <= 0 && phase == 1:
 		animation_tree["parameters/conditions/dead1"] = true
 		animation_tree["parameters/conditions/idle1"] = false
 		spike_active = false
@@ -208,15 +228,15 @@ func spawn_explosion():
 func take_damage(damage_received):
 	life -= damage_received
 
-func _on_stop_aggro_area_entered(area):
-	if area.is_in_group("player") && !death_anim_started:
-		speed = 30
-		#colliding_with_player = true
-
-
-func _on_stop_aggro_area_exited(area):
-	if area.is_in_group("player") && !death_anim_started:
-		speed = 80
+#func _on_stop_aggro_area_entered(area):
+	#if area.is_in_group("player") && !death_anim_started:
+		#speed = 30
+		##colliding_with_player = true
+#
+#
+#func _on_stop_aggro_area_exited(area):
+	#if area.is_in_group("player") && !death_anim_started:
+		#speed = 80
 
 
 func _on_main_hitbox_area_entered(area):
@@ -224,6 +244,7 @@ func _on_main_hitbox_area_entered(area):
 		if !area.get_parent().enemy_proj:
 			var damage_received = area.get_parent().dano
 			take_damage(damage_received)
+	#if area.is
 
 
 func _on_spike_active_time_timeout():
@@ -253,3 +274,7 @@ func _on_needle_active_time_timeout():
 
 func _on_needle_follow_player_timeout():
 	needle_follow_player = false
+
+
+func _on_dash_cooldown_timeout():
+	dash_on_cooldown = false
