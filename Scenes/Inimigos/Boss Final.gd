@@ -9,9 +9,10 @@ const slash_vfx_path = preload("res://Scenes/Inimigos/Slash effect.tscn")
 @export var player := Node2D
 @onready var nav_agent := $NavigationAgent2D as NavigationAgent2D
 
-@export var life = 80
+@export var life = 1
 @export var dano = 5
 @export var speed = 80
+@export var phase = 1
 
 @onready var animation_tree : AnimationTree = $AnimationTree
 
@@ -69,16 +70,17 @@ func update_animation_parameters():
 		melee_last_3s = true
 		$"Melee timer".start()
 		
-	if !player_close && !shot_recently:
-		animation_tree["parameters/conditions/shoot"] = true
-		await get_tree().create_timer(0.1).timeout
-		animation_tree["parameters/conditions/shoot"] = false
-		shot_recently = true
-		$"Shoot timer".start()
+	#if !player_close && !shot_recently:
+		#animation_tree["parameters/conditions/shoot"] = true
+		#await get_tree().create_timer(0.1).timeout
+		#animation_tree["parameters/conditions/shoot"] = false
+		#shot_recently = true
+		#$"Shoot timer".start()
+		
 		
 	if life <= 0:
-		animation_tree["parameters/conditions/dead"] = true
-		animation_tree["parameters/conditions/idle"] = false
+		animation_tree["parameters/conditions/dead1"] = true
+		animation_tree["parameters/conditions/idle1"] = false
 
 func _on_melee_trigger_area_entered(area):
 	if area.is_in_group("player"):
@@ -130,13 +132,6 @@ func slash_vfx():
 		get_tree().call_group("player", "take_damage", "inimigo")
 		#player.take_damage("inimigo")
 
-func _on_area_2d_area_entered(area):
-	if area.is_in_group("tiro"):
-		if !area.get_parent().enemy_proj:
-			var damage_received = area.get_parent().dano
-			take_damage(damage_received)
-	
-
 func take_damage(damage_received):
 	life -= damage_received
 
@@ -153,3 +148,10 @@ func _on_stop_aggro_area_entered(area):
 func _on_stop_aggro_area_exited(area):
 	if area.is_in_group("player") && !death_anim_started:
 		speed = 80
+
+
+func _on_main_hitbox_area_entered(area):
+	if area.is_in_group("tiro"):
+		if !area.get_parent().enemy_proj:
+			var damage_received = area.get_parent().dano
+			take_damage(damage_received)

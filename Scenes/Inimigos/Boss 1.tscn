@@ -446,8 +446,6 @@ size = Vector2(116.5, 92.5)
 position = Vector2(654, 452)
 script = ExtResource("1_ebebe")
 speed = 0
-intro_over = true
-death_anim_started = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 light_mask = 513

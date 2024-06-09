@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://f3t04yp7bbmv"
-path="res://.godot/imported/bossfinal_morte1.png-4b0e0d6815a94e4c78cd3a5e8489401e.ctex"
+path="res://.godot/imported/bossfinal_morte1.png-ee81967f0c7c46450c2c6d07beb2579b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Inimigos/Boss 2/Fase 2/bossfinal_morte1.png"
-dest_files=["res://.godot/imported/bossfinal_morte1.png-4b0e0d6815a94e4c78cd3a5e8489401e.ctex"]
+source_file="res://sprites/Inimigos/Boss 2/Fase 1/bossfinal_morte1.png"
+dest_files=["res://.godot/imported/bossfinal_morte1.png-ee81967f0c7c46450c2c6d07beb2579b.ctex"]
 
 [params]
 
