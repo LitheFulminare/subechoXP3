@@ -22,7 +22,10 @@ const explosion_path = preload("res://Scenes/Player_e_misc/Particulas e projéte
 var mirrored = false
 #var colliding_with_player = false
 
+var last_used = "" # controls what the last attack was
+
 var player_close = false
+@export var melee_attack = false
 var melee_last_3s = false
 
 var spike
@@ -35,8 +38,14 @@ var shot_recently = false
 #var death_anim_over = false
 
 func _ready():
-	animation_tree.active = true
+	speed = 80
+	phase = 1
+	intro_over = false
+	melee_attack = false
 	death_anim_started = false
+	
+	animation_tree.active = true
+	$"Melee effect".visible = false
 	$"Spike cooldown".start()
 	
 	
@@ -69,12 +78,17 @@ func makepath() -> void:
 	nav_agent.target_position = player.global_position
 
 func start_phase_2():
-	life = 100
+	phase = 2
+	speed = 100
+	life = 80
 	
 func attacks():
-	if !spike_active && !spike_on_cooldown:
+	if !spike_active && !spike_on_cooldown && last_used != "spike":
 		use_spike()
-		
+		last_used = "spike"
+	
+	if player_close && melee_attack:
+		get_tree().call_group("player", "take_damage", "inimigo")
 
 func use_spike():
 	spike = spike_path.instantiate()
@@ -86,7 +100,7 @@ func use_spike():
 	$"Spike active time".start()
 
 func update_animation_parameters():
-	if player_close && !melee_last_3s && !spike_active: 
+	if player_close && !melee_last_3s && !spike_active && phase == 1:
 		animation_tree["parameters/conditions/melee"] = true
 		await get_tree().create_timer(0.1).timeout
 		animation_tree["parameters/conditions/melee"] = false
@@ -162,10 +176,6 @@ func spawn_explosion():
 
 func take_damage(damage_received):
 	life -= damage_received
-
-func death_anim():
-	pass
-
 
 func _on_stop_aggro_area_entered(area):
 	if area.is_in_group("player") && !death_anim_started:
