@@ -50,7 +50,7 @@ sources/0 = SubResource("TileSetAtlasSource_w7cu8")
 [node name="BossFightFinal" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_mh3x2")]
-position = Vector2(629, 355)
+position = Vector2(503, 438)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 limit_left = 0
@@ -59,10 +59,9 @@ limit_right = 1920
 limit_bottom = 1080
 
 [node name="BossFinal" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_we3o8")]
-position = Vector2(414, 779)
+position = Vector2(1469, 566)
 scale = Vector2(4, 4)
 player = NodePath("../Player")
-death_anim_started = true
 
 [node name="TileMap" type="TileMap" parent="."]
 z_index = -2

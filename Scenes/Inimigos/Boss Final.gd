@@ -85,8 +85,18 @@ func _process(delta):
 
 func _physics_process(_delta: float) -> void:
 	var dir = to_local(nav_agent.get_next_path_position()).normalized()
-		
+	
 	velocity = dir * speed
+	
+	if on_dash:
+		if !mirrored:
+			dir.x = -1
+		else:
+			dir.x = 1
+		velocity = dir * speed
+		velocity.y = 0
+		
+	print("dir: " + str(dir))
 	
 	move_and_slide()
 
@@ -137,9 +147,11 @@ func use_needle():
 	$"Needle follow player".start()
 	
 func dash():
+	on_dash = true
 	speed = 400
 	await get_tree().create_timer(0.833).timeout
 	speed = 20
+	on_dash = false
 	await get_tree().create_timer(2).timeout
 	speed = 100
 
@@ -158,10 +170,17 @@ func update_animation_parameters():
 		#shot_recently = true
 		#$"Shoot timer".start()
 	
-	if !player_close && !dash_on_cooldown && !mirrored:
+	if !player_close && !dash_on_cooldown:
 		animation_tree["parameters/conditions/dash"] = true
 		await get_tree().create_timer(0.1).timeout
 		animation_tree["parameters/conditions/dash"] = false
+		#dash_on_cooldown = true
+		#$"Dash cooldown".start()
+		#dash()
+		
+	if phase == 2:
+		animation_tree["parameters/conditions/idle2"] = true
+		animation_tree["parameters/conditions/idle1"] = false
 		
 	if life <= 0 && phase == 1:
 		animation_tree["parameters/conditions/dead1"] = true
