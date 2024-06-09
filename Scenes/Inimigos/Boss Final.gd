@@ -37,6 +37,7 @@ var spike_on_cooldown = true
 var needle
 var needle_active = false
 var needle_on_cooldown = false
+var needle_follow_player = false
 
 var shot_recently = false
 @export var death_anim_started = false
@@ -69,8 +70,12 @@ func _process(delta):
 		update_animation_parameters()
 		attacks()
 	
-	if spike_active:
+	if spike_active && spike != null:
 		spike.global_position = global_position
+		
+	if needle_follow_player && needle != null:
+		needle.global_position = player.global_position
+		needle.global_position.y -= 125
 
 func _physics_process(_delta: float) -> void:
 	var dir = to_local(nav_agent.get_next_path_position()).normalized()
@@ -88,16 +93,20 @@ func start_phase_2():
 	life = 80
 	
 func attacks():
-	#if !spike_active && !spike_on_cooldown && last_used != "spike":
-		#use_spike()
-		#last_used = "spike"
+	randomize()
+	var random_float = randf()
+	if phase == 1:
+		if random_float > 0.5:
+			if !spike_active && !spike_on_cooldown && last_used != "spike":
+				use_spike()
+				#last_used = "spike"
+		else:
+			if !needle_active && !needle_on_cooldown:
+				use_needle()
+				#last_used = "needle"
 		
-	if !needle_active && !needle_on_cooldown:
-		use_needle()
-		last_used = "needle"
-	
-	if player_close && melee_attack:
-		get_tree().call_group("player", "take_damage", "inimigo")
+		if player_close && melee_attack:
+			get_tree().call_group("player", "take_damage", "inimigo")
 
 func use_spike():
 	spike = spike_path.instantiate()
@@ -112,7 +121,11 @@ func use_needle():
 	needle = needle_path.instantiate()
 	get_parent().add_child(needle)
 	needle.global_position = player.global_position
+	needle.global_position.y -= 125
 	needle_active = true
+	needle_follow_player = true
+	$"Needle active time".start()
+	$"Needle follow player".start()
 
 func update_animation_parameters():
 	if player_close && !melee_last_3s && !spike_active && phase == 1:
@@ -137,7 +150,10 @@ func update_animation_parameters():
 		spike_on_cooldown = true
 		if spike != null:
 			spike.queue_free()
+		if needle != null:
+			needle.queue_free()
 		$"Spike active time".stop()
+		$"Needle active time".stop()
 
 func _on_melee_trigger_area_entered(area):
 	if area.is_in_group("player"):
@@ -173,7 +189,7 @@ func spawn_explosion():
 	explosion.anim("morte inimigo")
 	explosion.get_node("luz").energy = 1.5
 	explosion.scale = Vector2(1.5,1.5)
-	explosion.global_position = $"Explosion position".global_position
+	explosion.global_position = $"Explosion spawn".global_position
 
 #func slash_vfx():
 	#var slash = slash_vfx_path.instantiate()
@@ -225,3 +241,15 @@ func _on_needle_cooldown_timeout():
 func _on_nav_timer_timeout():
 	if intro_over:
 		makepath()
+
+
+func _on_needle_active_time_timeout():
+	needle_active = false
+	needle_on_cooldown = true
+	if needle != null:
+		needle.queue_free()
+	$"Needle Cooldown".start()
+
+
+func _on_needle_follow_player_timeout():
+	needle_follow_player = false

@@ -190,6 +190,30 @@ tracks/5/keys = {
 "method": &"start_phase_2"
 }]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Explosion spawn:position")
+tracks/6/interp = 0
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.333334, 0.500001),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-15, -11), Vector2(-12, -4), Vector2(-9, 5), Vector2(-9, -15)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AnimationPlayer:speed_scale")
+tracks/7/interp = 0
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.167, 0.9]
+}
 
 [sub_resource type="Animation" id="Animation_to63n"]
 resource_name = "Idle"
@@ -326,6 +350,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Explosion spawn:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-15, -11)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vcgsn"]
 _data = {
@@ -398,12 +434,13 @@ collision_layer = 5
 collision_mask = 3
 script = ExtResource("1_8hqqr")
 speed = 0
+death_anim_started = true
 
 [node name="Sprite" type="Sprite2D" parent="."]
 light_mask = 513
 visibility_layer = 2
-texture = ExtResource("2_8qxdr")
-hframes = 24
+texture = ExtResource("2_0cfd7")
+hframes = 30
 
 [node name="PointLight2D" type="PointLight2D" parent="Sprite"]
 position = Vector2(-1, 1)
@@ -414,13 +451,14 @@ texture = SubResource("GradientTexture2D_0fjcm")
 [node name="Melee effect" type="PointLight2D" parent="."]
 position = Vector2(1.33514e-05, -1.19209e-06)
 scale = Vector2(1.875, 1.875)
-energy = 1.3333
+energy = 0.0
 texture = SubResource("GradientTexture2D_cuwgl")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_vcgsn")
 }
+speed_scale = 0.167
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 active = false
@@ -470,8 +508,19 @@ one_shot = true
 [node name="Needle Cooldown" type="Timer" parent="."]
 wait_time = 8.0
 
+[node name="Needle active time" type="Timer" parent="."]
+wait_time = 1.4
+one_shot = true
+
+[node name="Needle follow player" type="Timer" parent="."]
+wait_time = 0.4
+one_shot = true
+
 [node name="Nav timer" type="Timer" parent="."]
 wait_time = 0.2
+
+[node name="Explosion spawn" type="Marker2D" parent="."]
+position = Vector2(-15, -11)
 
 [connection signal="area_entered" from="Main Hitbox" to="." method="_on_main_hitbox_area_entered"]
 [connection signal="area_entered" from="Melee trigger" to="." method="_on_melee_trigger_area_entered"]
@@ -480,4 +529,6 @@ wait_time = 0.2
 [connection signal="timeout" from="Spike active time" to="." method="_on_spike_active_time_timeout"]
 [connection signal="timeout" from="Spike cooldown" to="." method="_on_spike_cooldown_timeout"]
 [connection signal="timeout" from="Needle Cooldown" to="." method="_on_needle_cooldown_timeout"]
+[connection signal="timeout" from="Needle active time" to="." method="_on_needle_active_time_timeout"]
+[connection signal="timeout" from="Needle follow player" to="." method="_on_needle_follow_player_timeout"]
 [connection signal="timeout" from="Nav timer" to="." method="_on_nav_timer_timeout"]
