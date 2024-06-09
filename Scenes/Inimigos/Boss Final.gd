@@ -83,6 +83,7 @@ func use_spike():
 	var spike = spike_path.instantiate()
 	get_parent().add_child(spike)
 	spike.scale = Vector2(4,4)
+	spike.global_position = global_position
 	#spike.visibility_layer = 1
 	spike_active = true
 
