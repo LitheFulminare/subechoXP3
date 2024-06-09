@@ -356,6 +356,11 @@ shape = SubResource("CircleShape2D_e1k72")
 wait_time = 3.0
 one_shot = true
 
+[node name="Spike active time" type="Timer" parent="."]
+wait_time = 5.833
+one_shot = true
+
 [connection signal="area_entered" from="Main Hitbox" to="." method="_on_main_hitbox_area_entered"]
 [connection signal="area_entered" from="Melee trigger" to="." method="_on_melee_trigger_area_entered"]
 [connection signal="timeout" from="Melee timer" to="." method="_on_melee_timer_timeout"]
+[connection signal="timeout" from="Spike active time" to="." method="_on_spike_active_time_timeout"]

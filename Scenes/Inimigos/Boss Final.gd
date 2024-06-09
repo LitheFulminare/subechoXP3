@@ -24,7 +24,11 @@ var mirrored = false
 
 var player_close = false
 var melee_last_3s = false
+
+#var spike
 var spike_active = false
+var spike_spinning_time = false
+
 var shot_recently = false
 @export var death_anim_started = false
 #var death_anim_over = false
@@ -48,7 +52,9 @@ func _process(delta):
 	if intro_over:
 		update_animation_parameters()
 		attacks()
-
+	
+	#if spike_active:
+		#spike.global_position = global_position
 
 func _physics_process(_delta: float) -> void:
 	var dir = to_local(nav_agent.get_next_path_position()).normalized()
@@ -65,18 +71,23 @@ func _on_timer_timeout():
 	if intro_over:
 		makepath()
 	
+func start_phase_2():
+	life = 100
+	
 func attacks():
 	if !spike_active:
-		var spike = spike_path.instantiate()
-		get_parent().add_child(spike)
-		spike.scale = Vector2(4,4)
-		spike.visibility_layer = 1
-		spike.global_position = global_position
-		spike_active = true
+		use_spike()
 		
 
+func use_spike():
+	var spike = spike_path.instantiate()
+	get_parent().add_child(spike)
+	spike.scale = Vector2(4,4)
+	#spike.visibility_layer = 1
+	spike_active = true
+
 func update_animation_parameters():
-	if player_close && !melee_last_3s: 
+	if player_close && !melee_last_3s && !spike_active: 
 		animation_tree["parameters/conditions/melee"] = true
 		await get_tree().create_timer(0.1).timeout
 		animation_tree["parameters/conditions/melee"] = false
@@ -168,3 +179,7 @@ func _on_main_hitbox_area_entered(area):
 		if !area.get_parent().enemy_proj:
 			var damage_received = area.get_parent().dano
 			take_damage(damage_received)
+
+
+func _on_spike_active_time_timeout():
+	spike_active = false
