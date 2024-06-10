@@ -6,6 +6,8 @@ importante lembrar:
 	
 	next_room() no Global pega o numero da sala pra pegar a lista aleatoria de salas e passar para a
 	próxima. ele também gera uma float random para ver se gera a loja antes ou depois
+	
+	o spike do boss final deve ter Z index -1
 
 Armas
 	Gen-EricV1

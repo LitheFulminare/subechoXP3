@@ -1,0 +1,111 @@
+[gd_scene load_steps=9 format=3 uid="uid://ccbuim0ju2yl1"]
+
+[ext_resource type="Script" path="res://Scenes/Inimigos/Agulha do além.gd" id="1_xjsy1"]
+[ext_resource type="Texture2D" uid="uid://tke02v5crk4y" path="res://sprites/Inimigos/Boss 2/Fase 1/bossfinal_ataque2.png" id="2_dc2qm"]
+
+[sub_resource type="Gradient" id="Gradient_8aad5"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.525974, 1)
+colors = PackedColorArray(0, 0, 0, 1, 1, 0, 0.796875, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ghhc6"]
+gradient = SubResource("Gradient_8aad5")
+fill_from = Vector2(0.5, 0)
+fill_to = Vector2(0.5, 1)
+
+[sub_resource type="Animation" id="Animation_o15fw"]
+resource_name = "default"
+length = 2.33335
+step = 0.166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5, 0.666667, 0.833333, 1, 1.16667, 1.33333, 1.5, 1.66667, 1.83333, 2, 2.16667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer:speed_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionShape2D:disabled")
+tracks/2/interp = 0
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.16667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_e132p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xyefb"]
+_data = {
+"RESET": SubResource("Animation_e132p"),
+"default": SubResource("Animation_o15fw")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8nqlj"]
+radius = 8.5
+height = 53.5
+
+[node name="AgulhaDoAlém" type="Area2D"]
+scale = Vector2(4, 4)
+collision_mask = 2
+script = ExtResource("1_xjsy1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+light_mask = 1024
+position = Vector2(0, -1.375)
+scale = Vector2(1, 0.957031)
+texture = ExtResource("2_dc2qm")
+hframes = 14
+
+[node name="PointLight2D" type="PointLight2D" parent="Sprite2D"]
+energy = 1.75
+range_item_cull_mask = 1024
+texture = SubResource("GradientTexture2D_ghhc6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xyefb")
+}
+autoplay = "default"
+speed_scale = 2.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.75, 1.25)
+shape = SubResource("CapsuleShape2D_8nqlj")
+disabled = true
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
