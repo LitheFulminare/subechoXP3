@@ -434,7 +434,7 @@ states/Shoot/node = SubResource("AnimationNodeAnimation_6757o")
 states/Shoot/position = Vector2(403, 183)
 states/Start/position = Vector2(89, 100)
 transitions = ["Start", "Intro", SubResource("AnimationNodeStateMachineTransition_bc2yd"), "Intro", "Idle", SubResource("AnimationNodeStateMachineTransition_nieji"), "Idle", "Melee", SubResource("AnimationNodeStateMachineTransition_p0a1g"), "Melee", "Idle", SubResource("AnimationNodeStateMachineTransition_iovbd"), "Idle", "Shoot", SubResource("AnimationNodeStateMachineTransition_qaf6q"), "Shoot", "Idle", SubResource("AnimationNodeStateMachineTransition_wk11h"), "Melee", "Death", SubResource("AnimationNodeStateMachineTransition_4t6ve"), "Idle", "Death", SubResource("AnimationNodeStateMachineTransition_krqax"), "Shoot", "Death", SubResource("AnimationNodeStateMachineTransition_pt565")]
-graph_offset = Vector2(-19, -19)
+graph_offset = Vector2(-46, -7)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_87sjq"]
 size = Vector2(62, 53)
@@ -446,13 +446,12 @@ size = Vector2(116.5, 92.5)
 position = Vector2(654, 452)
 script = ExtResource("1_ebebe")
 speed = 0
-intro_over = true
 death_anim_started = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 light_mask = 513
-texture = ExtResource("1_vacoo")
-hframes = 18
+texture = ExtResource("3_hjkyq")
+hframes = 6
 
 [node name="PointLight2D" type="PointLight2D" parent="Sprite2D"]
 light_mask = 512
@@ -497,6 +496,7 @@ collision_mask = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 4.5)
 shape = SubResource("RectangleShape2D_87sjq")
+disabled = true
 
 [node name="Stop aggro" type="Area2D" parent="."]
 collision_mask = 3
@@ -509,6 +509,7 @@ shape = SubResource("RectangleShape2D_2s00m")
 visible = false
 position = Vector2(0, 4.5)
 shape = SubResource("RectangleShape2D_87sjq")
+disabled = true
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 avoidance_mask = 7

@@ -384,25 +384,26 @@ func change_stat(stat, qtd):
 
 func take_damage(type):
 	#print("velocidade: " + str(current_speed))
-	var dano_tomado = 0
-	
-	match type:
-		"cenario":
-			dano_tomado = int(current_speed/20)
-			if dano_tomado < 1:
-				dano_tomado = 1
-		"inimigo":
-			dano_tomado = 10
-		"Heartbreak":
-			dano_tomado = 10
-		"invisible wall":
-			dano_tomado = 0
-	
-	life -= dano_tomado
-	velocity = Vector2.ZERO
-	invincible = true
-	damage_effect()
-	$iFrames.start()
+	if !invincible:
+		var dano_tomado = 0
+		
+		match type:
+			"cenario":
+				dano_tomado = int(current_speed/20)
+				if dano_tomado < 1:
+					dano_tomado = 1
+			"inimigo":
+				dano_tomado = 10
+			"Heartbreak":
+				dano_tomado = 10
+			"invisible wall":
+				dano_tomado = 0
+		
+		life -= dano_tomado
+		velocity = Vector2.ZERO
+		invincible = true
+		damage_effect()
+		$iFrames.start()
 
 
 
