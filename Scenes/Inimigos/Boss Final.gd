@@ -5,6 +5,8 @@ signal shoot
 #const bullet_path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Heartbreak projectile.tscn")
 const spike_path = preload("res://Scenes/Inimigos/Spike.tscn")
 const needle_path = preload("res://Scenes/Inimigos/Agulha do além.tscn")
+const scythe_path = preload("res://Scenes/Inimigos/Scythe.tscn")
+const energy_ball_path = preload("res://Scenes/Inimigos/Energy ball.tscn")
 const explosion_path = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Explosão morte inimigo.tscn")
 #const slash_vfx_path = preload("res://Scenes/Inimigos/Slash effect.tscn")
 
@@ -20,6 +22,7 @@ const explosion_path = preload("res://Scenes/Player_e_misc/Particulas e projéte
 
 @export var intro_over = false
 
+var player_too_close
 var mirrored = false
 #var colliding_with_player = false
 
@@ -40,6 +43,7 @@ var needle_on_cooldown = false
 var needle_follow_player = false
 
 var shot_recently = false
+var shoot_on_cooldown = false
 @export var death_anim_started = false
 #var death_anim_over = false
 
@@ -96,18 +100,19 @@ func _physics_process(_delta: float) -> void:
 		velocity = dir * speed
 		velocity.y = 0
 		
-	print("dir: " + str(dir))
+	#print("dir: " + str(dir))
 	
 	move_and_slide()
 
 func makepath() -> void:
 	#pass
-	nav_agent.target_position = player.global_position
+	if !player_too_close:
+		nav_agent.target_position = player.global_position
 
 func start_phase_2():
 	phase = 2
 	speed = 100
-	life = 80
+	life = 1
 	death_anim_started = false
 	dash_on_cooldown = false
 	
@@ -148,7 +153,7 @@ func use_needle():
 	
 func dash():
 	on_dash = true
-	speed = 400
+	speed = 500
 	await get_tree().create_timer(0.833).timeout
 	speed = 20
 	on_dash = false
@@ -163,12 +168,10 @@ func update_animation_parameters():
 		melee_last_3s = true
 		$"Melee timer".start()
 		
-	#if !player_close && !shoot_on_cooldown:
-		#animation_tree["parameters/conditions/shoot"] = true
-		#await get_tree().create_timer(0.1).timeout
-		#animation_tree["parameters/conditions/shoot"] = false
-		#shot_recently = true
-		#$"Shoot timer".start()
+	if !player_close && !shoot_on_cooldown && phase == 2:
+		animation_tree["parameters/conditions/shoot"] = true
+		await get_tree().create_timer(0.1).timeout
+		animation_tree["parameters/conditions/shoot"] = false
 	
 	if !player_close && !dash_on_cooldown:
 		animation_tree["parameters/conditions/dash"] = true
@@ -193,7 +196,11 @@ func update_animation_parameters():
 			needle.queue_free()
 		$"Spike active time".stop()
 		$"Needle active time".stop()
-
+		
+	if life <= 0 && phase == 2:
+		animation_tree["parameters/conditions/death2"] = true
+		animation_tree["parameters/conditions/idle2"] = false
+		
 func _on_melee_trigger_area_entered(area):
 	if area.is_in_group("player"):
 		player_close = true
@@ -212,15 +219,23 @@ func _on_shoot_timeout():
 	shot_recently = false
 
 
-#func _on_shoot():
-	#var targetPosition = player.global_position
-	#var bullet = bullet_path.instantiate()
-	#var gun_Position = $"Bullet spawn".global_position
-	#bullet.position = $"Bullet spawn".global_position
-	##var shootDirection = (targetPosition - gun_Position).normalized()
-	#bullet.set_bullet(gun_Position, targetPosition)
-	#bullet.tipo_tiro_boss(10)
-	#get_parent().add_child(bullet)
+func _on_shoot():
+	randomize()
+	var bullet
+	shoot_on_cooldown = true
+	$"Shoot cooldown".start()
+	var targetPosition = player.global_position
+	var random_float = randf()
+	if random_float > 0.5:
+		bullet = scythe_path.instantiate()
+	else:
+		bullet = energy_ball_path.instantiate()
+	var gun_Position = $"Bullet spawn".global_position
+	bullet.position = $"Bullet spawn".global_position
+	#var shootDirection = (targetPosition - gun_Position).normalized()
+	bullet.set_bullet(gun_Position, targetPosition)
+	bullet.tipo_tiro_boss(10)
+	get_parent().add_child(bullet)
 	
 func spawn_explosion():
 	var explosion = explosion_path.instantiate()
@@ -246,16 +261,6 @@ func spawn_explosion():
 
 func take_damage(damage_received):
 	life -= damage_received
-
-#func _on_stop_aggro_area_entered(area):
-	#if area.is_in_group("player") && !death_anim_started:
-		#speed = 30
-		##colliding_with_player = true
-#
-#
-#func _on_stop_aggro_area_exited(area):
-	#if area.is_in_group("player") && !death_anim_started:
-		#speed = 80
 
 
 func _on_main_hitbox_area_entered(area):
@@ -297,3 +302,19 @@ func _on_needle_follow_player_timeout():
 
 func _on_dash_cooldown_timeout():
 	dash_on_cooldown = false
+
+
+func _on_slowdown_area_area_entered(area):
+	if area.is_in_group("player") && !death_anim_started:
+		speed = 30
+		player_too_close = true
+
+
+func _on_slowdown_area_area_exited(area):
+	if area.is_in_group("player") && !death_anim_started:
+		player_too_close = false
+		speed = 100
+
+
+func _on_shoot_cooldown_timeout():
+	shoot_on_cooldown = false

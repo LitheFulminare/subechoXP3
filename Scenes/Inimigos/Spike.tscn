@@ -190,14 +190,14 @@ collision_mask = 2
 script = ExtResource("1_6te1d")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-light_mask = 1025
+light_mask = 2049
 hframes = 8
 
 [node name="PointLight2D" type="PointLight2D" parent="Sprite2D"]
 position = Vector2(22, -23)
 scale = Vector2(1.71875, 1.71875)
 energy = 3.0
-range_item_cull_mask = 1024
+range_item_cull_mask = 2048
 texture = SubResource("GradientTexture2D_ykt7t")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
