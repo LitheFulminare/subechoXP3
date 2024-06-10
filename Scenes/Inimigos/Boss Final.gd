@@ -13,7 +13,7 @@ const explosion_path = preload("res://Scenes/Player_e_misc/Particulas e projéte
 @export var player := Node2D
 @onready var nav_agent := $NavigationAgent2D as NavigationAgent2D
 
-@export var life = 1
+@export var life = 80
 @export var dano = 5
 @export var speed = 80
 @export var phase = 1
@@ -21,6 +21,8 @@ const explosion_path = preload("res://Scenes/Player_e_misc/Particulas e projéte
 @onready var animation_tree : AnimationTree = $AnimationTree
 
 @export var intro_over = false
+
+var player_colliding = false
 
 var player_too_close
 var mirrored = false
@@ -50,6 +52,8 @@ var shoot_on_cooldown = false
 var on_dash = false
 @export var dash_on_cooldown = false
 
+var dead_2 = false
+
 func _ready():
 	speed = 80
 	phase = 1
@@ -63,7 +67,7 @@ func _ready():
 	
 	
 func _process(delta):
-	if !death_anim_started:
+	if !death_anim_started && !on_dash:
 		if player.position.x <= global_position.x:
 			$Sprite.flip_h = false
 			#$"Melee trigger/CollisionShape2D".rotation = deg_to_rad(0)
@@ -72,6 +76,9 @@ func _process(delta):
 			$Sprite.flip_h = true
 			#$"Melee trigger/CollisionShape2D".rotation = deg_to_rad(180)
 			mirrored = true
+	if death_anim_started:
+		$Sprite.flip_h = false
+		mirrored = false
 	#
 	if intro_over:
 		update_animation_parameters()
@@ -112,7 +119,7 @@ func makepath() -> void:
 func start_phase_2():
 	phase = 2
 	speed = 100
-	life = 1
+	life = 120
 	death_anim_started = false
 	dash_on_cooldown = false
 	
@@ -131,6 +138,9 @@ func attacks():
 		
 		if player_close && melee_attack:
 			get_tree().call_group("player", "take_damage", "inimigo")
+			
+	if player_colliding:
+		get_tree().call_group("player", "take_damage", "inimigo")
 
 func use_spike():
 	spike = spike_path.instantiate()
@@ -157,7 +167,7 @@ func dash():
 	await get_tree().create_timer(0.833).timeout
 	speed = 20
 	on_dash = false
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(1).timeout
 	speed = 100
 
 func update_animation_parameters():
@@ -232,6 +242,8 @@ func _on_shoot():
 		bullet = energy_ball_path.instantiate()
 	var gun_Position = $"Bullet spawn".global_position
 	bullet.position = $"Bullet spawn".global_position
+	#if mirrored:
+		#bullet.flip()
 	#var shootDirection = (targetPosition - gun_Position).normalized()
 	bullet.set_bullet(gun_Position, targetPosition)
 	bullet.tipo_tiro_boss(10)
@@ -268,6 +280,8 @@ func _on_main_hitbox_area_entered(area):
 		if !area.get_parent().enemy_proj:
 			var damage_received = area.get_parent().dano
 			take_damage(damage_received)
+	if area.is_in_group("player"):
+		player_colliding = true
 	#if area.is
 
 
@@ -308,13 +322,20 @@ func _on_slowdown_area_area_entered(area):
 	if area.is_in_group("player") && !death_anim_started:
 		speed = 30
 		player_too_close = true
+		player_colliding = true
 
 
 func _on_slowdown_area_area_exited(area):
 	if area.is_in_group("player") && !death_anim_started:
 		player_too_close = false
+		player_colliding = false
 		speed = 100
 
 
 func _on_shoot_cooldown_timeout():
 	shoot_on_cooldown = false
+
+
+func _on_main_hitbox_area_exited(area):
+	if area.is_in_group("player"):
+		player_colliding = false

@@ -10,6 +10,9 @@ func tipo_tiro_boss(damage):
 	dano = damage
 	speed = 800
 	enemy_proj = true
+	
+func flip():
+	$Sprite2D.flip_h = true
 
 func set_bullet(position, targetPosition):
 	global_position = position
@@ -23,3 +26,6 @@ func _physics_process(delta):
 func _on_area_entered(area):
 	if area.is_in_group("player"):
 		get_tree().call_group("player", "take_damage", "inimigo")
+	
+	#if !area.is_in_group("inimigo"):
+		#queue_free()
