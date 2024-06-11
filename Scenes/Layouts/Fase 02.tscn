@@ -648,7 +648,7 @@ adjustment_saturation = 1.67
 size = Vector2(229.375, 19.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rlbt0"]
-size = Vector2(232, 24)
+size = Vector2(487, 24)
 
 [node name="Main 1" type="Node2D" groups=["logica"]]
 script = ExtResource("1_vrmbs")
@@ -1213,6 +1213,11 @@ collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary"]
 position = Vector2(0, -18)
+shape = SubResource("RectangleShape2D_rlbt0")
+debug_color = Color(0.603922, 0.00392157, 0.831373, 0.419608)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Boundary"]
+position = Vector2(144, -1522)
 shape = SubResource("RectangleShape2D_rlbt0")
 debug_color = Color(0.603922, 0.00392157, 0.831373, 0.419608)
 
