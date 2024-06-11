@@ -15,7 +15,7 @@ run/main_scene="res://Scenes/Layouts/principal.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 run/max_fps=120
 boot_splash/use_filter=false
-config/icon="res://sprites/Misc/logo.png"
+config/icon="res://sprites/Misc/LOGO_ABYSSAL.png"
 
 [autoload]
 
@@ -32,6 +32,8 @@ settings/stdout/print_gpu_profile=true
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=3
+window/size/borderless=true
+window/stretch/mode="canvas_items"
 mouse_cursor/custom_image="res://sprites/Misc/Cursor.png"
 
 [gui]
