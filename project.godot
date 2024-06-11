@@ -21,7 +21,6 @@ config/icon="res://sprites/Misc/logo.png"
 
 Global="*res://Misc/Global.gd"
 player_vars="*res://Misc/Player Variables.gd"
-lv_change="*res://Misc/Level change logic.gd"
 Ambience="*res://Scenes/Layouts/ambience.tscn"
 
 [debug]
@@ -99,6 +98,8 @@ Interact={
 
 [layer_names]
 
+2d_render/layer_1="default"
+2d_render/layer_2="bg"
 2d_render/layer_10="boss highlight"
 2d_render/layer_11="boss highlight 2"
 2d_render/layer_12="spike highlight"

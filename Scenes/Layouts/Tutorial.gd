@@ -5,11 +5,12 @@ var explosaoPath = preload("res://Scenes/Player_e_misc/Particulas e projéteis/e
 
 @export var inimigo_scene : PackedScene
 var inimigos_mortos = 0
-@export var meta_fase = 7
+@export var meta_fase = 0
 var gameover = false
 
 func _ready():
 	$CanvasGroup/CanvasModulate.visible = true
+	$UI.visible = true
 	$CanvasGroup/Player.global_position = $"Player Spawn".global_position
 	
 	if Global.current_room != 0:
@@ -23,7 +24,7 @@ func _ready():
 		
 	#$CanvasGroup/Player.position = $"Player Spawn".global_position
 	#$CanvasGroup/Player/Camera2D.position = $"Player Spawn".global_position
-	pass
+	#pass
 
 func _process(delta):
 	
@@ -57,10 +58,11 @@ func _process(delta):
 		
 func meta_fase_batida():
 	$CanvasGroup/SaidaVerdeDesligada.visible = false
-	$CanvasGroup/SaidaVerde.visible = true
+	$CanvasGroup/SaidaVerdeLigada.visible = true
 
 func game_over_no_life():
 	if !gameover:
+		gameover = true
 		var explosao = explosaoPath.instantiate()
 		$CanvasGroup.add_child(explosao)
 		explosao.position = $CanvasGroup/Player.global_position
@@ -85,22 +87,22 @@ func contador_morte_inimigo():
 
 
 func _on_area_2d_area_entered(area):
-	if inimigos_mortos >= meta_fase:
-		if area.is_in_group("player"):
-			Global.next_room()
+	#if inimigos_mortos >= meta_fase:
+	if area.is_in_group("player"):
+		Global.tutorial_completed = true
+		Global.next_room()
 
 func _on_spawn_2_inimigo_timeout():
-	pass # no tutorial não spawna
+	pass
 	#if inimigos_mortos < meta_fase:
 		#randomize()
 		#var numero_nos = $Spawns.get_children()
 		#var local_aleatorio = numero_nos[randi()% numero_nos.size()]
 		#var inimigo = inimigo_scene.instantiate()
 		#inimigo.player = $CanvasGroup/Player/playerpos
-		##inimigo.position = $"Spawns/spawn inimigo local 2".global_position
 		#inimigo.position = local_aleatorio.position
 		#add_child(inimigo)
 
 func restart():
-	#get_tree().change_scene_to_file("res://Scenes/Layouts/principal.tscn")
 	Global.goto_scene("res://Scenes/Layouts/principal.tscn")
+
