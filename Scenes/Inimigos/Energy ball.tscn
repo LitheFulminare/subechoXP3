@@ -1,16 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://pc8f2gvy1vgb"]
+[gd_scene load_steps=8 format=3 uid="uid://pc8f2gvy1vgb"]
 
 [ext_resource type="Script" path="res://Scenes/Inimigos/Energy ball.gd" id="1_cl70s"]
 [ext_resource type="Texture2D" uid="uid://dp3vns2nkv8cn" path="res://sprites/Inimigos/Boss 2/Fase 2/bossfinal_projetil.png" id="1_ramic"]
-
-[sub_resource type="Gradient" id="Gradient_6owww"]
-colors = PackedColorArray(1, 0, 0, 1, 0, 0, 0, 1)
+[ext_resource type="Gradient" uid="uid://5ymorrtoq1bs" path="res://Misc/Pink and purple gradient.tres" id="3_18t38"]
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_fygbc"]
-gradient = SubResource("Gradient_6owww")
-fill = 1
-fill_from = Vector2(0.481651, 0.486239)
-fill_to = Vector2(0.894495, 0.307339)
+gradient = ExtResource("3_18t38")
+fill_from = Vector2(0, 0.477064)
+fill_to = Vector2(1, 0.486239)
 
 [sub_resource type="Animation" id="Animation_sd0cy"]
 resource_name = "default"
@@ -42,24 +39,8 @@ tracks/1/keys = {
 "values": [0, 1, 2, 3]
 }
 
-[sub_resource type="Animation" id="Animation_gy08b"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kp7i0"]
 _data = {
-"RESET": SubResource("Animation_gy08b"),
 "default": SubResource("Animation_sd0cy")
 }
 
@@ -68,16 +49,20 @@ radius = 5.0
 
 [node name="EnergyBall" type="Area2D"]
 scale = Vector2(4, 4)
+collision_layer = 4
+collision_mask = 3
 script = ExtResource("1_cl70s")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 light_mask = 1024
 texture = ExtResource("1_ramic")
+flip_h = true
 hframes = 4
+frame = 1
 
 [node name="PointLight2D" type="PointLight2D" parent="Sprite2D"]
-position = Vector2(-1.90735e-06, -1)
-scale = Vector2(0.203125, 0.203125)
+position = Vector2(-4.5, -1.75)
+scale = Vector2(0.339844, 0.207031)
 energy = 0.5
 range_item_cull_mask = 1024
 texture = SubResource("GradientTexture2D_fygbc")
@@ -91,3 +76,5 @@ autoplay = "default"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -1)
 shape = SubResource("CircleShape2D_6au2f")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

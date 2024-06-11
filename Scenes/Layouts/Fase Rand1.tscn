@@ -1389,15 +1389,15 @@ axis_stretch_vertical = 1
 metadata/_edit_lock_ = true
 
 [node name="SaidaVerdeDesligada" type="PointLight2D" parent="CanvasGroup"]
-position = Vector2(2221, 169)
-scale = Vector2(5.98437, 4.03125)
+position = Vector2(2221, 166)
+scale = Vector2(5.98437, 3.71875)
 range_item_cull_mask = 2
 texture = SubResource("GradientTexture2D_gc8nu")
 
 [node name="SaidaVerde" type="PointLight2D" parent="CanvasGroup"]
 visible = false
-position = Vector2(2215.63, 153.5)
-scale = Vector2(6.11328, 4.51563)
+position = Vector2(2215.63, 166.5)
+scale = Vector2(6.11328, 3.76563)
 texture = SubResource("GradientTexture2D_22few")
 
 [node name="SaidaVermelha" type="PointLight2D" parent="CanvasGroup"]
@@ -1464,6 +1464,11 @@ collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary"]
 position = Vector2(-71, 0)
+shape = SubResource("RectangleShape2D_ui3tt")
+debug_color = Color(0.603922, 0.00392157, 0.831373, 0.419608)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Boundary"]
+position = Vector2(-2559, 1284)
 shape = SubResource("RectangleShape2D_ui3tt")
 debug_color = Color(0.603922, 0.00392157, 0.831373, 0.419608)
 
