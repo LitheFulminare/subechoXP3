@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpojntu4qfrbt"
-path="res://.godot/imported/créditos_jefferson.png-e7daf6f06e23bdb54ef4eb56bf16b600.ctex"
+uid="uid://cg55pa0s6ljkk"
+path="res://.godot/imported/créditos_jefferson.png-1b915f84c7164e34f539c426ad97504b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/UI/Ícones, misc/créditos_jefferson.png"
-dest_files=["res://.godot/imported/créditos_jefferson.png-e7daf6f06e23bdb54ef4eb56bf16b600.ctex"]
+source_file="res://sprites/UI/Créditos/créditos_jefferson.png"
+dest_files=["res://.godot/imported/créditos_jefferson.png-1b915f84c7164e34f539c426ad97504b.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfbajlhlwtqls"
-path="res://.godot/imported/créditos_victor.png-f3701da3267bbadf4ddb82c0e2bf8eb2.ctex"
+uid="uid://c8om8814rg33r"
+path="res://.godot/imported/Icon com logo (atualizado).png-13dca93ef79b7934793e7146e5ecd739.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/UI/Ícones, misc/créditos_victor.png"
-dest_files=["res://.godot/imported/créditos_victor.png-f3701da3267bbadf4ddb82c0e2bf8eb2.ctex"]
+source_file="res://sprites/Misc/Icon com logo (atualizado).png"
+dest_files=["res://.godot/imported/Icon com logo (atualizado).png-13dca93ef79b7934793e7146e5ecd739.ctex"]
 
 [params]
 

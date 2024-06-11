@@ -2,10 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://d004737er7nqm" path="res://sprites/Misc/Fundo Menu.png" id="1_4dosw"]
 [ext_resource type="Script" path="res://Scenes/Layouts/creditos.gd" id="1_ehcet"]
-[ext_resource type="Texture2D" uid="uid://dpojntu4qfrbt" path="res://sprites/UI/Ícones, misc/créditos_jefferson.png" id="2_gooyp"]
-[ext_resource type="Texture2D" uid="uid://bm87eu60yu0ew" path="res://sprites/UI/Ícones, misc/créditos_jolas.png" id="3_st1l5"]
-[ext_resource type="Texture2D" uid="uid://dfbajlhlwtqls" path="res://sprites/UI/Ícones, misc/créditos_victor.png" id="4_h0kso"]
+[ext_resource type="Texture2D" uid="uid://cg55pa0s6ljkk" path="res://sprites/UI/Créditos/créditos_jefferson.png" id="3_o0uy6"]
+[ext_resource type="Texture2D" uid="uid://p7uwuvwnsnjp" path="res://sprites/UI/Créditos/créditos_jolas.png" id="4_pkohv"]
 [ext_resource type="Texture2D" uid="uid://do1dywod4baf2" path="res://sprites/UI/Botões/voltar normal.png" id="5_0ho4y"]
+[ext_resource type="Texture2D" uid="uid://d0dyb6h5rmu80" path="res://sprites/UI/Créditos/créditos_victor.png" id="5_3m27w"]
 [ext_resource type="Texture2D" uid="uid://8j8owedgc630" path="res://sprites/UI/Botões/voltar hover.png" id="6_lax8v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1re7k"]
@@ -46,15 +46,15 @@ theme_override_constants/separation = 15
 
 [node name="Cred 1" type="TextureRect" parent="HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("2_gooyp")
+texture = ExtResource("3_o0uy6")
 
 [node name="Cred 2" type="TextureRect" parent="HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("3_st1l5")
+texture = ExtResource("4_pkohv")
 
 [node name="Cred 3" type="TextureRect" parent="HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("4_h0kso")
+texture = ExtResource("5_3m27w")
 
 [node name="Voltar" type="TextureButton" parent="."]
 layout_mode = 0

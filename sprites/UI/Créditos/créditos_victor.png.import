@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bm87eu60yu0ew"
-path="res://.godot/imported/créditos_jolas.png-9a45c41890b791aeb15b8cbaa6bc8fa6.ctex"
+uid="uid://d0dyb6h5rmu80"
+path="res://.godot/imported/créditos_victor.png-634988daee6017171bc8c7af53d3bffb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/UI/Ícones, misc/créditos_jolas.png"
-dest_files=["res://.godot/imported/créditos_jolas.png-9a45c41890b791aeb15b8cbaa6bc8fa6.ctex"]
+source_file="res://sprites/UI/Créditos/créditos_victor.png"
+dest_files=["res://.godot/imported/créditos_victor.png-634988daee6017171bc8c7af53d3bffb.ctex"]
 
 [params]
 
