@@ -93,7 +93,7 @@ func next_room():
 			elif current_room == 2:
 				goto_scene(room_2)
 				
-			else: # -1 - = -3
+			else:
 				print("sala: " + str(room_list[current_room-3]))
 				goto_scene(room_list[current_room-3])
 			

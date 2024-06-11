@@ -7,7 +7,7 @@ var first_weapon = 1
 var weapon_type : String #= "Gen-EricV2"
 var current_life : float
 var current_energy : float
-var current_scrap = 300
+var current_scrap = 0
 var current_weapon = ""
 
 # pontuações para mostrar depois que o jogo acaba / reseta quando recomeça
