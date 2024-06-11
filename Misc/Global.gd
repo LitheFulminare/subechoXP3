@@ -97,10 +97,10 @@ func next_room():
 				print("sala: " + str(room_list[current_room-3]))
 				goto_scene(room_list[current_room-3])
 			
-		elif shop_room && tutorial_completed:
-			shop_room = false
-			print("sala atual é a loja. a variavel current_room é " + str(current_room))
-			goto_scene("res://Scenes/Layouts/LojaMidGame.tscn")
+		#elif shop_room && tutorial_completed:
+			#shop_room = false
+			#print("sala atual é a loja. a variavel current_room é " + str(current_room))
+			#goto_scene("res://Scenes/Layouts/LojaMidGame.tscn")
 
 	if current_room == 10:
 		goto_scene("res://Scenes/Layouts/Death Screen.tscn")
