@@ -33,8 +33,8 @@ func interact():
 					player_vars.max_life += 25
 					get_tree().call_group("player", "change_stat", "life", 25)
 				"+ energia":
-					player_vars.max_energy += 25
-					get_tree().call_group("player", "change_stat", "energy", 25)
+					player_vars.max_energy += 30
+					get_tree().call_group("player", "change_stat", "energy", 30)
 
 
 func _on_buy_area_area_entered(area):

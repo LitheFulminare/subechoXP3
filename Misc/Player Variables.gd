@@ -2,7 +2,7 @@ extends Node
 
 # arma e status do jogador
 var max_life = 100
-var max_energy = 100
+var max_energy = 120
 var first_weapon = 1
 var weapon_type : String #= "Gen-EricV2"
 var current_life : float
