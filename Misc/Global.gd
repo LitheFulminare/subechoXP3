@@ -56,33 +56,33 @@ func next_room():
 			if !tutorial_completed:
 				goto_scene(tutorial)
 		
-##region Store
-#
-		## tutorial is not completed, current_room won't change so it's 0
-		#if current_room == 2:
-			#var random_float = randf()
-			#if random_float <= 0.5:
-				#shop_room = false
-				#shop_on_2 = false
-			#else:
-				#shop_room = true
-				#shop_on_2 = true
-		#elif current_room == 3 && !shop_on_2:
-			#shop_room == true
-#
-		#elif current_room == 6:
-			#var random_float = randf()
-			#if random_float <= 0.5:
-				#shop_room = false
-				#shop_on_6 = false
-			#else:
-				#shop_room = true
-				#shop_on_6 = true
-		#elif current_room == 7 && !shop_on_6:
-			#shop_room = true
-		#elif current_room == 9:
-			#shop_room = true
-##endregion
+#region Store
+
+		# tutorial is not completed, current_room won't change so it's 0
+		if current_room == 2:
+			var random_float = randf()
+			if random_float <= 0.5:
+				shop_room = false
+				shop_on_2 = false
+			else:
+				shop_room = true
+				shop_on_2 = true
+		elif current_room == 3 && !shop_on_2:
+			shop_room == true
+
+		elif current_room == 6:
+			var random_float = randf()
+			if random_float <= 0.5:
+				shop_room = false
+				shop_on_6 = false
+			else:
+				shop_room = true
+				shop_on_6 = true
+		elif current_room == 7 && !shop_on_6:
+			shop_room = true
+		elif current_room == 9:
+			shop_room = true
+#endregion
 
 		if !shop_room && tutorial_completed:
 			current_room += 1
@@ -96,6 +96,8 @@ func next_room():
 			else:
 				print("sala: " + str(room_list[current_room-3]))
 				goto_scene(room_list[current_room-3])
+		elif shop_room && tutorial:
+			goto_scene("res://Scenes/Layouts/LojaMidGame.tscn")
 			
 		#elif shop_room && tutorial_completed:
 			#shop_room = false

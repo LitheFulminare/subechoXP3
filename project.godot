@@ -10,10 +10,11 @@ config_version=5
 
 [application]
 
-config/name="subechoXP3"
+config/name="Abyssal Cleaner"
 run/main_scene="res://Scenes/Layouts/principal.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 run/max_fps=120
+boot_splash/image="res://sprites/Misc/Splash screen com logo.png"
 boot_splash/use_filter=false
 config/icon="res://sprites/Misc/Icon com logo (atualizado).png"
 
@@ -31,7 +32,6 @@ settings/stdout/print_gpu_profile=true
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/borderless=true
 window/stretch/mode="canvas_items"
 mouse_cursor/custom_image="res://sprites/Misc/Cursor.png"
 
@@ -107,6 +107,8 @@ Interact={
 2d_physics/layer_1="world"
 2d_physics/layer_2="player"
 2d_physics/layer_3="enemy"
+2d_render/size/borderless=true
+2d_render/name="Ab"
 
 [rendering]
 
