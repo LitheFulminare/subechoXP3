@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=3 uid="uid://d1pje2hup8ea6"]
+[gd_scene load_steps=83 format=3 uid="uid://d1pje2hup8ea6"]
 
 [ext_resource type="PackedScene" uid="uid://d2tg02cwm2lik" path="res://Scenes/Player_e_misc/UI/UI vida e energia.tscn" id="1_1wjsv"]
 [ext_resource type="Script" path="res://Scenes/Layouts/LojaMidGame.gd" id="1_7qn0a"]
@@ -14,6 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://bt7h07qggv7xv" path="res://Scenes/layoutTeste/tilemapjj.png" id="12_v6pt7"]
 [ext_resource type="Texture2D" uid="uid://da5o8qogsuwxq" path="res://sprites/Props/sheet pedra.png" id="13_0fbja"]
 [ext_resource type="Texture2D" uid="uid://cr1yy7kq7r2sn" path="res://sprites/Props/BG_Rock.png" id="14_j21t0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g567h"]
+radius = 21.2132
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wc7xb"]
 size = Vector2(1940, 105)
@@ -637,6 +640,7 @@ scale = Vector2(5.7, 5.7)
 color = Color(0, 0, 0, 1)
 
 [node name="BG" type="NinePatchRect" parent="CanvasGroup"]
+light_mask = 17
 z_index = -1
 offset_right = 706.0
 offset_bottom = 448.0
@@ -654,16 +658,19 @@ position = Vector2(529, 955)
 scale = Vector2(4, 4)
 
 [node name="BaseRecEnergia" parent="CanvasGroup/Interactables" instance=ExtResource("5_76bnt")]
-position = Vector2(958, 953)
+position = Vector2(933, 953)
 scale = Vector2(4, 4)
+value = 50
 
 [node name="PU Vida" parent="CanvasGroup/Interactables" instance=ExtResource("6_6lfav")]
-position = Vector2(1329, 957)
+position = Vector2(1334, 891)
 scale = Vector2(4, 4)
+value = 50
 
 [node name="PU Energia" parent="CanvasGroup/Interactables" instance=ExtResource("7_j7gty")]
-position = Vector2(1679, 957)
+position = Vector2(1693, 891)
 scale = Vector2(4, 4)
+value = 50
 
 [node name="Player" parent="CanvasGroup" instance=ExtResource("3_pn154")]
 light_mask = 1
@@ -680,6 +687,12 @@ limit_right = 1920
 limit_bottom = 1080
 editor_draw_screen = false
 editor_draw_limits = true
+
+[node name="Store Interact Area" type="Area2D" parent="CanvasGroup/Player" groups=["interact area"]]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasGroup/Player/Store Interact Area"]
+shape = SubResource("CircleShape2D_g567h")
 
 [node name="Floor" type="StaticBody2D" parent="CanvasGroup"]
 position = Vector2(0, 656)

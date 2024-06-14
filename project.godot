@@ -101,6 +101,8 @@ Interact={
 
 2d_render/layer_1="default"
 2d_render/layer_2="bg"
+2d_render/layer_5="Power UP"
+2d_render/layer_6="item base light"
 2d_render/layer_10="boss highlight"
 2d_render/layer_11="boss highlight 2"
 2d_render/layer_12="spike highlight"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dsdbnpcusldcf"]
+[gd_scene load_steps=7 format=3 uid="uid://dsdbnpcusldcf"]
 
 [ext_resource type="Script" path="res://Scenes/Player_e_misc/Loja/Base.gd" id="1_50yk5"]
 [ext_resource type="Texture2D" uid="uid://byvmuk4a70eeg" path="res://sprites/Loja in game/base_loja.png" id="1_vb148"]
@@ -7,17 +7,14 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hr0t6"]
 size = Vector2(30, 14)
 
-[sub_resource type="Gradient" id="Gradient_npyin"]
+[sub_resource type="Gradient" id="Gradient_h0dqq"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 1, 1, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_c7pqg"]
-gradient = SubResource("Gradient_npyin")
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_wbat8"]
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_dvvdl"]
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qxuti"]
+gradient = SubResource("Gradient_h0dqq")
 width = 10
 height = 10
-noise = SubResource("FastNoiseLite_wbat8")
 
 [node name="Base" type="StaticBody2D" groups=["ignore collision"]]
 script = ExtResource("1_50yk5")
@@ -60,35 +57,35 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(-0.100023, 8.25)
+position = Vector2(-0.179047, 8.11588)
 rotation = 1.5708
-scale = Vector2(0.0650106, 0.174993)
+scale = Vector2(0.421421, 1.30298)
 range_item_cull_mask = 32
-texture = SubResource("GradientTexture2D_c7pqg")
+texture = SubResource("GradientTexture2D_qxuti")
 
 [node name="Green light" type="PointLight2D" parent="."]
 position = Vector2(-10.5, 5.5)
 rotation = 1.5708
 scale = Vector2(0.1, 0.1)
-texture = SubResource("NoiseTexture2D_dvvdl")
+texture = SubResource("GradientTexture2D_qxuti")
 
 [node name="Blue light" type="PointLight2D" parent="."]
 position = Vector2(-9.50003, 11.5)
 rotation = 1.5708
 scale = Vector2(0.1, 0.1)
-texture = SubResource("NoiseTexture2D_dvvdl")
+texture = SubResource("GradientTexture2D_qxuti")
 
 [node name="Yellow light" type="PointLight2D" parent="."]
 position = Vector2(9.49997, 8.5)
 rotation = 1.5708
 scale = Vector2(0.1, 0.1)
-texture = SubResource("NoiseTexture2D_dvvdl")
+texture = SubResource("GradientTexture2D_qxuti")
 
 [node name="Red light" type="PointLight2D" parent="."]
 position = Vector2(9.49997, 3.5)
 rotation = 1.5708
 scale = Vector2(0.1, 0.1)
-texture = SubResource("NoiseTexture2D_dvvdl")
+texture = SubResource("GradientTexture2D_qxuti")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false

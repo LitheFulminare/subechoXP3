@@ -3,6 +3,12 @@ extends StaticBody2D
 @export_enum("Recuperar vida", "Recuperar energia", "powerup" ) var interact_type: String = ""
 @export_enum("+ vida", "+ energia") var powerup_type : String = ""
 
+@export_range(0,1000) var value : int:
+	set(value): 
+		value = value
+		if $Base != null:
+			$Base. value = value
+
 var player_in_area = false
 var depleted = false
 
@@ -38,12 +44,12 @@ func interact():
 
 
 func _on_buy_area_area_entered(area):
-	if area.is_in_group("player"):
+	if area.is_in_group("interact area"):
 		player_in_area = true
 		$Light.visible = true
 
 
 func _on_buy_area_area_exited(area):
-	if area.is_in_group("player"):
+	if area.is_in_group("interact area"):
 		player_in_area = false
 		$Light.visible = false
