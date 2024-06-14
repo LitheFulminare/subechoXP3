@@ -125,6 +125,7 @@ script = ExtResource("1_6fijx")
 interact_type = "Recuperar energia"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
+light_mask = 17
 sprite_frames = SubResource("SpriteFrames_3tohv")
 
 [node name="Light" type="PointLight2D" parent="."]
@@ -135,6 +136,7 @@ rotation = -1.5708
 scale = Vector2(0.16644, 0.278541)
 color = Color(0.611765, 0.764706, 1, 1)
 energy = 1.5
+range_item_cull_mask = 16
 texture = ExtResource("3_tvb3g")
 
 [node name="Collider" type="CollisionShape2D" parent="."]

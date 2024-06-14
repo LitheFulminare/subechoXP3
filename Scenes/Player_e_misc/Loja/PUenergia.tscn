@@ -16,7 +16,7 @@ script = ExtResource("1_na4o7")
 powerup_type = "+ energia"
 
 [node name="Sprite" type="Sprite2D" parent="."]
-light_mask = 16
+light_mask = 17
 texture = ExtResource("2_f8053")
 
 [node name="Light" type="PointLight2D" parent="."]

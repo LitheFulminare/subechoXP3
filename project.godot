@@ -14,6 +14,7 @@ config/name="Abyssal Cleaner"
 run/main_scene="res://Scenes/Layouts/principal.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 run/max_fps=120
+boot_splash/bg_color=Color(0.203922, 0.121569, 0.211765, 1)
 boot_splash/image="res://sprites/Misc/Splash screen com logo.png"
 boot_splash/use_filter=false
 config/icon="res://sprites/Misc/Icon com logo (atualizado).png"

@@ -15,6 +15,7 @@ script = ExtResource("1_7wxhc")
 interact_type = "Recuperar vida"
 
 [node name="Sprite" type="Sprite2D" parent="."]
+light_mask = 17
 texture = ExtResource("1_1jd24")
 
 [node name="Light" type="PointLight2D" parent="."]
@@ -25,6 +26,7 @@ rotation = 4.71239
 scale = Vector2(0.16644, 0.278541)
 color = Color(0.611765, 0.764706, 1, 1)
 energy = 1.5
+range_item_cull_mask = 16
 texture = ExtResource("3_wcb7m")
 
 [node name="Collider" type="CollisionShape2D" parent="."]
