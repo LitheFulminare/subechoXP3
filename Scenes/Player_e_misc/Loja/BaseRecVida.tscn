@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://c2o5uc5sspr57"]
+[gd_scene load_steps=7 format=3 uid="uid://c2o5uc5sspr57"]
 
 [ext_resource type="Texture2D" uid="uid://cpxdedk7i8nla" path="res://sprites/Loja in game/bigorna.png" id="1_1jd24"]
 [ext_resource type="Script" path="res://Scenes/Player_e_misc/Loja/StoreInteractable.gd" id="1_7wxhc"]
 [ext_resource type="Texture2D" uid="uid://r8vhexq3sysx" path="res://sprites/Misc/Luz.png" id="3_wcb7m"]
+[ext_resource type="PackedScene" uid="uid://dsdbnpcusldcf" path="res://Scenes/Player_e_misc/Loja/Base.tscn" id="4_0isdb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ohgns"]
 size = Vector2(22, 16)
@@ -25,7 +26,7 @@ position = Vector2(-9.53674e-07, 4)
 rotation = 4.71239
 scale = Vector2(0.16644, 0.278541)
 color = Color(0.611765, 0.764706, 1, 1)
-energy = 1.5
+energy = 2.5
 range_item_cull_mask = 16
 texture = ExtResource("3_wcb7m")
 
@@ -38,6 +39,10 @@ collision_mask = 2
 
 [node name="Collider" type="CollisionShape2D" parent="Buy area"]
 shape = SubResource("CircleShape2D_s8sct")
+
+[node name="Base" parent="." instance=ExtResource("4_0isdb")]
+position = Vector2(0, 16)
+value = 30
 
 [connection signal="area_entered" from="Buy area" to="." method="_on_buy_area_area_entered"]
 [connection signal="area_exited" from="Buy area" to="." method="_on_buy_area_area_exited"]

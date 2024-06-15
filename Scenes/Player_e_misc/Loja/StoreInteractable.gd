@@ -25,9 +25,10 @@ func _input(event):
 
 func interact():
 	if interact_type != "":
-		if not depleted && player_vars.current_scrap >= 70:
+		if not depleted && player_vars.current_scrap >= value:
 			depleted = true
-			get_tree().call_group("player", "change_stat", "scrap", -70)
+			$Light.visible = false
+			get_tree().call_group("player", "change_stat", "scrap", -value)
 			get_tree().call_group("player", "regen", interact_type)
 			if $Base != null:
 				$Base.turn_off()
@@ -38,6 +39,7 @@ func interact():
 	if powerup_type != "":
 		if not depleted && player_vars.current_scrap >= value:
 			depleted = true
+			$Light.visible = false
 			get_tree().call_group("player", "change_stat", "scrap", -value)
 			if $Base != null:
 				$Base.turn_off()
@@ -52,12 +54,12 @@ func interact():
 
 
 func _on_buy_area_area_entered(area):
-	if area.is_in_group("interact area"):
+	if area.is_in_group("interact area") && !depleted:
 		player_in_area = true
 		$Light.visible = true
 
 
 func _on_buy_area_area_exited(area):
-	if area.is_in_group("interact area"):
+	if area.is_in_group("interact area") && !depleted:
 		player_in_area = false
 		$Light.visible = false
