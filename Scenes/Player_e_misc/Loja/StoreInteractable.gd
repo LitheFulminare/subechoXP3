@@ -29,14 +29,18 @@ func interact():
 			depleted = true
 			get_tree().call_group("player", "change_stat", "scrap", -70)
 			get_tree().call_group("player", "regen", interact_type)
+			if $Base != null:
+				$Base.turn_off()
 			
 			if interact_type == "Recuperar energia":
 				$Sprite.play("default") # fica travado no ultimo frame
 
 	if powerup_type != "":
-		if not depleted && player_vars.current_scrap >= 70:
+		if not depleted && player_vars.current_scrap >= value:
 			depleted = true
-			get_tree().call_group("player", "change_stat", "scrap", -70)
+			get_tree().call_group("player", "change_stat", "scrap", -value)
+			if $Base != null:
+				$Base.turn_off()
 			
 			match powerup_type:
 				"+ vida":

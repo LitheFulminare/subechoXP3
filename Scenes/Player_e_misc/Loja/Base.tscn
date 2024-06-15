@@ -56,32 +56,34 @@ text = "70"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
+[node name="Lights" type="Node2D" parent="."]
+
+[node name="PointLight2D" type="PointLight2D" parent="Lights"]
 position = Vector2(-0.179047, 8.11588)
 rotation = 1.5708
 scale = Vector2(0.421421, 1.30298)
 range_item_cull_mask = 32
 texture = SubResource("GradientTexture2D_qxuti")
 
-[node name="Green light" type="PointLight2D" parent="."]
+[node name="Green light" type="PointLight2D" parent="Lights"]
 position = Vector2(-10.5, 5.5)
 rotation = 1.5708
 scale = Vector2(0.1, 0.1)
 texture = SubResource("GradientTexture2D_qxuti")
 
-[node name="Blue light" type="PointLight2D" parent="."]
+[node name="Blue light" type="PointLight2D" parent="Lights"]
 position = Vector2(-9.50003, 11.5)
 rotation = 1.5708
 scale = Vector2(0.1, 0.1)
 texture = SubResource("GradientTexture2D_qxuti")
 
-[node name="Yellow light" type="PointLight2D" parent="."]
+[node name="Yellow light" type="PointLight2D" parent="Lights"]
 position = Vector2(9.49997, 8.5)
 rotation = 1.5708
 scale = Vector2(0.1, 0.1)
 texture = SubResource("GradientTexture2D_qxuti")
 
-[node name="Red light" type="PointLight2D" parent="."]
+[node name="Red light" type="PointLight2D" parent="Lights"]
 position = Vector2(9.49997, 3.5)
 rotation = 1.5708
 scale = Vector2(0.1, 0.1)
