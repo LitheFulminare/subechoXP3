@@ -10,6 +10,8 @@ var shop_room = false
 var shop_on_2 = false
 var shop_on_6 = false
 
+var boss_room = false
+
 var tutorial = "res://Scenes/Layouts/Tutorial.tscn" # tutorial
 
 var room_1 = "res://Scenes/Layouts/Fase 01.tscn" # 1
