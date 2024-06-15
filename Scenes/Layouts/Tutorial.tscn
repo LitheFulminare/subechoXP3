@@ -766,18 +766,18 @@ offset_bottom = 398.0
 theme_override_colors/font_color = Color(0.6, 0.898039, 0.313726, 1)
 theme_override_fonts/font = ExtResource("4_i6vl3")
 theme_override_font_sizes/font_size = 40
-text = "Aperte F para usar o sonar"
+text = "Aperte 'F' para usar o sonar"
 metadata/_edit_use_anchors_ = true
 
 [node name="Label4" type="Label" parent="Labels"]
-offset_left = 1823.0
+offset_left = 1715.0
 offset_top = 672.0
-offset_right = 2421.0
+offset_right = 2405.0
 offset_bottom = 708.0
 theme_override_colors/font_color = Color(0.6, 0.898039, 0.313726, 1)
 theme_override_fonts/font = ExtResource("4_i6vl3")
 theme_override_font_sizes/font_size = 40
-text = "Colete o lixo maritmo
+text = "Aperte 'E' para coletar o lixo
 "
 metadata/_edit_use_anchors_ = true
 

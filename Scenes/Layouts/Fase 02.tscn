@@ -616,11 +616,11 @@ gradient = SubResource("Gradient_ux16l")
 fill_from = Vector2(0.193, 0.5)
 fill_to = Vector2(1, 0.5)
 
-[sub_resource type="Gradient" id="Gradient_gq56k"]
+[sub_resource type="Gradient" id="Gradient_j3ody"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 1, 0.390625, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_22few"]
-gradient = SubResource("Gradient_gq56k")
+gradient = SubResource("Gradient_j3ody")
 fill_from = Vector2(0.193, 0.5)
 fill_to = Vector2(1, 0.5)
 
