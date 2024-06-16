@@ -781,7 +781,7 @@ theme_override_colors/font_color = Color(0.6, 0.898039, 0.313726, 1)
 theme_override_fonts/font = ExtResource("4_i6vl3")
 theme_override_font_sizes/font_size = 40
 text = "'E' para coletar
- o lixo maritimo
+ o lixo marítimo
 "
 metadata/_edit_use_anchors_ = true
 
