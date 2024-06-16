@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=3 uid="uid://dqtivft1xt2qu"]
+[gd_scene load_steps=93 format=3 uid="uid://dqtivft1xt2qu"]
 
 [ext_resource type="Script" path="res://Scenes/Layouts/Fase 01.gd" id="1_m0kd3"]
 [ext_resource type="PackedScene" uid="uid://bj18jjcb7eo50" path="res://Scenes/Inimigos/inimigo.tscn" id="2_3bpey"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://da5o8qogsuwxq" path="res://sprites/Props/sheet pedra.png" id="8_7bdu5"]
 [ext_resource type="Texture2D" uid="uid://cr1yy7kq7r2sn" path="res://sprites/Props/BG_Rock.png" id="9_j07n6"]
 [ext_resource type="PackedScene" uid="uid://dfd261wrcyq1c" path="res://Scenes/Props/Lixo/Garrafa.tscn" id="10_cd6e7"]
+[ext_resource type="PackedScene" uid="uid://cfd07pxyjtad3" path="res://Scenes/Props/Lixo/Metal Enferrujado.tscn" id="12_lpubj"]
 [ext_resource type="PackedScene" uid="uid://i07d0qta5c7" path="res://Scenes/Props/Lixo/Plastico.tscn" id="13_w2dg2"]
 [ext_resource type="PackedScene" uid="uid://ofrdbaojdppx" path="res://Scenes/Props/Plantas/Alga.tscn" id="14_ibxo6"]
 [ext_resource type="PackedScene" uid="uid://b4c3j715n4txj" path="res://Scenes/Props/Plantas/Coral.tscn" id="15_054av"]
@@ -703,38 +704,70 @@ layer_0/tile_data = PackedInt32Array(65538, 131072, 1, 3, 196608, 0, 65539, 1966
 
 [node name="Garrafa" parent="CanvasGroup/Props" instance=ExtResource("10_cd6e7")]
 z_index = 2
-position = Vector2(1773, 1002)
-rotation = 2.76732
+position = Vector2(1527, 548)
+rotation = 4.63868
 
 [node name="Garrafa2" parent="CanvasGroup/Props" instance=ExtResource("10_cd6e7")]
 z_index = 2
-position = Vector2(1599, 1098)
+position = Vector2(857, 297)
 
 [node name="Garrafa3" parent="CanvasGroup/Props" instance=ExtResource("10_cd6e7")]
 z_index = 2
-position = Vector2(340, 1357)
+position = Vector2(745, 1291)
 rotation = 1.58538
 
 [node name="Plastico" parent="CanvasGroup/Props" instance=ExtResource("13_w2dg2")]
 z_index = 2
-position = Vector2(536, 891)
+position = Vector2(812, 736)
 scale = Vector2(1.57482, 1.57482)
 
 [node name="Plastico2" parent="CanvasGroup/Props" instance=ExtResource("13_w2dg2")]
 z_index = 2
-position = Vector2(1362, 523)
+position = Vector2(1181, 1277)
+rotation = -1.678
 scale = Vector2(1.57482, 1.57482)
 
 [node name="Plastico3" parent="CanvasGroup/Props" instance=ExtResource("13_w2dg2")]
 z_index = 2
-position = Vector2(2440, 225)
+position = Vector2(1944, 1070)
 scale = Vector2(1.57482, 1.57482)
 
 [node name="Plastico4" parent="CanvasGroup/Props" instance=ExtResource("13_w2dg2")]
 z_index = 2
-position = Vector2(524, 564)
+position = Vector2(1556, 1075)
 rotation = -1.07339
 scale = Vector2(1.57482, 1.57482)
+
+[node name="MetalEnferrujado" parent="CanvasGroup/Props" instance=ExtResource("12_lpubj")]
+z_index = 2
+position = Vector2(1068, 811)
+scale = Vector2(1.72, 1.72)
+
+[node name="MetalEnferrujado2" parent="CanvasGroup/Props" instance=ExtResource("12_lpubj")]
+z_index = 2
+position = Vector2(955, 324)
+scale = Vector2(1.72, 1.72)
+
+[node name="MetalEnferrujado3" parent="CanvasGroup/Props" instance=ExtResource("12_lpubj")]
+z_index = 2
+position = Vector2(1742, 726)
+rotation = 1.02271
+scale = Vector2(1.72, 1.72)
+
+[node name="Garrafa4" parent="CanvasGroup/Props" instance=ExtResource("10_cd6e7")]
+z_index = 2
+position = Vector2(492, 589)
+rotation = -0.0234144
+
+[node name="Plastico5" parent="CanvasGroup/Props" instance=ExtResource("13_w2dg2")]
+z_index = 2
+position = Vector2(2086, 166)
+scale = Vector2(1.57482, 1.57482)
+
+[node name="Garrafa5" parent="CanvasGroup/Props" instance=ExtResource("10_cd6e7")]
+z_index = 2
+position = Vector2(2267, 426)
+rotation = 4.13391
 
 [node name="Plantas" type="Node2D" parent="CanvasGroup"]
 z_index = 2
@@ -1204,7 +1237,7 @@ texture = SubResource("GradientTexture2D_rly4j")
 
 [node name="Player" parent="CanvasGroup" instance=ExtResource("17_esxon")]
 light_mask = 1
-position = Vector2(183, 1200)
+position = Vector2(95, 1043)
 scale = Vector2(0.992109, 0.984466)
 metadata/_edit_group_ = true
 

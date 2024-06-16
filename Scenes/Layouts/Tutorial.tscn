@@ -737,47 +737,51 @@ scale = Vector2(5.7, 5.7)
 [node name="Labels" type="CanvasGroup" parent="."]
 
 [node name="Label" type="Label" parent="Labels"]
-offset_left = 569.0
-offset_top = 766.0
-offset_right = 960.0
-offset_bottom = 802.0
+offset_left = 629.0
+offset_top = 735.0
+offset_right = 1089.0
+offset_bottom = 810.0
 theme_override_colors/font_color = Color(0.6, 0.898039, 0.313726, 1)
 theme_override_fonts/font = ExtResource("4_i6vl3")
 theme_override_font_sizes/font_size = 40
-text = "Controle com WASD"
+text = "Controle com
+   W-A-S-D"
 metadata/_edit_use_anchors_ = true
 
 [node name="Label2" type="Label" parent="Labels"]
-offset_left = 1584.0
-offset_top = 340.0
-offset_right = 2136.0
-offset_bottom = 376.0
+offset_left = 1559.0
+offset_top = 255.0
+offset_right = 2111.0
+offset_bottom = 330.0
 theme_override_colors/font_color = Color(0.6, 0.898039, 0.313726, 1)
 theme_override_fonts/font = ExtResource("4_i6vl3")
 theme_override_font_sizes/font_size = 40
-text = "Atire com botão esquerdo"
+text = "  Atire com 
+botão esquerdo"
 metadata/_edit_use_anchors_ = true
 
 [node name="Label3" type="Label" parent="Labels"]
-offset_left = 333.0
-offset_top = 362.0
-offset_right = 931.0
-offset_bottom = 398.0
+offset_left = 621.0
+offset_top = 513.0
+offset_right = 1219.0
+offset_bottom = 588.0
 theme_override_colors/font_color = Color(0.6, 0.898039, 0.313726, 1)
 theme_override_fonts/font = ExtResource("4_i6vl3")
 theme_override_font_sizes/font_size = 40
-text = "Aperte F para usar o sonar"
+text = "Aperte 'F' para 
+ usar o sonar"
 metadata/_edit_use_anchors_ = true
 
 [node name="Label4" type="Label" parent="Labels"]
-offset_left = 1823.0
-offset_top = 672.0
-offset_right = 2421.0
-offset_bottom = 708.0
+offset_left = 1864.0
+offset_top = 640.0
+offset_right = 2462.0
+offset_bottom = 715.0
 theme_override_colors/font_color = Color(0.6, 0.898039, 0.313726, 1)
 theme_override_fonts/font = ExtResource("4_i6vl3")
 theme_override_font_sizes/font_size = 40
-text = "Colete o lixo maritmo
+text = "'E' para coletar
+ o lixo maritimo
 "
 metadata/_edit_use_anchors_ = true
 
@@ -820,7 +824,7 @@ scale = Vector2(1.555, 1.555)
 
 [node name="Garrafa2" parent="CanvasGroup/Props" instance=ExtResource("13_dnirr")]
 z_index = 2
-position = Vector2(1925, 879)
+position = Vector2(2050, 876)
 rotation = 1.64192
 
 [node name="Garrafa3" parent="CanvasGroup/Props" instance=ExtResource("13_dnirr")]
@@ -830,7 +834,7 @@ rotation = 0.0181442
 
 [node name="Plastico" parent="CanvasGroup/Props" instance=ExtResource("14_yohfq")]
 z_index = 2
-position = Vector2(2090, 875)
+position = Vector2(2244, 875)
 scale = Vector2(1.57482, 1.57482)
 
 [node name="MetalEnferrujado" parent="CanvasGroup/Props" instance=ExtResource("15_2ixi7")]
@@ -1265,7 +1269,7 @@ texture = SubResource("GradientTexture2D_rly4j")
 
 [node name="Player" parent="CanvasGroup" instance=ExtResource("13_pd3wu")]
 light_mask = 1
-position = Vector2(317, 804)
+position = Vector2(321, 790)
 scale = Vector2(0.992109, 0.984466)
 metadata/_edit_group_ = true
 
