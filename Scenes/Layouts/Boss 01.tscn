@@ -700,72 +700,75 @@ format = 2
 layer_0/tile_data = PackedInt32Array(2, 131072, 0, 65538, 131072, 1, 3, 196608, 0, 65539, 196608, 1, 4, 131072, 0, 65540, 131072, 1, 5, 196608, 0, 65541, 196608, 1, 6, 131072, 0, 65542, 131072, 1, 7, 196608, 0, 65543, 196608, 1, 8, 131072, 0, 65544, 131072, 1, 9, 196608, 0, 65545, 131072, 0, 10, 131072, 0, 65546, 131072, 1, 11, 196608, 0, 65547, 196608, 1, 131074, 131072, 0, 196610, 131072, 1, 131075, 196608, 0, 196611, 196608, 1, 262146, 131072, 0, 327682, 131072, 0, 262147, 196608, 0, 327683, 131072, 0, 131073, 131072, 0, 196609, 131072, 0, 262145, 131072, 0, 327681, 131072, 0, 262144, 131072, 0, 196608, 131072, 0, 131072, 131072, 0, 131076, 131072, 0, 196612, 131072, 0, 262148, 131072, 0, 327684, 131072, 0, 327685, 131072, 0, 262149, 131072, 0, 196613, 131072, 0, 131077, 131072, 0, 131078, 131072, 0, 196614, 131072, 0, 262150, 131072, 0, 327686, 131072, 0, 262151, 131072, 0, 196615, 131072, 0, 131079, 131072, 0, 131080, 131072, 0, 131081, 131072, 0, 196617, 131072, 0, 262152, 131072, 0, 327688, 131072, 0, 327687, 131072, 0, 393223, 131072, 0, 196616, 131072, 0, 393217, 131072, 0, 393218, 131072, 0, 393219, 131072, 0, 393220, 131072, 0, 393221, 131072, 0, 393222, 131072, 0, 393224, 131072, 0, 393225, 131072, 0, 393226, 131072, 0, 327691, 131072, 0, 458762, 131072, 0, 458761, 131072, 0, 458760, 131072, 0, 458759, 131072, 0, 458758, 131072, 0, 458755, 131072, 0, 524295, 131072, 0, 655366, 131072, 0, 655367, 131072, 0, 655368, 131072, 0, 655369, 131072, 0, 589834, 131072, 0, 524299, 131072, 0, 524298, 131072, 0, 524297, 131072, 0, 524296, 131072, 0, 589831, 131072, 0, 589832, 131072, 0, 589833, 131072, 0, 524291, 131072, 0, 655370, 131072, 0, 589835, 131072, 0, 655371, 131072, 0, 524300, 131072, 0, 589836, 131072, 0, 655372, 131072, 0, 458765, 131072, 0, 524301, 131072, 0, 589837, 131072, 0, 655373, 131072, 0, 524302, 131072, 0, 589838, 131072, 0, 655374, 131072, 0, 524303, 131072, 0, 589839, 131072, 0, 655375, 131072, 0, 458768, 131072, 0, 524304, 131072, 0, 589840, 131072, 0, 655376, 131072, 0, 458769, 131072, 0, 524305, 131072, 0, 589841, 131072, 0, 655377, 131072, 0, 458770, 131072, 0, 524306, 131072, 0, 589842, 131072, 0, 655378, 131072, 0, 458771, 131072, 0, 524307, 131072, 0, 589843, 131072, 0, 655379, 131072, 0, 720913, 131072, 0, 786449, 131072, 0, 851985, 131072, 0, 917521, 131072, 0, 720914, 131072, 0, 786450, 131072, 0, 851986, 131072, 0, 917522, 131072, 0, 720915, 131072, 0, 786451, 131072, 0, 851987, 131072, 0, 917523, 131072, 0, 720916, 131072, 0, 786452, 131072, 0, 851988, 131072, 0, 917524, 131072, 0, 720911, 131072, 0, 786447, 131072, 0, 851983, 131072, 0, 720912, 131072, 0, 786448, 131072, 0, 851984, 131072, 0, 720909, 131072, 0, 786445, 131072, 0, 720910, 131072, 0, 786446, 131072, 0, 720905, 131072, 0, 720906, 131072, 0, 720907, 131072, 0, 720908, 131072, 0, 458774, 131072, 0, 393232, 131072, 0, 393233, 131072, 0, 393234, 131072, 0, 393235, 131072, 0, 393236, 131072, 0, 393237, 131072, 0, 393238, 131072, 0, 262160, 131072, 0, 327696, 131072, 0, 262161, 131072, 0, 327697, 131072, 0, 262162, 131072, 0, 327698, 131072, 0, 262163, 131072, 0, 327699, 131072, 0, 262164, 131072, 0, 327700, 131072, 0, 262165, 131072, 0, 327701, 131072, 0, 262166, 131072, 0, 327702, 131072, 0, 262167, 131072, 0, 262169, 131072, 0, 327705, 131072, 0, 262170, 131072, 0, 327706, 131072, 0, 262171, 131072, 0, 327707, 131072, 0, 262172, 131072, 0, 327708, 131072, 0, 262173, 131072, 0, 327709, 131072, 0, 262174, 131072, 0, 327710, 131072, 0, 262175, 131072, 0, 327711, 131072, 0, 262176, 131072, 0, 327712, 131072, 0, 262177, 131072, 0, 327713, 131072, 0, 262178, 131072, 0, 327714, 131072, 0, 262179, 131072, 0, 327715, 131072, 0, 262180, 131072, 0, 327716, 131072, 0, 262181, 131072, 0, 262182, 131072, 0, 262183, 131072, 0, 327719, 131072, 0, 262184, 131072, 0, 327720, 131072, 0, 262185, 131072, 0, 327721, 131072, 0, 262186, 131072, 0, 327722, 131072, 0, 262187, 131072, 0, 327723, 131072, 0, 262188, 131072, 0, 327724, 131072, 0, 262189, 131072, 0, 327725, 131072, 0, 262190, 131072, 0, 327726, 131072, 0, 262191, 131072, 0, 327727, 131072, 0, 262192, 131072, 0, 327728, 131072, 0, 262193, 131072, 0, 327729, 131072, 0, 262194, 131072, 0, 327730, 131072, 0, 262195, 131072, 0, 327731, 131072, 0, 262196, 131072, 0, 327732, 131072, 0, 196625, 131072, 0, 196626, 131072, 0, 196627, 131072, 0, 196628, 131072, 0, 196629, 131072, 0, 196630, 131072, 0, 196631, 131072, 0, 196632, 131072, 0, 196633, 131072, 0, 196634, 131072, 0, 196635, 131072, 0, 196636, 131072, 0, 196637, 131072, 0, 196638, 131072, 0, 196639, 131072, 0, 196640, 131072, 0, 196641, 131072, 0, 196642, 131072, 0, 196643, 131072, 0, 196644, 131072, 0, 196645, 131072, 0, 196646, 131072, 0, 196647, 131072, 0, 196648, 131072, 0, 196649, 131072, 0, 196650, 131072, 0, 196651, 131072, 0, 196652, 131072, 0, 196653, 131072, 0, 196654, 131072, 0, 196655, 131072, 0, 196656, 131072, 0, 196657, 131072, 0, 196658, 131072, 0, 196659, 131072, 0, 196660, 131072, 0, 65555, 131072, 0, 131091, 131072, 0, 65556, 131072, 0, 131092, 131072, 0, 65557, 131072, 0, 131093, 131072, 0, 65558, 131072, 0, 131094, 131072, 0, 65559, 131072, 0, 131095, 131072, 0, 65560, 131072, 0, 131096, 131072, 0, 65561, 131072, 0, 131097, 131072, 0, 65562, 131072, 0, 131098, 131072, 0, 65563, 131072, 0, 131099, 131072, 0, 65564, 131072, 0, 131100, 131072, 0, 65565, 131072, 0, 131101, 131072, 0, 65566, 131072, 0, 131102, 131072, 0, 65567, 131072, 0, 131103, 131072, 0, 65568, 131072, 0, 131104, 131072, 0, 65569, 131072, 0, 131105, 131072, 0, 65570, 131072, 0, 131106, 131072, 0, 65571, 131072, 0, 131107, 131072, 0, 65572, 131072, 0, 131108, 131072, 0, 65573, 131072, 0, 131109, 131072, 0, 65574, 131072, 0, 131110, 131072, 0, 65575, 131072, 0, 131111, 131072, 0, 65576, 131072, 0, 131112, 131072, 0, 65577, 131072, 0, 131113, 131072, 0, 65578, 131072, 0, 131114, 131072, 0, 65579, 131072, 0, 131115, 131072, 0, 65580, 131072, 0, 131116, 131072, 0, 65581, 131072, 0, 131117, 131072, 0, 65582, 131072, 0, 131118, 131072, 0, 65583, 131072, 0, 131119, 131072, 0, 65584, 131072, 0, 131120, 131072, 0, 65585, 131072, 0, 131121, 131072, 0, 65586, 131072, 0, 131122, 131072, 0, 131123, 131072, 0, 393255, 131072, 0, 393256, 131072, 0, 393257, 131072, 0, 393258, 131072, 0, 393259, 131072, 0, 393260, 131072, 0, 393261, 131072, 0, 393262, 131072, 0, 393263, 131072, 0, 393264, 131072, 0, 393265, 131072, 0, 393266, 131072, 0, 393267, 131072, 0, 393268, 131072, 0, 458794, 131072, 0, 458795, 131072, 0, 458796, 131072, 0, 458797, 131072, 0, 458798, 131072, 0, 458799, 131072, 0, 458800, 131072, 0, 458801, 131072, 0, 458802, 131072, 0, 458803, 131072, 0, 458804, 131072, 0, 524330, 131072, 0, 524331, 131072, 0, 524332, 131072, 0, 524333, 131072, 0, 524334, 131072, 0, 524335, 131072, 0, 524336, 131072, 0, 524337, 131072, 0, 524338, 131072, 0, 524339, 131072, 0, 524340, 131072, 0, 589865, 131072, 0, 589868, 131072, 0, 589869, 131072, 0, 589870, 131072, 0, 589871, 131072, 0, 589872, 131072, 0, 589873, 131072, 0, 589874, 131072, 0, 589875, 131072, 0, 589876, 131072, 0, 655406, 131072, 0, 655407, 131072, 0, 655408, 131072, 0, 655409, 131072, 0, 655410, 131072, 0, 655411, 131072, 0, 655412, 131072, 0, 720944, 131072, 0, 720945, 131072, 0, 720946, 131072, 0, 720947, 131072, 0, 720948, 131072, 0, 786480, 131072, 0, 786481, 131072, 0, 786482, 131072, 0, 786483, 131072, 0, 786484, 131072, 0, 917550, 131072, 0, 917551, 131072, 0, 852016, 131072, 0, 917552, 131072, 0, 852017, 131072, 0, 917553, 131072, 0, 852018, 131072, 0, 917554, 131072, 0, 852019, 131072, 0, 917555, 131072, 0, 852020, 131072, 0, 917556, 131072, 0, 983073, 131072, 0, 983074, 131072, 0, 1048610, 131072, 0, 1114146, 131072, 0, 983075, 131072, 0, 1048611, 131072, 0, 1114147, 131072, 0, 983076, 131072, 0, 1048612, 131072, 0, 1114148, 131072, 0, 983077, 131072, 0, 1048613, 131072, 0, 1114149, 131072, 0, 983078, 131072, 0, 1048614, 131072, 0, 1114150, 131072, 0, 983079, 131072, 0, 1048615, 131072, 0, 1114151, 131072, 0, 983080, 131072, 0, 1048616, 131072, 0, 1114152, 131072, 0, 983081, 131072, 0, 1048617, 131072, 0, 1114153, 131072, 0, 983082, 131072, 0, 1048618, 131072, 0, 1114154, 131072, 0, 983083, 131072, 0, 1048619, 131072, 0, 1114155, 131072, 0, 983084, 131072, 0, 1048620, 131072, 0, 1114156, 131072, 0, 983085, 131072, 0, 1048621, 131072, 0, 1114157, 131072, 0, 983086, 131072, 0, 1048622, 131072, 0, 1114158, 131072, 0, 983087, 131072, 0, 1048623, 131072, 0, 1114159, 131072, 0, 983088, 131072, 0, 1048624, 131072, 0, 1114160, 131072, 0, 983089, 131072, 0, 1048625, 131072, 0, 1114161, 131072, 0, 983090, 131072, 0, 1048626, 131072, 0, 1114162, 131072, 0, 983091, 131072, 0, 1048627, 131072, 0, 1114163, 131072, 0, 917537, 131072, 0, 917538, 131072, 0, 917539, 131072, 0, 917540, 131072, 0, 917541, 131072, 0, 917542, 131072, 0, 917544, 131072, 0, 917545, 131072, 0, 917546, 131072, 0, 917547, 131072, 0, 1179681, 131072, 0, 1179682, 131072, 0, 1179683, 131072, 0, 1179684, 131072, 0, 1179685, 131072, 0, 1179686, 131072, 0, 1179687, 131072, 0, 1179688, 131072, 0, 1179689, 131072, 0, 1179690, 131072, 0, 1179691, 131072, 0, 1179692, 131072, 0, 1179695, 131072, 0, 1179696, 131072, 0, 1179697, 131072, 0, 1179698, 131072, 0, 1245211, 131072, 0, 1114136, 131072, 0, 1179672, 131072, 0, 1114137, 131072, 0, 1179673, 131072, 0, 1114138, 131072, 0, 1179674, 131072, 0, 1114139, 131072, 0, 1179675, 131072, 0, 1114140, 131072, 0, 1179676, 131072, 0, 1114141, 131072, 0, 1179677, 131072, 0, 1114135, 131072, 0, 1048600, 131072, 0, 1048601, 131072, 0, 1048602, 131072, 0, 1048603, 131072, 0, 1048604, 131072, 0, 1048605, 131072, 0, 983058, 131072, 0, 983059, 131072, 0, 983060, 131072, 0, 720917, 131072, 0, 786453, 131072, 0, 851989, 131072, 0, 917525, 131072, 0, 983061, 131072, 0, 720918, 131072, 0, 786454, 131072, 0, 851990, 131072, 0, 917526, 131072, 0, 786455, 131072, 0, 851991, 131072, 0, 917527, 131072, 0, 786456, 131072, 0, 851992, 131072, 0, 917528, 131072, 0, 983064, 131072, 0, 720921, 131072, 0, 786457, 131072, 0, 851993, 131072, 0, 917529, 131072, 0, 983065, 131072, 0, 786458, 131072, 0, 851994, 131072, 0, 917530, 131072, 0, 983066, 131072, 0, 720923, 131072, 0, 786459, 131072, 0, 851995, 131072, 0, 917531, 131072, 0, 983067, 131072, 0, 720924, 131072, 0, 786460, 131072, 0, 851996, 131072, 0, 917532, 131072, 0, 983068, 131072, 0, 720925, 131072, 0, 786461, 131072, 0, 851997, 131072, 0, 917533, 131072, 0, 983069, 131072, 0, 720926, 131072, 0, 786462, 131072, 0, 851998, 131072, 0, 917534, 131072, 0, 983070, 131072, 0, 720927, 131072, 0, 786463, 131072, 0, 851999, 131072, 0, 917535, 131072, 0, 983071, 131072, 0, 720928, 131072, 0, 786464, 131072, 0, 852000, 131072, 0, 917536, 131072, 0, 983072, 131072, 0, 655382, 131072, 0, 655388, 131072, 0, 655389, 131072, 0, 655390, 131072, 0, 655391, 131072, 0, 589851, 131072, 0, 589852, 131072, 0, 589853, 131072, 0, 589854, 131072, 0, 589855, 131072, 0, 655392, 131072, 0, 655393, 131072, 0, 720929, 131072, 0, 852001, 131072, 0, 786466, 131072, 0, 852002, 131072, 0, 786467, 131072, 0, 852003, 131072, 0, 786468, 131072, 0, 852004, 131072, 0, 852005, 131072, 0, 852006, 131072, 0, 852007, 131072, 0, 1245219, 131072, 0, 1245220, 131072, 0, 1245221, 131072, 0, 1245222, 131072, 0, 1245223, 131072, 0, 1245224, 131072, 0, 1245225, 131072, 0, 1245226, 131072, 0, 1245227, 131072, 0, 1245228, 131072, 0, 1310758, 131072, 0, 1310759, 131072, 0, 1310760, 131072, 0, 1310761, 131072, 0, 1310762, 131072, 0, 1310763, 131072, 0, 1310764, 131072, 0, 1310765, 131072, 0, 1376294, 131072, 0, 1441830, 131072, 0, 1376295, 131072, 0, 1441831, 131072, 0, 1376296, 131072, 0, 1441832, 131072, 0, 1376297, 131072, 0, 1441833, 131072, 0, 1376298, 131072, 0, 1441834, 131072, 0, 1376299, 131072, 0, 1441835, 131072, 0, 1376300, 131072, 0, 1441836, 131072, 0, 1376301, 131072, 0, 1441837, 131072, 0, 1507364, 131072, 0, 1507365, 131072, 0, 1507366, 131072, 0, 1507367, 131072, 0, 1507368, 131072, 0, 1507369, 131072, 0, 1507370, 131072, 0, 1507371, 131072, 0, 1507372, 131072, 0, 1638435, 131072, 0, 1703971, 131072, 0, 1572900, 131072, 0, 1638436, 131072, 0, 1703972, 131072, 0, 1572901, 131072, 0, 1638437, 131072, 0, 1703973, 131072, 0, 1572902, 131072, 0, 1638438, 131072, 0, 1703974, 131072, 0, 1572903, 131072, 0, 1638439, 131072, 0, 1703975, 131072, 0, 1572904, 131072, 0, 1638440, 131072, 0, 1703976, 131072, 0, 1572905, 131072, 0, 1638441, 131072, 0, 1703977, 131072, 0, 1572906, 131072, 0, 1638442, 131072, 0, 1703978, 131072, 0, 1572907, 131072, 0, 1638443, 131072, 0, 1703979, 131072, 0, 1638434, 131072, 0, 1703970, 131072, 0, 1769507, 131072, 0, 1835043, 131072, 0, 1769508, 131072, 0, 1835044, 131072, 0, 1769509, 131072, 0, 1835045, 131072, 0, 1769510, 131072, 0, 1835046, 131072, 0, 1769511, 131072, 0, 1638428, 131072, 0, 1703964, 131072, 0, 1769500, 131072, 0, 1507357, 131072, 0, 1572893, 131072, 0, 1638429, 131072, 0, 1703965, 131072, 0, 1769501, 131072, 0, 1507358, 131072, 0, 1572894, 131072, 0, 1638430, 131072, 0, 1703966, 131072, 0, 1769502, 131072, 0, 1507359, 131072, 0, 1572895, 131072, 0, 1638431, 131072, 0, 1703967, 131072, 0, 1507360, 131072, 0, 1572896, 131072, 0, 1638432, 131072, 0, 1703968, 131072, 0, 1638433, 131072, 0, 1703969, 131072, 0, 1835031, 131072, 0, 1835032, 131072, 0, 1835033, 131072, 0, 1835034, 131072, 0, 1835035, 131072, 0, 1835036, 131072, 0, 1835037, 131072, 0, 1835038, 131072, 0, 1572873, 131072, 0, 1638409, 131072, 0, 1572874, 131072, 0, 1638410, 131072, 0, 1703946, 131072, 0, 1769482, 131072, 0, 1572875, 131072, 0, 1638411, 131072, 0, 1703947, 131072, 0, 1769483, 131072, 0, 1572876, 131072, 0, 1638412, 131072, 0, 1703948, 131072, 0, 1769484, 131072, 0, 1572877, 131072, 0, 1638413, 131072, 0, 1703949, 131072, 0, 1769485, 131072, 0, 1572878, 131072, 0, 1638414, 131072, 0, 1703950, 131072, 0, 1769486, 131072, 0, 1572879, 131072, 0, 1638415, 131072, 0, 1703951, 131072, 0, 1769487, 131072, 0, 1572880, 131072, 0, 1638416, 131072, 0, 1703952, 131072, 0, 1769488, 131072, 0, 1572881, 131072, 0, 1638417, 131072, 0, 1703953, 131072, 0, 1769489, 131072, 0, 1572882, 131072, 0, 1638418, 131072, 0, 1703954, 131072, 0, 1769490, 131072, 0, 1572883, 131072, 0, 1638419, 131072, 0, 1703955, 131072, 0, 1769491, 131072, 0, 1572884, 131072, 0, 1638420, 131072, 0, 1703956, 131072, 0, 1769492, 131072, 0, 1572885, 131072, 0, 1638421, 131072, 0, 1703957, 131072, 0, 1572886, 131072, 0, 1638422, 131072, 0, 1703958, 131072, 0, 1572887, 131072, 0, 1638423, 131072, 0, 1703959, 131072, 0, 1769495, 131072, 0, 1572888, 131072, 0, 1638424, 131072, 0, 1703960, 131072, 0, 1769496, 131072, 0, 1572889, 131072, 0, 1638425, 131072, 0, 1703961, 131072, 0, 1769497, 131072, 0, 1638426, 131072, 0, 1703962, 131072, 0, 1769498, 131072, 0, 1638427, 131072, 0, 1703963, 131072, 0, 1769499, 131072, 0, 1835018, 131072, 0, 1835019, 131072, 0, 1835020, 131072, 0, 1835021, 131072, 0, 1835022, 131072, 0, 1835023, 131072, 0, 1507329, 131072, 0, 1507330, 131072, 0, 1507331, 131072, 0, 1507332, 131072, 0, 1507333, 131072, 0, 1507334, 131072, 0, 1507335, 131072, 0, 1507336, 131072, 0, 1507337, 131072, 0, 1507338, 131072, 0, 1507339, 131072, 0, 1507340, 131072, 0, 1507341, 131072, 0, 1507342, 131072, 0, 1507343, 131072, 0, 1507344, 131072, 0, 1507345, 131072, 0, 1507348, 131072, 0, 1507349, 131072, 0, 1507350, 131072, 0, 1507351, 131072, 0, 1507352, 131072, 0, 1507353, 131072, 0, 1310721, 131072, 0, 1376257, 131072, 0, 1441793, 131072, 0, 1310722, 131072, 0, 1376258, 131072, 0, 1441794, 131072, 0, 1310723, 131072, 0, 1376259, 131072, 0, 1441795, 131072, 0, 1310724, 131072, 0, 1376260, 131072, 0, 1441796, 131072, 0, 1310725, 131072, 0, 1376261, 131072, 0, 1441797, 131072, 0, 1310726, 131072, 0, 1376262, 131072, 0, 1441798, 131072, 0, 1310727, 131072, 0, 1376263, 131072, 0, 1441799, 131072, 0, 1310728, 131072, 0, 1376264, 131072, 0, 1441800, 131072, 0, 1310729, 131072, 0, 1376265, 131072, 0, 1441801, 131072, 0, 1310730, 131072, 0, 1376266, 131072, 0, 1441802, 131072, 0, 1310731, 131072, 0, 1376267, 131072, 0, 1441803, 131072, 0, 1310732, 131072, 0, 1376268, 131072, 0, 1441804, 131072, 0, 1310733, 131072, 0, 1376269, 131072, 0, 1441805, 131072, 0, 1310734, 131072, 0, 1376270, 131072, 0, 1441806, 131072, 0, 1310735, 131072, 0, 1376271, 131072, 0, 1441807, 131072, 0, 1310736, 131072, 0, 1376272, 131072, 0, 1441808, 131072, 0, 1310737, 131072, 0, 1376273, 131072, 0, 1441809, 131072, 0, 1310738, 131072, 0, 1376274, 131072, 0, 1245185, 131072, 0, 1245186, 131072, 0, 1245187, 131072, 0, 1245188, 131072, 0, 1245189, 131072, 0, 1245190, 131072, 0, 1245191, 131072, 0, 1245192, 131072, 0, 1245193, 131072, 0, 1245194, 131072, 0, 1245195, 131072, 0, 1245196, 131072, 0, 1245197, 131072, 0, 1245198, 131072, 0, 1245199, 131072, 0, 1245200, 131072, 0, 1114113, 131072, 0, 1179649, 131072, 0, 1114114, 131072, 0, 1179650, 131072, 0, 1114115, 131072, 0, 1179651, 131072, 0, 1114116, 131072, 0, 1179652, 131072, 0, 1114117, 131072, 0, 1179653, 131072, 0, 1114118, 131072, 0, 1179654, 131072, 0, 1114119, 131072, 0, 1179655, 131072, 0, 1114120, 131072, 0, 1179656, 131072, 0, 1114121, 131072, 0, 1179657, 131072, 0, 1114122, 131072, 0, 1179658, 131072, 0, 1114123, 131072, 0, 1179659, 131072, 0, 1114124, 131072, 0, 1179660, 131072, 0, 983042, 131072, 0, 1048578, 131072, 0, 983043, 131072, 0, 1048579, 131072, 0, 983044, 131072, 0, 1048580, 131072, 0, 983045, 131072, 0, 1048581, 131072, 0, 983046, 131072, 0, 1048582, 131072, 0, 983047, 131072, 0, 1048583, 131072, 0, 983048, 131072, 0, 1048584, 131072, 0, 983049, 131072, 0, 1048585, 131072, 0, 1048586, 131072, 0, 1048587, 131072, 0, 1179661, 131072, 0, 1179662, 131072, 0, 1572865, 131072, 0, 1638401, 131072, 0, 1703937, 131072, 0, 1572866, 131072, 0, 1638402, 131072, 0, 1703938, 131072, 0, 1572867, 131072, 0, 1638403, 131072, 0, 1703939, 131072, 0, 1572868, 131072, 0, 1638404, 131072, 0, 1703940, 131072, 0, 1572869, 131072, 0, 1638405, 131072, 0, 1703941, 131072, 0, 1572870, 131072, 0, 1638406, 131072, 0, 1572871, 131072, 0, 1638407, 131072, 0, 1572872, 131072, 0, 1638408, 131072, 0, 1769473, 131072, 0, 1835009, 131072, 0, 1900545, 131072, 0, 1769474, 131072, 0, 1835010, 131072, 0, 1900546, 131072, 0, 1769475, 131072, 0, 1835011, 131072, 0, 1900547, 131072, 0, 1769476, 131072, 0, 1835012, 131072, 0, 1900548, 131072, 0, 1769477, 131072, 0, 1835013, 131072, 0, 1900549, 131072, 0, 1835014, 131072, 0, 1835017, 131072, 0, 262168, 131072, 0, 262143, 0, 0, 327679, 0, 0)
 
 [node name="Props" type="CanvasGroup" parent="CanvasGroup"]
-visible = false
 
 [node name="Garrafa" parent="CanvasGroup/Props" instance=ExtResource("10_lnotr")]
 z_index = 2
-position = Vector2(1773, 1002)
-rotation = 2.76732
+position = Vector2(1693, 688)
+rotation = 0.0102012
 
 [node name="Garrafa2" parent="CanvasGroup/Props" instance=ExtResource("10_lnotr")]
 z_index = 2
-position = Vector2(1599, 1098)
+position = Vector2(1625, 635)
 
 [node name="Garrafa3" parent="CanvasGroup/Props" instance=ExtResource("10_lnotr")]
 z_index = 2
-position = Vector2(340, 1357)
-rotation = 1.58538
+position = Vector2(1844, 654)
+rotation = 0.00832736
 
 [node name="Barril" parent="CanvasGroup/Props" instance=ExtResource("11_4l82n")]
 z_index = 2
-position = Vector2(164, 406)
+position = Vector2(1592, 648)
 
 [node name="Barril2" parent="CanvasGroup/Props" instance=ExtResource("11_4l82n")]
+visible = false
 z_index = 2
-position = Vector2(2396, 869)
+position = Vector2(1562, 623)
 scale = Vector2(1.555, 1.555)
 
 [node name="Barril3" parent="CanvasGroup/Props" instance=ExtResource("11_4l82n")]
+visible = false
 z_index = 2
-position = Vector2(1986, 453)
+position = Vector2(742, 437)
 
 [node name="MetalEnferrujado" parent="CanvasGroup/Props" instance=ExtResource("12_x5rcd")]
 z_index = 2
-position = Vector2(1246, 1379)
+position = Vector2(1908, 679)
+rotation = 1.63795
 scale = Vector2(1.72, 1.72)
 
 [node name="MetalEnferrujado2" parent="CanvasGroup/Props" instance=ExtResource("12_x5rcd")]
 z_index = 2
-position = Vector2(1086, 348)
-rotation = -0.789973
+position = Vector2(1838, 717)
+rotation = 0.00197786
 scale = Vector2(1.72, 1.72)
 
 [node name="Plastico" parent="CanvasGroup/Props" instance=ExtResource("13_2v1fw")]
 z_index = 2
-position = Vector2(536, 891)
+position = Vector2(1900, 504)
 scale = Vector2(1.57482, 1.57482)
 
 [node name="Plastico2" parent="CanvasGroup/Props" instance=ExtResource("13_2v1fw")]
+visible = false
 z_index = 2
 position = Vector2(1362, 523)
 scale = Vector2(1.57482, 1.57482)
 
 [node name="Plastico3" parent="CanvasGroup/Props" instance=ExtResource("13_2v1fw")]
 z_index = 2
-position = Vector2(2440, 225)
+position = Vector2(1745, 312)
 scale = Vector2(1.57482, 1.57482)
 
 [node name="Plastico4" parent="CanvasGroup/Props" instance=ExtResource("13_2v1fw")]
 z_index = 2
-position = Vector2(524, 564)
+position = Vector2(2015, 1145)
 rotation = -1.07339
 scale = Vector2(1.57482, 1.57482)
 
 [node name="Plantas" type="Node2D" parent="CanvasGroup"]
-visible = false
 z_index = 2
 
 [node name="Alga" parent="CanvasGroup/Plantas" instance=ExtResource("14_nm8db")]
+visible = false
 top_level = true
 light_mask = 0
 position = Vector2(1947, 1269)
@@ -775,6 +778,7 @@ visible = true
 energy = 3.16
 
 [node name="Alga2" parent="CanvasGroup/Plantas" instance=ExtResource("14_nm8db")]
+visible = false
 top_level = true
 position = Vector2(2077, 1271)
 
@@ -784,22 +788,24 @@ energy = 4.03
 
 [node name="Alga3" parent="CanvasGroup/Plantas" instance=ExtResource("14_nm8db")]
 top_level = true
-position = Vector2(1403, 889)
+position = Vector2(114, 445)
+rotation = 0.169688
 
 [node name="Alga4" parent="CanvasGroup/Plantas" instance=ExtResource("14_nm8db")]
 top_level = true
-position = Vector2(396, 504)
+position = Vector2(624, 175)
+rotation = -3.12146
 
 [node name="Alga5" parent="CanvasGroup/Plantas" instance=ExtResource("14_nm8db")]
 top_level = true
 position = Vector2(974, 741)
 
 [node name="Sprite2D" parent="CanvasGroup/Plantas/Alga5" index="0"]
-position = Vector2(3, 8)
+position = Vector2(-351, 316)
 
 [node name="Luz" parent="CanvasGroup/Plantas/Alga5" index="1"]
 visible = true
-position = Vector2(4, 7)
+position = Vector2(-351, 318)
 energy = 1.29
 
 [node name="Alga6" parent="CanvasGroup/Plantas" instance=ExtResource("14_nm8db")]
@@ -807,14 +813,15 @@ top_level = true
 position = Vector2(911, 756)
 
 [node name="Sprite2D" parent="CanvasGroup/Plantas/Alga6" index="0"]
-position = Vector2(2, 12)
+position = Vector2(-212, 276)
 
 [node name="Luz" parent="CanvasGroup/Plantas/Alga6" index="1"]
 visible = true
-position = Vector2(2, 11)
-energy = 0.57
+position = Vector2(-211, 275)
+energy = 2.44
 
 [node name="Coral" parent="CanvasGroup/Plantas" instance=ExtResource("15_xeet0")]
+visible = false
 top_level = true
 position = Vector2(2012, 1256)
 
@@ -824,35 +831,43 @@ energy = 0.57
 
 [node name="Coral2" parent="CanvasGroup/Plantas" instance=ExtResource("15_xeet0")]
 top_level = true
-position = Vector2(1707, 921)
+position = Vector2(102, 102)
+rotation = 0.875784
 
 [node name="Coral3" parent="CanvasGroup/Plantas" instance=ExtResource("15_xeet0")]
+modulate = Color(0.0901961, 0.164706, 0.937255, 1)
 top_level = true
-position = Vector2(1709, 248)
+position = Vector2(1274, 160)
+rotation = -3.11694
 
 [node name="Coral4" parent="CanvasGroup/Plantas" instance=ExtResource("15_xeet0")]
 top_level = true
-position = Vector2(1641, 277)
+position = Vector2(1210, 141)
+rotation = -3.11066
 
 [node name="AlgaVPe01" parent="CanvasGroup/Plantas" instance=ExtResource("14_nm8db")]
 top_level = true
-position = Vector2(740, 663)
+position = Vector2(684, 187)
+rotation = 3.093
 scale = Vector2(0.647537, 0.478418)
 
 [node name="AlgaVPe02" parent="CanvasGroup/Plantas" instance=ExtResource("14_nm8db")]
 top_level = true
-position = Vector2(785, 664)
+position = Vector2(560, 195)
+rotation = -3.14118
 scale = Vector2(0.647537, 0.478418)
 
 [node name="CoralPe02" parent="CanvasGroup/Plantas" instance=ExtResource("15_xeet0")]
 top_level = true
-position = Vector2(257, 414)
+position = Vector2(438, 138)
+rotation = -2.54823
 scale = Vector2(0.516552, 0.605347)
 
 [node name="CoralPe03" parent="CanvasGroup/Plantas" instance=ExtResource("15_xeet0")]
+modulate = Color(0.172549, 0.545098, 0.843137, 1)
 top_level = true
-position = Vector2(564, 255)
-rotation = -2.67076
+position = Vector2(1331, 147)
+rotation = -3.05388
 scale = Vector2(0.516552, 0.605347)
 
 [node name="AlgaVPe03" parent="CanvasGroup/Plantas" instance=ExtResource("14_nm8db")]
@@ -874,105 +889,99 @@ rotation = 3.1302
 scale = Vector2(0.647537, 0.478418)
 
 [node name="CoralPe04" parent="CanvasGroup/Plantas" instance=ExtResource("15_xeet0")]
+modulate = Color(0.321569, 0.333333, 0.670588, 1)
 top_level = true
-position = Vector2(2437, 61.9999)
-rotation = -2.59752
+position = Vector2(96, 197)
+rotation = -5.15997
 scale = Vector2(0.516552, 0.605347)
 
 [node name="AlgaVPe06" parent="CanvasGroup/Plantas" instance=ExtResource("14_nm8db")]
+modulate = Color(0.890196, 0.113725, 1, 1)
 top_level = true
-position = Vector2(2564, 190)
-rotation = -1.6064
+position = Vector2(453, 1012)
+rotation = 0.0844518
 scale = Vector2(0.647537, 0.478418)
-
-[node name="CoralPe05" parent="CanvasGroup/Plantas" instance=ExtResource("15_xeet0")]
-top_level = true
-position = Vector2(2548, 415)
-rotation = -1.25792
-scale = Vector2(0.516552, 0.605347)
-
-[node name="Sprite2D" parent="CanvasGroup/Plantas/CoralPe05" index="0"]
-position = Vector2(3.1582, 16.5651)
-
-[node name="Luz" parent="CanvasGroup/Plantas/CoralPe05" index="1"]
-visible = true
-position = Vector2(3.15821, 16.5651)
-energy = 0.57
 
 [node name="CoralPe06" parent="CanvasGroup/Plantas" instance=ExtResource("15_xeet0")]
 top_level = true
-position = Vector2(2542, 446)
-rotation = -1.86795
+position = Vector2(380, 503)
+rotation = -5.33426
 scale = Vector2(0.516552, 0.605347)
 
 [node name="Sprite2D" parent="CanvasGroup/Plantas/CoralPe06" index="0"]
-position = Vector2(-8.53281, 15.1212)
+position = Vector2(-852.521, 25.3232)
 
 [node name="Luz" parent="CanvasGroup/Plantas/CoralPe06" index="1"]
 visible = true
-position = Vector2(-8.5328, 15.1212)
+modulate = Color(1, 0.0705882, 0.0705882, 1)
+position = Vector2(-852.521, 25.3233)
 energy = 0.71
 
 [node name="Alga7" parent="CanvasGroup/Plantas" instance=ExtResource("14_nm8db")]
 top_level = true
-position = Vector2(2318, 886)
+position = Vector2(591, 726)
+
+[node name="Sprite2D" parent="CanvasGroup/Plantas/Alga7" index="0"]
+position = Vector2(1133, 427)
 
 [node name="Luz" parent="CanvasGroup/Plantas/Alga7" index="1"]
 visible = true
-energy = 0.42
+position = Vector2(1134, 426)
+energy = 4.6
 
 [node name="Alga8" parent="CanvasGroup/Plantas" instance=ExtResource("14_nm8db")]
 top_level = true
-position = Vector2(2249, 885)
+position = Vector2(554, 718)
+
+[node name="Sprite2D" parent="CanvasGroup/Plantas/Alga8" index="0"]
+position = Vector2(1103, 408)
 
 [node name="Luz" parent="CanvasGroup/Plantas/Alga8" index="1"]
 visible = true
-energy = 0.86
+position = Vector2(1103, 408)
+energy = 3.02
 
 [node name="AlgaVPe07" parent="CanvasGroup/Plantas" instance=ExtResource("14_nm8db")]
 top_level = true
-position = Vector2(1476, 415)
-rotation = 2.53051
+position = Vector2(1055, 179)
+rotation = 3.02737
 scale = Vector2(0.647537, 0.478418)
 
 [node name="AlgaVPe08" parent="CanvasGroup/Plantas" instance=ExtResource("14_nm8db")]
 top_level = true
-position = Vector2(1435, 438)
+position = Vector2(1010, 191)
 rotation = 2.99598
 scale = Vector2(0.647537, 0.478418)
 
 [node name="AlgaVPe09" parent="CanvasGroup/Plantas" instance=ExtResource("14_nm8db")]
+modulate = Color(0.705882, 0.333333, 0.682353, 1)
 top_level = true
-position = Vector2(1388, 437)
+position = Vector2(963, 190)
 rotation = 3.34892
 scale = Vector2(0.647537, 0.478418)
 
 [node name="AlgaVPe10" parent="CanvasGroup/Plantas" instance=ExtResource("14_nm8db")]
+modulate = Color(0.67451, 0.0666667, 0.0666667, 1)
 top_level = true
-position = Vector2(1347, 416)
+position = Vector2(922, 169)
 rotation = 3.83275
 scale = Vector2(0.647537, 0.478418)
 
 [node name="CoralPe07" parent="CanvasGroup/Plantas" instance=ExtResource("15_xeet0")]
 top_level = true
-position = Vector2(1756, 591)
+position = Vector2(1861, 387)
 rotation = -2.90215
 scale = Vector2(0.516552, 0.605347)
 
 [node name="CoralPe08" parent="CanvasGroup/Plantas" instance=ExtResource("15_xeet0")]
 top_level = true
-position = Vector2(1695, 590)
-rotation = -3.67212
+position = Vector2(1869, 426)
+rotation = -2.1119
 scale = Vector2(0.516552, 0.605347)
 
 [node name="AlgaVPe11" parent="CanvasGroup/Plantas" instance=ExtResource("14_nm8db")]
 top_level = true
 position = Vector2(1939, 373)
-rotation = 6.29072
-scale = Vector2(0.647537, 0.478418)
-
-[node name="AlgaVPe12" parent="CanvasGroup/Plantas" instance=ExtResource("14_nm8db")]
-position = Vector2(1985, 470)
 rotation = 6.29072
 scale = Vector2(0.647537, 0.478418)
 
@@ -984,39 +993,37 @@ scale = Vector2(0.647537, 0.478418)
 
 [node name="AlgaVPe14" parent="CanvasGroup/Plantas" instance=ExtResource("14_nm8db")]
 top_level = true
-position = Vector2(773, 212)
-rotation = 7.81424
+position = Vector2(1528, 191)
+rotation = 9.46089
 scale = Vector2(0.647537, 0.478418)
 
 [node name="AlgaVPe15" parent="CanvasGroup/Plantas" instance=ExtResource("14_nm8db")]
 top_level = true
-position = Vector2(772, 256)
-rotation = 7.81424
-scale = Vector2(0.647537, 0.478418)
-
-[node name="AlgaVPe16" parent="CanvasGroup/Plantas" instance=ExtResource("14_nm8db")]
-position = Vector2(164, 427)
-rotation = 6.28643
+position = Vector2(1575, 198)
+rotation = 9.78253
 scale = Vector2(0.647537, 0.478418)
 
 [node name="CoralPe09" parent="CanvasGroup/Plantas" instance=ExtResource("15_xeet0")]
 top_level = true
-position = Vector2(1374, 1402)
-rotation = -0.41418
+position = Vector2(251, 859)
+rotation = 0.327896
 scale = Vector2(0.516552, 0.605347)
 
 [node name="CoralPe10" parent="CanvasGroup/Plantas" instance=ExtResource("15_xeet0")]
+modulate = Color(0.517647, 0.870588, 0.133333, 1)
 top_level = true
-position = Vector2(1410, 1402)
+position = Vector2(299, 910)
 rotation = 0.260691
 scale = Vector2(0.516552, 0.605347)
 
 [node name="Alga9" parent="CanvasGroup/Plantas" instance=ExtResource("14_nm8db")]
+modulate = Color(0.607843, 0.121569, 0.121569, 1)
 top_level = true
-position = Vector2(464, 1387)
-rotation = 0.459696
+position = Vector2(131, 300)
+rotation = 1.29947
 
 [node name="AlgaVPe17" parent="CanvasGroup/Plantas" instance=ExtResource("14_nm8db")]
+visible = false
 top_level = true
 position = Vector2(40.0001, 1257)
 rotation = 7.27093
@@ -1031,6 +1038,7 @@ position = Vector2(-9.79185, 16.2982)
 energy = 1.86
 
 [node name="AlgaVPe18" parent="CanvasGroup/Plantas" instance=ExtResource("14_nm8db")]
+visible = false
 top_level = true
 position = Vector2(40, 1161)
 rotation = 7.27093
@@ -1052,20 +1060,20 @@ scale = Vector2(0.647537, 0.478418)
 
 [node name="AlgaVPe21" parent="CanvasGroup/Plantas" instance=ExtResource("14_nm8db")]
 top_level = true
-position = Vector2(288, 720)
-rotation = 9.43945
+position = Vector2(107, 241)
+rotation = 6.56591
 scale = Vector2(0.647537, 0.478418)
 
 [node name="AlgaVPe22" parent="CanvasGroup/Plantas" instance=ExtResource("14_nm8db")]
 top_level = true
-position = Vector2(336, 722)
-rotation = 9.43945
+position = Vector2(122, 680)
+rotation = 6.9241
 scale = Vector2(0.647537, 0.478418)
 
 [node name="AlgaVPe23" parent="CanvasGroup/Plantas" instance=ExtResource("14_nm8db")]
 top_level = true
-position = Vector2(382, 722)
-rotation = 9.35507
+position = Vector2(159, 712)
+rotation = 6.70018
 scale = Vector2(0.647537, 0.478418)
 
 [node name="AlgaVPe27" parent="CanvasGroup/Plantas" instance=ExtResource("14_nm8db")]
@@ -1075,9 +1083,10 @@ rotation = 3.13624
 scale = Vector2(0.647537, 0.478418)
 
 [node name="AlgaVPe30" parent="CanvasGroup/Plantas" instance=ExtResource("14_nm8db")]
+modulate = Color(0.866667, 0.258824, 0.917647, 1)
 top_level = true
-position = Vector2(1507, 1108)
-rotation = 3.13624
+position = Vector2(410, 998)
+rotation = 0.0468569
 scale = Vector2(0.647537, 0.478418)
 
 [node name="AlgaVPe31" parent="CanvasGroup/Plantas" instance=ExtResource("14_nm8db")]
@@ -1094,25 +1103,20 @@ scale = Vector2(0.647537, 0.478418)
 
 [node name="CoralPe11" parent="CanvasGroup/Plantas" instance=ExtResource("15_xeet0")]
 top_level = true
-position = Vector2(1859, 1373)
-rotation = -0.664328
+position = Vector2(1930, 547)
+rotation = -1.38148
 scale = Vector2(0.516552, 0.605347)
 
 [node name="CoralPe12" parent="CanvasGroup/Plantas" instance=ExtResource("15_xeet0")]
 top_level = true
-position = Vector2(897, 979)
-rotation = -2.08741
+position = Vector2(477, 140)
+rotation = -2.79285
 scale = Vector2(0.516552, 0.605347)
 
 [node name="AlgaVPe33" parent="CanvasGroup/Plantas" instance=ExtResource("14_nm8db")]
 top_level = true
-position = Vector2(1181, 1382)
+position = Vector2(756, 1047)
 rotation = 0.0373002
-scale = Vector2(0.647537, 0.478418)
-
-[node name="AlgaVPe34" parent="CanvasGroup/Plantas" instance=ExtResource("14_nm8db")]
-position = Vector2(1225, 1386)
-rotation = 0.0054752
 scale = Vector2(0.647537, 0.478418)
 
 [node name="AlgaVPe36" parent="CanvasGroup/Plantas" instance=ExtResource("14_nm8db")]
@@ -1126,6 +1130,126 @@ top_level = true
 position = Vector2(1027, 1339)
 rotation = -0.0288592
 scale = Vector2(0.647537, 0.478418)
+
+[node name="CoralPe13" parent="CanvasGroup/Plantas" instance=ExtResource("15_xeet0")]
+top_level = true
+position = Vector2(1947, 511)
+rotation = -1.66441
+scale = Vector2(0.516552, 0.605347)
+
+[node name="AlgaVPe34" parent="CanvasGroup/Plantas" instance=ExtResource("14_nm8db")]
+top_level = true
+position = Vector2(1530, 665)
+rotation = 0.0373002
+scale = Vector2(0.647537, 0.478418)
+
+[node name="AlgaVPe35" parent="CanvasGroup/Plantas" instance=ExtResource("14_nm8db")]
+top_level = true
+position = Vector2(1495, 687)
+rotation = -0.780034
+scale = Vector2(0.647537, 0.478418)
+
+[node name="AlgaVPe38" parent="CanvasGroup/Plantas" instance=ExtResource("14_nm8db")]
+top_level = true
+position = Vector2(1492, 732)
+rotation = -1.53237
+scale = Vector2(0.647537, 0.478418)
+
+[node name="CoralPe14" parent="CanvasGroup/Plantas" instance=ExtResource("15_xeet0")]
+top_level = true
+position = Vector2(1065, 1062)
+rotation = 0.0722203
+scale = Vector2(0.516552, 0.605347)
+
+[node name="CoralPe15" parent="CanvasGroup/Plantas" instance=ExtResource("15_xeet0")]
+top_level = true
+position = Vector2(1143, 1060)
+rotation = -0.0103388
+scale = Vector2(0.516552, 0.605347)
+
+[node name="CoralPe16" parent="CanvasGroup/Plantas" instance=ExtResource("15_xeet0")]
+top_level = true
+position = Vector2(1239, 1065)
+rotation = -0.383528
+scale = Vector2(0.516552, 0.605347)
+
+[node name="CoralPe17" parent="CanvasGroup/Plantas" instance=ExtResource("15_xeet0")]
+top_level = true
+position = Vector2(1101, 1079)
+rotation = 0.051751
+scale = Vector2(0.516552, 0.605347)
+
+[node name="CoralPe18" parent="CanvasGroup/Plantas" instance=ExtResource("15_xeet0")]
+top_level = true
+position = Vector2(1196, 1074)
+rotation = -0.0388505
+scale = Vector2(0.516552, 0.605347)
+
+[node name="AlgaVPe39" parent="CanvasGroup/Plantas" instance=ExtResource("14_nm8db")]
+modulate = Color(0.788235, 0.0117647, 0.0117647, 1)
+top_level = true
+position = Vector2(1591, 1095)
+rotation = 0.0373002
+scale = Vector2(0.647537, 0.478418)
+
+[node name="AlgaVPe40" parent="CanvasGroup/Plantas" instance=ExtResource("14_nm8db")]
+modulate = Color(0.819608, 0.223529, 0.784314, 1)
+top_level = true
+position = Vector2(1543, 1105)
+rotation = 0.0373002
+scale = Vector2(0.647537, 0.478418)
+
+[node name="CoralPe19" parent="CanvasGroup/Plantas" instance=ExtResource("15_xeet0")]
+top_level = true
+position = Vector2(1816, 874)
+rotation = -2.62252
+scale = Vector2(0.516552, 0.605347)
+
+[node name="CoralPe20" parent="CanvasGroup/Plantas" instance=ExtResource("15_xeet0")]
+top_level = true
+position = Vector2(1774, 857)
+rotation = -3.03923
+scale = Vector2(0.516552, 0.605347)
+
+[node name="AlgaVPe41" parent="CanvasGroup/Plantas" instance=ExtResource("14_nm8db")]
+modulate = Color(0.215686, 0.133333, 0.964706, 1)
+top_level = true
+position = Vector2(1667, 821)
+rotation = -2.97356
+scale = Vector2(0.647537, 0.478418)
+
+[node name="AlgaVPe42" parent="CanvasGroup/Plantas" instance=ExtResource("14_nm8db")]
+modulate = Color(0.215686, 0.133333, 0.964706, 1)
+top_level = true
+position = Vector2(2008, 908)
+rotation = -2.97356
+scale = Vector2(0.647537, 0.478418)
+
+[node name="AlgaVPe43" parent="CanvasGroup/Plantas" instance=ExtResource("14_nm8db")]
+modulate = Color(0.215686, 0.133333, 0.964706, 1)
+top_level = true
+position = Vector2(1965, 890)
+rotation = -2.97356
+scale = Vector2(0.647537, 0.478418)
+
+[node name="CoralPe21" parent="CanvasGroup/Plantas" instance=ExtResource("15_xeet0")]
+top_level = true
+position = Vector2(1946, 1158)
+rotation = 0.0200532
+scale = Vector2(0.516552, 0.605347)
+
+[node name="CoralPe22" parent="CanvasGroup/Plantas" instance=ExtResource("15_xeet0")]
+modulate = Color(0.615686, 0.258824, 0.258824, 1)
+top_level = true
+position = Vector2(1910, 1150)
+rotation = 0.0200532
+scale = Vector2(0.516552, 0.605347)
+
+[node name="CoralPe23" parent="CanvasGroup/Plantas" instance=ExtResource("15_xeet0")]
+top_level = true
+position = Vector2(1869, 1162)
+rotation = 0.0200532
+scale = Vector2(0.516552, 0.605347)
 
 [node name="BG" type="NinePatchRect" parent="CanvasGroup"]
 modulate = Color(1, 0.745098, 0.988235, 1)
@@ -1162,7 +1286,7 @@ texture = SubResource("GradientTexture2D_rly4j")
 
 [node name="Player" parent="CanvasGroup" instance=ExtResource("17_t0joh")]
 light_mask = 1
-position = Vector2(253, 105)
+position = Vector2(274, 89)
 scale = Vector2(0.992109, 0.984466)
 metadata/_edit_group_ = true
 
@@ -1177,7 +1301,7 @@ editor_draw_limits = true
 [node name="playerpos" type="Node2D" parent="CanvasGroup/Player"]
 
 [node name="Player Spawn" type="Marker2D" parent="."]
-position = Vector2(-273, -412)
+position = Vector2(277, 89)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_wadha")
@@ -1232,7 +1356,6 @@ debug_color = Color(0.603922, 0.00392157, 0.831373, 0.419608)
 [editable path="CanvasGroup/Plantas/Alga5"]
 [editable path="CanvasGroup/Plantas/Alga6"]
 [editable path="CanvasGroup/Plantas/Coral"]
-[editable path="CanvasGroup/Plantas/CoralPe05"]
 [editable path="CanvasGroup/Plantas/CoralPe06"]
 [editable path="CanvasGroup/Plantas/Alga7"]
 [editable path="CanvasGroup/Plantas/Alga8"]
