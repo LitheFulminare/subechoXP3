@@ -13,7 +13,7 @@ const explosion_path = preload("res://Scenes/Player_e_misc/Particulas e projéte
 @export var player := Node2D
 @onready var nav_agent := $NavigationAgent2D as NavigationAgent2D
 
-@export var life = 80
+@export var life = 120
 @export var dano = 5
 @export var speed = 80
 @export var phase = 1

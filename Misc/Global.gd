@@ -17,6 +17,7 @@ var shop3_visited = false
 
 var boss_room = false
 var boss_visted = false
+var boss2_visited = false
 
 var tutorial = "res://Scenes/Layouts/Tutorial.tscn" # tutorial
 
@@ -55,7 +56,7 @@ func _ready():
 	current_scene = root.get_child(root.get_child_count() - 1)
 
 func next_room():
-	if current_room < 9:
+	if current_room < 8:
 		
 		if current_room == 0: # se for a primeira sala
 			player_vars.current_life = player_vars.max_life
@@ -83,6 +84,11 @@ func next_room():
 			goto_scene("res://Scenes/Layouts/LojaMidGame.tscn")
 			shop_room = true
 			shop1_visited = true
+			
+		if current_room == 7 && !boss2_visited:
+			goto_scene("res://Scenes/Layouts/Boss 02.tscn")
+			boss_room = true
+			boss2_visited = true
 		
 ##region Store
 #
@@ -134,8 +140,7 @@ func next_room():
 			#print("sala atual é a loja. a variavel current_room é " + str(current_room))
 			#goto_scene("res://Scenes/Layouts/LojaMidGame.tscn")
 
-	if current_room == 9:
-		goto_scene("res://Scenes/Layouts/Boss 02.tscn")
+	
 
 func goto_scene(path):
 

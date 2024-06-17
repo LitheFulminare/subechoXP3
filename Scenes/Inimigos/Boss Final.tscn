@@ -869,13 +869,12 @@ radius = 60.0083
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k3utx"]
 size = Vector2(65, 67)
 
-[node name="BossFinal" type="CharacterBody2D" groups=["inimigo"]]
+[node name="BossFinal" type="CharacterBody2D" groups=["bosstaqui", "inimigo"]]
 visibility_layer = 3
 position = Vector2(876, 443)
 collision_layer = 5
 collision_mask = 3
 script = ExtResource("1_8hqqr")
-speed = 0
 intro_over = true
 death_anim_started = true
 dash_on_cooldown = true
@@ -883,8 +882,8 @@ dash_on_cooldown = true
 [node name="Sprite" type="Sprite2D" parent="."]
 light_mask = 513
 visibility_layer = 2
-texture = ExtResource("10_tdjgy")
-hframes = 12
+texture = ExtResource("4_qfo6u")
+hframes = 13
 
 [node name="PointLight2D" type="PointLight2D" parent="Sprite"]
 position = Vector2(6.24992, 1)
@@ -919,12 +918,15 @@ parameters/conditions/melee = false
 parameters/conditions/shoot = false
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+debug_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["inimigo"]]
+visible = false
 position = Vector2(-1.5, 1)
 shape = SubResource("RectangleShape2D_44vmy")
 
 [node name="Main Hitbox" type="Area2D" parent="." groups=["inimigo"]]
+visible = false
 collision_layer = 5
 collision_mask = 3
 
@@ -939,6 +941,7 @@ collision_mask = 2
 shape = SubResource("CircleShape2D_e1k72")
 
 [node name="Slowdown area" type="Area2D" parent="."]
+visible = false
 collision_layer = 5
 collision_mask = 2
 

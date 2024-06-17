@@ -24,4 +24,5 @@ func _on_area_2d_body_entered(body):
 	if body.is_in_group("player"):
 		body.life = 0
 	elif body.is_in_group("inimigo"):
-		body.vida = 0
+		if !body.is_in_group("bosstaqui"):
+			body.vida = 0
