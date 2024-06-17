@@ -813,11 +813,13 @@ layer_0/tile_data = PackedInt32Array(-65539, 1, 0, 65533, 1, 2, 196605, 1, 4, 32
 [node name="Props" type="CanvasGroup" parent="CanvasGroup"]
 
 [node name="Barril2" parent="CanvasGroup/Props" instance=ExtResource("10_ymu4y")]
+modulate = Color(1, 0, 0, 1)
 z_index = 2
 position = Vector2(2202, 339)
 scale = Vector2(1.555, 1.555)
 
 [node name="Barril4" parent="CanvasGroup/Props" instance=ExtResource("10_ymu4y")]
+modulate = Color(0.968627, 0, 0, 1)
 z_index = 2
 position = Vector2(2300, 387)
 scale = Vector2(1.555, 1.555)
