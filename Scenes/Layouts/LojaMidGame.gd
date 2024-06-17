@@ -3,6 +3,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Global.shop_room = false
 	$CanvasGroup/CanvasModulate.visible = true
 	$"CanvasGroup/Player/Energy timer".stop()
 	$CanvasGroup/Player.life = player_vars.current_life

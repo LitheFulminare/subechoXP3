@@ -69,13 +69,14 @@ _data = {
 gradient = ExtResource("2_c5mip")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(0.876147, 0.105505)
+fill_to = Vector2(0.848624, 0.174312)
 
 [node name="SlashEffect" type="Node2D"]
 position = Vector2(131, 103)
 scale = Vector2(1.5, 1.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+light_mask = 1025
 texture = ExtResource("1_4y7sl")
 hframes = 7
 frame = 1
@@ -89,4 +90,5 @@ autoplay = "Default"
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(9.53674e-07, -2)
 energy = 0.32
+range_item_cull_mask = 1025
 texture = SubResource("GradientTexture2D_sccpy")

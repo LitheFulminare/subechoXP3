@@ -106,6 +106,21 @@ text = "Inimigos mortos: 12
 
 "
 
+[node name="Texto sala alcançada" type="RichTextLabel" parent="."]
+layout_mode = 2
+offset_left = 698.0
+offset_top = 537.0
+offset_right = 1934.0
+offset_bottom = 633.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.6, 0.898039, 0.313726, 1)
+theme_override_fonts/normal_font = ExtResource("3_oqj0l")
+theme_override_font_sizes/normal_font_size = 48
+text = "Sala alcançada: 6
+
+"
+
 [node name="Continuar" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 880.0

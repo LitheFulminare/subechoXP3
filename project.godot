@@ -107,6 +107,7 @@ Interact={
 2d_render/layer_10="boss highlight"
 2d_render/layer_11="boss highlight 2"
 2d_render/layer_12="spike highlight"
+2d_render/layer_13="slash highlight"
 2d_physics/layer_1="world"
 2d_physics/layer_2="player"
 2d_physics/layer_3="enemy"

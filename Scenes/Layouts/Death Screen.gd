@@ -12,6 +12,7 @@ func _ready():
 	$"Texto Scrap".text = "Sucata coletada: " + str(player_vars.scrap_gained)
 	$"Texto Inimigos mortos".text = "Inimigos mortos: " + str(player_vars.enemies_killed)
 	$"Texto scrap gasta".text = "Sucata gasta: " + str(player_vars.scrap_spent)
+	$"Texto sala alcançada".text = "Sala alcançada: " + str(Global.current_room)
 	
 	player_vars.scrap_gained = 0
 	player_vars.enemies_killed = 0

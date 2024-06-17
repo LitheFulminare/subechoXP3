@@ -1,16 +1,22 @@
 extends Node
 
-var current_room = 0 # 0 é o menu, as salas vâo de 1 a 10r
+var current_room = 0 # 0 é o menu e o tutorial, as salas vâo de 1 a 10 (na teoria, age só tem 9)
 var current_scene = null
 
 var tutorial_completed = false
+var boss_1_defeated = false
 var killed_last_boss_on_run = false
 
 var shop_room = false
 var shop_on_2 = false
 var shop_on_6 = false
 
+var shop1_visited = false
+var shop2_visited = false
+var shop3_visited = false
+
 var boss_room = false
+var boss_visted = false
 
 var tutorial = "res://Scenes/Layouts/Tutorial.tscn" # tutorial
 
@@ -49,7 +55,7 @@ func _ready():
 	current_scene = root.get_child(root.get_child_count() - 1)
 
 func next_room():
-	if current_room < 10:
+	if current_room < 9:
 		
 		if current_room == 0: # se for a primeira sala
 			player_vars.current_life = player_vars.max_life
@@ -57,36 +63,57 @@ func next_room():
 			
 			if !tutorial_completed:
 				goto_scene(tutorial)
+				
+		if current_room == 3 && !shop1_visited:
+			goto_scene("res://Scenes/Layouts/LojaMidGame.tscn")
+			shop_room = true
+			shop1_visited = true
+			
+		if current_room == 4 && !boss_visted: # if player defeats the boss, this 'if' won't be true
+			goto_scene("res://Scenes/Layouts/Boss 01.tscn")
+			boss_room = true
+			boss_visted = true
+			
+		if current_room == 6 && !shop2_visited:
+			goto_scene("res://Scenes/Layouts/LojaMidGame.tscn")
+			shop_room = true
+			shop2_visited = true
+			
+		if current_room == 8 && !shop3_visited:
+			goto_scene("res://Scenes/Layouts/LojaMidGame.tscn")
+			shop_room = true
+			shop1_visited = true
 		
-#region Store
+##region Store
+#
+		## tutorial is not completed, current_room won't change so it's 0
+		#if current_room == 2:
+			#var random_float = randf()
+			#if random_float <= 0.5:
+				#shop_room = false
+				#shop_on_2 = false
+			#else:
+				#shop_room = true
+				#shop_on_2 = true
+		#if current_room == 3 && !shop_on_2:
+			#shop_room == true
+		#
+		#if current_room == 6:
+			#var random_float = randf()
+			#if random_float <= 0.5:
+				#shop_room = false
+				#shop_on_6 = false
+			#else:
+				#shop_room = true
+				#shop_on_6 = true
+		#if current_room == 7 && !shop_on_6:
+			#shop_room = true
+#
+		#if current_room == 9 :
+			#shop_room = true
+##endregion
 
-		# tutorial is not completed, current_room won't change so it's 0
-		if current_room == 2:
-			var random_float = randf()
-			if random_float <= 0.5:
-				shop_room = false
-				shop_on_2 = false
-			else:
-				shop_room = true
-				shop_on_2 = true
-		elif current_room == 3 && !shop_on_2:
-			shop_room == true
-
-		elif current_room == 6:
-			var random_float = randf()
-			if random_float <= 0.5:
-				shop_room = false
-				shop_on_6 = false
-			else:
-				shop_room = true
-				shop_on_6 = true
-		elif current_room == 7 && !shop_on_6:
-			shop_room = true
-		elif current_room == 9:
-			shop_room = true
-#endregion
-
-		if !shop_room && tutorial_completed:
+		if !shop_room && tutorial_completed && !boss_room:
 			current_room += 1
 			
 			if current_room == 1:
@@ -96,18 +123,19 @@ func next_room():
 				goto_scene(room_2)
 				
 			else:
-				print("sala: " + str(room_list[current_room-3]))
+				#print("sala: " + str(room_list[current_room-3]))
 				goto_scene(room_list[current_room-3])
-		elif shop_room && tutorial:
-			goto_scene("res://Scenes/Layouts/LojaMidGame.tscn")
+		#elif shop_room && tutorial:
+			#shop_room = false
+			#goto_scene("res://Scenes/Layouts/LojaMidGame.tscn")
 			
 		#elif shop_room && tutorial_completed:
 			#shop_room = false
 			#print("sala atual é a loja. a variavel current_room é " + str(current_room))
 			#goto_scene("res://Scenes/Layouts/LojaMidGame.tscn")
 
-	if current_room == 10:
-		goto_scene("res://Scenes/Layouts/Death Screen.tscn")
+	if current_room == 9:
+		goto_scene("res://Scenes/Layouts/Boss 02.tscn")
 
 func goto_scene(path):
 

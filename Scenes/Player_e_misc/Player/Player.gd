@@ -181,7 +181,7 @@ func Sonar():
 		$Sprite/Sonar.play()
 		sonar = true
 		$"Sonar cooldown".start()
-		energy = energy - 5
+		energy = energy - 3
 		$Sonar.visible = true
 		
 		@warning_ignore("shadowed_variable")
