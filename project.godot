@@ -18,6 +18,7 @@ boot_splash/bg_color=Color(0.203922, 0.121569, 0.211765, 1)
 boot_splash/image="res://sprites/Misc/Splash screen com logo.png"
 boot_splash/use_filter=false
 config/icon="res://sprites/Misc/Icon com logo (atualizado).png"
+config/size/mode=0
 
 [autoload]
 

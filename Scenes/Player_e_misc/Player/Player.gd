@@ -181,7 +181,7 @@ func Sonar():
 		$Sprite/Sonar.play()
 		sonar = true
 		$"Sonar cooldown".start()
-		energy = energy - 3
+		energy = energy - 2
 		$Sonar.visible = true
 		
 		@warning_ignore("shadowed_variable")
@@ -350,16 +350,16 @@ func collect(type):
 	var scrap_earned = 0
 	
 	if type == "plastic":
-		scrap_earned = randi_range(1,2)
+		scrap_earned = randi_range(2,4)
 		
 	if type == "bottle":
-		scrap_earned = randi_range(3,5)
+		scrap_earned = randi_range(5,8)
 		
 	if type == "fish":
-		scrap_earned = randi_range(6,8)
+		scrap_earned = randi_range(8,12)
 	
 	if type == "metal":
-		scrap_earned = randi_range(8,12)
+		scrap_earned = randi_range(15,20)
 		
 	scrap += scrap_earned
 	player_vars.scrap_gained += scrap_earned
@@ -393,7 +393,7 @@ func take_damage(type):
 				if dano_tomado < 1:
 					dano_tomado = 1
 			"inimigo":
-				dano_tomado = 10
+				dano_tomado = 5
 			"Heartbreak":
 				dano_tomado = 10
 			"invisible wall":
