@@ -32,6 +32,8 @@ var gun_Position
 var tiro1Path
 var muzz1Path
 
+var weapon_flipped = false
+
 func _physics_process(delta):
 	player_movement(delta)
 
@@ -139,6 +141,10 @@ func _process(delta):
 	
 	$Aim.position = get_local_mouse_position().clamp(Vector2(-300,-300),Vector2(300,300))
 	
+	flip_weapon()
+	
+	
+	
 	player_vars.current_life = life
 	player_vars.current_energy = energy
 	player_vars.current_scrap = scrap
@@ -172,6 +178,36 @@ func _process(delta):
 	if on_collision_with_enemy == true && not invincible:
 		take_damage("inimigo")
 		
+func _input(event):
+	if Input.is_action_pressed("Left"):
+		$Sprite/Casco.flip_h = true
+		$Sprite/Sonar.flip_h = true
+		#$Sprite/TurbinaV1/Sprites.flip_h = true
+		$Sprite/TurbinaV1/Sprites.offset = Vector2(-11,3)
+		$Sprite/TurbinaV1.rotation = deg_to_rad(180)
+	
+	if Input.is_action_pressed("Right"):
+		$Sprite/Casco.flip_h = false
+		$Sprite/Sonar.flip_h = false
+		#$Sprite/TurbinaV1/Sprites.flip_h = false
+		$Sprite/TurbinaV1/Sprites.offset = Vector2(-11,-3)
+		$Sprite/TurbinaV1.rotation = deg_to_rad(0)
+
+func flip_weapon():
+	if get_global_mouse_position() >= global_position && weapon_flipped:
+		$Sprite/Arma1.unflip()
+		weapon_flipped = false
+		$"Spawn Tiro 1".position.x = 65
+		$"Spawn Tiro 2".position.x = 88
+		$"Spawn Tiro 3".position.x = 78.635
+		
+	elif get_global_mouse_position() < global_position && !weapon_flipped:
+		$Sprite/Arma1.flip()
+		weapon_flipped = true
+		$"Spawn Tiro 1".position.x = -65
+		$"Spawn Tiro 2".position.x = -88
+		$"Spawn Tiro 3".position.x = -78.635
+	
 
 func _on_energy_timer_timeout():
 	energy -= 1

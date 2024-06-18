@@ -64,6 +64,7 @@ collision_mask = 5
 script = ExtResource("1_b66x1")
 
 [node name="Sprite" type="Area2D" parent="."]
+modulate = Color(0.686275, 0.686275, 0.686275, 1)
 position = Vector2(-2, -1.99999)
 scale = Vector2(4, 4)
 metadata/_edit_group_ = true
@@ -79,10 +80,8 @@ animation = &"Sonar 1"
 frame_progress = 0.382877
 
 [node name="Arma1" parent="Sprite" instance=ExtResource("7_dot8c")]
-position = Vector2(7, 7)
 
 [node name="TurbinaV1" parent="Sprite" instance=ExtResource("6_iu35p")]
-position = Vector2(-11, -3)
 
 [node name="Energy timer" type="Timer" parent="."]
 wait_time = 6.0
@@ -166,15 +165,16 @@ position = Vector2(123.67, 19)
 position = Vector2(119.88, 27.67)
 
 [node name="Colisão Geral" type="CollisionPolygon2D" parent="."]
+visible = false
 position = Vector2(-41, 5)
 rotation = 1.5708
 polygon = PackedVector2Array(-39, 1.00012, -51.0001, -34.9998, -68.0001, -34.9998, -68.0002, -58.9998, -51.0002, -58.9998, -43.0003, -78.9998, -35.0003, -82.9999, -34.0003, -89.9999, 8.99966, -91.0001, 8.99991, -23.0001, 4.99991, -23.0001, 4.99997, -7.00006, 0.999969, -7, 1, 1)
 
 [node name="Colisão Gen-EricV1" type="CollisionPolygon2D" parent="."]
-visible = false
+z_index = 1
 position = Vector2(25.6217, 25.9091)
-scale = Vector2(3.98686, 3.98686)
-polygon = PackedVector2Array(-5.9249, 3.03269, 4.10806, 3.03269, 4.10806, 5.03928, 9.12454, 5.03928, 9.12454, -5.99697, 6.11465, -5.99697, -8, -4, -7.93149, -0.980492, -5.9249, 0.0228043)
+scale = Vector2(4, 4)
+polygon = PackedVector2Array(-5.90543, 3.02273, 4.10806, 3.03269, 4.10806, 5.03928, 9.09457, 5.02273, 9.09457, -5.97727, 6.09457, -5.97727, -7.90543, -3.97727, -7.90543, -0.977272, -5.90543, 0.022728)
 disabled = true
 
 [node name="Colisão Gen-EricV2" type="CollisionPolygon2D" parent="."]
@@ -202,6 +202,7 @@ polygon = PackedVector2Array(-50, 58, -42, 58, -42, 62, 42, 62, 42, 61, 42, 58, 
 disabled = true
 
 [node name="Colisão turbina 1" type="CollisionPolygon2D" parent="."]
+visible = false
 position = Vector2(-45, -15)
 scale = Vector2(4.09669, 4.09669)
 polygon = PackedVector2Array(-4.63788, 6.10249, -3.17329, 6.10249, -3.17329, 7.07888, 1.70869, 7.07888, 1.70869, 6.10249, 2.68509, 6.10249, 4.63788, -5.61429, 1.70869, -6.59068, -3.17329, -6.59068, -4.63788, -5.85838)

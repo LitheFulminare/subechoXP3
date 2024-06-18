@@ -1,6 +1,7 @@
-[gd_scene load_steps=34 format=3 uid="uid://drvd8bhk4plho"]
+[gd_scene load_steps=35 format=3 uid="uid://drvd8bhk4plho"]
 
 [ext_resource type="Texture2D" uid="uid://cocbp3s5ii87t" path="res://sprites/player/Arma/arma1.png" id="1_crkei"]
+[ext_resource type="Script" path="res://Scenes/Player_e_misc/Player/Arma 1/Arma 1.gd" id="1_q52yd"]
 [ext_resource type="Texture2D" uid="uid://bnlpirhmgpg26" path="res://sprites/player/Arma/arma_rapida_base1.png" id="2_t6nh2"]
 [ext_resource type="Texture2D" uid="uid://d308e0ev5mr7k" path="res://sprites/player/Arma/escopeta_peacemaker.png" id="3_u420q"]
 [ext_resource type="Texture2D" uid="uid://bq5bb6sxfhq6h" path="res://sprites/player/Arma/aramalaser_imperium.png" id="4_l1h7q"]
@@ -215,11 +216,13 @@ animations = [{
 }]
 
 [node name="Arma1" type="Node2D"]
+z_index = 1
+script = ExtResource("1_q52yd")
 
 [node name="Sprites 1" type="AnimatedSprite2D" parent="."]
-visible = false
 sprite_frames = SubResource("SpriteFrames_e0eqn")
 animation = &"Arma 1 v1"
+offset = Vector2(7, 7)
 
 [node name="Sprites 2" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -227,12 +230,14 @@ position = Vector2(0, 4)
 sprite_frames = SubResource("SpriteFrames_4j4mm")
 animation = &"Peace"
 autoplay = "Peace"
+offset = Vector2(7, 7)
 
 [node name="Sprites 3" type="AnimatedSprite2D" parent="."]
 visible = false
 position = Vector2(3, -1)
 sprite_frames = SubResource("SpriteFrames_nu7a3")
 animation = &"Peacemaker"
+offset = Vector2(7, 7)
 
 [node name="Sprites 4" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -242,9 +247,11 @@ animation = &"Imperium"
 autoplay = "Imperium"
 frame = 3
 frame_progress = 1.0
+offset = Vector2(7, 7)
 
 [node name="Sprites 5" type="AnimatedSprite2D" parent="."]
 visible = false
 position = Vector2(2, 3)
 sprite_frames = SubResource("SpriteFrames_lxapy")
 animation = &"Loaded"
+offset = Vector2(7, 7)
