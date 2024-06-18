@@ -165,7 +165,6 @@ position = Vector2(123.67, 19)
 position = Vector2(119.88, 27.67)
 
 [node name="Colisão Geral" type="CollisionPolygon2D" parent="."]
-visible = false
 position = Vector2(-41, 5)
 rotation = 1.5708
 polygon = PackedVector2Array(-39, 1.00012, -51.0001, -34.9998, -68.0001, -34.9998, -68.0002, -58.9998, -51.0002, -58.9998, -43.0003, -78.9998, -35.0003, -82.9999, -34.0003, -89.9999, 8.99966, -91.0001, 8.99991, -23.0001, 4.99991, -23.0001, 4.99997, -7.00006, 0.999969, -7, 1, 1)

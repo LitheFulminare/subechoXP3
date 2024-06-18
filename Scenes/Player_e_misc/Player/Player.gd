@@ -197,17 +197,42 @@ func flip_weapon():
 	if get_global_mouse_position() >= global_position && weapon_flipped:
 		$Sprite/Arma1.unflip()
 		weapon_flipped = false
-		$"Spawn Tiro 1".position.x = 65
-		$"Spawn Tiro 2".position.x = 88
-		$"Spawn Tiro 3".position.x = 78.635
+		flip_weapoon_stats()
+		#$"Spawn Tiro 1".position.x = 65
+		#$"Spawn Tiro 2".position.x = 88
+		#$"Spawn Tiro 3".position.x = 78.635
 		
 	elif get_global_mouse_position() < global_position && !weapon_flipped:
 		$Sprite/Arma1.flip()
 		weapon_flipped = true
-		$"Spawn Tiro 1".position.x = -65
-		$"Spawn Tiro 2".position.x = -88
-		$"Spawn Tiro 3".position.x = -78.635
-	
+		flip_weapoon_stats()
+		
+func flip_weapoon_stats():
+	match weapon_type:
+		"Gen-EricV1":
+			$"Spawn Tiro 1".position.x = -$"Spawn Tiro 1".position.x
+			$Muzz1Local.position.x = -$Muzz1Local.position.x
+			$"Colisão Gen-EricV1".scale.x = -$"Colisão Gen-EricV1".scale.x
+			$"Area2D/Colisão Gen-EricV1".scale.x = -$"Area2D/Colisão Gen-EricV1".scale.x 
+		"Gen-EricV2":
+			$"Spawn Tiro 2".position.x = -$"Spawn Tiro 2".position.x
+			$Muzz1Local2.position.x = -$Muzz1Local2.position.x
+			$"Colisão Gen-EricV2".scale.x = -$"Colisão Gen-EricV2".scale.x
+			$"Area2D/Colisão Gen-EricV2".scale.x = -$"Area2D/Colisão Gen-EricV2".scale.x
+		"Peacemaker":
+			$"Spawn Tiro 3".position.x = -$"Spawn Tiro 3".position.x
+			$Muzz1Local3.position.x = -$Muzz1Local3.position.x
+			$"Colisão Peacemaker".scale.x = -$"Colisão Peacemaker".scale.x
+			$"Area2D/Colisão Peacemaker".scale.x = -$"Area2D/Colisão Peacemaker".scale.x
+		"Imperium":
+			$"Spawn Tiro 4".position.x = -$"Spawn Tiro 4".position.x
+			$Muzz1Local4.position.x = -$Muzz1Local4.position.x
+			$"Colisão Imperium".scale.x = -$"Colisão Imperium".scale.x
+			$"Area2D/Colisão Imperium".scale.x = -$"Area2D/Colisão Imperium".scale.x
+		"Killerbee":
+			$"Spawn Tiro 5".position.x = -$"Spawn Tiro 5".position.x
+			$"Colisão Killerbee".scale.x = -$"Colisão Killerbee".scale.x
+			$"Area2D/Colisão Killerbee".scale.x = -$"Area2D/Colisão Killerbee".scale.x 
 
 func _on_energy_timer_timeout():
 	energy -= 1
