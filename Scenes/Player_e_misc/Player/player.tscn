@@ -85,7 +85,7 @@ position = Vector2(7, 7)
 position = Vector2(-11, -3)
 
 [node name="Energy timer" type="Timer" parent="."]
-wait_time = 3.5
+wait_time = 6.0
 autostart = true
 
 [node name="Sonar cooldown" type="Timer" parent="."]
@@ -104,6 +104,7 @@ wait_time = 0.8
 [node name="Light" type="PointLight2D" parent="."]
 position = Vector2(2, 5.00003)
 scale = Vector2(2.34375, 2.42188)
+energy = 2.0
 range_item_cull_mask = 9
 shadow_color = Color(0, 0.27451, 1, 0)
 texture = SubResource("GradientTexture2D_w4kjf")
@@ -114,7 +115,7 @@ metadata/_edit_lock_ = true
 modulate = Color(0, 0.368627, 1, 1)
 scale = Vector2(1.44596, 2.47599)
 color = Color(0.611765, 0.764706, 1, 1)
-energy = 1.5
+energy = 3.0
 shadow_enabled = true
 shadow_filter = 1
 texture = ExtResource("7_sqbml")
