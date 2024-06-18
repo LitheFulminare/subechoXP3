@@ -214,11 +214,25 @@ func flip_weapoon_stats():
 			$Muzz1Local.position.x = -$Muzz1Local.position.x
 			$"Colisão Gen-EricV1".scale.x = -$"Colisão Gen-EricV1".scale.x
 			$"Area2D/Colisão Gen-EricV1".scale.x = -$"Area2D/Colisão Gen-EricV1".scale.x 
+			if weapon_flipped:
+				$"Colisão Gen-EricV1".position.x = -8.622
+				$"Area2D/Colisão Gen-EricV1".position.x = -8.622
+			else:
+				$"Colisão Gen-EricV1".position.x = 25.622
+				$"Area2D/Colisão Gen-EricV1".position.x = 25.622
+			
 		"Gen-EricV2":
 			$"Spawn Tiro 2".position.x = -$"Spawn Tiro 2".position.x
 			$Muzz1Local2.position.x = -$Muzz1Local2.position.x
 			$"Colisão Gen-EricV2".scale.x = -$"Colisão Gen-EricV2".scale.x
 			$"Area2D/Colisão Gen-EricV2".scale.x = -$"Area2D/Colisão Gen-EricV2".scale.x
+			if weapon_flipped:
+				$"Colisão Gen-EricV2".position.x = -8.622
+				$"Area2D/Colisão Gen-EricV2".position.x = -8.622
+			else:
+				$"Colisão Gen-EricV2".position.x = 25.622
+				$"Area2D/Colisão Gen-EricV2".position.x = 25.622
+			
 		"Peacemaker":
 			$"Spawn Tiro 3".position.x = -$"Spawn Tiro 3".position.x
 			$Muzz1Local3.position.x = -$Muzz1Local3.position.x

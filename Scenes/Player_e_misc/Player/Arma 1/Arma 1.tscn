@@ -220,38 +220,35 @@ z_index = 1
 script = ExtResource("1_q52yd")
 
 [node name="Sprites 1" type="AnimatedSprite2D" parent="."]
+visible = false
 sprite_frames = SubResource("SpriteFrames_e0eqn")
 animation = &"Arma 1 v1"
 offset = Vector2(7, 7)
 
 [node name="Sprites 2" type="AnimatedSprite2D" parent="."]
 visible = false
-position = Vector2(0, 4)
 sprite_frames = SubResource("SpriteFrames_4j4mm")
 animation = &"Peace"
 autoplay = "Peace"
-offset = Vector2(7, 7)
+offset = Vector2(7, 11)
 
 [node name="Sprites 3" type="AnimatedSprite2D" parent="."]
 visible = false
-position = Vector2(3, -1)
 sprite_frames = SubResource("SpriteFrames_nu7a3")
 animation = &"Peacemaker"
-offset = Vector2(7, 7)
+offset = Vector2(10, 6)
 
 [node name="Sprites 4" type="AnimatedSprite2D" parent="."]
 visible = false
-position = Vector2(1, 1)
 sprite_frames = SubResource("SpriteFrames_bk5l2")
 animation = &"Imperium"
 autoplay = "Imperium"
 frame = 3
 frame_progress = 1.0
-offset = Vector2(7, 7)
+offset = Vector2(8, 8)
 
 [node name="Sprites 5" type="AnimatedSprite2D" parent="."]
 visible = false
-position = Vector2(2, 3)
 sprite_frames = SubResource("SpriteFrames_lxapy")
 animation = &"Loaded"
-offset = Vector2(7, 7)
+offset = Vector2(9, 10)
