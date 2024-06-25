@@ -32,6 +32,8 @@ var gun_Position
 var tiro1Path
 var muzz1Path
 
+var weapon_flipped = false
+
 func _physics_process(delta):
 	player_movement(delta)
 
@@ -139,6 +141,10 @@ func _process(delta):
 	
 	$Aim.position = get_local_mouse_position().clamp(Vector2(-300,-300),Vector2(300,300))
 	
+	flip_weapon()
+	
+	
+	
 	player_vars.current_life = life
 	player_vars.current_energy = energy
 	player_vars.current_scrap = scrap
@@ -172,6 +178,75 @@ func _process(delta):
 	if on_collision_with_enemy == true && not invincible:
 		take_damage("inimigo")
 		
+func _input(event):
+	if Input.is_action_pressed("Left"):
+		$Sprite/Casco.flip_h = true
+		$Sprite/Sonar.flip_h = true
+		#$Sprite/TurbinaV1/Sprites.flip_h = true
+		$Sprite/TurbinaV1/Sprites.offset = Vector2(-11,3)
+		$Sprite/TurbinaV1.rotation = deg_to_rad(180)
+	
+	if Input.is_action_pressed("Right"):
+		$Sprite/Casco.flip_h = false
+		$Sprite/Sonar.flip_h = false
+		#$Sprite/TurbinaV1/Sprites.flip_h = false
+		$Sprite/TurbinaV1/Sprites.offset = Vector2(-11,-3)
+		$Sprite/TurbinaV1.rotation = deg_to_rad(0)
+
+func flip_weapon():
+	if get_global_mouse_position() >= global_position && weapon_flipped:
+		$Sprite/Arma1.unflip()
+		weapon_flipped = false
+		flip_weapoon_stats()
+		#$"Spawn Tiro 1".position.x = 65
+		#$"Spawn Tiro 2".position.x = 88
+		#$"Spawn Tiro 3".position.x = 78.635
+		
+	elif get_global_mouse_position() < global_position && !weapon_flipped:
+		$Sprite/Arma1.flip()
+		weapon_flipped = true
+		flip_weapoon_stats()
+		
+func flip_weapoon_stats():
+	match weapon_type:
+		"Gen-EricV1":
+			$"Spawn Tiro 1".position.x = -$"Spawn Tiro 1".position.x
+			$Muzz1Local.position.x = -$Muzz1Local.position.x
+			$"Colisão Gen-EricV1".scale.x = -$"Colisão Gen-EricV1".scale.x
+			$"Area2D/Colisão Gen-EricV1".scale.x = -$"Area2D/Colisão Gen-EricV1".scale.x 
+			if weapon_flipped:
+				$"Colisão Gen-EricV1".position.x = -8.622
+				$"Area2D/Colisão Gen-EricV1".position.x = -8.622
+			else:
+				$"Colisão Gen-EricV1".position.x = 25.622
+				$"Area2D/Colisão Gen-EricV1".position.x = 25.622
+			
+		"Gen-EricV2":
+			$"Spawn Tiro 2".position.x = -$"Spawn Tiro 2".position.x
+			$Muzz1Local2.position.x = -$Muzz1Local2.position.x
+			$"Colisão Gen-EricV2".scale.x = -$"Colisão Gen-EricV2".scale.x
+			$"Area2D/Colisão Gen-EricV2".scale.x = -$"Area2D/Colisão Gen-EricV2".scale.x
+			if weapon_flipped:
+				$"Colisão Gen-EricV2".position.x = -8.622
+				$"Area2D/Colisão Gen-EricV2".position.x = -8.622
+			else:
+				$"Colisão Gen-EricV2".position.x = 25.622
+				$"Area2D/Colisão Gen-EricV2".position.x = 25.622
+			
+		"Peacemaker":
+			$"Spawn Tiro 3".position.x = -$"Spawn Tiro 3".position.x
+			$Muzz1Local3.position.x = -$Muzz1Local3.position.x
+			$"Colisão Peacemaker".scale.x = -$"Colisão Peacemaker".scale.x
+			$"Area2D/Colisão Peacemaker".scale.x = -$"Area2D/Colisão Peacemaker".scale.x
+		"Imperium":
+			$"Spawn Tiro 4".position.x = -$"Spawn Tiro 4".position.x
+			$Muzz1Local4.position.x = -$Muzz1Local4.position.x
+			$"Colisão Imperium".scale.x = -$"Colisão Imperium".scale.x
+			$"Area2D/Colisão Imperium".scale.x = -$"Area2D/Colisão Imperium".scale.x
+		"Killerbee":
+			$"Spawn Tiro 5".position.x = -$"Spawn Tiro 5".position.x
+			$"Colisão Killerbee".scale.x = -$"Colisão Killerbee".scale.x
+			$"Area2D/Colisão Killerbee".scale.x = -$"Area2D/Colisão Killerbee".scale.x 
 
 func _on_energy_timer_timeout():
 	energy -= 1
@@ -181,7 +256,7 @@ func Sonar():
 		$Sprite/Sonar.play()
 		sonar = true
 		$"Sonar cooldown".start()
-		energy = energy - 3
+		energy = energy - 2
 		$Sonar.visible = true
 		
 		@warning_ignore("shadowed_variable")
@@ -350,16 +425,16 @@ func collect(type):
 	var scrap_earned = 0
 	
 	if type == "plastic":
-		scrap_earned = randi_range(1,2)
+		scrap_earned = randi_range(2,4)
 		
 	if type == "bottle":
-		scrap_earned = randi_range(3,5)
+		scrap_earned = randi_range(5,8)
 		
 	if type == "fish":
-		scrap_earned = randi_range(6,8)
+		scrap_earned = randi_range(8,12)
 	
 	if type == "metal":
-		scrap_earned = randi_range(8,12)
+		scrap_earned = randi_range(15,20)
 		
 	scrap += scrap_earned
 	player_vars.scrap_gained += scrap_earned
@@ -393,7 +468,7 @@ func take_damage(type):
 				if dano_tomado < 1:
 					dano_tomado = 1
 			"inimigo":
-				dano_tomado = 10
+				dano_tomado = 5
 			"Heartbreak":
 				dano_tomado = 10
 			"invisible wall":

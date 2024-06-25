@@ -30,4 +30,5 @@ animations = [{
 position = Vector2(0, 1.01725e-05)
 sprite_frames = SubResource("SpriteFrames_uhwi8")
 animation = &"Motor 1"
+offset = Vector2(-11, -3)
 metadata/_edit_lock_ = true

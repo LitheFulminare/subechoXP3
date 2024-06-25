@@ -40,10 +40,10 @@ func _process(delta):
 	
 	$"UI/UI vida e energia/Texto Inimigos Mortos".text = str(inimigos_mortos) + "/" + str(meta_fase)
 	
-	if $CanvasGroup/BossFinal.dead_2:
-		boss_dead = true
-		$CanvasGroup/SaidaVerdeDesligada.visible = false
-		$CanvasGroup/SaidaVerdeLigada.visible = true
+	#if $CanvasGroup/BossFinal.dead_2:
+		#boss_dead = true
+		#$CanvasGroup/SaidaVerdeDesligada.visible = false
+		#$CanvasGroup/SaidaVerdeLigada.visible = true
 	
 	#$"UI/UI vida e energia/Texto scrap".text = str($CanvasGroup/Player.scrap)
 
@@ -109,3 +109,9 @@ func _on_area_2d_area_entered(area):
 
 func restart():
 	Global.goto_scene("res://Scenes/Layouts/principal.tscn")
+
+
+func _on_boss_final_tree_exiting():
+	boss_dead = true
+	$CanvasGroup/SaidaVerdeDesligada.visible = false
+	$CanvasGroup/SaidaVerdeLigada.visible = true

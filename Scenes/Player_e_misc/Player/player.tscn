@@ -64,6 +64,7 @@ collision_mask = 5
 script = ExtResource("1_b66x1")
 
 [node name="Sprite" type="Area2D" parent="."]
+modulate = Color(0.686275, 0.686275, 0.686275, 1)
 position = Vector2(-2, -1.99999)
 scale = Vector2(4, 4)
 metadata/_edit_group_ = true
@@ -79,13 +80,11 @@ animation = &"Sonar 1"
 frame_progress = 0.382877
 
 [node name="Arma1" parent="Sprite" instance=ExtResource("7_dot8c")]
-position = Vector2(7, 7)
 
 [node name="TurbinaV1" parent="Sprite" instance=ExtResource("6_iu35p")]
-position = Vector2(-11, -3)
 
 [node name="Energy timer" type="Timer" parent="."]
-wait_time = 3.5
+wait_time = 6.0
 autostart = true
 
 [node name="Sonar cooldown" type="Timer" parent="."]
@@ -104,6 +103,7 @@ wait_time = 0.8
 [node name="Light" type="PointLight2D" parent="."]
 position = Vector2(2, 5.00003)
 scale = Vector2(2.34375, 2.42188)
+energy = 2.0
 range_item_cull_mask = 9
 shadow_color = Color(0, 0.27451, 1, 0)
 texture = SubResource("GradientTexture2D_w4kjf")
@@ -114,7 +114,7 @@ metadata/_edit_lock_ = true
 modulate = Color(0, 0.368627, 1, 1)
 scale = Vector2(1.44596, 2.47599)
 color = Color(0.611765, 0.764706, 1, 1)
-energy = 1.5
+energy = 3.0
 shadow_enabled = true
 shadow_filter = 1
 texture = ExtResource("7_sqbml")
@@ -171,13 +171,13 @@ polygon = PackedVector2Array(-39, 1.00012, -51.0001, -34.9998, -68.0001, -34.999
 
 [node name="Colisão Gen-EricV1" type="CollisionPolygon2D" parent="."]
 visible = false
+z_index = 1
 position = Vector2(25.6217, 25.9091)
-scale = Vector2(3.98686, 3.98686)
-polygon = PackedVector2Array(-5.9249, 3.03269, 4.10806, 3.03269, 4.10806, 5.03928, 9.12454, 5.03928, 9.12454, -5.99697, 6.11465, -5.99697, -8, -4, -7.93149, -0.980492, -5.9249, 0.0228043)
+scale = Vector2(4, 4)
+polygon = PackedVector2Array(-5.90543, 3.02273, 4.10806, 3.03269, 4.10806, 5.03928, 9.09457, 5.02273, 9.09457, -5.97727, 6.09457, -5.97727, -7.90543, -3.97727, -7.90543, -0.977272, -5.90543, 0.022728)
 disabled = true
 
 [node name="Colisão Gen-EricV2" type="CollisionPolygon2D" parent="."]
-visible = false
 position = Vector2(0, 16)
 polygon = PackedVector2Array(-6, -2, -6, 30, -26, 43, -26, 66, 26, 66, 26, 34, 63, 34, 82, 14, 74, 2, 57, 2, 58, -2)
 disabled = true
@@ -201,32 +201,36 @@ polygon = PackedVector2Array(-50, 58, -42, 58, -42, 62, 42, 62, 42, 61, 42, 58, 
 disabled = true
 
 [node name="Colisão turbina 1" type="CollisionPolygon2D" parent="."]
+visible = false
 position = Vector2(-45, -15)
 scale = Vector2(4.09669, 4.09669)
 polygon = PackedVector2Array(-4.63788, 6.10249, -3.17329, 6.10249, -3.17329, 7.07888, 1.70869, 7.07888, 1.70869, 6.10249, 2.68509, 6.10249, 4.63788, -5.61429, 1.70869, -6.59068, -3.17329, -6.59068, -4.63788, -5.85838)
 
 [node name="Area2D" type="Area2D" parent="." groups=["player"]]
-visible = false
 collision_layer = 2
 collision_mask = 5
 
 [node name="Colisão arma" type="CollisionPolygon2D" parent="Area2D"]
+visible = false
 position = Vector2(25.6217, 25.9091)
 scale = Vector2(3.98686, 3.98686)
 polygon = PackedVector2Array(-5.9249, 3.03269, 4.10806, 3.03269, 4.10806, 5.03928, 9.12454, 5.03928, 9.12454, -5.99697, 6.11465, -5.99697, -8, -4, -7.93149, -0.980492, -5.9249, 0.0228043)
 disabled = true
 
 [node name="Colisão Geral" type="CollisionPolygon2D" parent="Area2D"]
+visible = false
 position = Vector2(-41, 5)
 rotation = 1.5708
 polygon = PackedVector2Array(-39, 1.00012, -51.0001, -34.9998, -71.0001, -34.9998, -71.0002, -58.9998, -51.0002, -58.9998, -39.0003, -82.9999, -35.0003, -82.9999, -35.0003, -90.9999, 8.99966, -91.0001, 8.99991, -23.0001, 4.99991, -23.0001, 4.99997, -7.00006, 0.999969, -7, 1, 1)
 
 [node name="Colisão turbina" type="CollisionPolygon2D" parent="Area2D"]
+visible = false
 position = Vector2(-45, -15)
 scale = Vector2(4.09669, 4.09669)
 polygon = PackedVector2Array(-5.1261, 6.10249, -3.1733, 6.10249, -3.17329, 7.07888, 1.70869, 7.07888, 1.70869, 6.10249, 2.68509, 6.10249, 4.63788, -5.61429, 1.70869, -6.59068, -3.17329, -6.59068, -5.1261, -5.61429)
 
 [node name="Colisão Gen-EricV1" type="CollisionPolygon2D" parent="Area2D"]
+visible = false
 position = Vector2(25.6217, 25.9091)
 scale = Vector2(3.98686, 3.98686)
 polygon = PackedVector2Array(-5.9249, 3.03269, 4.10806, 3.03269, 4.10806, 5.03928, 9.12454, 5.03928, 9.12454, -5.99697, 6.11465, -5.99697, -8, -4, -7.93149, -0.980492, -5.9249, 0.0228043)
@@ -238,16 +242,19 @@ polygon = PackedVector2Array(-6, -2, -6, 30, -26, 43, -26, 66, 26, 66, 26, 34, 6
 disabled = true
 
 [node name="Colisão Peacemaker" type="CollisionPolygon2D" parent="Area2D"]
+visible = false
 position = Vector2(12, -4)
 polygon = PackedVector2Array(-18, 46, -2, 46, -2, 42, 2, 42, 2, 34, 70, 34, 70, 14, 38, 6, -18, 14)
 disabled = true
 
 [node name="Colisão Imperium" type="CollisionPolygon2D" parent="Area2D"]
+visible = false
 position = Vector2(16, 4)
 polygon = PackedVector2Array(-30, 58, -10, 58, -10, 34, 6, 50, 22, 50, 34, 34, 58, 34, 58, 10, 34, -2, -22, 22, -30, 22)
 disabled = true
 
 [node name="Colisão Killerbee" type="CollisionPolygon2D" parent="Area2D"]
+visible = false
 position = Vector2(24, 16)
 polygon = PackedVector2Array(-50, 58, -42, 58, -42, 62, 42, 62, 42, 61, 42, 58, 46, 58, 46, 30, 42, 26, 46, 17, 70, 8, 38, -7, 38, -14, -54, -2, -54, 14, -38, 14, -38, 26, -50, 30)
 disabled = true

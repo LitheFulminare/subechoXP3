@@ -918,7 +918,6 @@ parameters/conditions/melee = false
 parameters/conditions/shoot = false
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-debug_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["inimigo"]]
 visible = false
