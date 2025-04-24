@@ -2,6 +2,7 @@ extends AudioStreamPlayer
 
 const main_theme = preload("res://Audio/Soundtracks/Abyssal_Cleaner_Theme.ogg")
 
+# this is used to loop the song without cutting the last note and letting it ring
 @onready var secondary_audio_player = $"Secondary Audio Player"
 
 var is_playing_music: bool = false
@@ -16,8 +17,12 @@ func play_music(music: AudioStream, volume = 0.0):
 
 func play_main_theme():
 	is_playing_music = true
+	
 	secondary_audio_player.max_polyphony = 2
 	play_music(main_theme)
+	
+	# the file lasts almost 30 sec but the actual song lasts only 22 sec=
+	# this loops the song while letting the last note ring 
 	while is_playing_music:
 		await get_tree().create_timer(22).timeout
 		
@@ -48,5 +53,7 @@ func stop_playing_with_fadeout(fadeout_time : float = 1):
 	# after the tween it stops the music and sets the volume back to normal
 	stop()
 	secondary_audio_player.stop()
+	stream = null
+	secondary_audio_player.stream = null
 	volume_db = 0
 	secondary_audio_player.volume_db = 0
