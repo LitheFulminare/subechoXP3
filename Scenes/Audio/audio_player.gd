@@ -20,6 +20,13 @@ func play_main_theme():
 	play_music(main_theme)
 	while is_playing_music:
 		await get_tree().create_timer(22).timeout
+		
+		# maybe there's a better solution, but if I don't check is_playing_music
+		# again it might cause an unwanted loop if the bool becomes false after
+		# starting the timer
+		if !is_playing_music:
+			return
+			
 		secondary_audio_player.stream = main_theme
 		secondary_audio_player.play()
 
