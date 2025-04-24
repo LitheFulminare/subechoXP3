@@ -1,6 +1,6 @@
 extends AudioStreamPlayer
 
-const main_theme = preload("res://Audio/Soundtracks/Abyssal_Cleaner_Theme.ogg")
+const main_theme = preload("res://Audio/Soundtracks/Abyssal Cleaner Theme.ogg")
 
 # this is used to loop the song without cutting the last note and letting it ring
 @onready var secondary_audio_player = $"Secondary Audio Player"
