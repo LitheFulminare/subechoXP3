@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d3lq4rq1fh0y1"
+path="res://.godot/imported/Lead 2 (Phase 1).wav-fc7680861b4ae991eecc4e351cd5ffd0.sample"
+
+[deps]
+
+source_file="res://Audio/Reaper projects/Exports/Lead 2 (Phase 1).wav"
+dest_files=["res://.godot/imported/Lead 2 (Phase 1).wav-fc7680861b4ae991eecc4e351cd5ffd0.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
