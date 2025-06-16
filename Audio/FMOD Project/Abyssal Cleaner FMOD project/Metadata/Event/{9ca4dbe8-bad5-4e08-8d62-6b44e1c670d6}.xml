@@ -369,8 +369,8 @@
 			<value>8</value>
 		</property>
 		<relationship name="sounds">
-			<destination>{f628a670-93bc-4ead-9743-d53f4234cf36}</destination>
 			<destination>{ff6270c1-0938-4e45-9596-741936d8c23d}</destination>
+			<destination>{f628a670-93bc-4ead-9743-d53f4234cf36}</destination>
 			<destination>{bb31016e-e794-4d79-9ea1-59c1736f3bed}</destination>
 		</relationship>
 	</object>
@@ -653,6 +653,7 @@
 		<relationship name="effects">
 			<destination>{019d8ad6-48d0-4921-95e0-3c7bced8e6af}</destination>
 			<destination>{d64496bb-a5ab-4a1f-993e-3cbc4cc23f73}</destination>
+			<destination>{02eb5391-43d0-48c8-b97b-7c2b81a7a8b3}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{38628066-94a6-4210-8308-c248e92ca5ad}" />
@@ -683,14 +684,14 @@
 			<destination>{4e799b4b-5397-48d0-9e26-8e59b3af152c}</destination>
 		</relationship>
 	</object>
-	<object class="SingleSound" id="{f628a670-93bc-4ead-9743-d53f4234cf36}">
-		<relationship name="audioFile">
-			<destination>{7b0512bf-47bc-4200-ad11-df92fbe0ec0d}</destination>
-		</relationship>
-	</object>
 	<object class="SingleSound" id="{ff6270c1-0938-4e45-9596-741936d8c23d}">
 		<relationship name="audioFile">
 			<destination>{668822a2-3cad-454d-9142-17e91f052132}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{f628a670-93bc-4ead-9743-d53f4234cf36}">
+		<relationship name="audioFile">
+			<destination>{7b0512bf-47bc-4200-ad11-df92fbe0ec0d}</destination>
 		</relationship>
 	</object>
 	<object class="SingleSound" id="{bb31016e-e794-4d79-9ea1-59c1736f3bed}">
@@ -791,6 +792,14 @@
 	<object class="MultibandEqEffect" id="{d64496bb-a5ab-4a1f-993e-3cbc4cc23f73}">
 		<property name="frequencyA">
 			<value>1024.91663</value>
+		</property>
+	</object>
+	<object class="ChorusEffect" id="{02eb5391-43d0-48c8-b97b-7c2b81a7a8b3}">
+		<property name="rate">
+			<value>2</value>
+		</property>
+		<property name="depth">
+			<value>20</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{87dea8d1-1a19-4301-983d-c708bf202389}">

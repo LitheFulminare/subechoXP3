@@ -1,4 +1,4 @@
-<REAPER_PROJECT 0.1 "7.38/win64" 1750099233
+<REAPER_PROJECT 0.1 "7.38/win64" 1750098949
   <NOTES 0 2
   >
   RIPPLE 0 0
@@ -18,8 +18,8 @@
   VIDEO_CONFIG 0 0 65792
   PANMODE 3
   PANLAWFLAGS 3
-  CURSOR 19.5
-  ZOOM 35.85960413809074 218 0
+  CURSOR 27
+  ZOOM 35.85960413809074 243 0
   VZOOMEX 9.18011856 0
   USE_REC_CFG 0
   RECMODE 1
@@ -112,7 +112,7 @@
     BUSCOMP 0 0 0 0 0
     SHOWINMIX 1 0.6667 0.5 1 0.5 0 0 0
     FIXEDLANES 9 0 0 0 0
-    SEL 0
+    SEL 1
     REC 0 0 1 0 0 0 0 0
     VU 64
     TRACKHEIGHT 0 0 0 0 0 0 0
@@ -274,7 +274,7 @@
       FADEIN 1 0 0 1 0 0 0
       FADEOUT 1 0 0 1 0 0 0
       MUTE 0 0
-      SEL 0
+      SEL 1
       IGUID {B30BBBF5-3E1D-42C3-9F93-78A777376F6E}
       IID 50
       NAME 01-Lead-MIDI
@@ -297,10 +297,12 @@
         E 3840 80 32 00
         E 0 90 35 7f
         E 2880 80 35 00
-        e 0 90 39 7f
-        e 960 80 39 00
-        E 0 90 32 7f
-        E 3840 80 32 00
+        E 0 90 39 7f
+        E 1920 80 39 00
+        E 0 90 38 7f
+        E 960 80 38 00
+        e 0 90 32 7f
+        e 1920 80 32 00
         E 0 b0 7b 00
         CCINTERP 32
         CHASE_CC_TAKEOFFS 1
@@ -556,7 +558,7 @@
     BUSCOMP 0 0 0 0 0
     SHOWINMIX 1 0.6667 0.5 1 0.5 0 0 0
     FIXEDLANES 9 0 0 0 0
-    SEL 1
+    SEL 0
     REC 0 0 1 0 0 0 0 0
     VU 64
     TRACKHEIGHT 0 0 0 0 0 0 0
