@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ccy57llxk3tvb"
+path="res://.godot/imported/Starting synth.wav-ae1eea03bf41e9a950f50d87d617d30d.sample"
+
+[deps]
+
+source_file="res://Audio/Reaper projects/Starting synth.wav"
+dest_files=["res://.godot/imported/Starting synth.wav-ae1eea03bf41e9a950f50d87d617d30d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

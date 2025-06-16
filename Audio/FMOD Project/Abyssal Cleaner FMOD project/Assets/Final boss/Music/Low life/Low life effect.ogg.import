@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cebxxd8dy0nf4"
+path="res://.godot/imported/Low life effect.ogg-5350ee533a1da3e478503dcb2d467ec7.oggvorbisstr"
+
+[deps]
+
+source_file="res://Audio/FMOD Project/Abyssal Cleaner FMOD project/Assets/Final boss/Music/Low life/Low life effect.ogg"
+dest_files=["res://.godot/imported/Low life effect.ogg-5350ee533a1da3e478503dcb2d467ec7.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
