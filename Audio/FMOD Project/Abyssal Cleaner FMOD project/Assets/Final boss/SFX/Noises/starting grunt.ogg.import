@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dtd0u4v5bbyob"
+path="res://.godot/imported/starting grunt.ogg-3e58275f95a73a97dd4441c37a2c4b7b.oggvorbisstr"
+
+[deps]
+
+source_file="res://Audio/FMOD Project/Abyssal Cleaner FMOD project/Assets/Final boss/SFX/Noises/starting grunt.ogg"
+dest_files=["res://.godot/imported/starting grunt.ogg-3e58275f95a73a97dd4441c37a2c4b7b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{19899d2c-9fd7-406d-b1ff-f4fc3836d94a}">
+		<property name="assetPath">
+			<value>Final boss/SFX/Noises/starting grunt.ogg</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>2.5312916666666667</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{81210979-5d59-43ac-8b34-3bdf3c66b654}</destination>
+		</relationship>
+	</object>
+</objects>
