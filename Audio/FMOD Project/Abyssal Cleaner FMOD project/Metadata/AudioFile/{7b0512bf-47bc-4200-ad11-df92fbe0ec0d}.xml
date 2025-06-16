@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{7b0512bf-47bc-4200-ad11-df92fbe0ec0d}">
+		<property name="assetPath">
+			<value>Final boss/Music/Phase 1 Instruments/Bass/Bass 2.ogg</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>8</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{81210979-5d59-43ac-8b34-3bdf3c66b654}</destination>
+		</relationship>
+	</object>
+</objects>
