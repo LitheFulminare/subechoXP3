@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="DataFile" id="{89552ed0-0595-442b-be31-80b67672916d}">
+		<property name="assetPath">
+			<value>Final boss/Music/Phase 1 Instruments/Lead/Lead 2.ogg.import</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b3c2a0a9-0ee7-4337-ba01-331de48a96ed}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="DataFile" id="{de191f2b-b3d6-4466-94e6-82b1c553c48a}">
+		<property name="assetPath">
+			<value>Final boss/Music/Transitions/Starting synth.ogg.import</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b3c2a0a9-0ee7-4337-ba01-331de48a96ed}</destination>
+		</relationship>
+	</object>
+</objects>

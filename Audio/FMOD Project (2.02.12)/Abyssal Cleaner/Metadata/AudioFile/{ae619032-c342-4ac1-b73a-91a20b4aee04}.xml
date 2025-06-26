@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{ae619032-c342-4ac1-b73a-91a20b4aee04}">
+		<property name="assetPath">
+			<value>Final boss/Music/Low life/Low life (fade in&amp;out).ogg</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>4</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b3c2a0a9-0ee7-4337-ba01-331de48a96ed}</destination>
+		</relationship>
+	</object>
+</objects>

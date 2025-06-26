@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="DataFile" id="{6a20f871-432b-421c-9e03-cbbc621dde90}">
+		<property name="assetPath">
+			<value>Final boss/Music/Low life/Low life (fade in&amp;out).ogg.import</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b3c2a0a9-0ee7-4337-ba01-331de48a96ed}</destination>
+		</relationship>
+	</object>
+</objects>
