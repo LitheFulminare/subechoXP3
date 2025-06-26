@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{c9994ada-73bd-4a0d-a672-450d285bd0b1}">
 		<property name="assetPath">
-			<value>Abyssal Cleaner Theme.ogg</value>
+			<value>Music/Main Theme/Abyssal Cleaner Theme.ogg</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

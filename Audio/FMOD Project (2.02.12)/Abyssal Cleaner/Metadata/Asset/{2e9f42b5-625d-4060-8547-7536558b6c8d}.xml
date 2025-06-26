@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="EncodableAsset" id="{2e9f42b5-625d-4060-8547-7536558b6c8d}">
 		<property name="assetPath">
-			<value>Final boss/Music/Phase 1 Instruments/Synth/</value>
+			<value>Music/Final boss/Music/Phase 1 Instruments/Synth/</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{b3c2a0a9-0ee7-4337-ba01-331de48a96ed}</destination>

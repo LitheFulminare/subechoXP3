@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="DataFile" id="{f8409e45-761d-44c6-b661-4149f98a5d45}">
 		<property name="assetPath">
-			<value>Final boss/Music/Low life/Low life effect.ogg.import</value>
+			<value>Music/Final boss/Music/Low life/Low life effect.ogg.import</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{b3c2a0a9-0ee7-4337-ba01-331de48a96ed}</destination>

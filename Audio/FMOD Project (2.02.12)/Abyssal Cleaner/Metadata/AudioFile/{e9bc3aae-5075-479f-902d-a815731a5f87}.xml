@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{e9bc3aae-5075-479f-902d-a815731a5f87}">
 		<property name="assetPath">
-			<value>Final boss/Music/Phase 1 Instruments/Synth/Low synth intro.ogg</value>
+			<value>Music/Final boss/Music/Phase 1 Instruments/Synth/Low synth intro.ogg</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>

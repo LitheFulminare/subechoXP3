@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="DataFile" id="{fa97e137-d51b-4db3-b2f2-b6ea2228a8f9}">
+	<object class="EncodableAsset" id="{96d35c68-7645-45f8-8395-555eda7d447a}">
 		<property name="assetPath">
-			<value>Final boss/Music/Phase 1 Instruments/Bass/Bass 1.ogg.import</value>
+			<value>Music/</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{b3c2a0a9-0ee7-4337-ba01-331de48a96ed}</destination>

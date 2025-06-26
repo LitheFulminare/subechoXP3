@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{aaa5532c-df0f-44a2-ab97-53ee8cc9e045}">
 		<property name="assetPath">
-			<value>Final boss/SFX/Noises/starting grunt.ogg</value>
+			<value>Music/Final boss/SFX/Noises/starting grunt.ogg</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

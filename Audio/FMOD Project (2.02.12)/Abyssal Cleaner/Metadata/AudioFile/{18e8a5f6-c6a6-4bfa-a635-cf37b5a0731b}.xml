@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{18e8a5f6-c6a6-4bfa-a635-cf37b5a0731b}">
 		<property name="assetPath">
-			<value>Final boss/Music/Transitions/Starting synth.ogg</value>
+			<value>Music/Final boss/Music/Transitions/Starting synth.ogg</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>
