@@ -1,7 +1,8 @@
 extends Control
 
 func _ready():
-	AudioPlayer.play_main_theme()
+	#AudioPlayer.play_main_theme()
+	AudioPlayer.play_level_1()
 	
 	Global.killed_last_boss_on_run = false
 	Global.current_room = 0

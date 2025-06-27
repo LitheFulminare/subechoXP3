@@ -2,6 +2,9 @@ extends AudioStreamPlayer
 
 const main_theme = preload("res://Audio/Soundtracks/Abyssal Cleaner Theme.ogg")
 
+const level1_intro: AudioStream = preload("res://Audio/Soundtracks/Level 1 - intro.ogg")
+const level1_loop: AudioStream = preload("res://Audio/Soundtracks/Level 1 - loop.ogg")
+
 # this is used to loop the song without cutting the last note and letting it ring
 @onready var secondary_audio_player = $"Secondary Audio Player"
 
@@ -17,6 +20,15 @@ func play_music(music: AudioStream, volume = 0.0):
 
 func play_main_theme():
 	play_music(main_theme)
+	
+func play_level_1():
+	play_music(level1_intro)
+	finished.connect(play_level_1_with_tail)
+
+## Plays the tail at the beggining. Called after playing this song at least once
+func play_level_1_with_tail():
+	#finished.disconnect(play_level_1_with_tail())
+	play_music(level1_loop)
 
 func stop_playing_with_fadeout(fadeout_time: float = 1):
 	is_playing_music = false
