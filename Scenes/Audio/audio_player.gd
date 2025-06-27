@@ -6,6 +6,7 @@ const level1_intro: AudioStream = preload("res://Audio/Soundtracks/Level 1 - int
 const level1_loop: AudioStream = preload("res://Audio/Soundtracks/Level 1 - loop.ogg")
 
 # this is used to loop the song without cutting the last note and letting it ring
+@export var timer: Timer
 @onready var secondary_audio_player = $"Secondary Audio Player"
 
 var is_playing_music: bool = false
@@ -23,10 +24,14 @@ func play_main_theme():
 	
 func play_level_1():
 	play_music(level1_intro)
-	## USE A TIMER INSTEAD
-	#maybe this is the solution -> stream.get_length()
-	finished.connect(play_level_1_with_tail)
+	timer.wait_time = stream.get_length()
+	timer.start()
+	if !timer.timeout.is_connected(play_level_1_with_tail):
+		timer.timeout.connect(play_level_1_with_tail)
 
+# this function is called every time the song ends without needing to,
+# but it doesn't cause any errors.
+# I'm writing this just in case
 func play_level_1_with_tail():
 	play_music(level1_loop)
 
