@@ -2,8 +2,8 @@ extends AudioStreamPlayer
 
 const main_theme = preload("res://Audio/Soundtracks/Abyssal Cleaner Theme.ogg")
 
-const level1_intro: AudioStream = preload("res://Audio/Soundtracks/Level 1 - intro.ogg")
-const level1_loop: AudioStream = preload("res://Audio/Soundtracks/Level 1 - loop.ogg")
+const level1_intro: AudioStream = preload("res://Audio/Soundtracks/Level 1/Level 1 - intro.ogg")
+const level1_loop: AudioStream = preload("res://Audio/Soundtracks/Level 1/Level 1 - loop.ogg")
 
 # this is used to loop the song without cutting the last note and letting it ring
 @export var timer: Timer
@@ -11,7 +11,13 @@ const level1_loop: AudioStream = preload("res://Audio/Soundtracks/Level 1 - loop
 
 var is_playing_music: bool = false
 
-func play_music(music: AudioStream, volume = 0.0):
+func loop_seamlessly(callable: Callable) -> void:
+	timer.wait_time = stream.get_length()
+	timer.start()
+	if !timer.timeout.is_connected(callable):
+		timer.timeout.connect(callable)
+
+func play_music(music: AudioStream, volume = 0.0) -> void:
 	if stream == music:
 		return
 	
@@ -24,10 +30,7 @@ func play_main_theme():
 	
 func play_level_1():
 	play_music(level1_intro)
-	timer.wait_time = stream.get_length()
-	timer.start()
-	if !timer.timeout.is_connected(play_level_1_with_tail):
-		timer.timeout.connect(play_level_1_with_tail)
+	loop_seamlessly(play_level_1_with_tail)
 
 # this function is called every time the song ends without needing to,
 # but it doesn't cause any errors.
