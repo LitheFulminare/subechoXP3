@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dj7bf6hjdce42"
+path="res://.godot/imported/Bass 3.ogg-a23cd504c6a8f5907b6f25b381e88437.oggvorbisstr"
+
+[deps]
+
+source_file="res://Audio/FMOD Project (2.02.12)/Abyssal Cleaner/Assets/Music/Final boss/Music/Phase 1 Instruments/Bass/Bass 3.ogg"
+dest_files=["res://.godot/imported/Bass 3.ogg-a23cd504c6a8f5907b6f25b381e88437.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

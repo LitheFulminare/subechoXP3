@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://bdb4fpqew8b7y"
-path="res://.godot/imported/Low life (fade in&out).ogg-0fa4d21f2262e867d8575dba94c4c327.oggvorbisstr"
+path="res://.godot/imported/Low life (fade in&out).ogg-e8f5259197cb4e795dddbfe132d943cb.oggvorbisstr"
 
 [deps]
 
-source_file="res://Audio/FMOD Project/Abyssal Cleaner FMOD project/Assets/Final boss/Music/Low life/Low life (fade in&out).ogg"
-dest_files=["res://.godot/imported/Low life (fade in&out).ogg-0fa4d21f2262e867d8575dba94c4c327.oggvorbisstr"]
+source_file="res://Audio/FMOD Project (2.02.12)/Abyssal Cleaner/Assets/Music/Final boss/Music/Low life/Low life (fade in&out).ogg"
+dest_files=["res://.godot/imported/Low life (fade in&out).ogg-e8f5259197cb4e795dddbfe132d943cb.oggvorbisstr"]
 
 [params]
 

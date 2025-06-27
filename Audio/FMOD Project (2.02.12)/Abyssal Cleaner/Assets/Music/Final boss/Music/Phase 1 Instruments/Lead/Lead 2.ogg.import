@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b1pe23c3xjbnl"
+path="res://.godot/imported/Lead 2.ogg-e7c346f5439317a87b77da9ca2e8ae8d.oggvorbisstr"
+
+[deps]
+
+source_file="res://Audio/FMOD Project (2.02.12)/Abyssal Cleaner/Assets/Music/Final boss/Music/Phase 1 Instruments/Lead/Lead 2.ogg"
+dest_files=["res://.godot/imported/Lead 2.ogg-e7c346f5439317a87b77da9ca2e8ae8d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

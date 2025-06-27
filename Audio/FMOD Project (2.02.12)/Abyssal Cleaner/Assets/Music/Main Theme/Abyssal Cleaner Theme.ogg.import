@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bmm6g1tbyy1ka"
+path="res://.godot/imported/Abyssal Cleaner Theme.ogg-7d8c8b761ade7a9baf392207d76d2bfd.oggvorbisstr"
+
+[deps]
+
+source_file="res://Audio/FMOD Project (2.02.12)/Abyssal Cleaner/Assets/Music/Main Theme/Abyssal Cleaner Theme.ogg"
+dest_files=["res://.godot/imported/Abyssal Cleaner Theme.ogg-7d8c8b761ade7a9baf392207d76d2bfd.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

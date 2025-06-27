@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cll3g6r4rbr8b"
+path="res://.godot/imported/Low synth intro.ogg-d4be5bd621bad81396a880331a36a9b6.oggvorbisstr"
+
+[deps]
+
+source_file="res://Audio/FMOD Project (2.02.12)/Abyssal Cleaner/Assets/Music/Final boss/Music/Phase 1 Instruments/Synth/Low synth intro.ogg"
+dest_files=["res://.godot/imported/Low synth intro.ogg-d4be5bd621bad81396a880331a36a9b6.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://djd0njdu54squ"
+path="res://.godot/imported/Starting synth.ogg-4aa9d923836ffa09b9e72f74e3627878.oggvorbisstr"
+
+[deps]
+
+source_file="res://Audio/FMOD Project (2.02.12)/Abyssal Cleaner/Assets/Music/Final boss/Music/Transitions/Starting synth.ogg"
+dest_files=["res://.godot/imported/Starting synth.ogg-4aa9d923836ffa09b9e72f74e3627878.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
