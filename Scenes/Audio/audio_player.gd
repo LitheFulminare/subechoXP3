@@ -23,11 +23,11 @@ func play_main_theme():
 	
 func play_level_1():
 	play_music(level1_intro)
+	## USE A TIMER INSTEAD
+	#maybe this is the solution -> stream.get_length()
 	finished.connect(play_level_1_with_tail)
 
-## Plays the tail at the beggining. Called after playing this song at least once
 func play_level_1_with_tail():
-	#finished.disconnect(play_level_1_with_tail())
 	play_music(level1_loop)
 
 func stop_playing_with_fadeout(fadeout_time: float = 1):
