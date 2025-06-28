@@ -1,9 +1,12 @@
 extends AudioStreamPlayer
 
-const main_theme = preload("res://Audio/Soundtracks/Abyssal Cleaner Theme.ogg")
+const main_theme_intro = preload("res://Audio/Soundtracks/Main Theme/Abyssal Cleaner Theme - intro.ogg")
+const main_theme_loop = preload("res://Audio/Soundtracks/Main Theme/Abyssal Cleaner Theme - loop.ogg")
 
 const level1_intro: AudioStream = preload("res://Audio/Soundtracks/Level 1/Level 1 - intro.ogg")
 const level1_loop: AudioStream = preload("res://Audio/Soundtracks/Level 1/Level 1 - loop.ogg")
+
+var current_song: AudioStream
 
 # this is used to loop the song without cutting the last note and letting it ring
 @export var timer: Timer
@@ -11,11 +14,18 @@ const level1_loop: AudioStream = preload("res://Audio/Soundtracks/Level 1/Level 
 
 var is_playing_music: bool = false
 
-func loop_seamlessly(callable: Callable) -> void:
+func _ready() -> void:
+	if !timer.timeout.is_connected(play_seamless_music):
+		timer.timeout.connect(play_seamless_music)
+
+func play_seamless_music() -> void:
+	play_music(current_song)
+
+func loop_seamlessly(music_with_tail: AudioStream) -> void:
 	timer.wait_time = stream.get_length()
 	timer.start()
-	if !timer.timeout.is_connected(callable):
-		timer.timeout.connect(callable)
+	
+	current_song = music_with_tail
 
 func play_music(music: AudioStream, volume = 0.0) -> void:
 	if stream == music:
@@ -26,17 +36,12 @@ func play_music(music: AudioStream, volume = 0.0) -> void:
 	play()
 
 func play_main_theme():
-	play_music(main_theme)
+	play_music(main_theme_intro)
+	loop_seamlessly(main_theme_loop)
 	
 func play_level_1():
 	play_music(level1_intro)
-	loop_seamlessly(play_level_1_with_tail)
-
-# this function is called every time the song ends without needing to,
-# but it doesn't cause any errors.
-# I'm writing this just in case
-func play_level_1_with_tail():
-	play_music(level1_loop)
+	loop_seamlessly(level1_loop)
 
 func stop_playing_with_fadeout(fadeout_time: float = 1):
 	is_playing_music = false

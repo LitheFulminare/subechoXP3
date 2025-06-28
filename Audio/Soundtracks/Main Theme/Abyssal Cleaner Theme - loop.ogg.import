@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://50q0rghyo5dq"
+path="res://.godot/imported/Abyssal Cleaner Theme - loop.ogg-6106fff163ed989dd645e9d2cb74d29b.oggvorbisstr"
+
+[deps]
+
+source_file="res://Audio/Soundtracks/Main Theme/Abyssal Cleaner Theme - loop.ogg"
+dest_files=["res://.godot/imported/Abyssal Cleaner Theme - loop.ogg-6106fff163ed989dd645e9d2cb74d29b.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
