@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/Level 1 - loop.ogg-3fcaa84b80dd74b4c5789252df
 [params]
 
 loop=true
-loop_offset=0.0
-bpm=120.0
+loop_offset=42.0
+bpm=0.0
 beat_count=0
 bar_beats=4
