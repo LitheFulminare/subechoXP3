@@ -25,7 +25,7 @@ config/size/mode=0
 Global="*res://Misc/Global.gd"
 player_vars="*res://Misc/Player Variables.gd"
 Ambience="*res://Scenes/Layouts/ambience.tscn"
-AudioPlayer="*res://Scenes/Audio/audio_player.tscn"
+MusicManager="*res://Scenes/Audio/MusicManager.tscn"
 
 [debug]
 

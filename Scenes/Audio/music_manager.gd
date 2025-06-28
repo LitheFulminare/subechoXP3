@@ -7,6 +7,7 @@ const level1_intro: AudioStream = preload("res://Audio/Soundtracks/Level 1/Level
 const level1_loop: AudioStream = preload("res://Audio/Soundtracks/Level 1/Level 1 - loop.ogg")
 
 var current_song: AudioStream
+var queued_song: Callable
 
 # this is used to loop the song without cutting the last note and letting it ring
 @export var timer: Timer
@@ -14,6 +15,7 @@ var current_song: AudioStream
 
 var is_playing_music: bool = false
 
+# I think this is causing clipping, I might go back to the old callable thing
 func _ready() -> void:
 	if !timer.timeout.is_connected(play_seamless_music):
 		timer.timeout.connect(play_seamless_music)
@@ -49,14 +51,9 @@ func stop_playing_with_fadeout(fadeout_time: float = 1):
 	secondary_audio_player.max_polyphony = 1
 	
 	# create tween for the volume of both main and secondary Audio Players
-	var tween1 = get_tree().create_tween()
-	var tween2 = get_tree().create_tween()
-	tween1.tween_property(self, "volume_db", -60, fadeout_time)
-	tween2.tween_property(secondary_audio_player, "volume_db", -60, fadeout_time)
-	# I don't know why, but I'm pretty sure I have to await both tweens even though
-	# their duration is the same
-	await tween1.finished
-	await tween2.finished
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "volume_db", -60, fadeout_time)
+	await tween.finished
 	
 	# after the tween it stops the music and sets the volume back to normal
 	stop()
@@ -65,3 +62,5 @@ func stop_playing_with_fadeout(fadeout_time: float = 1):
 	secondary_audio_player.stream = null
 	volume_db = 0
 	secondary_audio_player.volume_db = 0
+	
+	queued_song.call()

@@ -1,7 +1,7 @@
 extends Control
 
 func _ready():
-	AudioPlayer.play_main_theme()
+	MusicManager.play_main_theme()
 	
 	Global.killed_last_boss_on_run = false
 	Global.current_room = 0
@@ -11,7 +11,8 @@ func _process(delta):
 
 func _on_play_pressed():
 	Global.room_list.shuffle()
-	AudioPlayer.stop_playing_with_fadeout(4)
+	MusicManager.stop_playing_with_fadeout(3)
+	MusicManager.queued_song = MusicManager.play_level_1
 	Global.next_room()
 	#print(Global.room_list)
 	#Global.goto_scene("res://Scenes/Layouts/Main 1.tscn")
