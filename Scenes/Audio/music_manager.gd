@@ -35,6 +35,9 @@ func play_main_theme():
 	
 func play_level_1():
 	play_music(level1)
+	
+func play_level_2():
+	play_music(level2)
 
 func stop_playing_with_fadeout(fadeout_time: float = 1):
 	is_playing_music = false
