@@ -10,6 +10,7 @@ enum songs
 const main_theme: AudioStream  = preload("res://Audio/Soundtracks/Main Theme/Abyssal Cleaner Theme.ogg")
 
 const level1: AudioStream = preload("res://Audio/Soundtracks/Level 1/Level 1.ogg")
+const level2: AudioStream = preload("res://Audio/Soundtracks/Level 2/Level_2.ogg")
 
 var current_song: songs = songs.no_song
 var queued_song: Callable

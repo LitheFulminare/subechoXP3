@@ -20,6 +20,10 @@ boot_splash/use_filter=false
 config/icon="res://sprites/Misc/Icon com logo (atualizado).png"
 config/size/mode=0
 
+[audio]
+
+buses/default_bus_layout="res://Misc/Audio Bus/default_bus_layout.tres"
+
 [autoload]
 
 Global="*res://Misc/Global.gd"

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dhkkeejyr7hg4"
+path="res://.godot/imported/Abyssal_Cleaner__Level_2.wav-291b166ec8c05cf10195dc1ed4dc100a.sample"
+
+[deps]
+
+source_file="res://Audio/Raw audio/Abyssal_Cleaner__Level_2.wav"
+dest_files=["res://.godot/imported/Abyssal_Cleaner__Level_2.wav-291b166ec8c05cf10195dc1ed4dc100a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
