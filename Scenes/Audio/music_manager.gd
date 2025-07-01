@@ -65,15 +65,13 @@ func stop_playing_with_fadeout(fadeout_time: float = 1):
 		
 	play_music(queued_song)
 
-func crossfade(new_song: AudioStream, duration: float = 0.075) -> void:
+func transition_to_song(new_song: AudioStream, duration: float = 0.15) -> void:
 	var tween: Tween = get_tree().create_tween()
-	tween.set_parallel()
 	
 	# if "Music Player" node is playing
 	if playing:
 		tween.tween_property(self, "volume_db", -80, duration)
-		play_music(new_song, secondary_audio_player, -80)
-		tween.tween_property(secondary_audio_player, "volume_db", 0, duration)
+		play_music(new_song, secondary_audio_player)
 		
 		await tween.finished
 		stop()
@@ -81,14 +79,13 @@ func crossfade(new_song: AudioStream, duration: float = 0.075) -> void:
 	# if "Secondary Music Player" node is playing
 	else:
 		tween.tween_property(secondary_audio_player, "volume_db", -80, duration)
-		play_music(new_song, self, -80)
-		tween.tween_property(self, "volume_db", 0, duration)
+		play_music(new_song, self)
 		
 		await tween.finished
 		secondary_audio_player.stop()
 
 func change_level_song() -> void:
 	if Global.current_room - 1 < MusicManager.level_songs.size():
-		crossfade(level_songs[Global.current_room-1])
+		transition_to_song(level_songs[Global.current_room-1])
 		#stop_playing_with_fadeout(1)
 		#queued_song = level_songs[Global.current_room-1]
