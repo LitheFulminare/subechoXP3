@@ -12,8 +12,10 @@ const main_theme: AudioStream  = preload("res://Audio/Soundtracks/Main Theme/Aby
 const level1: AudioStream = preload("res://Audio/Soundtracks/Level 1/Level 1.ogg")
 const level2: AudioStream = preload("res://Audio/Soundtracks/Level 2/Level_2.ogg")
 
+var level_songs: Array[AudioStream] = [level1, level2]
+
 var current_song: songs = songs.no_song
-var queued_song: Callable
+var queued_song: AudioStream
 
 # this is used to loop the song without cutting the last note and letting it ring
 @export var timer: Timer
@@ -57,4 +59,7 @@ func stop_playing_with_fadeout(fadeout_time: float = 1):
 	volume_db = 0
 	secondary_audio_player.volume_db = 0
 	
-	queued_song.call()
+	if queued_song == null:
+		return
+		
+	play_music(queued_song)

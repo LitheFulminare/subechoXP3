@@ -12,7 +12,7 @@ func _process(delta):
 func _on_play_pressed():
 	Global.room_list.shuffle()
 	MusicManager.stop_playing_with_fadeout(3)
-	MusicManager.queued_song = MusicManager.play_level_1
+	MusicManager.queued_song = MusicManager.level1
 	Global.next_room()
 	#print(Global.room_list)
 	#Global.goto_scene("res://Scenes/Layouts/Main 1.tscn")
