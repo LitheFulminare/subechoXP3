@@ -19,17 +19,18 @@ var queued_song: AudioStream
 
 # this is used to loop the song without cutting the last note and letting it ring
 @export var timer: Timer
-@onready var secondary_audio_player = $"Secondary Audio Player"
+@export var secondary_audio_player: AudioStreamPlayer
 
 var is_playing_music: bool = false
 
-func play_music(music: AudioStream, volume = 0.0) -> void:
-	if stream == music:
+func play_music(music: AudioStream, audio_player: AudioStreamPlayer = self, volume = 0.0) -> void:
+	audio_player.volume_db = volume
+	
+	if audio_player.stream == music:
 		return
 	
-	stream = music
-	volume_db = volume
-	play()
+	audio_player.stream = music
+	audio_player.play()
 
 # principal calls this and plays the intro again if it's playing the loop
 func play_main_theme():
@@ -64,7 +65,30 @@ func stop_playing_with_fadeout(fadeout_time: float = 1):
 		
 	play_music(queued_song)
 
+func crossfade(new_song: AudioStream, duration: float = 0.075) -> void:
+	var tween: Tween = get_tree().create_tween()
+	tween.set_parallel()
+	
+	# if "Music Player" node is playing
+	if playing:
+		tween.tween_property(self, "volume_db", -80, duration)
+		play_music(new_song, secondary_audio_player, -80)
+		tween.tween_property(secondary_audio_player, "volume_db", 0, duration)
+		
+		await tween.finished
+		stop()
+	
+	# if "Secondary Music Player" node is playing
+	else:
+		tween.tween_property(secondary_audio_player, "volume_db", -80, duration)
+		play_music(new_song, self, -80)
+		tween.tween_property(self, "volume_db", 0, duration)
+		
+		await tween.finished
+		secondary_audio_player.stop()
+
 func change_level_song() -> void:
 	if Global.current_room - 1 < MusicManager.level_songs.size():
-		stop_playing_with_fadeout(1)
-		queued_song = level_songs[Global.current_room-1]
+		crossfade(level_songs[Global.current_room-1])
+		#stop_playing_with_fadeout(1)
+		#queued_song = level_songs[Global.current_room-1]

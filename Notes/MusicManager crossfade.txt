@@ -1,0 +1,4 @@
+It fades out the current song and fades in the new one. Probably will do some changes so it fades out the current one but starts playing the new song immediately.
+
+I guess it won't be that different from the old "stop_playing_with_fade_out()", but instead of waiting for the fade out to end, it'll play ass soon as the fade out starts.
+I'll have to test if that works

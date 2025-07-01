@@ -2,11 +2,12 @@
 
 [ext_resource type="Script" path="res://Scenes/Audio/music_manager.gd" id="1_txvf4"]
 
-[node name="Music Player" type="AudioStreamPlayer" node_paths=PackedStringArray("timer")]
+[node name="Music Player" type="AudioStreamPlayer" node_paths=PackedStringArray("timer", "secondary_audio_player")]
 bus = &"Music"
 script = ExtResource("1_txvf4")
 timer = NodePath("Timer")
+secondary_audio_player = NodePath("Secondary Music Player")
 
 [node name="Timer" type="Timer" parent="."]
 
-[node name="Secondary Audio Player" type="AudioStreamPlayer" parent="."]
+[node name="Secondary Music Player" type="AudioStreamPlayer" parent="."]
