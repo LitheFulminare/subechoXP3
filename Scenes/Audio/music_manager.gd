@@ -63,3 +63,8 @@ func stop_playing_with_fadeout(fadeout_time: float = 1):
 		return
 		
 	play_music(queued_song)
+
+func change_level_song() -> void:
+	if Global.current_room - 1 < MusicManager.level_songs.size():
+		stop_playing_with_fadeout(1)
+		queued_song = level_songs[Global.current_room-1]

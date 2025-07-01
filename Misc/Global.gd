@@ -123,8 +123,9 @@ func next_room():
 			current_room += 1
 			if current_room >= 2:
 				if current_room - 1 < MusicManager.level_songs.size():
-					MusicManager.stop_playing_with_fadeout(1)
-					MusicManager.queued_song = MusicManager.level_songs[current_room-1]
+					MusicManager.change_level_song()
+					#MusicManager.stop_playing_with_fadeout(1)
+					#MusicManager.queued_song = MusicManager.level_songs[current_room-1]
 			
 			if current_room == 1:
 				goto_scene(room_1)
