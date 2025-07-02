@@ -9,6 +9,8 @@ enum songs
 
 const main_theme: AudioStream  = preload("res://Audio/Soundtracks/Main Theme/Abyssal Cleaner Theme.ogg")
 
+const shop_song: AudioStream = preload("res://Audio/Soundtracks/Shop/Shop.ogg")
+
 const level1: AudioStream = preload("res://Audio/Soundtracks/Level 1/Level 1.ogg")
 const level2: AudioStream = preload("res://Audio/Soundtracks/Level 2/Level_2.ogg")
 
