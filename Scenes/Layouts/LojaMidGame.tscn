@@ -551,15 +551,23 @@ buy4 = NodePath("Sounds/Buy 4")
 
 [node name="Buy 1" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("2_ob2d8")
+volume_db = -10.0
+bus = &"SFX"
 
 [node name="Buy 2" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("3_iybjn")
+volume_db = -10.0
+bus = &"SFX"
 
 [node name="Buy 3" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("4_f0jui")
+volume_db = -10.0
+bus = &"SFX"
 
 [node name="Buy 4" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("5_lkn0l")
+volume_db = -10.0
+bus = &"SFX"
 
 [node name="UI" type="CanvasLayer" parent="."]
 

@@ -12,11 +12,15 @@ extends Node2D
 @export var buy3: AudioStreamPlayer
 @export var buy4: AudioStreamPlayer
 
-var buy_effects: Array[AudioStreamPlayer] = [buy1, buy2, buy3, buy4]
+var buy_effects: Array[AudioStreamPlayer]
 var buy_effect_index: int = 0
 
 func _ready():
 	Global.shop_room = false
+	
+	# DEBUG
+	#player_vars.current_scrap = 300
+	#MusicManager.transition_to_song(MusicManager.shop_song)
 	
 	buy_effects = [buy1, buy2, buy3, buy4]
 	
