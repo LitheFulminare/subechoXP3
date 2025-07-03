@@ -1,4 +1,7 @@
+class_name StoreInteractable
 extends StaticBody2D
+
+signal player_interacted
 
 @export_enum("Recuperar vida", "Recuperar energia", "powerup" ) var interact_type: String = ""
 @export_enum("+ vida", "+ energia") var powerup_type : String = ""
@@ -27,6 +30,8 @@ func interact():
 	if interact_type != "":
 		if not depleted && player_vars.current_scrap >= value:
 			depleted = true
+			player_interacted.emit()
+			
 			$Light.visible = false
 			get_tree().call_group("player", "change_stat", "scrap", -value)
 			get_tree().call_group("player", "regen", interact_type)
@@ -39,6 +44,8 @@ func interact():
 	if powerup_type != "":
 		if not depleted && player_vars.current_scrap >= value:
 			depleted = true
+			player_interacted.emit()
+			
 			$Light.visible = false
 			get_tree().call_group("player", "change_stat", "scrap", -value)
 			if $Base != null:

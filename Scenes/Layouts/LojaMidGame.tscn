@@ -1,11 +1,15 @@
-[gd_scene load_steps=76 format=3 uid="uid://d1pje2hup8ea6"]
+[gd_scene load_steps=80 format=3 uid="uid://d1pje2hup8ea6"]
 
 [ext_resource type="PackedScene" uid="uid://d2tg02cwm2lik" path="res://Scenes/Player_e_misc/UI/UI vida e energia.tscn" id="1_1wjsv"]
 [ext_resource type="Script" path="res://Scenes/Layouts/LojaMidGame.gd" id="1_7qn0a"]
 [ext_resource type="PackedScene" uid="uid://8q3v8osdokef" path="res://Scenes/Player_e_misc/UI/UI scrap.tscn" id="2_bklwr"]
+[ext_resource type="AudioStream" uid="uid://c3xjgq6blnbqn" path="res://Audio/SFX/Shop/Buy 1.ogg" id="2_ob2d8"]
+[ext_resource type="AudioStream" uid="uid://dj3uv3ktjcy27" path="res://Audio/SFX/Shop/Buy 2.ogg" id="3_iybjn"]
 [ext_resource type="PackedScene" uid="uid://e4g3db01cv23" path="res://Scenes/Player_e_misc/Player/player.tscn" id="3_pn154"]
+[ext_resource type="AudioStream" uid="uid://bi3vyycrrodm8" path="res://Audio/SFX/Shop/Buy 3.ogg" id="4_f0jui"]
 [ext_resource type="PackedScene" uid="uid://c2o5uc5sspr57" path="res://Scenes/Player_e_misc/Loja/BaseRecVida.tscn" id="4_nhqbp"]
 [ext_resource type="PackedScene" uid="uid://da20fitkathkr" path="res://Scenes/Player_e_misc/Loja/BaseRecEnergia.tscn" id="5_76bnt"]
+[ext_resource type="AudioStream" uid="uid://bf1kjaqt538jy" path="res://Audio/SFX/Shop/Buy 4.ogg" id="5_lkn0l"]
 [ext_resource type="PackedScene" uid="uid://c2xpi37g636ng" path="res://Scenes/Player_e_misc/Loja/PUvida.tscn" id="6_6lfav"]
 [ext_resource type="PackedScene" uid="uid://dgetijbqxnchl" path="res://Scenes/Player_e_misc/Loja/PUenergia.tscn" id="7_j7gty"]
 [ext_resource type="Texture2D" uid="uid://d004737er7nqm" path="res://sprites/Misc/Fundo Menu.png" id="9_3iqao"]
@@ -532,8 +536,30 @@ size = Vector2(52, 457)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wrg76"]
 size = Vector2(90, 283)
 
-[node name="LojaMidGame" type="Node2D"]
+[node name="LojaMidGame" type="Node2D" node_paths=PackedStringArray("interactable1", "interactable2", "interactable3", "interactable4", "buy1", "buy2", "buy3", "buy4")]
 script = ExtResource("1_7qn0a")
+interactable1 = NodePath("CanvasGroup/Interactables/BaseRecVida")
+interactable2 = NodePath("CanvasGroup/Interactables/BaseRecEnergia")
+interactable3 = NodePath("CanvasGroup/Interactables/PU Vida")
+interactable4 = NodePath("CanvasGroup/Interactables/PU Energia")
+buy1 = NodePath("Sounds/Buy 1")
+buy2 = NodePath("Sounds/Buy 2")
+buy3 = NodePath("Sounds/Buy 3")
+buy4 = NodePath("Sounds/Buy 4")
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="Buy 1" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("2_ob2d8")
+
+[node name="Buy 2" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("3_iybjn")
+
+[node name="Buy 3" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("4_f0jui")
+
+[node name="Buy 4" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("5_lkn0l")
 
 [node name="UI" type="CanvasLayer" parent="."]
 

@@ -78,12 +78,14 @@ func next_room():
 			
 		if current_room == 6 && !shop2_visited:
 			goto_scene("res://Scenes/Layouts/LojaMidGame.tscn")
+			# or play alternate shop music here
 			MusicManager.transition_to_song(MusicManager.shop_song)
 			shop_room = true
 			shop2_visited = true
 			
 		if current_room == 8 && !shop3_visited:
 			goto_scene("res://Scenes/Layouts/LojaMidGame.tscn")
+			# or play alternate shop music here
 			MusicManager.transition_to_song(MusicManager.shop_song)
 			shop_room = true
 			shop1_visited = true
