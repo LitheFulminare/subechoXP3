@@ -331,13 +331,14 @@ func death_no_life():
 	$"Light 2".visible = false
 	$Sonar.visible = false
 	dead = true
+	print_debug("Fade out song here")
 	
 func death_no_energy():
 	var tween = create_tween()
 	tween.tween_property($Light, "energy", 0, 1)
 	tween.parallel().tween_property($"Light 2", "energy", 0, 2) 
 	dead = true
-	
+	print_debug("Fade out song here")
 
 #func _on_mudar_arma_1_cooldown_timeout():
 	#mudarA1_cd = false
