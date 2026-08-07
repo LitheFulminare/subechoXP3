@@ -1,7 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://e4g3db01cv23"]
+[gd_scene load_steps=17 format=3 uid="uid://e4g3db01cv23"]
 
 [ext_resource type="Script" path="res://Scenes/Player_e_misc/Player/Player.gd" id="1_b66x1"]
+[ext_resource type="AudioStream" uid="uid://bdbxht0rx2l8l" path="res://Audio/SFX/explosion.wav" id="2_obrug"]
 [ext_resource type="Texture2D" uid="uid://fcjwgbvtu06l" path="res://sprites/player/Casco/Casco1.png" id="2_r5lx4"]
+[ext_resource type="AudioStream" uid="uid://djmu23csvqhe5" path="res://Audio/SFX/Sonar.wav" id="3_yq4ty"]
+[ext_resource type="AudioStream" uid="uid://je8i7mawves1" path="res://Audio/SFX/Enemy/Damage.wav" id="4_4vjkp"]
 [ext_resource type="Texture2D" uid="uid://vjb3rydk6640" path="res://sprites/player/Sonar/sonar1.png" id="6_22ess"]
 [ext_resource type="PackedScene" uid="uid://r2uor4w348v2" path="res://Scenes/Player_e_misc/Player/Turbina/Turbina v1.tscn" id="6_iu35p"]
 [ext_resource type="Texture2D" uid="uid://cvae20cgax3sk" path="res://sprites/player/Sonar/sonar1_2.png" id="7_3ljv3"]
@@ -56,12 +59,34 @@ fill = 1
 fill_from = Vector2(0.495413, 0.477064)
 fill_to = Vector2(0, 0)
 
-[node name="Player" type="CharacterBody2D" groups=["player"]]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("shooting_stream_player", "explosion_stream_player", "sonar_stream_player", "damage_stream_player") groups=["player"]]
 light_mask = 0
 position = Vector2(1044, 422)
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_b66x1")
+shooting_stream_player = NodePath("ShootingStreamPlayer")
+explosion_stream_player = NodePath("ExplosionStreamPlayer")
+sonar_stream_player = NodePath("SonarStreamPlayer")
+damage_stream_player = NodePath("DamageStreamPlayer")
+
+[node name="ShootingStreamPlayer" type="AudioStreamPlayer" parent="."]
+max_polyphony = 10
+bus = &"SFX"
+
+[node name="ExplosionStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_obrug")
+bus = &"SFX"
+
+[node name="SonarStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_yq4ty")
+volume_db = -9.0
+bus = &"SFX"
+
+[node name="DamageStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_4vjkp")
+volume_db = -3.0
+bus = &"SFX"
 
 [node name="Sprite" type="Area2D" parent="."]
 position = Vector2(-2, -1.99999)

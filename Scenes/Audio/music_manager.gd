@@ -39,6 +39,12 @@ func play_music(path: String, volume: float = 0, fadeout: bool = false, duration
 	stream = music
 	play()
 
+func stop_music(fadeout_duration: float = 1) -> void:
+	var tween: Tween = get_tree().create_tween()
+	tween.tween_property(self, "volume_db", -60, fadeout_duration)
+	await tween.finished
+	stop()
+
 # original functions
 #func play_music(music: AudioStream, audio_player: AudioStreamPlayer = self, volume = 0.0) -> void:
 	#audio_player.volume_db = volume

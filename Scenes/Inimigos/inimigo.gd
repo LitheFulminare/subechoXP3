@@ -7,6 +7,7 @@ var speed = 100
 @onready var nav_agent := $NavigationAgent2D as NavigationAgent2D
 @export var vida = 5
 @export var dano = 5
+@export var death_stream_player: AudioStreamPlayer
 
 const explosaoPath = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Explosão morte inimigo.tscn")
 #const tiro1 = preload("res://Scenes/Player_e_misc/Particulas e projéteis/Tiro 1.tscn")
@@ -25,6 +26,7 @@ func _process(delta):
 		morte()
 
 func morte():
+	death_stream_player.play()
 	# código pra spawnar a explosao, ela vai ser outra sprite no jogo final
 	var explosao = explosaoPath.instantiate()
 	get_parent().add_child(explosao)

@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://bj18jjcb7eo50"]
+[gd_scene load_steps=10 format=3 uid="uid://bj18jjcb7eo50"]
 
 [ext_resource type="Texture2D" uid="uid://b1yqmo12hkkwh" path="res://sprites/Inimigos/inimigo_spritesheet - Copia.webp" id="1_0e7fl"]
 [ext_resource type="Script" path="res://Scenes/Inimigos/inimigo.gd" id="1_atb20"]
+[ext_resource type="AudioStream" uid="uid://c0cm8a0ghmxxh" path="res://Audio/SFX/Enemy/enemy_death.wav" id="2_7gpys"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x1onv"]
 atlas = ExtResource("1_0e7fl")
@@ -38,7 +39,7 @@ size = Vector2(25, 29)
 [sub_resource type="CircleShape2D" id="CircleShape2D_ktimd"]
 radius = 14.274
 
-[node name="inimigo" type="CharacterBody2D" groups=["inimigo"]]
+[node name="inimigo" type="CharacterBody2D" node_paths=PackedStringArray("death_stream_player") groups=["inimigo"]]
 position = Vector2(64, 46)
 scale = Vector2(2.975, 2.975)
 collision_layer = 6
@@ -47,6 +48,11 @@ motion_mode = 1
 wall_min_slide_angle = 0.0
 platform_wall_layers = 7
 script = ExtResource("1_atb20")
+death_stream_player = NodePath("DeathStreamPlayer")
+
+[node name="DeathStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_7gpys")
+bus = &"SFX"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 light_mask = 8

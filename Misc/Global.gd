@@ -67,7 +67,7 @@ func next_room():
 				
 		if current_room == 3 && !shop1_visited:
 			goto_scene("res://Scenes/Layouts/LojaMidGame.tscn")
-			MusicManager.transition_to_song(MusicManager.sshop_song)
+			MusicManager.play_music(MusicManager.SONGS.Its_recycling_time, 0, true, 0.5)
 			shop_room = true
 			shop1_visited = true
 			

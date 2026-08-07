@@ -7,6 +7,11 @@ signal died_by_explosion
 @export var speed = 200
 @export var acceleration = 150
 @export var friction = 400
+@export var shooting_stream_player: AudioStreamPlayer
+@export var explosion_stream_player: AudioStreamPlayer
+@export var sonar_stream_player: AudioStreamPlayer
+@export var damage_stream_player: AudioStreamPlayer
+
 #@export var arma1_tipo = 1
 #@export var life = 100
 #@export var energy = 100
@@ -31,6 +36,8 @@ var tween
 var gun_Position
 var tiro1Path
 var muzz1Path
+
+var shooting_sound: AudioStreamWAV
 
 func _physics_process(delta):
 	player_movement(delta)
@@ -91,6 +98,7 @@ func _ready():
 			$"Sprite/Arma1/Sprites 1".visible = true
 			$"Tiro 1 cooldown".wait_time = 0.8
 			player_vars.bullet_penetration = false
+			shooting_stream_player.stream = preload("res://Audio/SFX/Weapons/gen-ericV1.wav")
 			#gun_Position = $"Spawn Tiro 1".global_position
 		
 		"Gen-EricV2":
@@ -101,6 +109,7 @@ func _ready():
 			$"Sprite/Arma1/Sprites 2".visible = true
 			$"Tiro 1 cooldown".wait_time = 0.35
 			gun_Position = $"Spawn Tiro 2".global_position
+			shooting_stream_player.stream = preload("res://Audio/SFX/Weapons/gen-ericV2.wav")
 			player_vars.bullet_penetration = false
 		
 		"Peacemaker":
@@ -122,6 +131,7 @@ func _ready():
 			$"Sprite/Arma1/Sprites 4".visible = true
 			$"Tiro 1 cooldown".wait_time = 0.2
 			gun_Position = $"Spawn Tiro 3".global_position
+			shooting_stream_player.stream = preload("res://Audio/SFX/Weapons/imperium.wav")
 			player_vars.bullet_penetration = false
 			
 		"Killerbee":
@@ -132,6 +142,7 @@ func _ready():
 			$"Sprite/Arma1/Sprites 5".visible = true
 			$"Tiro 1 cooldown".wait_time = 1.5
 			gun_Position = $"Spawn Tiro 5".global_position
+			printerr("No sound for Killerbee")
 			player_vars.bullet_penetration = true
 
 @warning_ignore("unused_parameter")
@@ -178,6 +189,7 @@ func _on_energy_timer_timeout():
 	
 func Sonar():
 	if not sonar && life > 0 && energy > 0:
+		sonar_stream_player.play()
 		$Sprite/Sonar.play()
 		sonar = true
 		$"Sonar cooldown".start()
@@ -210,6 +222,7 @@ func tiro1():
 		var muzz = muzz1Path.instantiate()
 		get_parent().add_child(muzz)
 		muzz.anim()
+		shooting_stream_player.play()
 		
 		match weapon_type:
 			"Gen-EricV1":
@@ -331,14 +344,17 @@ func death_no_life():
 	$"Light 2".visible = false
 	$Sonar.visible = false
 	dead = true
-	print_debug("Fade out song here")
+	MusicManager.stop_music()
+	explosion_stream_player.play()
 	
 func death_no_energy():
 	var tween = create_tween()
 	tween.tween_property($Light, "energy", 0, 1)
 	tween.parallel().tween_property($"Light 2", "energy", 0, 2) 
 	dead = true
-	print_debug("Fade out song here")
+	MusicManager.stop_music()
+	#MusicManager.play_music(MusicManager.SONGS.At_the_bottom_of_the_sea, 0, true, 0.5)
+	#print_debug("Fade out song here")
 
 #func _on_mudar_arma_1_cooldown_timeout():
 	#mudarA1_cd = false
@@ -384,6 +400,7 @@ func change_stat(stat, qtd):
 				player_vars.scrap_spent -= qtd
 
 func take_damage(type):
+	
 	#print("velocidade: " + str(current_speed))
 	if !invincible:
 		var dano_tomado = 0
@@ -401,6 +418,8 @@ func take_damage(type):
 				dano_tomado = 0
 		
 		life -= dano_tomado
+		if life > 0:
+			damage_stream_player.play()
 		velocity = Vector2.ZERO
 		invincible = true
 		damage_effect()
