@@ -657,12 +657,10 @@ inimigo_scene = ExtResource("2_37w4k")
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="UI vida e energia" parent="UI" instance=ExtResource("3_aktkr")]
-visible = false
 scale = Vector2(4.455, 4.455)
 metadata/_edit_lock_ = true
 
 [node name="UI Scrap" parent="UI" instance=ExtResource("4_lvuuc")]
-visible = false
 anchors_preset = 2
 anchor_top = 1.0
 anchor_right = 0.0

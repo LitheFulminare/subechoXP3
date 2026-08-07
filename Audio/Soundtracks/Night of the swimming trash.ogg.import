@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bvchrmbgqbc1d"
+path="res://.godot/imported/Night of the swimming trash.ogg-13923a00954c20a61d5e7d81beeaafe7.oggvorbisstr"
+
+[deps]
+
+source_file="res://Audio/Soundtracks/Night of the swimming trash.ogg"
+dest_files=["res://.godot/imported/Night of the swimming trash.ogg-13923a00954c20a61d5e7d81beeaafe7.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=10.105
+bpm=0.0
+beat_count=0
+bar_beats=4

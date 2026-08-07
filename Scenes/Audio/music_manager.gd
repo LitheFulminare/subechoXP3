@@ -8,10 +8,14 @@ enum songs
 }
 
 const SONGS: Dictionary = {
-	"At_the_bottom_of_the_sea": "uid://boyjxoo7kh6fo"
+	"At_the_bottom_of_the_sea": "res://Audio/Soundtracks/At the bottom of the sea.ogg",
+	"Main_Theme": "res://Audio/Soundtracks/Main Theme.ogg",
+	"Night_of_the_swimming_trash": "res://Audio/Soundtracks/Night of the swimming trash.ogg",
+	"Its_recycling_time": "",
 }
 
 var queued_song: AudioStream
+var current_song_path: String
 
 # this is used to loop the song without cutting the last note and letting it ring
 @export var timer: Timer
@@ -19,8 +23,19 @@ var queued_song: AudioStream
 
 var is_playing_music: bool = false
 
-func play_music(uid: String) -> void:
-	var music: AudioStream = load(uid)
+func play_music(path: String, volume: float = 0, fadeout: bool = false, duration: float = 0) -> void:
+	if path == current_song_path:
+		return
+	
+	if fadeout:
+		if is_playing():
+			var tween: Tween = get_tree().create_tween()
+			tween.tween_property(self, "volume_db", -60, duration)
+			await tween.finished
+	
+	current_song_path = path
+	var music: AudioStream = load(path)
+	volume_db = volume
 	stream = music
 	play()
 

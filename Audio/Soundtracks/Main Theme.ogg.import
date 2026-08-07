@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b2bcqprah4vxe"
+path="res://.godot/imported/Main Theme.ogg-ee6dbecf74bc12127dc173073931e588.oggvorbisstr"
+
+[deps]
+
+source_file="res://Audio/Soundtracks/Main Theme.ogg"
+dest_files=["res://.godot/imported/Main Theme.ogg-ee6dbecf74bc12127dc173073931e588.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=12.8
+bpm=0.0
+beat_count=0
+bar_beats=4
